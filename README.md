@@ -13,11 +13,19 @@ npm run dev
 
 In order to develop the website of DevRiser company, please follow the below folder structure guidelines:
 
-- `src/components`: Contains reusable React components.
+### `src` directory
+
+- `src/app`: Contains the globals.css, layout.tsx, page.tsx and other pages of the website.
+- `src/components`: Contains reusable components.
 - `src/containers`: Contains container components that connect to the backend API.
 - `src/services`: Contains API service functions for communication with the backend.
 - `src/utils`: Contains utility functions.
-- `src/types`: Contains all the TypeScript types.
+- `src/types`: Contains TypeScript types.
+
+### `public` directory
+
+- `public/assets/icons`: Contains all the icons.
+- `public/assets/images`: Contains all the images.
 
 ## Dependencies
 
