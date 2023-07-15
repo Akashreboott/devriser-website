@@ -15,7 +15,7 @@ In order to develop the website of DevRiser company, please follow the below fol
 
 ### `src` directory
 
-- `src/app`: Contains the globals.css, layout.tsx, page.tsx and other pages of the website.
+- `src/app`: Contains globals.css, layout.tsx, page.tsx and other pages of the website.
 - `src/components`: Contains reusable components.
 - `src/containers`: Contains container components that connect to the backend API.
 - `src/services`: Contains API service functions for communication with the backend.
