@@ -62,7 +62,7 @@ module.exports = {
 			screens: {
 				md: "768px",
 				lg: "1012px",
-				xl: "1024px",
+				xl: "1248px",
 			},
 			fontWeight: {
 				350: 350,
