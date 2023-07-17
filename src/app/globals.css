@@ -1,3 +1,261 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--dark-gradient-border: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
+	--light-gradient-border: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
+	--light-gradient-border2: linear-gradient(143.39deg, rgb(143, 143, 143) 0%, rgba(255, 255, 255, 0.55) 129.61%);
+	--curve-color: #222;
+	--gradient-border-color: var(--dark-gradient-border);
+}
+@layer base {
+	body {
+		@apply flex relative lg:flex-row flex-col bg-light text-primary-dark
+		dark:bg-dark font-mono-sans dark:text-white 
+		dark:[--gradient-border-color:var(--dark-gradient-border)];
+	}
+	p {
+		@apply dark:text-gray text-primary-dark;
+	}
+}
+@layer components {
+	.btn {
+		border-radius: 6px;
+		padding: 8px 28px 8px 28px;
+	}
+}
+
+@layer utilities {
+	.primary-heading {
+		@apply lg:text-heading1 md:text-[24px]/[35px] text-[20px]/[35px] font-semibold;
+	}
+	.hero-text {
+		@apply lg:text-hero text-[24px]/[48px];
+	}
+	.para-text {
+		@apply lg:text-basic text-[14px]/[30px];
+		font-weight: 350;
+	}
+	.para-text-xl {
+		@apply lg:text-[20px]/[35px] md:text-[16px]/[35px] text-[16px]/[30px];
+	}
+	.testimonial-text {
+		@apply lg:text-[36px]/[44px] md:text-[24px]/[34px];
+	}
+	.bg-linear-gradient-1 {
+		background-image: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+	}
+	.btn-white-gradient {
+		background-image: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%),
+			linear-gradient(151.41deg, rgba(255, 255, 255, 0.2) 6.38%, rgba(0, 0, 0, 0) 128.97%, rgba(255, 255, 255, 0.2) 128.97%);
+	}
+	.btn-outline {
+		@apply grid place-items-center 
+		lg:text-[24px]/[23.21px] font-extralight active:scale-[0.99] hover:scale-[0.99]  gradient-border  rounded-lg lg:h-[92px] w-full text-center lg:max-w-[175px] md:h-[68px] md:max-w-[130px] md:text-[16px]/[15.47px] max-md:h-[47px] max-md:max-w-[88px] max-md:text-[12px]/[11.6px] 
+		bg-noise250;
+	}
+
+	.clip {
+		background-clip: text;
+		color: transparent;
+	}
+	.hero-gradient {
+		background-image: linear-gradient(180deg, #e67ca2 0%, #dc56c5 100%);
+	}
+	.btn-gradient {
+		background-image: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+	}
+	.white-gradient {
+		background-image: linear-gradient(151.41deg, rgba(255, 255, 255, 0.1) 6.38%, rgba(0, 0, 0, 0) 128.97%, rgba(255, 255, 255, 0.1) 128.97%);
+	}
+	.pink-gradient {
+		background-image: linear-gradient(298.43deg, #e883ab -25.91%, #e77ea7 101.58%);
+	}
+	.pink-gradient-bright {
+		background-image: linear-gradient(91.31deg, #e57aa5 28.71%, #df60bc 65.61%);
+	}
+	.bg-noise {
+		background-image: url("./../../public/assets/images/bg-noise.png");
+	}
+	.bg-noise250 {
+		background-image: url("./../../public/assets/images/bg-noise250.png");
+	}
+	.bg-noise1800 {
+		background-image: url("./../../public/assets/images/bg-noise1800x600.png");
+	}
+	.gradient-border {
+		--border-width: 2px;
+		@apply relative;
+	}
+	.gradient-border > * {
+		@apply z-10;
+	}
+
+	.gradient-border::before {
+		@apply rounded-lg absolute w-full h-full -z-40 inset-0;
+		content: "";
+		background-image: var(--gradient-border-color);
+	}
+	.gradient-border::after {
+		@apply dark:bg-dark bg-light -z-30  absolute top-[calc(var(--border-width)/2)] left-[calc(var(--border-width)/2)] rounded-lg;
+		width: calc(100% - var(--border-width));
+		height: calc(100% - var(--border-width));
+		content: "";
+	}
+}
+
+body header + * {
+	flex-grow: 1;
+}
+
+@keyframes NavSlide {
+	from {
+		transform: translateX(-90px);
+	}
+}
+.navslide-anim {
+	animation: NavSlide 0.3s ease forwards;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-RegularWide.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-ExtraBold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-ExtraBoldItalic.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-MediumWide.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-Regular.woff") format("woff");
+	font-weight: 350;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-RegularWide.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-MediumItalic.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-RegularItalic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-SemiBoldWide.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+/* @font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+} */
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-SemiBoldItalic.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-UltraLightWide.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Mona-Sans";
+	src: url("./../../public/assets/fonts/Mona-Sans-UltraLightItalic.woff") format("woff");
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+
+.scroll-bar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scroll-bar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
