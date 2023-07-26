@@ -1,0 +1,18 @@
+@layer utilities {
+	.primary-heading {
+		@apply lg:text-heading1 md:text-[24px]/[35px] text-[20px]/[35px] font-semibold;
+	}
+	.hero-text {
+		@apply lg:text-hero text-[24px]/[48px];
+	}
+	.para-text {
+		@apply lg:text-basic text-[14px]/[30px];
+		font-weight: 350;
+	}
+	.para-text-xl {
+		@apply lg:text-[20px]/[35px] md:text-[16px]/[35px] text-[16px]/[30px];
+	}
+	.testimonial-text {
+		@apply lg:text-[36px]/[44px] md:text-[24px]/[34px];
+	}
+}

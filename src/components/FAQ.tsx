@@ -1,6 +1,5 @@
-import Image from "next/image";
-import plus from "./../../public/assets/icons/plus.svg";
-import minus from "./../../public/assets/icons/minus.svg";
+import Plus from "./../../public/assets/icons/Plus";
+import Minus from "./../../public/assets/icons/Minus";
 
 interface props {
 	title: string;
@@ -12,20 +11,20 @@ const FAQ = (props: props) => {
 			<input className='peer hidden appearance-none' aria-hidden='true' type='checkbox' name='faq' id={`${props.title}id`} />
 			<label
 				htmlFor={`${props.title}id`}
-				className='flex w-full cursor-pointer select-none justify-between items-center gap-2 py-2 text-lg font-normal  peer-checked:[&>span+span]:!inline-block peer-checked:[&>span:first-of-type]:!hidden'>
+				className='flex w-full cursor-pointer items-center justify-between gap-2 py-2 text-left text-lg font-normal  peer-checked:[&>span+span]:!inline-block peer-checked:[&>span:first-of-type]:!hidden'>
 				{props.title}
 				<span className='shrink-0'>
-					<Image src={plus} alt='' />
+					<Plus className='h-5 w-5 text-toggle-icon-color' />
 				</span>
 				<span className='hidden shrink-0'>
-					<Image src={minus} alt='' />
+					<Minus className='h-5 w-5 text-toggle-icon-color' />
 				</span>
 			</label>
 			<div className='grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 peer-checked:[grid-template-rows:1.2fr]'>
-				<p className='overflow-hidden opacity-75 max-sm:text-[18px]/[28px] text-slate-gray '>{props.content}</p>
+				<p className='overflow-hidden text-left text-slate-gray opacity-75 max-sm:text-[18px]/[28px] '>{props.content}</p>
 			</div>
 			<div
-				className='pointer-events-none absolute h-full w-full border-b-2 dark:border-[#A6A6A6] border-dark-gray  peer-checked:ring-zinc-300 dark:ring-zinc-800 peer-checked:dark:ring-zinc-500'
+				className='pointer-events-none absolute h-full w-full border-b-2 border-dark-gray peer-checked:ring-zinc-300  dark:border-[#A6A6A6] dark:ring-zinc-800 peer-checked:dark:ring-zinc-500'
 				aria-hidden='true'
 			/>
 		</div>

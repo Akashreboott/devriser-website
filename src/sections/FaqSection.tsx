@@ -1,5 +1,5 @@
 import FAQ from "@/components/FAQ";
-import React from "react";
+import SectionHeading from "@/components/SectionHeading";
 
 const FaqSection = () => {
 	const FAQS = [
@@ -25,17 +25,13 @@ const FaqSection = () => {
 		},
 	];
 	return (
-		<section className='grid justify-center gap-12 max-md:px-4 mb-48'>
-			<h2 className='primary-heading mt-24 text-center'>
-				Frequently <span className='clip pink-gradient-bright '>Asked</span> Questions
-			</h2>
-
+		<SectionHeading title='Frequently Asked Questions' gradientText='Asked' className='mt-24 grid justify-center gap-12  max-md:px-4'>
 			<div className='flex w-full max-w-screen-md flex-col gap-4'>
 				{FAQS.map((faq) => (
 					<FAQ {...faq} key={faq.title} />
 				))}
 			</div>
-		</section>
+		</SectionHeading>
 	);
 };
 

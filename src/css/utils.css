@@ -1,0 +1,32 @@
+@layer components {
+	/* To hide scroll bar for overflowing content  */
+	.scroll-bar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scroll-bar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scroll-bar-thin {
+		scrollbar-width: thin;
+	}
+	.scroll-bar-thin::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.clip {
+		background-clip: text;
+		color: transparent;
+	}
+
+	.before-overlay {
+		@apply relative before:absolute before:h-full before:w-full;
+	}
+	.after-overlay {
+		@apply after:absolute after:h-full after:w-full;
+	}
+	.hide-in-dark {
+		@apply dark:!hidden;
+	}
+}

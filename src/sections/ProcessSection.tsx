@@ -13,9 +13,10 @@ import vector34 from "./../../public/assets/icons/Vector 34.svg";
 import vector35 from "./../../public/assets/icons/Vector 35.svg";
 import vector37 from "./../../public/assets/icons/Vector 37.svg";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
 
 const ProcessSection = () => {
-	const PROCESSES = [
+	const PROCESSES: { title: string; description: string }[] = [
 		{
 			title: "Gathering requirements",
 			description:
@@ -56,44 +57,35 @@ const ProcessSection = () => {
 			description: "After successful staging, the website is launched, marking its online debut and making it accessible to the target audience",
 		},
 	];
+
+	function SliceProcesses(start: number, end?: number) {
+		return PROCESSES.slice(start, end).map((process) => (
+			<div
+				key={process.title}
+				className='btn-outline h-[33px] max-w-[100px] px-4 hover:after:bg-dark md:h-[38px] md:max-w-[155px] lg:h-[75px] lg:max-w-[312px]'>
+				{process.title}
+			</div>
+		));
+	}
 	return (
-		<section className='[&_img]:!text-gray'>
-			<div className='max-lg:hidden bg-dark text-white'>
-				<h2 className='primary-heading mt-24 text-center'>
-					Our <span className='clip pink-gradient-bright '>Process</span>
-				</h2>
+		<section className='isolate w-full bg-dark [&_.btn-outline::after]:[background-color:transparent] [&_.btn-outline::before]:bg-none [&_img]:!text-gray'>
+			<SectionHeading title='Our Process' gradientText='Process' as='div' className='z-10 mt-24 text-white max-lg:hidden '>
 				<div className='flex flex-col'>
-					<div className='flex justify-center -space-x-1 rotate-180 relative'>
-						<div className='w-5 aspect-square rounded-full bg-pink-500 border-[3px] border-white absolute bottom-0 translate-x-[calc(50%-11px)]'></div>
+					<div className='relative flex rotate-180 justify-center -space-x-1'>
+						<div className='absolute bottom-0 aspect-square w-5 translate-x-[calc(50%-11px)] rounded-full border-[3px] border-white bg-pink-500'></div>
 						<Image src={vector2} alt='' />
 						<Image src={vector1} alt='' />
 						<Image src={vector3} alt='' />
 					</div>
-					<div className='flex gap-3 justify-center'>
-						{PROCESSES.slice(0, 3).map((process) => (
-							<div
-								key={process.title}
-								className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-w-[100px] h-[33px] px-4'>
-								{process.title}
-							</div>
-						))}
-					</div>
+					<div className='flex justify-center gap-3'>{SliceProcesses(0, 3)}</div>
 					<div className='flex justify-center -space-x-1 '>
 						<Image src={vector4} alt='' />
 						<Image src={vector6} alt='' />
 						<Image src={vector4} alt='' />
 						<Image src={vector6} alt='' />
 					</div>
-					<div className='flex gap-[65px] justify-center'>
-						{PROCESSES.slice(3, 5).map((process) => (
-							<div
-								key={process.title}
-								className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-w-[100px] h-[33px] px-4'>
-								{process.title}
-							</div>
-						))}
-					</div>
-					<div className='flex justify-center items-start -space-x-1 '>
+					<div className='flex justify-center gap-[65px]'>{SliceProcesses(3, 5)}</div>
+					<div className='flex items-start justify-center -space-x-1 '>
 						<Image src={vector8} alt='' />
 						<div className='relative'>
 							<Image src={vector10} alt='' />
@@ -101,110 +93,68 @@ const ProcessSection = () => {
 						</div>
 						<Image src={vector9} alt='' />
 					</div>
-					<div className='flex gap-3 justify-center'>
-						{PROCESSES.slice(5).map((process) => (
-							<div
-								key={process.title}
-								className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-w-[100px] h-[33px] px-4'>
-								{process.title}
-							</div>
-						))}
-					</div>
+					<div className='flex justify-center gap-3'>{SliceProcesses(5)}</div>
 				</div>
-			</div>
-			<div className='lg:hidden bg-dark'>
-				<h2 className='primary-heading md:mt-24 text-center mb-3'>
+			</SectionHeading>
+
+			{/* <div className='bg-dark lg:hidden'>
+				<h2 className='primary-heading mb-3 text-center md:mt-24'>
 					Our <span className='clip pink-gradient-bright '>Process</span>
-				</h2>
-				<div className='flex flex-col items-center gap-2'>
-					<div className='flex flex-col gap-3 justify-center  -space-y-2'>
-						<div className='flex justify-center -space-x-1 relative '>
-							<div className='w-3 aspect-square rounded-full bg-pink-500 border-[2.5px] border-white absolute -top-3 translate-x-[calc(50%-7px)]'></div>
-							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%+0.5px)] rotate-[0deg] -z-10' alt='' />
+				</h2> */}
+			<SectionHeading title='Our Process' gradientText='Process' as='div' className='md:pt-24 lg:hidden [&_.btn-outline]:!text-white'>
+				<div className='mt-4 flex flex-col items-center gap-2'>
+					<div className='flex flex-col justify-center gap-3  -space-y-2'>
+						<div className='relative flex justify-center -space-x-1 '>
+							<div className='absolute -top-3 aspect-square w-3 translate-x-[calc(50%-7px)] rounded-full border-[2.5px] border-white bg-pink-500'></div>
+							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%+0.5px)] -z-10 rotate-[0deg]' alt='' />
 
-							<Image src={vector34} className='max-w-[133px] w-full' alt='' />
-							<Image src={vector37} className='max-w-[133px] w-full' alt='' />
+							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
+							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
-						<div className='flex justify-center gap-[119px]'>
-							{PROCESSES.slice(0, 2).map((process) => (
-								<div
-									key={process.title}
-									className='btn-outline hover:after:bg-darklg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-md:!max-w-[100px] w-full h-[33px] md:px-4'>
-									{process.title}
-								</div>
-							))}
-						</div>
-						<div className='flex justify-center -space-x-1 rotate-180 -translate-x-[0.5px]'>
-							<Image src={vector34} className='max-w-[133px] w-full' alt='' />
-							<Image src={vector37} className='max-w-[133px] w-full' alt='' />
+						<div className='flex justify-center gap-[119px]'>{SliceProcesses(0, 2)}</div>
+						<div className='flex -translate-x-[0.5px] rotate-180 justify-center -space-x-1'>
+							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
+							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
 					</div>
-					{PROCESSES.slice(2, 3).map((process) => (
-						<div
-							key={process.title}
-							className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-md:!max-w-[100px] w-full h-[33px] md:px-4'>
-							{process.title}
-						</div>
-					))}
+					{SliceProcesses(2, 3)}
+					<div className='flex flex-col justify-center gap-3 -space-y-2'>
+						<div className='relative flex justify-center -space-x-1 '>
+							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%-4px)] -z-10  origin-top rotate-[0deg]' alt='' />
 
-					<div className='flex flex-col gap-3 justify-center -space-y-2'>
-						<div className='flex justify-center -space-x-1 relative '>
-							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%-4px)] rotate-[0deg]  origin-top -z-10' alt='' />
-
-							<Image src={vector34} className='max-w-[133px] w-full' alt='' />
-							<Image src={vector37} className='max-w-[133px] w-full' alt='' />
+							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
+							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
-						<div className='flex justify-center gap-[119px]'>
-							{PROCESSES.slice(3, 5).map((process) => (
-								<div
-									key={process.title}
-									className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-md:!max-w-[100px] w-full h-[33px] md:px-4'>
-									{process.title}
-								</div>
-							))}
-						</div>
-						<div className='flex justify-center -space-x-1 rotate-180 -translate-x-[0.5px]'>
-							<Image src={vector34} className='max-w-[133px] w-full' alt='' />
-							<Image src={vector37} className='max-w-[133px] w-full' alt='' />
+						<div className='flex justify-center gap-[119px]'>{SliceProcesses(3, 5)}</div>
+						<div className='flex -translate-x-[0.5px] rotate-180 justify-center -space-x-1'>
+							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
+							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
 					</div>
-					{PROCESSES.slice(5, 6).map((process) => (
-						<div
-							key={process.title}
-							className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-md:!max-w-[100px] w-full h-[33px] md:px-4'>
-							{process.title}
-						</div>
-					))}
-					<div className='flex flex-col gap-3 justify-center -space-y-2'>
+					{SliceProcesses(5, 6)}
+					<div className='flex flex-col justify-center gap-3 -space-y-2'>
 						<div className='flex justify-center -space-x-1 '>
-							<Image src={vector34} className='max-w-[133px] w-full' alt='' />
-							<Image src={vector37} className='max-w-[133px] w-full' alt='' />
+							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
+							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
-						<div className='flex justify-center gap-[119px]'>
-							{PROCESSES.slice(6).map((process) => (
-								<div
-									key={process.title}
-									className='btn-outline hover:after:bg-dark lg:max-w-[312px] lg:h-[75px] md:max-w-[155px] md:h-[38px] max-md:!max-w-[100px] w-full h-[33px] md:px-4'>
-									{process.title}
-								</div>
-							))}
-						</div>
+						<div className='flex justify-center gap-[119px]'>{SliceProcesses(6)}</div>
 					</div>
 				</div>
-			</div>
-			<div className='px-12 bg-dark mx-auto grid lg:gap-[75px] xl:gap-[95px] gap-[70px] xl:pt-[200px] lg:pt-[180px] md:pt-[150px] py-[63px] relative '>
-				<div className='w-[500px] aspect-square rounded-full bg-violet/50 blur-[100px] absolute -top-[6rem] -left-[1rem] opacity-60'></div>
-				<div className='flex max-lg:flex-wrap max-lg:max-w-[500px] max-lg:mx-auto lg:gap-[30px] gap-[70px]  xl:gap-[64px] justify-center'>
+			</SectionHeading>
+			{/* </div> */}
+			<div className='relative isolate  mx-auto grid gap-[70px] bg-dark px-12 py-[63px] md:pt-[150px] lg:gap-[75px] lg:pt-[180px] xl:gap-[95px] xl:pt-[200px] '>
+				<div className='absolute -left-[1rem] -top-[6rem]  -z-10 aspect-square w-[500px] rounded-full opacity-40 blur-[100px] [background-image:radial-gradient(circle,theme("colors.violet"),transparent_90%)]'></div>
+				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(0, 3).map((process) => (
 						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
 					))}
 				</div>
-				<div className='flex max-lg:flex-wrap max-lg:max-w-[500px] max-lg:mx-auto lg:gap-[30px] gap-[70px]  xl:gap-[64px] justify-center'>
+				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(3, 5).map((process) => (
 						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
 					))}
 				</div>
-				<div className='flex max-lg:flex-wrap max-lg:max-w-[500px] max-lg:mx-auto lg:gap-[30px] gap-[70px]  xl:gap-[64px] justify-center'>
+				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(5).map((process) => (
 						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
 					))}

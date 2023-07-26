@@ -2,6 +2,7 @@
 import Logo from "./../../public/assets/icons/Logo";
 import Xmark from "./../../public/assets/icons/Xmark";
 import ChevronIcon from "./../../public/assets/icons/Chevron";
+import DevRiserLogo from "../../public/assets/images/DevRiserLogo";
 import AboutIcon from "./../../public/assets/icons/About";
 import ContactIcon from "./../../public/assets/icons/ContactIcon";
 import Light from "./../../public/assets/icons/LightIcon";
@@ -11,61 +12,40 @@ import Solutions from "./../../public/assets/icons/SolutionIcon";
 import flag from "./../../public/assets/icons/flag.svg";
 import Image from "next/image";
 import Menu from "../../public/assets/icons/Menu";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useEffect, useRef, useState } from "react";
 import ThemeContext from "@/utils/ThemeContext";
 import ThemeButton from "@/utils/ThemeButton";
+import { NAV_LINKS, NAV_LINKSInterface } from "../utils/cms-data";
+import Link from "next/link";
 
-const Header = () => {
+const Header = ({ className }: { className?: string }) => {
 	const ctx = useContext(ThemeContext);
-	const [activeLink, setActiveLink] = useState<string>("");
+	const [activeLink, setActiveLink] = useState("services");
 	const [desktopMenuOpened, setDesktopMenuOpened] = useState<boolean>(false);
 	const [mobileMenuOpened, setMobileMenuOpened] = useState<boolean>(false);
-	const [services, setServices] = useState(false);
-	const [solutions, setSolutions] = useState(false);
+	const [services, setServices] = useState<boolean>(false);
+	const [solutions, setSolutions] = useState<boolean>(false);
+	const headerRef = useRef<HTMLDivElement>(null);
+	const [headerWidth, setheaderWidth] = useState<number>(85);
+	const [page, setPage] = useState<string>("");
 
-	const NAV_LINKS = {
-		services: [
-			["Web Development", "#"],
-			["Mobile Development", "#"],
-			["UI/UX Services", "#"],
-			["CMS Services", "#"],
-			["Managed Services", "#"],
-			["Enterprise Solutions", "#"],
-		],
-		solutions: [
-			["Web Development solutions ", "#"],
-			["Mobile Development solutions ", "#"],
-			["UI/UX Services solutions ", "#"],
-			["CMS Services solutions ", "#"],
-			["Managed Services solutions ", "#"],
-			["Enterprise Solutions solutions ", "#"],
-		],
-		blog: [
-			["Blog 0", "#"],
-			["Blog 1", "#"],
-			["Blog 2", "#"],
-			["Blog 3", "#"],
-			["Blog 4", "#"],
-			["Blog 5", "#"],
-		],
-		contact: [
-			["Contact Link 0", "#"],
-			["Contact Link 1", "#"],
-			["Contact Link 2", "#"],
-			["Contact Link 3", "#"],
-			["Contact Link 4", "#"],
-			["Contact Link 5", "#"],
-		],
-		AboutUs: [
-			["About Link 0", "#"],
-			["About Link 1", "#"],
-			["About Link 2", "#"],
-			["About Link 3", "#"],
-			["About Link 4", "#"],
-			["About Link 5", "#"],
-		],
-		languages: [["En"], ["Francis"], ["Posh"]],
-	};
+	console.log(page);
+	useEffect(() => {
+		if (headerRef.current != null) {
+			console.log(headerRef.current.getBoundingClientRect());
+			setheaderWidth(headerRef.current.getBoundingClientRect().width);
+		}
+	}, []);
+	// useEffect(() => {
+	// 	function changeDataAttribute(pageName: string) {
+	// 		const main = document.getElementById("main");
+	// 		if (main) {
+	// 			main.dataset.page = pageName;
+	// 		}
+	// 	}
+	// 	changeDataAttribute(page);
+	// }, [page]);
+	// onClick={activeLink == "services" ? () => setPage(name) : () => {}}
 
 	function closeMenu() {
 		setDesktopMenuOpened(false);
@@ -73,95 +53,68 @@ const Header = () => {
 	function openMenu() {
 		setDesktopMenuOpened(true);
 	}
+	function setActive(name: string): void {
+		openMenu();
+		setActiveLink(name);
+	}
 
+	let IconClasses = (tag: string) =>
+		`dark:hover:bg-dark hover:bg-light p-2 rounded-lg box-content ${activeLink === tag && desktopMenuOpened && "dark:bg-dark bg-light"}`;
+
+	const NavBarLink = (children: ReactNode, linkname: string) => {
+		return (
+			<li onMouseEnter={() => setActive(linkname)} className='flex flex-col items-center gap-[5px]  '>
+				{children}
+				<p>Services</p>
+			</li>
+		);
+	};
 	return (
 		<>
-			<header className='relative'>
+			<header
+				ref={headerRef}
+				className={`scroll-bar-thin sticky top-0 isolate z-[100]  h-full max-h-screen min-h-screen [grid-area:header] max-lg:hidden ${
+					className ?? ""
+				}`}>
 				<div
 					onMouseLeave={closeMenu}
-					className={`w-fit max-lg:hidden flex flex-col items-center h-full  ${
+					className={`flex h-full w-fit flex-col items-center   ${
 						desktopMenuOpened && "border-r"
-					} z-[100] border-gray justify-self-start justify-between self-start px-1 py-3 max-h-screen h-full dark:bg-secondary-dark min-h-screen  top-0 sticky bg-white`}>
-					<Logo className='w-[35px] h-[35px] aspect-square mb-[40px] shrink-0' />
-					<ul className='grid gap-[25px] text-navlink h-full [&_li]:cursor-pointer'>
-						<li
-							onMouseEnter={() => {
-								openMenu();
-								setActiveLink("services");
-							}}
-							className='flex flex-col gap-[5px] items-center '>
-							<SettingsIcon
-								className={`dark:hover:bg-dark hover:bg-light/10 p-2 rounded-lg box-content ${
-									activeLink === "services" && desktopMenuOpened && "dark:bg-dark bg-light"
-								}`}
-							/>
-							<p>Services</p>
+					}  z-10 justify-between self-start justify-self-start overflow-y-auto overflow-x-hidden border-gray bg-white px-1  py-3  dark:bg-gray-30`}>
+					<Link href={"/"} onClick={() => setPage("")}>
+						<DevRiserLogo className='mb-[40px]  aspect-square h-[35px] w-[35px] shrink-0 ' />
+					</Link>
+					<ul className='grid h-full gap-[25px] [&_li]:cursor-pointer [&_p]:text-navlink [&_p]:text-black dark:[&_p]:text-white'>
+						<li onMouseEnter={() => setActive("services")} className='flex flex-col items-center gap-0.5   '>
+							<SettingsIcon className={IconClasses("services")} />
+							<p className=''>Services</p>
 						</li>
-						<li
-							onMouseEnter={() => {
-								openMenu();
-								setActiveLink("solutions");
-							}}
-							className='flex flex-col gap-[5px] items-center '>
-							<Solutions
-								className={`dark:hover:bg-dark hover:bg-light/10 p-2 rounded-lg box-content ${
-									activeLink === "solutions" && desktopMenuOpened && "dark:bg-dark bg-light"
-								}`}
-							/>
-							<p>Solutions</p>
+						<li onMouseEnter={() => setActive("solutions")} className='flex flex-col items-center gap-0.5   '>
+							<Solutions className={IconClasses("solutions")} />
+							<p className=''>Solutions</p>
 						</li>
-						<li
-							onMouseEnter={() => {
-								openMenu();
-								setActiveLink("blog");
-							}}
-							className='flex flex-col gap-[5px] items-center '>
-							<Blogs
-								className={`dark:hover:bg-dark hover:bg-light/10 p-2 rounded-lg box-content ${
-									activeLink === "blog" && desktopMenuOpened && "dark:bg-dark bg-light"
-								}`}
-							/>
-							<p>Blogs</p>
+						<li onMouseEnter={() => setActive("blog")} className='flex flex-col items-center gap-0.5   '>
+							<Blogs className={IconClasses("blog")} />
+							<p className=''>Blogs</p>
 						</li>
-						<li
-							onMouseEnter={() => {
-								openMenu();
-								setActiveLink("contact");
-							}}
-							className='flex flex-col gap-[5px] items-center '>
-							<ContactIcon
-								className={`dark:hover:bg-dark hover:bg-light/10 p-2 rounded-lg box-content ${
-									activeLink === "contact" && desktopMenuOpened && "dark:bg-dark bg-light"
-								}`}
-							/>
-							<p>Contact</p>
+						<li onMouseEnter={() => setActive("contact")} className='flex flex-col items-center gap-0.5   '>
+							<ContactIcon className={IconClasses("contact")} />
+							<p className=''>Contact</p>
 						</li>
-						<li
-							onMouseEnter={() => {
-								openMenu();
-								setActiveLink("AboutUs");
-							}}
-							className='flex flex-col gap-[5px] items-center '>
-							<AboutIcon
-								className={`dark:hover:bg-dark hover:bg-light/10 p-2 rounded-lg box-content ${
-									activeLink === "AboutUs" && desktopMenuOpened && "dark:bg-dark bg-light"
-								}`}
-							/>
-							<p>About Us</p>
+						<li onMouseEnter={() => setActive("AboutUs")} className='flex flex-col items-center gap-0.5   '>
+							<AboutIcon className={IconClasses("AboutUs")} />
+							<p className=''>About Us</p>
 						</li>
 					</ul>
-					<div className='flex flex-col gap-[15px] text-navlink h-full mt-auto mb-2'>
+					<div className=' mb-2 mt-auto flex h-full flex-col gap-[15px] pt-3 text-navlink'>
 						<ThemeButton />
 						<div className='grow-0'>
-							<button className='px-[17px] py-2 rounded-[3.5px] dark:bg-gray-66 bg-[#EBEAEA]'>SignIn</button>
+							<button className='rounded-[3.5px] bg-[#EBEAEA] px-[17px] py-2 dark:bg-gray-66'>SignIn</button>
 						</div>
-						<div className='grow-0 w-full'>
+						<div className='w-full grow-0'>
 							<button
-								onMouseEnter={() => {
-									openMenu();
-									setActiveLink("languages");
-								}}
-								className='px-[17px] py-2 w-max rounded-[3.5px] flex gap-1 items-center  border dark:border-white border-[#2A2A2A]'>
+								onMouseEnter={() => setActive("languages")}
+								className='flex w-max items-center gap-1 rounded-[3.5px] border border-[#2A2A2A]  px-[17px] py-2 dark:border-white'>
 								<Image src={flag} alt='' />
 								<span className='relative top-[0.5px]'>En</span>
 							</button>
@@ -172,76 +125,86 @@ const Header = () => {
 				<div
 					onMouseEnter={openMenu}
 					onMouseLeave={closeMenu}
+					style={{
+						transform: `translateX(${headerWidth}px)`,
+					}}
 					className={`${
 						!desktopMenuOpened && "hidden"
-					} fixed navslide-anim max-lg:hidden  w-fit translate-x-[85px] max-h-screen h-full backdrop-blur-lg z-50 dark:bg-secondary-dark bg-light top-0 left-0`}>
-					<ul className={"flex flex-col gap-5 [&>*]:min-w-[200px] [&>li]:cursor-pointer [&>li]:transition-colors   py-6 px-5"}>
+					} navslide-anim fixed left-0 top-0 -z-10 h-full max-h-screen w-fit min-w-[320px]  bg-white backdrop-blur-lg dark:bg-[#1E1E1E] max-lg:hidden`}>
+					<ul className={"flex flex-col gap-5 px-5 py-6 [&>*]:min-w-[200px]  [&>li]:cursor-pointer [&>li]:transition-colors"}>
 						{activeLink &&
 							desktopMenuOpened &&
-							NAV_LINKS[activeLink].map(([name, path]) => (
-								<li key={name} className='p-[9px] pr-[21px] dark:hover:bg-dark hover:bg-white rounded-md duration-200'>
-									<a href={path ?? ""}>{name}</a>
+							NAV_LINKS[activeLink as keyof NAV_LINKSInterface].map(([name, path]) => (
+								<li key={name} className='rounded-md p-[9px] pr-[21px] duration-200 hover:bg-light dark:hover:bg-dark'>
+									<Link href={path ?? ""} className='inline-block h-full w-full'>
+										{name}
+									</Link>
 								</li>
 							))}
 					</ul>
 				</div>
 			</header>
 
-			<header className='lg:hidden flex items-center justify-between backdrop-blur-2xl z-[100] self-start  py-3  dark:bg-secondary-dark/50 w-full px-2  top-0 sticky'>
-				<button className='px-[10px] py-[5px] rounded-[3.5px] border border-white text-xs'>SignIn</button>
-				<Logo className='w-[35] aspect-square ' />
+			{/* MOBILE HEADER */}
+			<header className='sticky top-0 z-[100] flex w-full items-center justify-between self-start  px-2  py-3 backdrop-blur-2xl [grid-area:header]  dark:bg-secondary-dark/50 lg:hidden'>
+				<button className='rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-dark'>SignIn</button>
+				<Logo className='aspect-square w-[35] ' />
+
+				{/* OVERLAY */}
 				{mobileMenuOpened && (
-					<div className='fixed top-0  bg-white/20 p-4  w-screen h-screen backdrop-blur-xl'>
-						<div className='flex justify-between items-center px-4 mb-4'>
-							<ThemeButton className='w-6 h-6'>
-								<Light className='w-6 h-6' />
+					<div className='fixed left-0 top-0 h-screen w-screen  bg-white/20 p-4 backdrop-blur-xl'>
+						<div className='mb-4 flex items-center justify-between px-4'>
+							<ThemeButton className='h-6 w-6'>
+								<Light className='h-6 w-6' />
 							</ThemeButton>
-							<Xmark onClick={() => setMobileMenuOpened(false)} className='w-4 h-4 cursor-pointer' />
+							<Xmark onClick={() => setMobileMenuOpened(false)} className='h-4 w-4 cursor-pointer' />
 						</div>
-						<ul className=' flex flex-col gap-[26px] w-full h-full [&_p]:text-basic [&_p]:font-normal  dark:bg-secondary-dark bg-light  mx-auto  text-navlink p-6 pt-8'>
-							<li className='flex  gap-[18px] items-center'>
-								<Logo className='w-[15px]' />
-								<p>Home</p>
+						<ul className=' mx-auto flex h-full w-full flex-col gap-[26px] bg-light  p-6 pt-8  text-navlink  dark:bg-secondary-dark [&_p]:text-basic [&_p]:font-normal'>
+							<li className=''>
+								<Link href={"/"} className='flex items-center gap-[18px]'>
+									<Logo className='w-[15px]' />
+									<p>Home</p>
+								</Link>
 							</li>
 							<li className='flex flex-col'>
-								<button onClick={() => setServices((prev) => !prev)} className='flex  gap-[18px] items-center'>
+								<button onClick={() => setServices((prev) => !prev)} className='flex  items-center gap-[18px]'>
 									<SettingsIcon className='w-[15px]' />
 									<p>Services</p>
-									<ChevronIcon className={`w-[15px] ml-auto  transition-transform ${services && "rotate-90"}`} />
+									<ChevronIcon className={`ml-auto w-[15px]  transition-transform ${services && "rotate-90"}`} />
 								</button>
 
-								<div className={`space-y-[20px] mt-4 pl-8 ${!services && "hidden"}`}>
+								<div className={`mt-4 space-y-[20px] pl-8 ${!services && "hidden"}`}>
 									{NAV_LINKS["services"].map(([name, path]) => (
-										<a key={name} href={path} className='block text-xs/[12px]'>
+										<Link key={name} href={path} onClick={() => setMobileMenuOpened(false)} className='block text-xs/[12px]'>
 											{name}
-										</a>
+										</Link>
 									))}
 								</div>
 							</li>
 							<li className='flex flex-col'>
-								<div onClick={() => setSolutions((prev) => !prev)} className='flex  gap-[18px] items-center'>
+								<button onClick={() => setSolutions((prev) => !prev)} className='flex  items-center gap-[18px]'>
 									<Solutions className='w-[15px]' />
 									<p>Solutions</p>
-									<ChevronIcon className={`w-[15px] ml-auto  transition-transform ${solutions && "rotate-90"}`} />
-								</div>
+									<ChevronIcon className={`ml-auto w-[15px]  transition-transform ${solutions && "rotate-90"}`} />
+								</button>
 
-								<div className={`space-y-[20px] mt-4 pl-8 ${!solutions && "hidden"}`}>
+								<div className={`mt-4 space-y-[20px] pl-8 ${!solutions && "hidden"}`}>
 									{NAV_LINKS["solutions"].map(([name, path]) => (
-										<a key={name} href={path} className='block text-xs/[12px]'>
+										<Link key={name} href={path} onClick={() => setMobileMenuOpened(false)} className='block text-xs/[12px]'>
 											{name}
-										</a>
+										</Link>
 									))}
 								</div>
 							</li>
-							<li className='flex  gap-[18px] items-center'>
+							<li className='flex  items-center gap-[18px]'>
 								<Blogs className='w-[15px]' />
 								<p>Blogs</p>
 							</li>
-							<li className='flex  gap-[18px] items-center'>
+							<li className='flex  items-center gap-[18px]'>
 								<ContactIcon className='w-[15px]' />
 								<p>Contact</p>
 							</li>
-							<li className='flex  gap-[18px] items-center'>
+							<li className='flex  items-center gap-[18px]'>
 								<AboutIcon className='w-[15px]' />
 								<p>About Us</p>
 							</li>
@@ -254,7 +217,7 @@ const Header = () => {
 						<span className='relative top-[0.5px]'>En</span>
 					</button> */}
 				<button>
-					<Menu className='w-5 fill-white cursor-pointer' onClick={() => setMobileMenuOpened(true)} />
+					<Menu className='w-5 cursor-pointer fill-white' onClick={() => setMobileMenuOpened(true)} />
 				</button>
 			</header>
 		</>

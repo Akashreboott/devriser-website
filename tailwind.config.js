@@ -14,17 +14,24 @@ module.exports = {
 			},
 			colors: {
 				gray: "rgba(177, 178, 178, 1)",
-				dark: "rgba(30, 30, 30, 1)",
-				light: "rgba(246, 246, 246, 0.96)",
+				"body-bg": "var(--body-bg)",
+				dark: "#090a0b",
+				light: "#F6F6F6",
 				"primary-light": "white",
 				"primary-dark": "rgb(42,42,42)",
 				"secondary-dark": "rgb(51,51,51)",
 				"gray-66": "rgb(66,66,66)",
+				"gray-30": "rgb(30,30,30)",
 				"light-pink": "rgba(231, 123, 166, 1)",
 				"slate-gray": "rgba(102, 112, 133, 1)",
 				coral: "rgba(237, 149, 141, 1)",
 				violet: " rgba(224, 142, 245, 1)",
 				"dark-gray": "rgba(166, 166, 166, 1)",
+
+				"secondary-btn-color": "var(--secondary-btn-color)",
+				"faq-border-color": "var(--faq-border-color)",
+				"toggle-icon-color": "var(--toggle-icon-color)",
+				"banner-bg": "var(--banner-bg)",
 			},
 			fontSize: {
 				basic: [
@@ -49,9 +56,9 @@ module.exports = {
 					},
 				],
 				navlink: [
-					"14px",
+					"12px",
 					{
-						lineHeight: "13.54px",
+						lineHeight: "11.6px",
 						fontWeight: "normal",
 					},
 				],
@@ -62,7 +69,7 @@ module.exports = {
 			screens: {
 				md: "768px",
 				lg: "1012px",
-				xl: "1024px",
+				xl: "1280px",
 			},
 			fontWeight: {
 				350: 350,

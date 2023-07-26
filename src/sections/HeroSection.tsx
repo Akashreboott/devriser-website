@@ -1,23 +1,43 @@
-import illustration from "./../../public/assets/images/dark hero illustration.svg";
-import Lightillustration from "./../../public/assets/images/light hero illustration.svg";
+import Button from "@/components/Button";
+import SemiGradientText from "@/components/SemiGradientText";
+import transparent from "./../../public/assets/images/transparent.png";
 import Image from "next/image";
-const HeroSection = () => {
+import React from "react";
+
+interface props {
+	heading: string;
+	gradientText?: string;
+	btnText?: string;
+	description?: string;
+	LightModeImage?: any;
+	DarkModeImage?: any;
+}
+
+const HeroSection = ({ heading, gradientText, btnText, description, ...props }: props) => {
 	return (
-		<section className='flex justify-center max-md:text-center  max-lg:flex-wrap items-center lg:mb-[220px] md:mb-[112px] mb-[95px]  max-md:max-w-[90%] max-md:mx-auto gap-4 relative'>
-			<div className='max-w-[611px] lg:mt-[274px] md:mt-[100px] mt-[57px] '>
-				<h1 className='hero-text text-primary-dark dark:text-white font-normal '>
-					Advanced <span className='hero-gradient clip font-medium '>CMS Development</span>{" "}
-					<span className='hero-gradient clip font-medium'>Services</span> For Maximizing Your Website&apos;s Potential
-				</h1>
-				<p className='text-primary-dark dark:text-gray mt-4 text-basic'>
-					We optimize the true power of your business with our advanced CMS development services. Our CMS team handles every aspect of your
-					website&apos;s creation, ensuring a seamless and dynamic online presence that maximizes your website&apos;s potential
-				</p>
-				<button className='btn btn-gradient mt-8'>Let&apos; begin</button>
+		<section className='relative mx-6 mb-[95px] flex w-full items-center justify-between  gap-10  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]   lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]'>
+			<div className='mx-auto mt-[57px] w-full min-w-[300px] basis-[611px] md:mt-[100px] lg:mt-[220px] '>
+				<SemiGradientText
+					className='hero-text  font-normal text-primary-dark dark:text-white'
+					text={heading}
+					gradientText={gradientText ?? ""}
+					GradientTextColor='gradient-tint'
+					as='h1'
+				/>
+				{description && <p className='mt-4 text-basic text-primary-dark dark:text-gray'>{description}</p>}
+				{btnText && <Button text={btnText} variant='Primary' className='mt-8' />}
 			</div>
 
-			<Image className='w-[402px] dark:block hidden max-md:w-[80%] h-fit lg:mt-[274px] md:mt-[38px] mt-[32.5px]' src={illustration} alt='' />
-			<Image className='dark:hidden block w-[402px] max-md:w-[80%] h-fit lg:mt-[274px] md:mt-[38px] mt-[32.5px]' src={Lightillustration} alt='' />
+			<Image
+				className='mx-auto mt-[32.5px] hidden h-fit w-full max-w-[402px] dark:block max-md:w-[80%] md:mt-[38px] lg:mt-[220px]'
+				src={props.DarkModeImage ?? transparent}
+				alt=''
+			/>
+			<Image
+				className='mx-auto mt-[32.5px] block h-fit w-full max-w-[402px] dark:hidden max-md:w-[80%] md:mt-[38px] lg:mt-[220px]'
+				src={props.LightModeImage ?? transparent}
+				alt=''
+			/>
 		</section>
 	);
 };

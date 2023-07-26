@@ -1,0 +1,112 @@
+@layer base {
+	:root {
+		--dark-gradient-border: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
+		--light-gradient-border: linear-gradient(143.39deg, rgba(217, 82, 82, 0.6) 0%, rgrgba(232, 81, 81, 0.33) 29.61%);
+		--light-gradient-border2: linear-gradient(143.39deg, rgb(143, 143, 143) 0%, rgba(255, 255, 255, 0.55) 129.61%);
+		--gradient-border-color: var(--dark-gradient-border);
+		--body-bg: #f6f6f6;
+
+		@apply dark:[--body-bg:#090a0b];
+		/*Gradients*/
+		--gray-gradient: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
+		--gradient-tint: linear-gradient(180deg, #e67ca2 0%, #dc56c5 100%);
+		--gradient-bright: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+		--moving-gradient-color: radial-gradient(circle, theme("colors.violet"), transparent 90%);
+
+		/* Solids */
+		--faq-border-color: #a6a6a6;
+		--primary-btn-text-color: #ffffff;
+		--secondary-btn-color: #ffffff;
+		--toggle-icon-color: #df5dc1;
+		--banner-bg: #e679a5;
+		--hero-overlay-color: rgba(237, 149, 141, 1);
+
+		/* Variables */
+		--testimonial-bg: var(--gradient-bright);
+		--card-border-color: var(--gray-gradient);
+		--card-title-color: var(--gradient-bright);
+		--primary-btn-color: var(--gradient-bright);
+		--secondary-btn-text-color: var(--gradient-bright);
+		--ring-color: var(--gradient-bright);
+	}
+
+	[data-page="UI/UX Services"] {
+		/*Gradients*/
+		--gray-gradient: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
+		--gradient-bright: linear-gradient(96.96deg, #4db1c7 0%, #0036ff 121.28%);
+		--gradient-tint: var(--gradient-bright);
+		--moving-gradient-color: radial-gradient(circle, rgba(0, 55, 255, 0.823), transparent 95%);
+
+		/* Solids */
+		--faq-border-color: #a6a6a6;
+		--primary-btn-text-color: #ffffff;
+		--secondary-btn-color: #ffffff;
+		--toggle-icon-color: #4a97ff;
+		--banner-bg: #345df6;
+		--hero-overlay-color: rgba(71, 167, 204, 0.8);
+
+		/* Variables */
+		--testimonial-bg: var(--gradient-bright);
+		--card-border-color: var(--gray-gradient);
+		--card-title-color: var(--gradient-bright);
+		--primary-btn-color: var(--gradient-bright);
+		--secondary-btn-text-color: var(--gradient-bright);
+		--ring-color: var(--gradient-bright);
+	}
+}
+
+@layer utilities {
+	.gray-gradient {
+		background-image: var(--gray-gradient);
+	}
+	.gradient-tint {
+		background-image: var(--gradient-tint);
+	}
+	.gradient-bright {
+		background-image: var(--gradient-bright);
+	}
+	.testimonial-bg {
+		background-image: var(--testimonial-bg);
+	}
+	.card-border-color {
+		background-image: var(--card-border-color);
+	}
+	.card-title-color {
+		background-image: var(--card-title-color);
+	}
+	.primary-btn-color {
+		background-image: var(--primary-btn-color);
+	}
+	.secondary-btn-text-color {
+		background-image: var(--secondary-btn-text-color);
+	}
+	.ring-color {
+		background-image: var(--ring-color);
+	}
+	.banner-bg {
+		background-color: var(--banner-bg);
+	}
+
+	.bg-linear-gradient-1 {
+		background-image: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+	}
+	.btn-white-gradient {
+		background-image: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%),
+			linear-gradient(151.41deg, rgba(255, 255, 255, 0.2) 6.38%, rgba(0, 0, 0, 0) 128.97%, rgba(255, 255, 255, 0.2) 128.97%);
+	}
+	.hero-gradient {
+		background-image: linear-gradient(180deg, #e67ca2 0%, #dc56c5 100%);
+	}
+	.btn-gradient {
+		background-image: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+	}
+	.white-gradient {
+		background-image: linear-gradient(151.41deg, rgba(255, 255, 255, 0.05) 6.38%, rgba(0, 0, 0, 0) 128.97%, rgba(255, 255, 255, 0.1) 128.97%);
+	}
+	.pink-gradient {
+		background-image: linear-gradient(298.43deg, #e883ab -25.91%, #e77ea7 101.58%);
+	}
+	.pink-gradient-bright {
+		background-image: linear-gradient(91.31deg, #e57aa5 28.71%, #df60bc 65.61%);
+	}
+}
