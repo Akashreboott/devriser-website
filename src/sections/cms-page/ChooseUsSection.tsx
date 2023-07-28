@@ -1,6 +1,6 @@
 import ProcessCard from "@/components/ProcessCard";
-import placeholder from "../../public/assets/images/placeholder.png";
-import black from "../../public/assets/images/black.png";
+import placeholder from "../../../public/assets/images/placeholder.png";
+import black from "../../../public/assets/images/black.png";
 import SectionHeading from "@/components/SectionHeading";
 import { SPECIALITIES } from "@/utils/cms-data";
 

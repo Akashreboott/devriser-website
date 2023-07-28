@@ -1,5 +1,6 @@
 import placeholder from "../../public/assets/images/placeholder.png";
 
+// ******************************************      NAV_LINKS       ***********************************************
 export interface NAV_LINKSInterface {
 	services: [string, string][];
 	solutions: [string, string][];
@@ -11,11 +12,11 @@ export interface NAV_LINKSInterface {
 
 export const NAV_LINKS: NAV_LINKSInterface = {
 	services: [
-		["Web Development", "#"],
+		["Web Development", "/web-development-services"],
 		["Mobile Development", "#"],
 		["UI/UX Services", "/ui-ux-design-services"],
 		["CMS Services", "/"],
-		["Managed Services", "#"],
+		["Managed Services", "/managed-services"],
 		["Enterprise Solutions", "#"],
 	],
 	solutions: [
@@ -51,6 +52,8 @@ export const NAV_LINKS: NAV_LINKSInterface = {
 	languages: [["En"], ["Francis"], ["Posh"]],
 };
 
+// ******************************************      FEATURES       ***********************************************
+
 export const Features: { title: string; description: string; image: any }[] = [
 	{
 		title: "Time-Efficient",
@@ -77,6 +80,8 @@ export const Features: { title: string; description: string; image: any }[] = [
 		image: placeholder,
 	},
 ];
+
+// ******************************************      EXPERTISE       ***********************************************
 
 export const SPECIALITIES: {
 	title: string;
@@ -111,5 +116,49 @@ export const SPECIALITIES: {
 		description:
 			"Get cost-effective CMS development tailored to your budget. Our team delivers efficient, high-quality websites, ensuring exceptional value.",
 		image: placeholder,
+	},
+];
+
+// ******************************************      PROCESS CHART       ***********************************************
+
+export const PROCESSES: { title: string; description: string }[] = [
+	{
+		title: "Gathering requirements",
+		description:
+			"We Begin by understanding your needs, goals, preferred CMS platform, and target audience to determine the website's features, functionality, and content requirements",
+	},
+	{
+		title: "Research and planning",
+		description:
+			"We then move on to conduct in-depth research and create a comprehensive plan outlining the project scope, suitable CMS platform, timeline, and deliverables",
+	},
+	{
+		title: "Creating design",
+		description:
+			"Our third step involves creating a visually appealing and user-friendly website design, considering factors like branding, layout, navigation, and responsive design",
+	},
+	{
+		title: "Website developments",
+		description:
+			"Utilizing the approved design, our professionals develop a fully functional website by incorporating all of the necessary features and functionalities",
+	},
+	{
+		title: "Website testing",
+		description:
+			"We conduct rigorous testing of the newly created website to ensure the website functions flawlessly across different browsers, devices, and scenarios",
+	},
+	{
+		title: "User training",
+		description:
+			"We provide training and a detailed manual for your web operations team to efficiently manage the website, serving as a comprehensive reference guide for ongoing maintenance and updates",
+	},
+	{
+		title: "Staging site",
+		description:
+			"After user training and before the launch, we deploy the website for the final round of testing. This ensures that any issues or bugs are identified and resolved before the website goes live",
+	},
+	{
+		title: "Launch of website",
+		description: "After successful staging, the website is launched, marking its online debut and making it accessible to the target audience",
 	},
 ];

@@ -7,6 +7,15 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+	:root {
+		@apply [--border-width:2px] xl:[--border-width:3px] min-[1600px]:[--border-width:3.5px];
+	}
+
+	@media (min-width: "1200px") {
+		:root {
+			--border-width: 4px;
+		}
+	}
 	body {
 		@apply relative mx-auto   grid
 		bg-light font-mono-sans text-primary-dark  dark:bg-dark dark:text-white
@@ -35,7 +44,6 @@
 		padding: 8px 28px 8px 28px;
 	}
 	.gradient-border {
-		--border-width: 2px;
 		@apply relative;
 	}
 	.gradient-border > * {
@@ -52,6 +60,13 @@
 		width: calc(100% - var(--border-width));
 		height: calc(100% - var(--border-width));
 		content: "";
+	}
+
+	.layout-1x2:nth-of-type(odd) > .first {
+		@apply lg:order-2;
+	}
+	.layout-1x2:nth-of-type(odd) > .second {
+		@apply lg:order-1;
 	}
 }
 
@@ -81,6 +96,30 @@
 	from {
 		transform: translateX(-85px);
 	}
+}
+@keyframes InfiniteRotate {
+	0% {
+		transform: rotate(0deg);
+		opacity: 0.5;
+	}
+	100% {
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+}
+@keyframes moveX {
+	0% {
+		translate: -2px 0;
+	}
+	100% {
+		translate: 5px 0;
+	}
+}
+.moveX {
+	animation: moveX 1s ease-in-out infinite alternate-reverse;
+}
+.infinite-rotate {
+	animation: InfiniteRotate 2s ease-out infinite;
 }
 .navslide-anim {
 	animation: NavSlide 0.3s ease forwards;

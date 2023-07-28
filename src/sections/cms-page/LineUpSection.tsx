@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import wordpress from "./../../public/assets/images/wordpress.png";
+import wordpress from "./../../../public/assets/images/wordpress.png";
 import { useState } from "react";
 
 interface detail {

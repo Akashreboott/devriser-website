@@ -17,6 +17,7 @@ import ThemeContext from "@/utils/ThemeContext";
 import ThemeButton from "@/utils/ThemeButton";
 import { NAV_LINKS, NAV_LINKSInterface } from "../utils/cms-data";
 import Link from "next/link";
+import cn from "@/utils/cn";
 
 const Header = ({ className }: { className?: string }) => {
 	const ctx = useContext(ThemeContext);
@@ -59,7 +60,7 @@ const Header = ({ className }: { className?: string }) => {
 	}
 
 	let IconClasses = (tag: string) =>
-		`dark:hover:bg-dark hover:bg-light p-2 rounded-lg box-content ${activeLink === tag && desktopMenuOpened && "dark:bg-dark bg-light"}`;
+		`dark:hover:bg-dark hover:bg-light p-1.5 rounded-lg w-[20px] box-content ${activeLink === tag && desktopMenuOpened && "dark:bg-dark bg-light"}`;
 
 	const NavBarLink = (children: ReactNode, linkname: string) => {
 		return (
@@ -73,40 +74,43 @@ const Header = ({ className }: { className?: string }) => {
 		<>
 			<header
 				ref={headerRef}
-				className={`scroll-bar-thin sticky top-0 isolate z-[100]  h-full max-h-screen min-h-screen [grid-area:header] max-lg:hidden ${
-					className ?? ""
-				}`}>
+				className={cn(
+					"scroll-bar-thin sticky top-0 isolate z-[100] h-full max-h-screen  min-h-screen w-[82px] [grid-area:header] max-lg:hidden [&_*]:!font-350",
+					className
+				)}>
 				<div
 					onMouseLeave={closeMenu}
-					className={`flex h-full w-fit flex-col items-center   ${
-						desktopMenuOpened && "border-r"
-					}  z-10 justify-between self-start justify-self-start overflow-y-auto overflow-x-hidden border-gray bg-white px-1  py-3  dark:bg-gray-30`}>
+					className={cn(
+						"flex h-full w-fit flex-col items-center",
+						desktopMenuOpened && "border-r border-gray",
+						"scroll-bar-thin z-10 justify-between self-start justify-self-start overflow-y-auto overflow-x-hidden  bg-white px-1  py-3  dark:bg-gray-30"
+					)}>
 					<Link href={"/"} onClick={() => setPage("")}>
 						<DevRiserLogo className='mb-[40px]  aspect-square h-[35px] w-[35px] shrink-0 ' />
 					</Link>
-					<ul className='grid h-full gap-[25px] [&_li]:cursor-pointer [&_p]:text-navlink [&_p]:text-black dark:[&_p]:text-white'>
-						<li onMouseEnter={() => setActive("services")} className='flex flex-col items-center gap-0.5   '>
+					<ul className='grid  gap-[25px] [&_li]:cursor-pointer [&_p]:text-navlink [&_p]:font-350 [&_p]:text-black dark:[&_p]:text-white'>
+						<li onMouseEnter={() => setActive("services")} className='flex flex-col items-center gap-1   '>
 							<SettingsIcon className={IconClasses("services")} />
 							<p className=''>Services</p>
 						</li>
-						<li onMouseEnter={() => setActive("solutions")} className='flex flex-col items-center gap-0.5   '>
+						<li onMouseEnter={() => setActive("solutions")} className='flex flex-col items-center gap-1   '>
 							<Solutions className={IconClasses("solutions")} />
 							<p className=''>Solutions</p>
 						</li>
-						<li onMouseEnter={() => setActive("blog")} className='flex flex-col items-center gap-0.5   '>
+						<li onMouseEnter={() => setActive("blog")} className='flex flex-col items-center gap-1   '>
 							<Blogs className={IconClasses("blog")} />
 							<p className=''>Blogs</p>
 						</li>
-						<li onMouseEnter={() => setActive("contact")} className='flex flex-col items-center gap-0.5   '>
+						<li onMouseEnter={() => setActive("contact")} className='flex flex-col items-center gap-1   '>
 							<ContactIcon className={IconClasses("contact")} />
 							<p className=''>Contact</p>
 						</li>
-						<li onMouseEnter={() => setActive("AboutUs")} className='flex flex-col items-center gap-0.5   '>
+						<li onMouseEnter={() => setActive("AboutUs")} className='flex flex-col items-center gap-1   '>
 							<AboutIcon className={IconClasses("AboutUs")} />
 							<p className=''>About Us</p>
 						</li>
 					</ul>
-					<div className=' mb-2 mt-auto flex h-full flex-col gap-[15px] pt-3 text-navlink'>
+					<div className=' mb-2 mt-auto flex h-full flex-col gap-[15px] pt-12 text-navlink'>
 						<ThemeButton />
 						<div className='grow-0'>
 							<button className='rounded-[3.5px] bg-[#EBEAEA] px-[17px] py-2 dark:bg-gray-66'>SignIn</button>
@@ -146,8 +150,8 @@ const Header = ({ className }: { className?: string }) => {
 			</header>
 
 			{/* MOBILE HEADER */}
-			<header className='sticky top-0 z-[100] flex w-full items-center justify-between self-start  px-2  py-3 backdrop-blur-2xl [grid-area:header]  dark:bg-secondary-dark/50 lg:hidden'>
-				<button className='rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-dark'>SignIn</button>
+			<header className='sticky top-0 z-[100] flex w-full items-center justify-between self-start  px-2  py-3 backdrop-blur-2xl [grid-area:header]  dark:bg-gray-30 lg:hidden'>
+				<button className='rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-gray-30'>SignIn</button>
 				<Logo className='aspect-square w-[35] ' />
 
 				{/* OVERLAY */}

@@ -10,9 +10,10 @@ const SectionHeading = (props: SectionHeadingProps) => {
 	return (
 		<Component as={props.as} style={{ gap: props.gap }} className={cn("mx-auto flex w-full flex-col items-center text-center", props.className)}>
 			<SemiGradientText
-				GradientTextColor='gradient-bright'
+				GradientTextColor={props.GradientColor ?? "gradient-bright"}
 				gradientText={props.gradientText ?? ""}
 				text={props.title}
+				FullGradient={props.FullGradient}
 				as='h2'
 				className='primary-heading mx-auto max-w-[85%] max-md:max-w-[95%]'
 			/>

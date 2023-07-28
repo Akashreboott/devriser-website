@@ -7,7 +7,7 @@ interface props {
 }
 
 const Button = ({ variant: variant, text, ...props }: props) => {
-	const baseClasses = "rounded-lg font-semibold";
+	const baseClasses = "rounded-lg font-semibold ";
 	const primaryClasses = "py-3.5 px-7 primary-btn-color primary-btn-text-color";
 	const secondaryClasses = "py-[18px] px-9 bg-secondary-btn-color ";
 

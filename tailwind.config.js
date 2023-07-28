@@ -62,6 +62,24 @@ module.exports = {
 						fontWeight: "normal",
 					},
 				],
+				p18: [
+					"18px",
+					{
+						lineHeight: "30px",
+					},
+				],
+				p16: [
+					"16px",
+					{
+						lineHeight: "25.71px",
+					},
+				],
+				p14: [
+					"14px",
+					{
+						lineHeight: "24px",
+					},
+				],
 			},
 			backgroundImage: {
 				// noise: "url(./public/assets/images/bg-noise.png)",

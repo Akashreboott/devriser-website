@@ -1,63 +1,22 @@
 import ProcessCard from "@/components/ProcessCard";
-import placeholder from "../../public/assets/images/placeholder.png";
-import vector1 from "./../../public/assets/icons/Vector 1.svg";
-import vector2 from "./../../public/assets/icons/Vector 2.svg";
-import vector3 from "./../../public/assets/icons/Vector 3.svg";
-import vector4 from "./../../public/assets/icons/Vector 4.svg";
-import vector6 from "./../../public/assets/icons/Vector 6.svg";
-import vector8 from "./../../public/assets/icons/Vector 8.svg";
-import vector9 from "./../../public/assets/icons/Vector 9.svg";
-import vector10 from "./../../public/assets/icons/Vector 10.svg";
-import vector11 from "./../../public/assets/icons/Vector 11.svg";
-import vector34 from "./../../public/assets/icons/Vector 34.svg";
-import vector35 from "./../../public/assets/icons/Vector 35.svg";
-import vector37 from "./../../public/assets/icons/Vector 37.svg";
+import placeholder from "./../../../public/assets/images/placeholder.png";
+import vector1 from "./../../../public/assets/icons/Vector 1.svg";
+import vector2 from "./../../../public/assets/icons/Vector 2.svg";
+import vector3 from "./../../../public/assets/icons/Vector 3.svg";
+import vector4 from "./../../../public/assets/icons/Vector 4.svg";
+import vector6 from "./../../../public/assets/icons/Vector 6.svg";
+import vector8 from "./../../../public/assets/icons/Vector 8.svg";
+import vector9 from "./../../../public/assets/icons/Vector 9.svg";
+import vector10 from "./../../../public/assets/icons/Vector 10.svg";
+import vector11 from "./../../../public/assets/icons/Vector 11.svg";
+import vector34 from "./../../../public/assets/icons/Vector 34.svg";
+import vector35 from "./../../../public/assets/icons/Vector 35.svg";
+import vector37 from "./../../../public/assets/icons/Vector 37.svg";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
+import { PROCESSES } from "@/utils/cms-data";
 
 const ProcessSection = () => {
-	const PROCESSES: { title: string; description: string }[] = [
-		{
-			title: "Gathering requirements",
-			description:
-				"We Begin by understanding your needs, goals, preferred CMS platform, and target audience to determine the website's features, functionality, and content requirements",
-		},
-		{
-			title: "Research and planning",
-			description:
-				"We then move on to conduct in-depth research and create a comprehensive plan outlining the project scope, suitable CMS platform, timeline, and deliverables",
-		},
-		{
-			title: "Creating design",
-			description:
-				"Our third step involves creating a visually appealing and user-friendly website design, considering factors like branding, layout, navigation, and responsive design",
-		},
-		{
-			title: "Website developments",
-			description:
-				"Utilizing the approved design, our professionals develop a fully functional website by incorporating all of the necessary features and functionalities",
-		},
-		{
-			title: "Website testing",
-			description:
-				"We conduct rigorous testing of the newly created website to ensure the website functions flawlessly across different browsers, devices, and scenarios",
-		},
-		{
-			title: "User training",
-			description:
-				"We provide training and a detailed manual for your web operations team to efficiently manage the website, serving as a comprehensive reference guide for ongoing maintenance and updates",
-		},
-		{
-			title: "Staging site",
-			description:
-				"After user training and before the launch, we deploy the website for the final round of testing. This ensures that any issues or bugs are identified and resolved before the website goes live",
-		},
-		{
-			title: "Launch of website",
-			description: "After successful staging, the website is launched, marking its online debut and making it accessible to the target audience",
-		},
-	];
-
 	function SliceProcesses(start: number, end?: number) {
 		return PROCESSES.slice(start, end).map((process) => (
 			<div

@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import SemiGradientText from "@/components/SemiGradientText";
-import transparent from "./../../public/assets/images/transparent.png";
+import transparent from "./../../../public/assets/images/transparent.png";
 import Image from "next/image";
 import React from "react";
 
@@ -15,8 +15,8 @@ interface props {
 
 const HeroSection = ({ heading, gradientText, btnText, description, ...props }: props) => {
 	return (
-		<section className='relative mx-6 mb-[95px] flex w-full items-center justify-between  gap-10  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]   lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]'>
-			<div className='mx-auto mt-[57px] w-full min-w-[300px] basis-[611px] md:mt-[100px] lg:mt-[220px] '>
+		<section className=' relative mx-6 mb-[95px] flex w-full items-center justify-between gap-10  [--top-space:160px]  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]  lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]'>
+			<div className='mx-auto  mt-[57px] w-full min-w-[300px] basis-[611px]  md:mt-[100px] lg:mt-[var(--top-space)] '>
 				<SemiGradientText
 					className='hero-text  font-normal text-primary-dark dark:text-white'
 					text={heading}
@@ -29,12 +29,12 @@ const HeroSection = ({ heading, gradientText, btnText, description, ...props }: 
 			</div>
 
 			<Image
-				className='mx-auto mt-[32.5px] hidden h-fit w-full max-w-[402px] dark:block max-md:w-[80%] md:mt-[38px] lg:mt-[220px]'
+				className='mx-auto mt-[32.5px] hidden h-fit w-full max-w-[402px] dark:block max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
 				src={props.DarkModeImage ?? transparent}
 				alt=''
 			/>
 			<Image
-				className='mx-auto mt-[32.5px] block h-fit w-full max-w-[402px] dark:hidden max-md:w-[80%] md:mt-[38px] lg:mt-[220px]'
+				className='mx-auto mt-[32.5px] block h-fit w-full max-w-[402px] dark:hidden max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
 				src={props.LightModeImage ?? transparent}
 				alt=''
 			/>

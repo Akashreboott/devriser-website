@@ -1,18 +1,23 @@
 @layer utilities {
 	.primary-heading {
-		@apply lg:text-heading1 md:text-[24px]/[35px] text-[20px]/[35px] font-semibold;
+		@apply text-[20px]/[35px] font-semibold md:text-[24px]/[35px] lg:text-heading1;
+	}
+
+	.secondary-heading {
+		@apply text-[20px]/[52px] font-semibold md:text-[24px]/[43px] lg:text-[32px]/[52px];
 	}
 	.hero-text {
-		@apply lg:text-hero text-[24px]/[48px];
+		@apply text-[24px]/[48px] lg:text-hero;
 	}
 	.para-text {
-		@apply lg:text-basic text-[14px]/[30px];
+		@apply text-[14px]/[30px] lg:text-basic;
 		font-weight: 350;
 	}
 	.para-text-xl {
-		@apply lg:text-[20px]/[35px] md:text-[16px]/[35px] text-[16px]/[30px];
+		@apply text-[16px]/[30px] md:text-[16px]/[35px] lg:text-[20px]/[35px];
 	}
+
 	.testimonial-text {
-		@apply lg:text-[36px]/[44px] md:text-[24px]/[34px];
+		@apply md:text-[24px]/[34px] lg:text-[36px]/[44px];
 	}
 }

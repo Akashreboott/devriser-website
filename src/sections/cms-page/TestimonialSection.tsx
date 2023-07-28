@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Avatar from "./../../public/assets/images/Avatar.png";
-import Star from "./../../public/assets/icons/Star.svg";
+import Avatar from "./../../../public/assets/images/Avatar.png";
+import Star from "./../../../public/assets/icons/Star.svg";
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
 

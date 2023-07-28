@@ -1,4 +1,7 @@
 import placeholder from "../../public/assets/images/placeholder.png";
+
+// ******************************************      FEATURES      ***********************************************
+
 export const Features: { title: string; description: string; image: any }[] = [
 	{
 		title: "Visual hierarchy",
@@ -25,6 +28,8 @@ export const Features: { title: string; description: string; image: any }[] = [
 		image: placeholder,
 	},
 ];
+
+// ******************************************      EXPERTISE       ***********************************************
 
 export const SPECIALITIES: {
 	title: string;
@@ -55,5 +60,43 @@ export const SPECIALITIES: {
 		title: "Expertise in UI/UX Design Services",
 		description: "Our user-centric designs elevates your digital presence, meeting unique requirements with exceptional expertise.",
 		image: placeholder,
+	},
+];
+
+// ******************************************      PROCESS CHART       ***********************************************
+
+export const PROCESSES: { title: string; description: string }[] = [
+	{
+		title: "Gathering requirements",
+		description:
+			"We Begin by understanding your needs, goals, preferred CMS platform, and target audience to determine the website's features, functionality, and content requirements",
+	},
+	{
+		title: "Research and Discovery",
+		description: "Creating strategic, research-informed designs for your business goals, and industry trends.",
+	},
+	{
+		title: "User Analysis and Personas",
+		description: "Deep user analysis uncovers behaviors, and pain points, guiding the design is based on diverse user personas.",
+	},
+	{
+		title: "Information Architecture",
+		description: "Streamline screen organization and navigation for optimal information flow and accessibility.",
+	},
+	{
+		title: "Wireframing and Prototyping",
+		description: "Visualize, validate, and iterate using low-fidelity wireframes and interactive prototypes.",
+	},
+	{
+		title: "Visual Design",
+		description: "Craft stunning designs that capture your brand's essence and resonate with your target audience.",
+	},
+	{
+		title: "Interactive Design",
+		description: "Refine and test design interactions through interactive prototypes for delightful user experiences.",
+	},
+	{
+		title: "Usability Testing",
+		description: "Iterative usability testing with real users validates design choices and drives data-driven improvements.",
 	},
 ];
