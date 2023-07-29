@@ -1,13 +1,8 @@
 import Main from "@/components/Main";
 import HeroSection from "@/sections/cms-page/HeroSection";
-import { HERO_DETAILS, PROCESS_DETAILS } from "@/utils/web-development-data";
+import { HERO_DETAILS, TECH_STACK } from "@/utils/web-development-data";
 import HeroImgDark from "../../../public/assets/images/web-development-illustration.svg";
-import Logo1 from "../../../public/assets/icons/logoipsum-295.svg";
-import Logo2 from "../../../public/assets/icons/logoipsum-296.svg";
-import Logo3 from "../../../public/assets/icons/logoipsum-298.svg";
-import Logo4 from "../../../public/assets/icons/logoipsum-299.svg";
-import Logo5 from "../../../public/assets/icons/logoipsum-293.svg";
-import Logo6 from "../../../public/assets/icons/logoipsum-292.svg";
+
 import HeroImgLight from "../../../public/assets/images/web-development-illustration-light.svg";
 import Pattern from "../../../public/assets/images/webservices-pattern.svg";
 import React, { useState } from "react";
@@ -49,20 +44,18 @@ const Page = () => {
 				</div>
 			</SectionHeading>
 
-			<SectionHeading title='Our Technology Stack' className='max-w-6xl gap-10'>
-				<div className='flex w-[calc(100%-20px)] flex-col items-center gap-5'>
-					<h3 className='mr-auto text-lg leading-[52px] md:text-[22px] lg:text-3xl'>Frontend</h3>
-					<div className='flex w-full flex-wrap  justify-center rounded border border-white px-4 py-4 [&>img]:mx-12'>
-						<Image src={Logo1} alt='' />
-						<Image src={Logo2} alt='' />
-						<Image src={Logo3} alt='' />
-						<Image src={Logo4} alt='' />
-						<Image src={Logo5} alt='' />
-						<Image src={Logo6} alt='' />
-						<Image src={Logo2} alt='' />
-						<Image src={Logo4} alt='' />
+			<SectionHeading title='Our Technology Stack' className='my-24 max-w-6xl gap-10'>
+				{TECH_STACK.map(({ field, techs }) => (
+					<div key={field} className='flex w-[calc(100%-20px)] flex-col items-center gap-8'>
+						<h3 className='mr-auto text-lg leading-[52px] md:text-[22px] lg:text-3xl'>{field}</h3>
+						{/* <div className='flex w-full flex-wrap  justify-center rounded border border-white px-4 py-4 [&>img]:mx-12'> */}
+						<div className='flex w-full max-w-[var(--container-width)]  flex-wrap items-center justify-between gap-7  rounded-lg border border-white/60 bg-white/[0.05] p-1.5  [--container-width:1280px] [--logo-width:8rem] [--space:1rem] [&>img>*]:aspect-[7/1]  [&>img>*]:w-[var(--logo-width)]  [&>img]:mx-[var(--space)] [&>img]:my-[calc(var(--space)/2)]'>
+							{techs.map((logo, index) => (
+								<Image key={index} src={logo} alt='' />
+							))}
+						</div>
 					</div>
-				</div>
+				))}
 			</SectionHeading>
 
 			<TestimonialSection />
