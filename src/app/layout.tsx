@@ -3,9 +3,7 @@ import Header from "@/sections/Header";
 import type { Metadata } from "next";
 // import { ThemeProvider } from "@/utils/ThemeContext";
 
-import Footer from "@/sections/Footer";
-import FramerAnimatePresence from "@/components/AnimatePresence";
-import { ThemeProvider } from "next-themes";
+import App from "./App";
 
 export const metadata: Metadata = {
 	title: "DevRiser",
@@ -14,15 +12,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang='en' className='light' suppressHydrationWarning>
+		<html lang='en' className='light'>
 			<body>
-				<ThemeProvider attribute='class' storageKey='devriser-theme'>
-					<Header />
-					<FramerAnimatePresence initial={false} mode='wait'>
-						{children}
-					</FramerAnimatePresence>
-					<Footer />
-				</ThemeProvider>
+				<App>{children}</App>
 			</body>
 		</html>
 	);
