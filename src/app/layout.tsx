@@ -1,4 +1,3 @@
-"use client";
 import "./globals.css";
 import Header from "@/sections/Header";
 import type { Metadata } from "next";
