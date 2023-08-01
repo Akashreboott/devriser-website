@@ -24,7 +24,13 @@ const SemiGradientText = (props: SemiGradientTextProps) => {
 		return splittedText.map((word) => {
 			let gradientWord = splittedGradientText.has(word);
 			return (
-				<span key={word} className={cn("font-semibold", gradientWord && "clip gradient-bright", gradientWord && props.GradientTextColor)}>
+				<span
+					// initial={{ opacity: 0 }}
+					// whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					// viewport={{ margin: "100px 0px" }}
+					// as='span'
+					key={word}
+					className={cn("font-semibold", gradientWord && "clip gradient-bright", gradientWord && props.GradientTextColor)}>
 					{word + " "}
 				</span>
 			);

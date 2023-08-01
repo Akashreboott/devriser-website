@@ -9,14 +9,15 @@ const FAQ = (props: props) => {
 	return (
 		<div className='relative grid w-full rounded-md px-4 py-2 '>
 			<input className='peer hidden appearance-none' aria-hidden='true' type='checkbox' name='faq' id={`${props.title}id`} />
+
 			<label
 				htmlFor={`${props.title}id`}
-				className='flex w-full cursor-pointer items-center justify-between gap-2 py-2 text-left text-lg font-normal  peer-checked:[&>span+span]:!inline-block peer-checked:[&>span:first-of-type]:!hidden'>
+				className='flex w-full cursor-pointer select-none items-center justify-between gap-2 py-2 text-left text-lg font-normal max-md:text-base  peer-checked:[&>span+span]:!inline-block peer-checked:[&>span:first-of-type]:!hidden'>
 				{props.title}
-				<span className='shrink-0'>
+				<span className='mb-auto shrink-0'>
 					<Plus className='h-5 w-5 text-toggle-icon-color' />
 				</span>
-				<span className='hidden shrink-0'>
+				<span className='mb-auto hidden shrink-0'>
 					<Minus className='h-5 w-5 text-toggle-icon-color' />
 				</span>
 			</label>

@@ -35,7 +35,8 @@
 		}
 	}
 	p {
-		@apply text-primary-dark dark:text-gray;
+		/* @apply text-primary-dark dark:text-gray; */
+		color: var(--primary-text-color);
 	}
 }
 @layer components {
@@ -61,23 +62,33 @@
 		height: calc(100% - var(--border-width));
 		content: "";
 	}
-
-	.layout-1x2:nth-of-type(odd) > .first {
-		@apply lg:order-2;
+	.layout-1x2 {
 	}
-	.layout-1x2:nth-of-type(odd) > .second {
-		@apply lg:order-1;
+	.layout-1x2:nth-of-type(2n) > .first {
+		@apply lg:order-2
+		md:[&_:is(h3,p)]:text-right;
+		/* [&_p]:ml-auto; */
+
+		/* [&_h3]:text-right [&_p]:text-right; */
+	}
+	.layout-1x2:nth-of-type(2n) > .second {
+		@apply lg:order-1
+		md:[&_:is(h3,p)]:text-left;
+		/* [&_p]:mr-auto; */
+		/* [&_h3]:text-left [&_p]:text-left; */
 	}
 }
 
 @layer utilities {
 	.btn-outline {
-		@apply gradient-border bg-noise250 
-		grid w-full place-items-center rounded-lg  text-center  font-extralight hover:scale-[0.99] active:scale-[0.99] max-md:h-[47px] max-md:max-w-[88px] max-md:text-[12px]/[11.6px] md:h-[68px] md:max-w-[130px] md:text-[16px]/[15.47px] lg:h-[92px] lg:max-w-[175px] 
+		@apply gradient-border
+		 /* bg-noise250  */
+		grid w-full place-items-center rounded-lg  text-center  font-extralight 
+		max-md:h-[47px]  max-md:text-[11px]/[16px] md:h-[68px] md:max-w-[130px] md:text-[16px]/[15.47px] lg:h-[92px] lg:max-w-[175px] 
 		lg:text-[24px]/[23.21px];
 	}
 
-	.bg-noise {
+	/* .bg-noise {
 		background-image: url("./../../public/assets/images/bg-noise.png");
 	}
 	.bg-noise250 {
@@ -85,7 +96,7 @@
 	}
 	.bg-noise1800 {
 		background-image: url("./../../public/assets/images/bg-noise1800x600.png");
-	}
+	} */
 }
 
 /* body header + * {
@@ -114,6 +125,24 @@
 	100% {
 		translate: 5px 0;
 	}
+}
+@keyframes RotateAndSlide {
+	0% {
+		transform: rotate(0deg) translateX(var(--x));
+	}
+	100% {
+		transform: rotate(var(--rotation)) translateX(0);
+	}
+}
+.RotateAndSlide {
+	--x: -0.5rem;
+	--rotation: 720deg;
+	animation: RotateAndSlide 15s ease-in-out infinite alternate-reverse;
+}
+.RotateAndSlideOpposite {
+	--rotation: -720deg;
+	--x: 0.5rem;
+	animation: RotateAndSlide 15s ease-in-out infinite alternate-reverse;
 }
 .moveX {
 	animation: moveX 1s ease-in-out infinite alternate-reverse;

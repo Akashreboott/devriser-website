@@ -21,7 +21,7 @@ const ProcessSection = () => {
 		return PROCESSES.slice(start, end).map((process) => (
 			<div
 				key={process.title}
-				className='btn-outline h-[33px] max-w-[100px] px-4 hover:after:bg-dark md:h-[38px] md:max-w-[155px] lg:h-[75px] lg:max-w-[312px]'>
+				className='btn-outline h-[33px] max-w-[100px] border border-gray px-2.5 md:h-[60px] md:max-w-[155px] lg:h-[75px] lg:max-w-[312px] lg:px-4'>
 				{process.title}
 			</div>
 		));
@@ -66,7 +66,6 @@ const ProcessSection = () => {
 						<div className='relative flex justify-center -space-x-1 '>
 							<div className='absolute -top-3 aspect-square w-3 translate-x-[calc(50%-7px)] rounded-full border-[2.5px] border-white bg-pink-500'></div>
 							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%+0.5px)] -z-10 rotate-[0deg]' alt='' />
-
 							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
 							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>
@@ -80,7 +79,6 @@ const ProcessSection = () => {
 					<div className='flex flex-col justify-center gap-3 -space-y-2'>
 						<div className='relative flex justify-center -space-x-1 '>
 							<Image src={vector35} className='absolute -top-1.5 left-[calc(50%-4px)] -z-10  origin-top rotate-[0deg]' alt='' />
-
 							<Image src={vector34} className='w-full max-w-[133px]' alt='' />
 							<Image src={vector37} className='w-full max-w-[133px]' alt='' />
 						</div>

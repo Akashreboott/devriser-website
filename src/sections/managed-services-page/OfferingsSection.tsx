@@ -5,8 +5,8 @@ import React from "react";
 
 const OfferingsSection = () => {
 	return (
-		<SectionHeading title='Our Offerings'>
-			<div className='mt-14'>
+		<SectionHeading title='Our Offerings' gradientText="Offerings">
+			<div className='md:mt-14'>
 				{OFFERINGS.map(({ content, heading, image }) => (
 					<Grid1x2 key={heading} content={content} image={image} title={heading} className='layout-1x2' />
 				))}

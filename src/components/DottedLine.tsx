@@ -25,31 +25,11 @@ const DottedLine = ({
 					gap: `${strokeGap}px`,
 				}}
 				className={cn("flex flex-col gap-1.5", className)}>
-				{
-					Array(noOfDashes)
-						.fill(Math.random())
-						.map((num, index) => (
-							<div key={index} style={{ height: `${DashHeight}px`, width: `${DashWidth}px`, backgroundColor: strokeColor }}></div>
-						))
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-					// <div style={{ height: `${DashHeight}px` ?? "0.5rem", backgroundColor: strokeColor }} className='w-px'></div>
-				}
+				{Array(noOfDashes)
+					.fill(Math.random())
+					.map((num, index) => (
+						<div key={index} style={{ height: `${DashHeight}px`, width: `${DashWidth}px`, backgroundColor: strokeColor }}></div>
+					))}
 			</div>
 		</>
 	);

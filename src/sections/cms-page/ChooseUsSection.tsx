@@ -21,7 +21,7 @@ const ChooseUsSection = () => {
 				security, and effortless management'
 			gap='3rem'
 			className='pt-24'>
-			<div className='mt-[63px] flex w-full   shrink grow-0 basis-[300px] flex-wrap justify-center gap-[70px] md:mt-[75px] lg:mt-[180px] lg:gap-[75px] xl:mt-[95px] xl:gap-[95px]'>
+			<div className='mt-[63px] flex w-full shrink grow-0 basis-[300px] flex-wrap justify-center gap-[70px] md:mt-[75px] lg:mt-[180px] lg:gap-[75px] xl:mt-[95px] xl:gap-[95px]'>
 				{SPECIALITIES.map((speciality) => (
 					<ProcessCard
 						title={speciality.title}
@@ -31,7 +31,7 @@ const ChooseUsSection = () => {
 						description={speciality.description}
 						key={speciality.title}
 						card='center-aligned'
-						className='[&_p]:!text-primary-dark dark:[&_p]:!text-primary-light'
+						className='[&_p]:!text-primary-dark dark:[&_p]:!text-primary-light xl:max-w-[370px]'
 					/>
 				))}
 			</div>

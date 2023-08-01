@@ -28,4 +28,11 @@
 	.hide-in-dark {
 		@apply dark:!hidden;
 	}
+
+	:is(.dark [data-hide-in-dark="true"]) {
+		display: none !important;
+	}
+	:is(.light [data-hide-in-light="true"]) {
+		display: none !important;
+	}
 }

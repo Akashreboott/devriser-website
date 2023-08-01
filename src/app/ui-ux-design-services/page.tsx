@@ -19,7 +19,7 @@ import Main from "@/components/Main";
 
 const page = () => {
 	return (
-		<Main data-page='UI/UX Services'>
+		<Main data-page='UI/UX Services' key='UI/UX Services'>
 			<HeroOverlay Overlay={overlay} TransparentGradientClasses='dark:to-80% bg-gradient-to-br' />
 
 			{/* HERO SECTION */}

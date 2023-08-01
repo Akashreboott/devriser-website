@@ -1,35 +1,46 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
-import ThemeContext, { ThemeProvider } from "./ThemeContext";
+import { useEffect, useState } from "react";
 import LightIcon from "../../public/assets/icons/LightIcon";
 import MoonIcon from "../../public/assets/icons/MoonIcon";
 
+import { useTheme } from "next-themes";
 const ThemeButton = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
-	let ctx = useContext(ThemeContext);
-	return (
-		<ThemeProvider>
-			<div className='flex flex-col gap-[9px] items-center mt-auto'>
-				{ctx.theme === "dark" && (
-					<button
-						className='appearance-none'
-						onClick={() => {
-							ctx.changeTheme("light");
-						}}>
-						<LightIcon className={`p-2.5 box-content border border-gray rounded-full ${className ?? ""}`} />
-					</button>
-				)}
-				{ctx.theme !== "dark" && (
-					<button
-						className='appearance-none'
-						onClick={() => {
-							ctx.changeTheme("dark");
-						}}>
-						<MoonIcon className={`p-2.5 box-content border border-gray rounded-full ${className ?? ""}`} />
-					</button>
-				)}
+	const [mounted, setMounted] = useState(false);
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	let ctx = useTheme();
+	if (!mounted)
+		return (
+			<div className='mt-auto flex flex-col items-center gap-[9px]'>
+				<button className='h-[33px] w-[33px] appearance-none'>
+					<div className='h-full w-full animate-pulse rounded'></div>
+				</button>
 			</div>
-		</ThemeProvider>
+		);
+	return (
+		<div className='mt-auto flex flex-col items-center gap-[9px]'>
+			{ctx.theme === "dark" && (
+				<button
+					className='appearance-none'
+					onClick={() => {
+						ctx.setTheme("light");
+					}}>
+					<LightIcon className={`box-content h-6 w-6 rounded-full border border-gray p-2.5 ${className ?? ""}`} />
+				</button>
+			)}
+			{ctx.theme !== "dark" && (
+				<button
+					className='appearance-none'
+					onClick={() => {
+						ctx.setTheme("dark");
+					}}>
+					<MoonIcon className={`box-content h-6 w-6 rounded-full border border-gray p-2.5 ${className ?? ""}`} />
+				</button>
+			)}
+		</div>
 	);
 };
 

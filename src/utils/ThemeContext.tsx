@@ -13,7 +13,9 @@ interface themeContext {
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 	let [theme, setTheme] = useState<string>("");
+
 	useEffect(() => {
+		resetTheme();
 		if (
 			localStorage["devriser-theme"] === "dark" ||
 			(!("devriser-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -26,14 +28,16 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 		}
 	}, []);
 
-	function changeTheme(mode: string) {
+	function resetTheme() {
 		if (document.documentElement.classList.contains("dark")) {
 			document.documentElement.classList.remove("dark");
 		}
 		if (document.documentElement.classList.contains("light")) {
 			document.documentElement.classList.remove("light");
 		}
-
+	}
+	function changeTheme(mode: string) {
+		resetTheme();
 		setTheme(mode);
 		document.documentElement.classList.add(mode);
 		localStorage.setItem("devriser-theme", mode);
@@ -48,7 +52,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 		changeToOsPreferred,
 	};
 
-	return <ThemeContext.Provider value={context}>{children}</ThemeContext.Provider>;
+	return <ThemeContext.Provider value={context}>{theme && children}</ThemeContext.Provider>;
 };
 
 export default ThemeContext;

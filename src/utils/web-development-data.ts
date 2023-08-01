@@ -66,11 +66,11 @@ export const PROCESS_DETAILS: { heading: string; description: string }[] = [
 
 export const TECH_STACK = [
 	{
-		field: "Front end",
+		field: "Frontend",
 		techs: [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6],
 	},
 	{
-		field: "Back end",
+		field: "Backend",
 		techs: [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6],
 	},
 	{

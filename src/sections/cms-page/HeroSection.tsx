@@ -3,19 +3,25 @@ import SemiGradientText from "@/components/SemiGradientText";
 import transparent from "./../../../public/assets/images/transparent.png";
 import Image from "next/image";
 import React from "react";
+import cn from "@/utils/cn";
 
 interface props {
 	heading: string;
 	gradientText?: string;
 	btnText?: string;
+	className?: string;
 	description?: string;
 	LightModeImage?: any;
 	DarkModeImage?: any;
 }
 
-const HeroSection = ({ heading, gradientText, btnText, description, ...props }: props) => {
+const HeroSection = ({ heading, gradientText, btnText, description, className, ...props }: props) => {
 	return (
-		<section className=' relative mx-6 mb-[95px] flex w-full items-center justify-between gap-10  [--top-space:160px]  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]  lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]'>
+		<section
+			className={cn(
+				"relative mx-6 mb-[95px] flex w-full items-center justify-between gap-10  [--top-space:160px]  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]  lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]",
+				className
+			)}>
 			<div className='mx-auto  mt-[57px] w-full min-w-[300px] basis-[611px]  md:mt-[100px] lg:mt-[var(--top-space)] '>
 				<SemiGradientText
 					className='hero-text  font-normal text-primary-dark dark:text-white'

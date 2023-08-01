@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Avatar from "./../../../public/assets/images/Avatar.png";
+import Person from "./../../../public/assets/images/test-img.png";
 import Star from "./../../../public/assets/icons/Star.svg";
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
@@ -7,24 +8,50 @@ import SectionHeading from "@/components/SectionHeading";
 const TestimonialSection = () => {
 	const Testimonial = (props: { content: string; userName: string; userRole?: string; Rating: number }) => {
 		return (
-			<div className='testimonial-bg w-full'>
-				<div className='flex flex-col items-center py-[80px] md:py-[90px] '>
-					<h3 className='max-w-[90%] font-350 text-white md:text-[24px]/[34px] lg:max-w-[1024px] lg:text-[36px]/[44px]'>{props.content}</h3>
-					<Image src={Avatar} className='mt-[62px]' alt='' />
-					<p className='mt-4 text-[18px]/[28px] font-bold !text-white'>{props.userName}</p>
-					<p className='mt-1 text-[18px]/[28px] font-bold !text-white'>{props.userRole}</p>
-					<div className='mt-4 flex justify-center gap-1'>
-						<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-						<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-						<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-						<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-						<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// <div className='testimonial-bg w-full'>
+			// 	<div className='flex flex-col items-center py-[80px] md:py-[90px] '>
+			// 		<h3 className='max-w-[90%] font-350 text-white md:text-[24px]/[34px] lg:max-w-[1024px] lg:text-[36px]/[44px]'>{props.content}</h3>
+			// 		<Image src={Avatar} className='mt-[62px]' alt='' />
+			// 		<p className='mt-4 text-[18px]/[28px] font-bold !text-white'>{props.userName}</p>
+			// 		<p className='mt-1 text-[18px]/[28px] font-bold !text-white'>{props.userRole}</p>
+			// 		<div className='mt-4 flex justify-center gap-1'>
+			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+			// 		</div>
+			// 		<div className='mt-10 space-x-4'>
+			// 			<span className='inline-block h-2.5 w-2.5 rounded-full bg-white'></span>
+			// 			<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
+			// 			<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
+			// 		</div>
+			// 	</div>
+			// </div>
+			<div className='testimonial-bg isolate w-[min(920px,100%)] py-3 pl-14 pr-7 lg:rounded-lg '>
+				<div className='mb-2 flex items-center  justify-center gap-3 max-md:flex-col md:justify-between '>
+					<div className='flex flex-col text-center max-md:order-2 md:text-left'>
+						<p className='max-w-[480px] text-[16px]/[27px] font-350 text-white '>{props.content}</p>
+						<h3 className='mt-6 text-[18px]/[28px] font-semibold text-white '>{props.userName}</h3>
+						<p className='mt-1 text-[14px]/[28px]  text-white'>{props.userRole}</p>
+						<div className='mt-1 flex justify-center gap-1 md:justify-start'>
+							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+						</div>
 					</div>
-					<div className='mt-10 space-x-4'>
-						<span className='inline-block h-2.5 w-2.5 rounded-full bg-white'></span>
-						<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
-						<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
-					</div>
+					<Image
+						src={Person}
+						className='max-md:order-1 max-md:h-16 max-md:w-16 max-md:rounded-full max-md:border max-md:border-white max-md:bg-white max-md:object-cover max-md:object-top'
+						alt=''
+					/>
+				</div>
+				<div className='mb-2 space-x-4 max-md:mt-4'>
+					<span className='inline-block h-2.5 w-2.5 rounded-full bg-white'></span>
+					<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
+					<span className='inline-block h-2.5 w-2.5 rounded-full bg-white/80'></span>
 				</div>
 			</div>
 		);

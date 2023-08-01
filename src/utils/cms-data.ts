@@ -1,55 +1,59 @@
 import placeholder from "../../public/assets/images/placeholder.png";
+import EN from "../../public/assets/icons/flag.svg";
+import FR from "../../public/assets/icons/frenchflagframed.svg";
+import CN from "../../public/assets/icons/BevelledChina.svg";
 
 // ******************************************      NAV_LINKS       ***********************************************
 export interface NAV_LINKSInterface {
 	services: [string, string][];
 	solutions: [string, string][];
-	blog: [string, string][];
+	// blog: [string, string][];
 	contact: [string, string][];
-	AboutUs: [string, string][];
-	languages: [string][];
+	// AboutUs: [string, string][];
+	// languages: [string, string][];
 }
+export const LANGUAGES = [
+	{ shortName: "EN", fullName: "English", flag: EN },
+	{ shortName: "FR", fullName: "Francis", flag: FR },
+	{ shortName: "CN", fullName: "China", flag: CN },
+];
 
 export const NAV_LINKS: NAV_LINKSInterface = {
 	services: [
 		["Web Development", "/web-development-services"],
-		["Mobile Development", "#"],
+		["Mobile Development", "/mobile-app-development"],
 		["UI/UX Services", "/ui-ux-design-services"],
 		["CMS Services", "/"],
 		["Managed Services", "/managed-services"],
 		["Enterprise Solutions", "#"],
 	],
 	solutions: [
-		["ERP", "#"],
-		["CRM", "#"],
-		["HRMS", "#"],
-		["IMS", "#"],
+		["Enterpirse Resource Management", "#"],
+		["Customer Relationship Management", "#"],
+		["Human Resource Management System", "#"],
+		["Inventory Management System", "#"],
 	],
-	blog: [
-		["Blog 0", "#"],
-		["Blog 1", "#"],
-		["Blog 2", "#"],
-		["Blog 3", "#"],
-		["Blog 4", "#"],
-		["Blog 5", "#"],
-	],
+	// blog: [
+	// 	["Blog 0", "#"],
+	// 	["Blog 1", "#"],
+	// 	["Blog 2", "#"],
+	// 	["Blog 3", "#"],
+	// 	["Blog 4", "#"],
+	// 	["Blog 5", "#"],
+	// ],
 	contact: [
-		["Contact Link 0", "#"],
 		["Contact Link 1", "#"],
 		["Contact Link 2", "#"],
 		["Contact Link 3", "#"],
-		["Contact Link 4", "#"],
-		["Contact Link 5", "#"],
 	],
-	AboutUs: [
-		["About Link 0", "#"],
-		["About Link 1", "#"],
-		["About Link 2", "#"],
-		["About Link 3", "#"],
-		["About Link 4", "#"],
-		["About Link 5", "#"],
-	],
-	languages: [["En"], ["Francis"], ["Posh"]],
+	// AboutUs: [
+	// 	["About Link 0", "#"],
+	// 	["About Link 1", "#"],
+	// 	["About Link 2", "#"],
+	// 	["About Link 3", "#"],
+	// 	["About Link 4", "#"],
+	// 	["About Link 5", "#"],
+	// ],
 };
 
 // ******************************************      FEATURES       ***********************************************

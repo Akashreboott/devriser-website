@@ -5,7 +5,7 @@ import React from "react";
 const HeroOverlay = (props: {
 	Overlay: any;
 	className?: string;
-	Opacity?: number;
+
 	TransparentGradientClasses?: string;
 	GradientClasses?: string;
 }) => {
@@ -14,9 +14,8 @@ const HeroOverlay = (props: {
 	return (
 		<div className={cn("absolute  left-0 top-0  -z-10 grid grid-cols-2 overflow-hidden", commonClasses, props.className)}>
 			<div
-				style={{ opacity: props.Opacity ?? "0.4" }}
 				className={cn(
-					"absolute -left-1/4 -top-1/3 aspect-square w-[543px] rounded-full bg-[--hero-overlay-color]   blur-[100px]",
+					"opacity-0.4 absolute -left-1/4 -top-1/3 aspect-square w-[543px] rounded-full  bg-[--hero-overlay-color]  blur-[100px]",
 					props.GradientClasses
 				)}></div>
 			<div

@@ -4,7 +4,8 @@ function DevRiserLogo({ className, ...props }) {
 	return (
 		<>
 			{/* LIGHT VERSION */}
-			<svg viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg' {...props} className={cn("hidden dark:block", className)}>
+
+			<svg {...props} className={cn("hidden dark:block", className)} viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'>
 				<path d='M32.35 16.5C32.35 25.613 25.03 33 16 33 6.97 33 0 25.613 0 16.5S6.97 0 16 0c9.03 0 16.35 7.387 16.35 16.5z' fill='#ffffff' />
 				<path d='M11.326 21.52l-5.084-5.612 5.08-5.71 1.06.984-4.195 4.717 4.191 4.627-1.052.994z' fill={"#000000"} />
 				<path
@@ -15,7 +16,8 @@ function DevRiserLogo({ className, ...props }) {
 			</svg>
 
 			{/* DARK VERSION */}
-			<svg viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg' {...props} className={cn(" block dark:hidden", className)}>
+
+			<svg {...props} className={cn(" block dark:hidden", className)} viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'>
 				<path d='M32.35 16.5C32.35 25.613 25.03 33 16 33 6.97 33 0 25.613 0 16.5S6.97 0 16 0c9.03 0 16.35 7.387 16.35 16.5z' fill='#000' />
 				<path d='M11.326 21.52l-5.084-5.612 5.08-5.71 1.06.984-4.195 4.717 4.191 4.627-1.052.994z' fill={"#fff"} />
 				<path

@@ -21,6 +21,7 @@ module.exports = {
 				"primary-dark": "rgb(42,42,42)",
 				"secondary-dark": "rgb(51,51,51)",
 				"gray-66": "rgb(66,66,66)",
+				"gray-54":"rgba(54, 54, 54, 1)",
 				"gray-30": "rgb(30,30,30)",
 				"light-pink": "rgba(231, 123, 166, 1)",
 				"slate-gray": "rgba(102, 112, 133, 1)",

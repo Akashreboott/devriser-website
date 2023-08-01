@@ -16,11 +16,12 @@ const ProcessCard = ({ title, gradientTitle, description, image, darkImage, card
 		className={cn(
 			"flex flex-col gap-[19px] lg:max-w-[311px]",
 			card === "left-aligned" ? "lg:items-start  lg:text-left" : "items-center text-center",
-			className ?? ""
+			className
 		)}>
 		<Image src={image} alt='' className={` ${darkImage ? "hidden dark:block" : ""}`} />
 		{darkImage && <Image src={darkImage ?? ""} alt='' className='block dark:hidden' />}
 		<h2
+
 			className={cn(
 				"text-[20px]/[52px] md:text-[24px]/[52px]",
 				gradientTitle ? "clip gradient-bright font-semibold lg:min-h-[104px]" : "text-white"

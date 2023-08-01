@@ -1,6 +1,6 @@
 @layer utilities {
 	.primary-heading {
-		@apply text-[20px]/[35px] font-semibold md:text-[24px]/[35px] lg:text-heading1;
+		@apply text-[24px]/[35px] font-semibold md:text-[24px]/[35px] lg:text-heading1;
 	}
 
 	.secondary-heading {

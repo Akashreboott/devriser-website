@@ -16,8 +16,13 @@ import Main from "@/components/Main";
 
 export default function Home() {
 	return (
-		<Main data-page='cms'>
-			<HeroOverlay Overlay={Frame} className='w-screen lg:w-[70vw]' Opacity={0.25} TransparentGradientClasses='bg-gradient-to-b to-light to-90% ' />
+		<Main data-page='cms' key='cms'>
+			<HeroOverlay
+				Overlay={Frame}
+				className='w-screen lg:w-[70vw]'
+				GradientClasses='opacity-25'
+				TransparentGradientClasses='bg-gradient-to-b to-light to-90% '
+			/>
 			<HeroSection
 				LightModeImage={Lightillustration}
 				DarkModeImage={illustration}
