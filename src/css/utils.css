@@ -28,6 +28,21 @@
 	.hide-in-dark {
 		@apply dark:!hidden;
 	}
+	.layout-1x2 {
+	}
+	.layout-1x2:nth-of-type(odd) > .first {
+		@apply md:order-2
+		md:[&_:is(h3,p)]:text-right;
+		/* [&_p]:ml-auto; */
+
+		/* [&_h3]:text-right [&_p]:text-right; */
+	}
+	.layout-1x2:nth-of-type(odd) > .second {
+		@apply md:order-1
+		md:[&_:is(h3,p)]:text-left;
+		/* [&_p]:mr-auto; */
+		/* [&_h3]:text-left [&_p]:text-left; */
+	}
 
 	:is(.dark [data-hide-in-dark="true"]) {
 		display: none !important;

@@ -8,6 +8,7 @@ import ContactIcon from "./../../public/assets/icons/ContactIcon";
 import Light from "./../../public/assets/icons/LightIcon";
 import Blogs from "./../../public/assets/icons/BlogIcon";
 import SettingsIcon from "./../../public/assets/icons/SettingsIcon";
+
 import Solutions from "./../../public/assets/icons/SolutionIcon";
 import flag from "./../../public/assets/icons/flag.svg";
 import Image from "next/image";
@@ -43,23 +44,6 @@ const Header = ({ className }: { className?: string }) => {
 		}
 	}, [mobileMenuOpened, desktopMenuOpened]);
 
-	// useEffect(() => {
-	// 	if (headerRef.current != null) {
-	// 		console.log(headerRef.current.getBoundingClientRect());
-	// 		setheaderWidth(headerRef.current.getBoundingClientRect().width);
-	// 	}
-	// }, []);
-	// useEffect(() => {
-	// 	function changeDataAttribute(pageName: string) {
-	// 		const main = document.getElementById("main");
-	// 		if (main) {
-	// 			main.dataset.page = pageName;
-	// 		}
-	// 	}
-	// 	changeDataAttribute(page);
-	// }, [page]);
-	// onClick={activeLink == "services" ? () => setPage(name) : () => {}}
-
 	function closeMenu() {
 		setDesktopMenuOpened(false);
 	}
@@ -71,19 +55,8 @@ const Header = ({ className }: { className?: string }) => {
 		setActiveLink(name);
 	}
 
-	// let IconClasses = (tag: string) =>
-	// 	`dark:hover:bg-dark hover:bg-light p-1.5 rounded-lg w-[20px] box-content ${activeLink === tag && desktopMenuOpened && "dark:bg-dark bg-light"}`;
-
 	let IconClasses = "p-1.5 rounded-lg w-[20px] box-content";
 
-	const NavBarLink = (children: ReactNode, linkname: string) => {
-		return (
-			<li onMouseEnter={() => setActive(linkname)} className='flex flex-col items-center gap-[5px]  '>
-				{children}
-				<p>Services</p>
-			</li>
-		);
-	};
 	return (
 		<AnimatePresence>
 			<header
@@ -99,46 +72,46 @@ const Header = ({ className }: { className?: string }) => {
 						desktopMenuOpened && "border-r border-gray",
 						"scroll-bar-thin z-10 justify-between self-start justify-self-start overflow-y-auto   bg-white  py-3  dark:bg-gray-30"
 					)}>
-					<Link href={"/"} onClick={() => setPage("")}>
-						<DevRiserLogo className='mb-[40px]  aspect-square h-[35px] w-[35px] shrink-0 ' />
+					<Link href={"/"}>
+						<DevRiserLogo className='mb-[40px]  aspect-square h-[38px] w-[38px] shrink-0' />
 					</Link>
 					<ul
 						onMouseEnter={openMenu}
 						onMouseLeave={closeMenu}
 						className='grid w-full  gap-[25px] px-1 [&_li]:cursor-pointer [&_p]:text-navlink [&_p]:font-350 [&_p]:text-black dark:[&_p]:text-white'>
 						<li onMouseEnter={() => setActive("services")} className=' isolate flex flex-col items-center gap-1   '>
-							<div className='relative isolate -z-10 h-fit w-fit'>
-								<SettingsIcon className={IconClasses} />
+							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, activeLink === "services" && "text-light dark:text-dark")} />
 								{activeLink === "services" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-light dark:bg-dark'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
 								)}
 							</div>
 							<p className='z-10'>Services</p>
 						</li>
 						<li onMouseEnter={() => setActive("solutions")} className=' isolate flex flex-col items-center gap-1   '>
-							<div className='relative isolate -z-10 h-fit w-fit'>
-								<SettingsIcon className={IconClasses} />
+							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, activeLink === "solutions" && "text-light dark:text-dark")} />
 								{activeLink === "solutions" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-light dark:bg-dark'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
 								)}
 							</div>
 							<p className='z-10'>Solutions</p>
 						</li>
 
 						<li onMouseEnter={() => setActive("contact")} className=' isolate flex flex-col items-center gap-1   '>
-							<div className='relative isolate -z-10 h-fit w-fit'>
-								<SettingsIcon className={IconClasses} />
+							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, activeLink === "contact" && "text-light dark:text-dark")} />
 								{activeLink === "contact" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-light dark:bg-dark'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
 								)}
 							</div>
 							<p className='z-10'>Contact</p>
@@ -240,7 +213,9 @@ const Header = ({ className }: { className?: string }) => {
 						Sign In
 					</button>
 				</div>
-				<DevRiserLogo className='h-[35px] w-[35px] shrink-0' />
+				<Link href={"/"}>
+					<DevRiserLogo className='h-[38px] w-[38px] shrink-0' />
+				</Link>
 
 				{/* <button className='px-[17px] py-2 w-max rounded-[3.5px] flex gap-1 items-center  border border-white'>
 						<Image src={flag} alt='' />
@@ -261,11 +236,15 @@ const Header = ({ className }: { className?: string }) => {
 						transition={{ duration: "0.5", ease: "easeInOut" }}
 						key='mobile-menu'
 						className='fixed left-0 top-0 z-[200] h-screen w-screen bg-white/20 p-4 backdrop-blur-3xl dark:bg-dark/50 lg:hidden [&_p]:text-dark dark:[&_p]:text-white'>
-						<div className='mb-4 flex items-center justify-between px-2'>
-							<ThemeButton className='h-6 w-6'>
+						<div className='mb-4 grid grid-cols-3 items-center justify-between justify-items-center px-2'>
+							<ThemeButton className='justify-self-start'>
 								<Light className='h-6 w-6' />
 							</ThemeButton>
-							<Xmark onClick={() => setMobileMenuOpened(false)} className='h-4 w-4 cursor-pointer' />
+
+							<Link href={"/"} onClick={() => setMobileMenuOpened(false)}>
+								<DevRiserLogo className='h-[38px] w-[38px] shrink-0' />
+							</Link>
+							<Xmark onClick={() => setMobileMenuOpened(false)} className='h-4 w-4 cursor-pointer justify-self-end' />
 						</div>
 						<ul className=' mx-auto flex h-full w-full flex-col gap-[26px] bg-white  p-6 pt-8  text-navlink  dark:bg-gray-30 [&_p]:text-basic [&_p]:font-normal'>
 							<li className=''>

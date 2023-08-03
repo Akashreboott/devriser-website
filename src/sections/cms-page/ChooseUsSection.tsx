@@ -31,7 +31,7 @@ const ChooseUsSection = () => {
 						description={speciality.description}
 						key={speciality.title}
 						card='center-aligned'
-						className='[&_p]:!text-primary-dark dark:[&_p]:!text-primary-light xl:max-w-[370px]'
+						className=' xl:max-w-[370px]'
 					/>
 				))}
 			</div>

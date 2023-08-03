@@ -14,7 +14,7 @@ const ProcessSection = () => {
 						key={title}
 						className='layout-1x2 relative grid grid-cols-1 gap-8 pl-24 text-left lg:grid-cols-2  lg:justify-center lg:justify-items-center lg:gap-20 lg:text-center  '>
 						{/* DOT */}
-						<div className='ball top[calc(50%+14px)] absolute left-[calc(25px+1.5px)] h-[28px] w-[28px] rounded-full border-[9px] border-white bg-black lg:left-[calc(50%-14px-1.5px)]'></div>
+						<div className='ball top[calc(50%+14px)] absolute left-[calc(25px+0.75px)] h-[28px] w-[28px] rounded-full border-[9px] border-white bg-black lg:left-[calc(50%-14px-1.5px)]'></div>
 
 						<SemiGradientText
 							GradientTextColor='[background-image:linear-gradient(90.32deg,#00C4E0_30.86%,#A371F7_50.81%)]'

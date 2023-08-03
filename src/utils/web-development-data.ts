@@ -13,7 +13,7 @@ export const HERO_DETAILS = {
 
 export const PROCESS_DETAILS: { heading: string; description: string }[] = [
 	{
-		heading: "Consultation and gathering requirements",
+		heading: "Requirement gathering",
 		description:
 			"Consultation and gathering requirements and establish project scope through consultation. We gather the required information and ensure that we create a website that aligns with your business goals, target audience, desired features, design aesthetics, and technical considerations",
 	},

@@ -13,6 +13,7 @@ interface props {
 	description?: string;
 	LightModeImage?: any;
 	DarkModeImage?: any;
+	GradientTextColor?: string;
 }
 
 const HeroSection = ({ heading, gradientText, btnText, description, className, ...props }: props) => {
@@ -27,7 +28,7 @@ const HeroSection = ({ heading, gradientText, btnText, description, className, .
 					className='hero-text  font-normal text-primary-dark dark:text-white'
 					text={heading}
 					gradientText={gradientText ?? ""}
-					GradientTextColor='gradient-tint'
+					GradientTextColor={props.GradientTextColor ?? "gradient-tint"}
 					as='h1'
 				/>
 				{description && <p className='mt-4 text-basic text-primary-dark dark:text-gray'>{description}</p>}

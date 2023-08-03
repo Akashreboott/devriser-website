@@ -21,14 +21,10 @@ const ProcessCard = ({ title, gradientTitle, description, image, darkImage, card
 		<Image src={image} alt='' className={` ${darkImage ? "hidden dark:block" : ""}`} />
 		{darkImage && <Image src={darkImage ?? ""} alt='' className='block dark:hidden' />}
 		<h2
-
-			className={cn(
-				"text-[20px]/[52px] md:text-[24px]/[52px]",
-				gradientTitle ? "clip gradient-bright font-semibold lg:min-h-[104px]" : "text-white"
-			)}>
+			className={cn("text-[20px]/[35px] md:text-[24px]/[35px]", gradientTitle ? "clip gradient-bright font-semibold lg:min-h-[70px]" : "text-white")}>
 			{title}
 		</h2>
-		<p className={cn("para-text pt-1", card === "left-aligned" ? "text-primary-dark dark:text-white" : "text-white dark:text-gray")}>{description}</p>
+		<p className={cn("para-text pt-1", "text-primary-dark dark:text-gray")}>{description}</p>
 	</div>
 );
 

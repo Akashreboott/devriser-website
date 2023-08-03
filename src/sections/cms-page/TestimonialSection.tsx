@@ -31,20 +31,20 @@ const TestimonialSection = () => {
 			<div className='testimonial-bg isolate w-[min(920px,100%)] py-3 pl-14 pr-7 lg:rounded-lg '>
 				<div className='mb-2 flex items-center  justify-center gap-3 max-md:flex-col md:justify-between '>
 					<div className='flex flex-col text-center max-md:order-2 md:text-left'>
-						<p className='max-w-[480px] text-[16px]/[27px] font-350 text-white '>{props.content}</p>
-						<h3 className='mt-6 text-[18px]/[28px] font-semibold text-white '>{props.userName}</h3>
-						<p className='mt-1 text-[14px]/[28px]  text-white'>{props.userRole}</p>
-						<div className='mt-1 flex justify-center gap-1 md:justify-start'>
-							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
-							<Image src={Star} className='h-5 w-5 object-cover' alt='' />
+						<p className='max-w-[480px] text-p14 font-350 text-white md:text-[16px]/[27px] '>{props.content}</p>
+						<h3 className='mt-6 text-p14 font-semibold text-white md:text-[18px]/[28px] '>{props.userName}</h3>
+						<p className='mt-1 text-xs text-white  md:text-[14px]/[28px]'>{props.userRole}</p>
+						<div className='mt-1 flex justify-center gap-1 md:justify-start [&>img]:h-4 [&>img]:w-4 md:[&>img]:h-5 md:[&>img]:w-5'>
+							<Image src={Star} className=' object-cover' alt='' />
+							<Image src={Star} className=' object-cover' alt='' />
+							<Image src={Star} className=' object-cover' alt='' />
+							<Image src={Star} className=' object-cover' alt='' />
+							<Image src={Star} className=' object-cover' alt='' />
 						</div>
 					</div>
 					<Image
 						src={Person}
-						className='max-md:order-1 max-md:h-16 max-md:w-16 max-md:rounded-full max-md:border max-md:border-white max-md:bg-white max-md:object-cover max-md:object-top'
+						className='max-md:order-1 max-md:h-[72px] max-md:w-[72px] max-md:rounded-full max-md:border max-md:border-white max-md:bg-white max-md:object-cover max-md:object-top'
 						alt=''
 					/>
 				</div>

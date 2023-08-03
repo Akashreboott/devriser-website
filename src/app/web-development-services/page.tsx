@@ -22,7 +22,13 @@ import AnimatedNumber from "@/components/AnimatedNumber";
 const Page = () => {
 	return (
 		<Main data-page='web-development-services' key='web-development-services'>
-			<HeroOverlay Overlay={Pattern} className='h-[500px]' GradientClasses='left-0' />
+			<HeroOverlay
+				Overlay={Pattern}
+				className='h-[550px]'
+				GradientClasses='left-0'
+				TransparentGradientClasses='md:dark:to-90% bg-gradient-to-br to-90%'
+				ImgClasses='object-contain '
+			/>
 			<HeroSection
 				heading={HERO_DETAILS.heading}
 				gradientText='Custom Website Development Services'
@@ -34,7 +40,7 @@ const Page = () => {
 
 			<SectionHeading title='Our Offerings' className='gap-12'>
 				<div className='h-full max-h-[600px] w-full max-w-[800px] px-2'>
-					<Cone className='h-full w-full text-gray dark:text-white' />
+					<Cone className='h-full w-full text-dark dark:text-white' />
 				</div>
 			</SectionHeading>
 

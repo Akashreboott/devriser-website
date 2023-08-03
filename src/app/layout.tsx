@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "@/sections/Header";
+
 import type { Metadata } from "next";
 // import { ThemeProvider } from "@/utils/ThemeContext";
 

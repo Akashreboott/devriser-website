@@ -17,7 +17,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 					<div className='circle  ring-color RotateAndSlideOpposite absolute -left-[350px] -top-[300px] -z-20 grid aspect-square w-[446px] place-items-center rounded-full  blur-md duration-[15s] md:-left-[300px] md:-top-[250px] '>
 						<div className='aspect-square w-[calc(100%-var(--inner-circle-width))] rounded-full bg-dark [--inner-circle-width:140px] md:[--inner-circle-width:100px]'></div>
 					</div>
-					<div className='circle ring-color RotateAndSlide absolute -bottom-[300px] -right-[320px] -z-20 grid aspect-square w-[446px] rotate-90 place-items-center rounded-full  blur-md duration-[15s]  md:-bottom-[250px] md:-right-[270px]'>
+					<div className='circle ring-color RotateAndSlide absolute -bottom-[300px] -right-[320px] -z-20 grid aspect-square w-[446px] rotate-180 place-items-center rounded-full  blur-md duration-[15s]  md:-bottom-[250px] md:-right-[270px]'>
 						<div className='aspect-square w-[calc(100%-var(--inner-circle-width))] rounded-full bg-dark [--inner-circle-width:140px] md:[--inner-circle-width:100px]'></div>
 					</div>
 				</>

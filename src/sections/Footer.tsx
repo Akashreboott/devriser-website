@@ -36,16 +36,16 @@ const Footer = () => {
 			variants={opacityVariants}
 			viewport={{ margin: "200px" }}
 			as='footer'
-			className='grid bg-white pt-[70px] font-350 [grid-area:footer] dark:bg-gray-30  [&>*]:mx-auto [&>*]:w-[min(100%,1347px)] [&>*]:px-3 '>
+			className='grid w-[calc(100%+1.5px)] -translate-x-[1.5px] bg-white pt-[30px] font-350 [grid-area:footer] dark:bg-gray-30  [&>*]:mx-auto [&>*]:w-[min(100%,1347px)] [&>*]:px-3 '>
 			<div className='flex flex-col justify-between gap-16 lg:flex-row'>
 				{/* LOGO SECTION */}
-				<MotionComponent initial='hide' animate='visible' variants={opacityVariants} className='flex flex-col space-y-[35px] '>
+				<MotionComponent initial='hide' animate='visible' variants={opacityVariants} className='flex flex-col space-y-[16px] '>
 					<div className='flex items-center gap-[18px]'>
-						<DevRiserLogo className='h-[42px] w-[42px]' />
-						<h4 className='text-[26px]/[33px] font-normal '>DevRiser</h4>
-					</div>
-					<div className='max-w-md text-[15px]/[25px] opacity-70'>
-						Elevate performance, engage users, and unlock potential with our transformative software services.
+						<DevRiserLogo className='h-[48px] w-[48px]' />
+						<div>
+							<h4 className='text-[22px]/[33px] font-normal'>DevRiser</h4>
+							<div className='max-w-md text-[15px]/[25px] opacity-70'>Elevating Your Project</div>
+						</div>
 					</div>
 				</MotionComponent>
 
@@ -156,7 +156,7 @@ const Footer = () => {
 			</div> */}
 
 			{/* COPYRIGHT SECTION */}
-			<div className='mt-[30px] grid  grid-cols-1 items-center justify-between justify-items-center bg-dark/50 !px-5 py-2 dark:text-white max-lg:gap-5 max-lg:py-4 lg:grid-cols-3'>
+			<div className='mt-[30px] grid  grid-cols-1 items-center justify-between justify-items-center !px-5 py-2   backdrop-brightness-[0.8] dark:text-white max-lg:gap-5 max-lg:py-4 lg:grid-cols-3'>
 				<div className='lg:justify-self-start'>
 					<a
 						href='#'

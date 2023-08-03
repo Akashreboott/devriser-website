@@ -10,6 +10,11 @@ import ProcessCard from "@/components/ProcessCard";
 import DecoratedBanner from "@/components/DecoratedBanner";
 import Grid1x2 from "@/components/Grid1x2";
 import ProcessSection from "@/sections/mobile-app-development/ProcessSection";
+import TestimonialSection from "@/sections/cms-page/TestimonialSection";
+import { TECH_STACK } from "@/utils/web-development-data";
+import Image from "next/image";
+import Banner from "@/components/Banner";
+import FaqSection from "@/sections/cms-page/FaqSection";
 const page = () => {
 	return (
 		<Main data-page='mobile-app-development'>
@@ -82,6 +87,22 @@ const page = () => {
 				</div>
 			</SectionHeading>
 			<ProcessSection />
+			<TestimonialSection />
+			<SectionHeading title='Our Technology Stack' gradientText='Technology' className='my-24 max-w-6xl gap-12'>
+				{TECH_STACK.map(({ field, techs }) => (
+					<div key={field} className='group  flex w-[calc(100%-20px)] max-w-[80%] flex-col items-center gap-2'>
+						<h3 className='mr-auto origin-left text-lg leading-[52px] transition-transform group-hover:scale-110 md:text-[24px]'>{field}</h3>
+						{/* <div className='flex w-full flex-wrap  justify-center rounded border border-white px-4 py-4 [&>img]:mx-12'> */}
+						<div className='flex w-full max-w-[var(--container-width)]  flex-wrap items-center justify-center gap-7 rounded-lg  border border-white/10 bg-white/[0.05] p-2 transition-all [--container-width:1280px] [--logo-width:8rem] [--space:0.6rem]  group-hover:border-white/30 md:p-1.5 md:[--space:1rem]  [&>img>*]:aspect-[7/1]  [&>img>*]:w-[var(--logo-width)]  [&>img]:mx-[var(--space)] [&>img]:my-[calc(var(--space)/2)]'>
+							{techs.map((logo, index) => (
+								<Image key={index} src={logo} className='h-8 w-8' alt='' />
+							))}
+						</div>
+					</div>
+				))}
+			</SectionHeading>
+			<Banner btnText='Get started now!' heading="Ready To Innovate? Let's Build Your Dream App!" />
+			<FaqSection />
 		</Main>
 	);
 };

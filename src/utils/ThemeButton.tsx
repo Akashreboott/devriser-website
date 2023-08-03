@@ -5,6 +5,7 @@ import LightIcon from "../../public/assets/icons/LightIcon";
 import MoonIcon from "../../public/assets/icons/MoonIcon";
 
 import { useTheme } from "next-themes";
+import cn from "./cn";
 const ThemeButton = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
 	const [mounted, setMounted] = useState(false);
 	useEffect(() => {
@@ -14,14 +15,14 @@ const ThemeButton = ({ children, className }: { children?: React.ReactNode; clas
 	let ctx = useTheme();
 	if (!mounted)
 		return (
-			<div className='mt-auto flex flex-col items-center gap-[9px]'>
+			<div className={cn("mt-auto flex flex-col items-center gap-[9px]", className)}>
 				<button className='h-[33px] w-[33px] appearance-none'>
 					<div className='h-full w-full animate-pulse rounded'></div>
 				</button>
 			</div>
 		);
 	return (
-		<div className='mt-auto flex flex-col items-center gap-[9px]'>
+		<div className={cn("mt-auto flex flex-col items-center gap-[9px]", className)}>
 			{ctx.theme === "dark" && (
 				<button
 					className='appearance-none'

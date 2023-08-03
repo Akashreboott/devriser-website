@@ -11,18 +11,57 @@ interface SemiGradientTextProps {
 	FullGradient?: boolean;
 }
 
+// const SemiGradientText = (props: SemiGradientTextProps) => {
+// 	function convertToGradient(text: string, gradientText: string = "") {
+// 		const splittedText = text.split(" ");
+// 		const splittedGradientText = new Set(gradientText.split(" "));
+
+// 		if (props.FullGradient)
+// 			return (
+// 				<span className={cn("font-semibold", gradientText && "clip gradient-bright", gradientText && props.GradientTextColor)}>{text + " "}</span>
+// 			);
+
+// 		return splittedText.map((word) => {
+// 			let gradientWord = splittedGradientText.has(word);
+// 			return (
+// 				<span
+// 					// initial={{ opacity: 0 }}
+// 					// whileInView={{ opacity: 1, transition: { duration: 1 } }}
+// 					// viewport={{ margin: "100px 0px" }}
+// 					// as='span'
+// 					key={word}
+// 					className={cn("font-semibold", gradientWord && "clip gradient-bright", gradientWord && props.GradientTextColor)}>
+// 					{word + " "}
+// 				</span>
+// 			);
+// 		});
+// 	}
 const SemiGradientText = (props: SemiGradientTextProps) => {
 	function convertToGradient(text: string, gradientText: string = "") {
-		const splittedText = text.split(" ");
-		const splittedGradientText = new Set(gradientText.split(" "));
+		if (!props.gradientText) return <span className={cn("font-semibold")}>{text + " "}</span>;
 
 		if (props.FullGradient)
 			return (
-				<span className={cn("font-semibold", gradientText && "clip gradient-bright", gradientText && props.GradientTextColor)}>{text + " "}</span>
+				<span
+					className={cn(
+						"font-semibold",
+						gradientText && "clip",
+						gradientText && !props.GradientTextColor ? "gradient-bright" : gradientText && props.GradientTextColor
+					)}>
+					{text + " "}
+				</span>
 			);
 
-		return splittedText.map((word) => {
-			let gradientWord = splittedGradientText.has(word);
+		let trimmedText = text.trim();
+		const index = trimmedText.indexOf(gradientText);
+		const lastIndex = index + gradientText.length;
+		const newArr = [trimmedText.slice(0, index).trim(), trimmedText.slice(index, lastIndex + 1).trim(), trimmedText.slice(lastIndex).trim()];
+
+		const splittedGradientText = gradientText.trim();
+
+		return newArr.map((word) => {
+			let gradientWord = splittedGradientText === word;
+
 			return (
 				<span
 					// initial={{ opacity: 0 }}
@@ -30,7 +69,11 @@ const SemiGradientText = (props: SemiGradientTextProps) => {
 					// viewport={{ margin: "100px 0px" }}
 					// as='span'
 					key={word}
-					className={cn("font-semibold", gradientWord && "clip gradient-bright", gradientWord && props.GradientTextColor)}>
+					className={cn(
+						"font-semibold",
+						gradientWord && "clip ",
+						gradientWord && !props.GradientTextColor ? "gradient-bright" : gradientWord && props.GradientTextColor
+					)}>
 					{word + " "}
 				</span>
 			);

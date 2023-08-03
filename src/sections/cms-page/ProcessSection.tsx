@@ -12,9 +12,14 @@ import vector11 from "./../../../public/assets/icons/Vector 11.svg";
 import vector34 from "./../../../public/assets/icons/Vector 34.svg";
 import vector35 from "./../../../public/assets/icons/Vector 35.svg";
 import vector37 from "./../../../public/assets/icons/Vector 37.svg";
+import process from "./../../../public/assets/images/process-image-cms.svg";
+import processLight from "./../../../public/assets/images/process-image-cms.-light.svg";
+import processSmall from "./../../../public/assets/images/process-image-cms-small.svg";
+import processSmallLight from "./../../../public/assets/images/process-image-cms-small-light.svg";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { PROCESSES } from "@/utils/cms-data";
+import DarkLightImage from "@/components/DarkLightImage";
 
 const ProcessSection = () => {
 	function SliceProcesses(start: number, end?: number) {
@@ -29,7 +34,7 @@ const ProcessSection = () => {
 	return (
 		<section className='isolate w-full bg-dark [&_.btn-outline::after]:[background-color:transparent] [&_.btn-outline::before]:bg-none [&_img]:!text-gray'>
 			<SectionHeading title='Our Process' gradientText='Process' as='div' className='z-10 mt-24 text-white max-lg:hidden '>
-				<div className='flex flex-col'>
+				{/* <div className='flex flex-col'>
 					<div className='relative flex rotate-180 justify-center -space-x-1'>
 						<div className='absolute bottom-0 aspect-square w-5 translate-x-[calc(50%-11px)] rounded-full border-[3px] border-white bg-pink-500'></div>
 						<Image src={vector2} alt='' />
@@ -53,7 +58,9 @@ const ProcessSection = () => {
 						<Image src={vector9} alt='' />
 					</div>
 					<div className='flex justify-center gap-3'>{SliceProcesses(5)}</div>
-				</div>
+				</div> */}
+
+				<DarkLightImage alt='' className='px-3' DarkVisibleImage={process} LightVisibleImage={processLight} />
 			</SectionHeading>
 
 			{/* <div className='bg-dark lg:hidden'>
@@ -61,7 +68,7 @@ const ProcessSection = () => {
 					Our <span className='clip pink-gradient-bright '>Process</span>
 				</h2> */}
 			<SectionHeading title='Our Process' gradientText='Process' as='div' className='md:pt-24 lg:hidden [&_.btn-outline]:!text-white'>
-				<div className='mt-4 flex flex-col items-center gap-2'>
+				{/* <div className='mt-4 flex flex-col items-center gap-2'>
 					<div className='flex flex-col justify-center gap-3  -space-y-2'>
 						<div className='relative flex justify-center -space-x-1 '>
 							<div className='absolute -top-3 aspect-square w-3 translate-x-[calc(50%-7px)] rounded-full border-[2.5px] border-white bg-pink-500'></div>
@@ -96,7 +103,8 @@ const ProcessSection = () => {
 						</div>
 						<div className='flex justify-center gap-[119px]'>{SliceProcesses(6)}</div>
 					</div>
-				</div>
+				</div> */}
+				<DarkLightImage alt='' DarkVisibleImage={processSmall} LightVisibleImage={processSmallLight} />
 			</SectionHeading>
 			{/* </div> */}
 			<div className='relative isolate  mx-auto grid gap-[70px] bg-dark px-12 py-[63px] md:pt-[150px] lg:gap-[75px] lg:pt-[180px] xl:gap-[95px] xl:pt-[200px] '>

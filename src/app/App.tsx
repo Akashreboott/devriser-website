@@ -1,7 +1,7 @@
 "use client";
 import FramerAnimatePresence from "@/components/AnimatePresence";
 import Footer from "@/sections/Footer";
-import Header from "@/sections/Header";
+import Header from "@/sections/Header/Header";
 import { ThemeProvider } from "next-themes";
 import React from "react";
 

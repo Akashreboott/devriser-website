@@ -32,6 +32,13 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+
+		/* SWIPER */
+		--swiper-navigation-color: var(--banner-bg);
+
+		/* SWIPER */
+
+		--swiper-navigation-color: var(--banner-bg);
 	}
 
 	/* ----------- DARK MODE ----------- */
@@ -66,6 +73,9 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+
+		/* SWIPER */
+		--swiper-navigation-color: var(--banner-bg);
 	}
 	/* --------------------------------- UI/UX  --------------------------------- */
 
@@ -93,6 +103,9 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+
+		/* SWIPER */
+		--swiper-navigation-color: var(--banner-bg);
 	}
 	/* --------------------------------- MANAGED SERVICES  --------------------------------- */
 
@@ -121,12 +134,15 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: linear-gradient(180deg, #ffffff 0%, #9747ff 100%);
+
+		/* SWIPER */
+		--swiper-navigation-color: var(--banner-bg);
 	}
 }
 
 /* ----------- DARK MODE ----------- */
 :is(.dark [data-page="web-development-services"]) {
-	--primary-text-color: rgba(178,178,178,1) !important;
+	--primary-text-color: rgba(178, 178, 178, 1) !important;
 }
 
 /* --------------------------------- WEB DEVELOPMENT  --------------------------------- */
@@ -157,6 +173,9 @@
 	--primary-btn-color: var(--gradient-bright);
 	--secondary-btn-text-color: var(--gradient-bright);
 	--ring-color: var(--gradient-bright);
+
+	/* SWIPER */
+	--swiper-navigation-color: var(--banner-bg);
 }
 
 /* ----------- DARK MODE ----------- */

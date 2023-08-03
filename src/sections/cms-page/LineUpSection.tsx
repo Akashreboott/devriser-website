@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import wordpress from "./../../../public/assets/images/wordpress.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cn from "@/utils/cn";
 import { motion } from "framer-motion";
 import ShopifyLight from "../../../public/assets/icons/shopify-svgrepo-light.svg";
@@ -18,6 +18,9 @@ import DrupalDark from "../../../public/assets/icons/drupal-svgrepo-com.svg";
 
 import WordpressLight from "../../../public/assets/icons/wordpress-logo-svgrepo-com-light.svg";
 import WordpressDark from "../../../public/assets/icons/wordpress-logo-svgrepo-com.svg";
+import { Swiper, SwiperSlide } from "@/components/Swiper";
+import ChevronIcon from "../../../public/assets/icons/Chevron";
+import DarkLightImage from "@/components/DarkLightImage";
 
 interface detail {
 	name: string;
@@ -70,44 +73,88 @@ let DETAILS: detail[] = [
 
 const LineUpSection = () => {
 	let [active, setActive] = useState("Wordpress");
+	let SwiperRef = useRef<any>(null);
+	let swiperAtStart = SwiperRef.current && SwiperRef.current.swiper.isBeginning;
+	let swiperAtEnd = SwiperRef.current && SwiperRef.current.swiper.isEnd;
 
-	function setActiveButton(name: string) {
-		setActive(name);
-	}
 	return (
 		<section className='mb-16 grid max-w-[90%] items-center justify-items-center overflow-x-hidden py-16 text-center'>
 			<h2 className='primary-heading mb-[65px] '>Meet Our CMS Lineups</h2>
-			<nav
-				style={{ gridTemplateColumns: `repeat(${DETAILS.length},1fr)` }}
-				className='scroll-bar-hide grid w-full max-w-[80%]  justify-start gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 [&>*]:grow'>
-				{DETAILS.map(({ name }) => (
-					<button
-						onClick={() => setActive(name)}
-						key={name}
-						className={cn(
-							"relative isolate rounded-lg bg-[#eee] text-[16px]/[19.39px]   backdrop-blur   transition-colors active:scale-[0.99] dark:bg-gray-30 max-lg:min-h-[3rem] max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5  max-lg:before:w-full lg:border lg:border-white/20 lg:p-5  lg:text-xl",
-							name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
-						)}>
-						{name}
-						{/* {name == active && (
+			<div className='relative mx-auto flex h-[calc(100%+1.5rem)] w-full'>
+				{/* 
+			// @ts-ignore */}
+				<Swiper
+					ref={SwiperRef}
+					slidesPerView={5}
+					breakpoints={{
+						768: { slidesPerView: 5, spaceBetween: 20 },
+						// 1012: { slidesPerView: 5, spaceBetween: 20 },
+						// 1280: { slidesPerView: 5, spaceBetween: 20 },
+						320: {
+							slidesPerView: 2,
+							spaceBetween: 20,
+						},
+						180: {
+							slidesPerView: 1,
+							spaceBetween: 20,
+						},
+					}}
+					style={{ gridTemplateColumns: `repeat(${DETAILS.length},1fr)` }}
+					className='scroll-bar-hide mx-auto grid h-full w-9/12   justify-center gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 [&>*]:grow'>
+					{DETAILS.map(({ name }) => (
+						<SwiperSlide data-swiper-slide='cms-lineups' key={name}>
+							<button
+								onClick={() => setActive(name)}
+								className={cn(
+									"relative isolate w-full rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
+									// name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
+									name === active && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
+								)}>
+								{name}
+								{/* {name == active && (
 							<motion.div
-								layoutId='lineup-bg'
-								transition={{ duration: 1 }}
-								className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-banner-bg mix-blend-exclusion'></motion.div>
+							layoutId='lineup-bg'
+							transition={{ duration: 1 }}
+							className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-banner-bg mix-blend-exclusion'></motion.div>
 						)} */}
-					</button>
-				))}
-			</nav>
+							</button>
+						</SwiperSlide>
+					))}
+				</Swiper>
+				<div
+					onClick={() => SwiperRef.current.swiper.slidePrev()}
+					className={cn(
+						"absolute -left-0 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark md:hidden"
+						// swiperAtStart && "opacity-40"
+					)}>
+					<ChevronIcon className='h-5 w-5 -translate-x-0.5 rotate-180' />
+				</div>
+				<div
+					onClick={() => SwiperRef.current.swiper.slideNext()}
+					className={cn(
+						"absolute right-0 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark md:hidden"
+						// swiperAtEnd && "opacity-40"
+					)}>
+					<ChevronIcon className=' h-5 w-5 translate-x-0.5' />
+				</div>
+			</div>
 
 			{DETAILS.map((detail) => {
 				if (detail.name === active) {
 					return (
 						<div
 							key={detail.name}
-							className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-[45px] rounded-lg  bg-[#eee] px-[30px] py-[42px] dark:bg-gray-30 lg:px-[54px] lg:py-[30px]'>
-							<Image src={detail.darkImage} data-hide-in-light='true' className='h-[65px] w-[65px] max-lg:mx-auto' alt={detail.name} />
-							<Image src={detail.lightImage} data-hide-in-dark='true' className='h-[65px] w-[65px] max-lg:mx-auto' alt={detail.name} />
-							<p className='text-center text-[18px]/[35px]  dark:text-white lg:mr-16 '>{detail.details}</p>
+							className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-5 rounded-lg bg-[#eee]  px-[30px] py-5 
+						dark:bg-gray-30 
+							md:gap-10 md:py-[42px] lg:px-[54px] lg:py-[30px]
+							'>
+							<DarkLightImage
+								DarkVisibleImage={detail.darkImage}
+								LightVisibleImage={detail.lightImage}
+								alt={detail.name}
+								className='h-[65px] w-[65px] max-lg:mx-auto'
+							/>
+							<p className='text-center text-[15px]/[30px] font-350 dark:text-white  md:text-[16px]/[35px] lg:mr-16 '>{detail.details}</p>
 						</div>
 					);
 				}

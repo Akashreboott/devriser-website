@@ -5,7 +5,7 @@ import React from "react";
 const HeroOverlay = (props: {
 	Overlay: any;
 	className?: string;
-
+	ImgClasses?: string;
 	TransparentGradientClasses?: string;
 	GradientClasses?: string;
 }) => {
@@ -24,7 +24,11 @@ const HeroOverlay = (props: {
 					commonClasses,
 					props.TransparentGradientClasses
 				)}></div>
-			<Image src={props.Overlay} alt='' className={cn("absolute left-0 top-0 -z-30 object-cover", commonClasses, props.className)} />
+			<Image
+				src={props.Overlay}
+				alt=''
+				className={cn("absolute left-0 top-0 -z-30 object-cover", commonClasses, props.className, props.ImgClasses)}
+			/>
 		</div>
 	);
 };

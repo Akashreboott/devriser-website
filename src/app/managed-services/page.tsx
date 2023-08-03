@@ -17,6 +17,7 @@ const ManagedServices = () => {
 				description='Achieve More, Worry Less with Our Expert Managed Services for Your Digital Infrastructure.'
 				btnText="Let's Begin"
 				gradientText='Managed Services'
+				GradientTextColor='[background-image:linear-gradient(103.61deg,_#00d085_37.8%,_#1910be_170.78%)]'
 			/>
 			<StatsSection className='my-14' />
 

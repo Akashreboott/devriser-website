@@ -5,10 +5,12 @@ import React, { useEffect, useState } from "react";
 import ArrowLeft from "../../../public/assets/icons/ArrowLeft";
 import cn from "@/utils/cn";
 import { motion } from "framer-motion";
+import { nanoid } from "nanoid"; // Import nanoid to generate unique layoutIds
 
 const ProcessSection = () => {
-	const [activeProcess, setActiveProcess] = useState("Consultation and gathering requirements");
+	const [activeProcess, setActiveProcess] = useState(PROCESS_DETAILS[0].heading);
 	const [breakPoint767, setBreakPoint767] = useState<boolean>(false);
+	const [layoutId, setLayoutId] = useState(nanoid()); // Generate a unique layoutId
 	const process = PROCESS_DETAILS.filter(({ heading }) => heading === activeProcess)[0].description;
 	const index = PROCESS_DETAILS.findIndex(({ heading }) => heading === activeProcess);
 	const MODIFIED_PROCESS = breakPoint767 ? PROCESS_DETAILS.slice(index).concat(PROCESS_DETAILS.slice(0, index)) : PROCESS_DETAILS;
@@ -29,11 +31,17 @@ const ProcessSection = () => {
 
 	let activeClasses = "clip gradient-tint";
 
+	useEffect(() => {
+		// Update the layoutId when activeProcess changes
+		setLayoutId(nanoid());
+	}, [activeProcess]);
+
 	return (
-		<SectionHeading title='Our Process' gradientText="Process" className='mt-20 w-full gap-20'>
-			<div className=' gradient-border grid w-[calc(100%-30px)]  max-w-[1436px] grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-[75px]'>
+		<SectionHeading title='Our Process' gradientText='Process' className='mt-20 w-full gap-20'>
+			<div className='gradient-border grid w-[calc(100%-30px)]  max-w-[1436px] grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-9 lg:p-[65px]'>
 				<motion.div
-					layoutRoot
+					layout
+					layoutId={layoutId} // Use the layoutId prop
 					initial={{ scale: 1, x: "var(--move-right)" }}
 					animate={{ scale: 1, x: 0 }}
 					className='scroll-bar-hide flex snap-x snap-mandatory gap-10 [--move-right:50px] max-md:overflow-x-auto  md:flex-col md:[--move-right:0] max-md:[&>*]:shrink-0'>
@@ -57,7 +65,7 @@ const ProcessSection = () => {
 						);
 					})}
 				</motion.div>
-				<div className='rounded bg-white dark:bg-gray-54 px-8 py-[35px] text-[14px]/[21px] text-dark font-350 dark:text-white max-md:font-350 md:px-[54px] md:text-[18px]/[40px]  '>
+				<div className='rounded bg-white px-8 py-[35px] text-[14px]/[21px] font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-[18px]/[40px] lg:px-[54px]  '>
 					<motion.div initial={{ opacity: 0, y: "-5px" }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
 						{process}
 					</motion.div>
