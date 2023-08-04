@@ -7,12 +7,12 @@ import LineLayout from "@/components/LineLayout";
 import SideHeading from "@/components/SideHeading";
 import Link from "next/link";
 import Image from "next/image";
-import largeImage from "../../../public/assets/images/Rectangle 186.png";
-import smallimage from "../../../public/assets/images/Rectangle 200.png";
-import image208 from "../../../public/assets/images/Rectangle 208.png";
-import image281 from "../../../public/assets/images/Rectangle 281.png";
+import largeImage from "../../../public/assets/images/Rectangle-186.png";
+import smallimage from "../../../public/assets/images/Rectangle-200.png";
+import image208 from "../../../public/assets/images/Rectangle-208.png";
+import image281 from "../../../public/assets/images/Rectangle-281.png";
 import Stars from "../../../public/assets/images/stars home.svg";
-import Phone from "../../../public/assets/images/Nothing Phone 1.png";
+import Phone from "../../../public/assets/images/Nothing-Phone-1.png";
 import { Swiper, SwiperSlide } from "@/components/Swiper";
 import MotionComponent from "@/components/MotionComponent";
 

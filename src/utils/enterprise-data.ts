@@ -3,18 +3,18 @@ import Vector2 from "../../public/assets/images/Vector2.svg";
 import Vector3 from "../../public/assets/images/Vector3.svg";
 // INDUSTRIES
 
-import industry1 from "../../public/assets/images/industries (1).png";
-import industry2 from "../../public/assets/images/industries (2).png";
-import industry3 from "../../public/assets/images/industries (3).png";
-import industry4 from "../../public/assets/images/industries (4).png";
-import industry5 from "../../public/assets/images/industries (5).png";
-import industry6 from "../../public/assets/images/industries (6).png";
-import industry7 from "../../public/assets/images/industries (7).png";
-import industry8 from "../../public/assets/images/industries (8).png";
-import industry9 from "../../public/assets/images/industries (9).png";
-import industry10 from "../../public/assets/images/industries (10).png";
-import industry11 from "../../public/assets/images/industries (11).png";
-import industry12 from "../../public/assets/images/industries (12).png";
+import industry1 from "../../public/assets/images/industries-(1).png";
+import industry2 from "../../public/assets/images/industries-(2).png";
+import industry3 from "../../public/assets/images/industries-(3).png";
+import industry4 from "../../public/assets/images/industries-(4).png";
+import industry5 from "../../public/assets/images/industries-(5).png";
+import industry6 from "../../public/assets/images/industries-(6).png";
+import industry7 from "../../public/assets/images/industries-(7).png";
+import industry8 from "../../public/assets/images/industries-(8).png";
+import industry9 from "../../public/assets/images/industries-(9).png";
+import industry10 from "../../public/assets/images/industries-(10).png";
+import industry11 from "../../public/assets/images/industries-(11).png";
+import industry12 from "../../public/assets/images/industries-(12).png";
 
 // ******************************************      FEATURES       ***********************************************
 
