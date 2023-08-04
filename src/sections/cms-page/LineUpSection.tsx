@@ -73,66 +73,63 @@ let DETAILS: detail[] = [
 
 const LineUpSection = () => {
 	let [active, setActive] = useState("Wordpress");
+	const [buttonClicked, setButtonClicked] = useState(0);
+
+	function moveRight() {
+		setButtonClicked((prev) => {
+			let number = prev === DETAILS.length - 1 ? prev : prev + 1;
+			setActive(DETAILS[number].name);
+			return number;
+		});
+	}
+	function moveLeft() {
+		setButtonClicked((prev) => {
+			let number = prev === 0 ? prev : prev - 1;
+			setActive(DETAILS[number].name);
+			return number;
+		});
+	}
 	let SwiperRef = useRef<any>(null);
-	let swiperAtStart = SwiperRef.current && SwiperRef.current.swiper.isBeginning;
-	let swiperAtEnd = SwiperRef.current && SwiperRef.current.swiper.isEnd;
 
 	return (
-		<section className='mb-16 grid max-w-[90%] items-center justify-items-center overflow-x-hidden py-16 text-center'>
+		<section className='mx-auto mb-16 grid w-full max-w-[90%] items-center justify-center justify-items-center overflow-x-hidden py-16 text-center'>
 			<h2 className='primary-heading mb-[65px] '>Meet Our CMS Lineups</h2>
 			<div className='relative mx-auto flex h-[calc(100%+1.5rem)] w-full'>
-				{/* 
-			// @ts-ignore */}
-				<Swiper
-					ref={SwiperRef}
-					slidesPerView={5}
-					breakpoints={{
-						768: { slidesPerView: 5, spaceBetween: 20 },
-						// 1012: { slidesPerView: 5, spaceBetween: 20 },
-						// 1280: { slidesPerView: 5, spaceBetween: 20 },
-						320: {
-							slidesPerView: 2,
-							spaceBetween: 20,
-						},
-						180: {
-							slidesPerView: 1,
-							spaceBetween: 20,
-						},
-					}}
-					style={{ gridTemplateColumns: `repeat(${DETAILS.length},1fr)` }}
-					className='scroll-bar-hide mx-auto grid h-full w-9/12   justify-center gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 [&>*]:grow'>
+				<div
+					// loop={true}
+					className='scroll-bar-hide mx-auto flex  h-full w-[80%]  justify-start gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 '>
 					{DETAILS.map(({ name }) => (
-						<SwiperSlide data-swiper-slide='cms-lineups' key={name}>
+						<div data-swiper-slide='cms-lineups' className='shrink-0' key={name}>
 							<button
 								onClick={() => setActive(name)}
 								className={cn(
-									"relative isolate w-full rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
+									"relative isolate w-full  grow rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
 									// name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
 									name === active && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
 								)}>
 								{name}
-								{/* {name == active && (
-							<motion.div
-							layoutId='lineup-bg'
-							transition={{ duration: 1 }}
-							className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-banner-bg mix-blend-exclusion'></motion.div>
-						)} */}
 							</button>
-						</SwiperSlide>
+						</div>
 					))}
-				</Swiper>
+				</div>
 				<div
-					onClick={() => SwiperRef.current.swiper.slidePrev()}
+					onClick={() => {
+						// moveLeft();
+						// SwiperRef.current.swiper.slidePrev();
+					}}
 					className={cn(
-						"absolute -left-0 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark md:hidden"
+						"absolute -left-0 top-1/2 z-10  hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark"
 						// swiperAtStart && "opacity-40"
 					)}>
 					<ChevronIcon className='h-5 w-5 -translate-x-0.5 rotate-180' />
 				</div>
 				<div
-					onClick={() => SwiperRef.current.swiper.slideNext()}
+					onClick={() => {
+						moveRight();
+						// SwiperRef.current.swiper.slideNext();
+					}}
 					className={cn(
-						"absolute right-0 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark md:hidden"
+						"absolute right-0 top-1/2 z-10  hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark"
 						// swiperAtEnd && "opacity-40"
 					)}>
 					<ChevronIcon className=' h-5 w-5 translate-x-0.5' />
@@ -144,8 +141,8 @@ const LineUpSection = () => {
 					return (
 						<div
 							key={detail.name}
-							className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-5 rounded-lg bg-[#eee]  px-[30px] py-5 
-						dark:bg-gray-30 
+							className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-5 rounded-lg bg-[#eee] px-[30px]  py-5 dark:bg-gray-30 
+						max-md:w-[80%] 
 							md:gap-10 md:py-[42px] lg:px-[54px] lg:py-[30px]
 							'>
 							<DarkLightImage
@@ -164,3 +161,37 @@ const LineUpSection = () => {
 };
 
 export default LineUpSection;
+
+// 	{
+// 		/*
+// // @ts-ignore */
+// 	}
+// 	<Swiper
+// 		ref={SwiperRef}
+// 		slidesPerView={1}
+// 		// loop={true}
+// 		breakpoints={{
+// 			768: { slidesPerView: 5, spaceBetween: 20 },
+// 		}}
+// 		className='scroll-bar-hide mx-auto grid h-full w-9/12    justify-center gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 '>
+// 		{DETAILS.map(({ name }) => (
+// 			<SwiperSlide data-swiper-slide='cms-lineups' key={name}>
+// 				<button
+// 					onClick={() => setActive(name)}
+// 					className={cn(
+// 						"relative isolate w-full rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
+// 						// name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
+// 						name === active && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
+// 					)}>
+// 					{name}
+// comment this
+// 					{name == active && (
+// 				<motion.div
+// 				layoutId='lineup-bg'
+// 				transition={{ duration: 1 }}
+// 				className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-banner-bg mix-blend-exclusion'></motion.div>
+// 			)}
+// 				</button>
+// 			</SwiperSlide>
+// 		))}
+// 	</Swiper>;

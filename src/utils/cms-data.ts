@@ -23,9 +23,9 @@ export const NAV_LINKS: NAV_LINKSInterface = {
 		["Web Development", "/web-development-services"],
 		["Mobile Development", "/mobile-app-development"],
 		["UI/UX Services", "/ui-ux-design-services"],
-		["CMS Services", "/"],
+		["CMS Services", "/cms-services"],
 		["Managed Services", "/managed-services"],
-		["Enterprise Solutions", "#"],
+		["Enterprise Solutions", "/enterprise-solutions"],
 	],
 	solutions: [
 		["Enterpirse Resource Management", "#"],

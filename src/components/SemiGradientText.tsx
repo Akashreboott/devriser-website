@@ -9,6 +9,7 @@ interface SemiGradientTextProps {
 	as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "div";
 	className?: string;
 	FullGradient?: boolean;
+	style?: React.CSSProperties;
 }
 
 // const SemiGradientText = (props: SemiGradientTextProps) => {
@@ -80,7 +81,7 @@ const SemiGradientText = (props: SemiGradientTextProps) => {
 		});
 	}
 
-	return React.createElement(props.as ?? "h2", { className: props.className }, convertToGradient(props.text, props.gradientText));
+	return React.createElement(props.as ?? "h2", { className: props.className, style: props.style }, convertToGradient(props.text, props.gradientText));
 };
 
 export default SemiGradientText;

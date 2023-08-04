@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const DesktopHeader = ({ className }: { className?: string }) => {
 	const [activeLink, setActiveLink] = useState("services");
-	const [subLink, setSubLink] = useState<string>("CMS Services");
+	const [subLink, setSubLink] = useState<string>("");
 	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
 	const [selectedLanguage, setSelectedLanguage] = useState(LANGUAGES[0]);
 

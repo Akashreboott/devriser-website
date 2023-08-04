@@ -20,4 +20,5 @@ export interface DecoratedBannerProps extends SectionHeadingProps {
 export interface BannerProps {
 	heading: string;
 	btnText: string;
+	className?: string;
 }

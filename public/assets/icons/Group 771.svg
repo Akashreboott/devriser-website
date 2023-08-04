@@ -1,0 +1,14 @@
+<svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 771">
+<circle id="Ellipse 175" cx="44" cy="44" r="44" fill="url(#paint0_radial_5_302494)"/>
+<g id="Group">
+<path id="Vector" d="M51.6458 56L50.1895 54.3123L59.0873 43.9997L50.1895 33.688L51.6458 32L62 43.9997L51.6458 56ZM37.3542 56L27 43.9997L37.3542 32L38.8105 33.688L29.9127 43.9997L38.8105 54.3123L37.3542 56Z" fill="#E5E1E6"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_5_302494" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45.1429 46.2857) rotate(91.5694) scale(41.7299)">
+<stop stop-color="#56D163" stop-opacity="0.67"/>
+<stop offset="1" stop-color="#60DC1A" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

@@ -25,7 +25,7 @@ const FaqSection = () => {
 		},
 	];
 	return (
-		<SectionHeading title='Frequently Asked Questions' gradientText='Asked' className='mt-24 grid justify-center gap-12  max-md:px-4'>
+		<SectionHeading title='Frequently Asked Questions' gradientText='Asked' className='my-32 grid justify-center gap-12  max-md:px-4'>
 			<div className='flex w-full max-w-screen-md flex-col gap-4'>
 				{FAQS.map((faq) => (
 					<FAQ {...faq} key={faq.title} />

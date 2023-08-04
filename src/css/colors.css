@@ -185,6 +185,84 @@
 
 /* --------------------------------- MOBILE APP DEVELOPMENT  --------------------------------- */
 
+/* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
+
+/* ----------- LIGHT MODE ----------- */
+[data-page="enterprise-solutions"] {
+	/*Gradients*/
+	--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
+
+	--gradient-tint: var(--gradient-bright);
+	--moving-gradient-color: radial-gradient(circle, rgba(0, 55, 255, 0.823), transparent 95%);
+
+	/* Solids */
+
+	--faq-border-color: #a6a6a6;
+	--primary-btn-text-color: #ffffff;
+	--secondary-btn-color: #ffffff;
+
+	--toggle-icon-color: rgba(251, 65, 115, 1);
+	--banner-bg: rgba(197, 61, 173, 1);
+	--hero-overlay-color: rgba(125, 61, 245, 1);
+	/* Variables */
+	--testimonial-bg: var(--gradient-bright);
+	--card-border-color: var(--gray-gradient);
+	--card-title-color: var(--gradient-bright);
+	--primary-btn-color: var(--gradient-bright);
+	--secondary-btn-text-color: var(--gradient-bright);
+	--ring-color: var(--gradient-bright);
+
+	/* SWIPER */
+	--swiper-navigation-color: var(--banner-bg);
+}
+
+/* ----------- DARK MODE ----------- */
+:is(.dark [data-page="enterprise-solutions"]) {
+	--primary-text-color: white;
+}
+
+/* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
+
+/* --------------------------------- HOME  --------------------------------- */
+
+/* ----------- LIGHT MODE ----------- */
+[data-page="home"] {
+	/*Gradients*/
+	--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
+
+	--gradient-tint: var(--gradient-bright);
+	--moving-gradient-color: radial-gradient(circle, rgba(0, 55, 255, 0.823), transparent 95%);
+
+	/* Solids */
+
+	--faq-border-color: #a6a6a6;
+	--primary-btn-text-color: #090a0b;
+	--secondary-btn-color: #ffffff;
+
+	--toggle-icon-color: rgba(251, 65, 115, 1);
+	--banner-bg: #2853de;
+	--hero-overlay-color: rgba(125, 61, 245, 1);
+	/* Variables */
+	--testimonial-bg: var(--gradient-bright);
+	--card-border-color: var(--gray-gradient);
+	--card-title-color: var(--gradient-bright);
+	--primary-btn-color: linear-gradient(to right, white, white);
+	--secondary-btn-text-color: var(--gradient-bright);
+	--ring-color: var(--gradient-bright);
+
+	/* SWIPER */
+	--swiper-navigation-color: var(--banner-bg);
+}
+
+/* ----------- DARK MODE ----------- */
+:is(.dark [data-page="home"]) {
+	--primary-text-color: white;
+	--primary-btn-text-color: #090a0b;
+
+	--primary-btn-color: linear-gradient(to right, white, white);
+}
+
+/* --------------------------------- HOME  --------------------------------- */
 @layer utilities {
 	.gray-gradient {
 		background-image: var(--gray-gradient);

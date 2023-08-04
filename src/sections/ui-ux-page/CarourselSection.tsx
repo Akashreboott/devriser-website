@@ -54,23 +54,18 @@ const CarourselSection = () => {
 			title='Embrace The Benefits Of UI UX Design Services'
 			description='Witness the power of exceptional UI/UX services with our expert team of designers.'
 			gap='40px'
-			className='max-w-[80%]'>
+			className='max-w-[95%] lg:max-w-[80%] xl:max-w-[60%]'>
 			{/* 
 			// @ts-ignore */}
 			<Swiper
 				id='ui-ux-carousel'
 				ref={SwiperRef}
-				slidesPerView={3}
+				slidesPerView={1}
 				spaceBetween={10}
 				loop={true}
 				breakpoints={{
-					620: { slidesPerView: 2, spaceBetween: 20 },
-					1012: { slidesPerView: 3, spaceBetween: 20 },
-					1280: { slidesPerView: 4, spaceBetween: 20 },
-					320: {
-						slidesPerView: 1,
-						spaceBetween: 20,
-					},
+					// 100: { slidesPerView: 2, spaceBetween: 20 },
+					768: { slidesPerView: 3, spaceBetween: 20 },
 				}}
 				className='scroll-bar-hide mt-[40px] flex h-[calc(400px+50px)] w-full max-w-full snap-x  items-center justify-start  gap-16  [--card-width:320px]  max-md:px-3 md:[--card-width:400px]'>
 				{/* className='scroll-bar-hide max-w-ful mt-[40px] grid h-[calc(400px+20px)] w-full  snap-x grid-cols-[repeat(7,calc(var(--card-width)-64px))] items-center  justify-start  gap-16 overflow-x-auto overflow-y-visible [--card-width:320px] md:[--card-width:400px] [&>*]:mx-auto   [&>*]:snap-center'> */}
@@ -80,7 +75,7 @@ const CarourselSection = () => {
 							layout
 							key={title}
 							className={cn(
-								"gradient-border bg-noise relative  !flex h-[332px] w-full max-w-[320px]  flex-col items-center justify-center gap-10 overflow-hidden rounded px-4 transition-transform lg:max-w-[400px]",
+								"gradient-border bg-noise relative !flex  h-[332px] w-full max-w-[320px] flex-col  items-center justify-center gap-10 overflow-hidden rounded px-4 transition-transform max-md:mx-auto lg:max-w-[400px]",
 								index === 0 && "ml-4",
 								"group"
 							)}>
