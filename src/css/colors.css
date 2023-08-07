@@ -258,7 +258,6 @@
 :is(.dark [data-page="home"]) {
 	--primary-text-color: white;
 	--primary-btn-text-color: #090a0b;
-
 	--primary-btn-color: linear-gradient(to right, white, white);
 }
 

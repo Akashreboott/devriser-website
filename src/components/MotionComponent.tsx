@@ -1,5 +1,5 @@
 "use client";
-import { motion, HTMLMotionProps } from "framer-motion";
+import { motion, HTMLMotionProps, MotionProps } from "framer-motion";
 import React from "react";
 
 interface props extends HTMLMotionProps<"div"> {
@@ -13,3 +13,11 @@ const MotionComponent = ({ children, as, ...props }: props) => {
 };
 
 export default MotionComponent;
+
+interface buttonprops extends HTMLMotionProps<"button"> {
+	children?: React.ReactNode;
+}
+
+export const MotionButtonComponent = ({ children, ...props }: any) => {
+	return <motion.button {...props}>{children}</motion.button>;
+};

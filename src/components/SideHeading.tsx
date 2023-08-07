@@ -19,12 +19,13 @@ const SideHeading = (props: props) => {
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
-				className='text-p16 lg:text-[24px]'>
+				viewport={{ once: true }}
+				className='w-fit text-p16 font-medium max-lg:mx-auto max-lg:text-center lg:text-[24px]'>
 				{props.heading}
 			</MotionComponent>
 			<SemiGradientText
 				gradientText={props.gradientText}
-				className='primary-heading'
+				className='primary-heading max-lg:mx-3'
 				GradientTextColor={props.gradientColor ?? "[background-color:#55D163]"}
 				text={props.description}></SemiGradientText>
 		</div>

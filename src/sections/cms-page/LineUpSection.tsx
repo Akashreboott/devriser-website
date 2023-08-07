@@ -1,9 +1,6 @@
 "use client";
-import Image from "next/image";
-import wordpress from "./../../../public/assets/images/wordpress.png";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import cn from "@/utils/cn";
-import { motion } from "framer-motion";
 import ShopifyLight from "../../../public/assets/icons/shopify-svgrepo-light.svg";
 import ShopifyDark from "../../../public/assets/icons/shopify-svgrepo-com.svg";
 
@@ -18,9 +15,11 @@ import DrupalDark from "../../../public/assets/icons/drupal-svgrepo-com.svg";
 
 import WordpressLight from "../../../public/assets/icons/wordpress-logo-svgrepo-com-light.svg";
 import WordpressDark from "../../../public/assets/icons/wordpress-logo-svgrepo-com.svg";
-import { Swiper, SwiperSlide } from "@/components/Swiper";
+
 import ChevronIcon from "../../../public/assets/icons/Chevron";
 import DarkLightImage from "@/components/DarkLightImage";
+import useEmblaCarousel from "embla-carousel-react";
+import useMatchesMedia from "@/hooks/useMatchesMedia";
 
 interface detail {
 	name: string;
@@ -72,126 +71,88 @@ let DETAILS: detail[] = [
 ];
 
 const LineUpSection = () => {
-	let [active, setActive] = useState("Wordpress");
+	const [emblaRef, emblaApi] = useEmblaCarousel();
+	let [active, setActive] = useState(DETAILS[0]);
+	let matches1014 = useMatchesMedia("min-width:1014px");
 	const [buttonClicked, setButtonClicked] = useState(0);
 
 	function moveRight() {
 		setButtonClicked((prev) => {
 			let number = prev === DETAILS.length - 1 ? prev : prev + 1;
-			setActive(DETAILS[number].name);
+			setActive(DETAILS[number]);
 			return number;
 		});
 	}
 	function moveLeft() {
 		setButtonClicked((prev) => {
 			let number = prev === 0 ? prev : prev - 1;
-			setActive(DETAILS[number].name);
+			setActive(DETAILS[number]);
+
 			return number;
 		});
 	}
-	let SwiperRef = useRef<any>(null);
 
 	return (
 		<section className='mx-auto mb-16 grid w-full max-w-[90%] items-center justify-center justify-items-center overflow-x-hidden py-16 text-center'>
 			<h2 className='primary-heading mb-[65px] '>Meet Our CMS Lineups</h2>
 			<div className='relative mx-auto flex h-[calc(100%+1.5rem)] w-full'>
 				<div
-					// loop={true}
-					className='scroll-bar-hide mx-auto flex  h-full w-[80%]  justify-start gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 '>
-					{DETAILS.map(({ name }) => (
-						<div data-swiper-slide='cms-lineups' className='shrink-0' key={name}>
+					ref={!matches1014 ? emblaRef : null}
+					className='scroll-bar-hide mx-auto flex  h-full w-[60%] justify-start  gap-[43px] overflow-hidden md:gap-[86px] lg:justify-center lg:gap-3 '>
+					<div data-swiper-slide='cms-lineups' className='flex w-full grid-cols-5 gap-2.5 lg:grid'>
+						{DETAILS.map((detail) => (
 							<button
-								onClick={() => setActive(name)}
+								key={detail.name}
+								onClick={() => setActive(detail)}
 								className={cn(
-									"relative isolate w-full  grow rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
-									// name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
-									name === active && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
+									"relative isolate  rounded-lg  text-[16px]/[19.39px] transition-colors active:scale-[0.99]",
+									"max-lg:min-h-[3rem] max-lg:shrink-0 max-lg:grow-0 max-lg:basis-full   max-lg:text-center   max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit",
+									"lg:grow lg:border lg:border-white/20  lg:bg-[#eee] lg:p-1 lg:text-xl lg:backdrop-blur lg:dark:bg-gray-30",
+									detail.name === active.name && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
 								)}>
-								{name}
+								{detail.name}
 							</button>
-						</div>
-					))}
+						))}
+					</div>
 				</div>
-				<div
+
+				<button
+					disabled={buttonClicked === 0}
 					onClick={() => {
-						// moveLeft();
-						// SwiperRef.current.swiper.slidePrev();
+						moveLeft();
+						emblaApi?.scrollPrev();
 					}}
 					className={cn(
-						"absolute -left-0 top-1/2 z-10  hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark"
-						// swiperAtStart && "opacity-40"
+						"absolute left-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark md:hidden"
 					)}>
-					<ChevronIcon className='h-5 w-5 -translate-x-0.5 rotate-180' />
-				</div>
-				<div
+					<ChevronIcon className='pointer-events-none h-5 w-5 -translate-x-0.5 rotate-180 text-banner-bg' />
+				</button>
+				<button
+					disabled={buttonClicked === DETAILS.length - 1}
 					onClick={() => {
 						moveRight();
-						// SwiperRef.current.swiper.slideNext();
+						emblaApi?.scrollNext();
 					}}
 					className={cn(
-						"absolute right-0 top-1/2 z-10  hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-light p-2 dark:bg-dark"
-						// swiperAtEnd && "opacity-40"
+						"absolute right-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark md:hidden"
 					)}>
-					<ChevronIcon className=' h-5 w-5 translate-x-0.5' />
-				</div>
+					<ChevronIcon className=' pointer-events-none h-5 w-5 translate-x-0.5 text-banner-bg' />
+				</button>
 			</div>
-
-			{DETAILS.map((detail) => {
-				if (detail.name === active) {
-					return (
-						<div
-							key={detail.name}
-							className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-5 rounded-lg bg-[#eee] px-[30px]  py-5 dark:bg-gray-30 
-						max-md:w-[80%] 
-							md:gap-10 md:py-[42px] lg:px-[54px] lg:py-[30px]
-							'>
-							<DarkLightImage
-								DarkVisibleImage={detail.darkImage}
-								LightVisibleImage={detail.lightImage}
-								alt={detail.name}
-								className='h-[65px] w-[65px] max-lg:mx-auto'
-							/>
-							<p className='text-center text-[15px]/[30px] font-350 dark:text-white  md:text-[16px]/[35px] lg:mr-16 '>{detail.details}</p>
-						</div>
-					);
-				}
-			})}
+			<div
+				className='mt-[77px] grid grid-cols-1 justify-center justify-items-center gap-5 rounded-lg bg-[#eee] px-[30px]  py-5 dark:bg-gray-30 
+						max-md:w-[80%]
+						md:gap-10 md:py-[42px] lg:px-[54px] lg:py-[30px]'>
+				<DarkLightImage
+					DarkVisibleImage={active.darkImage}
+					LightVisibleImage={active.lightImage}
+					alt={active.name}
+					className='h-[65px] w-[65px] max-lg:mx-auto'
+				/>
+				<p className='text-center text-[15px]/[30px] font-350 dark:text-white  md:text-[16px]/[35px] lg:mr-16 '>{active.details}</p>
+			</div>
 		</section>
 	);
 };
 
 export default LineUpSection;
-
-// 	{
-// 		/*
-// // @ts-ignore */
-// 	}
-// 	<Swiper
-// 		ref={SwiperRef}
-// 		slidesPerView={1}
-// 		// loop={true}
-// 		breakpoints={{
-// 			768: { slidesPerView: 5, spaceBetween: 20 },
-// 		}}
-// 		className='scroll-bar-hide mx-auto grid h-full w-9/12    justify-center gap-[43px] max-lg:overflow-x-scroll md:gap-[86px] lg:justify-center lg:gap-3 '>
-// 		{DETAILS.map(({ name }) => (
-// 			<SwiperSlide data-swiper-slide='cms-lineups' key={name}>
-// 				<button
-// 					onClick={() => setActive(name)}
-// 					className={cn(
-// 						"relative isolate w-full rounded-lg text-[16px]/[19.39px] transition-colors active:scale-[0.99]   max-lg:min-h-[3rem]   max-lg:text-center max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit lg:border lg:border-white/20  lg:bg-[#eee] lg:p-5 lg:text-xl lg:backdrop-blur  lg:dark:bg-gray-30",
-// 						// name === active && "lg:pink-gradient max-lg:before:bg-pink-500"
-// 						name === active && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
-// 					)}>
-// 					{name}
-// comment this
-// 					{name == active && (
-// 				<motion.div
-// 				layoutId='lineup-bg'
-// 				transition={{ duration: 1 }}
-// 				className='absolute inset-0 -z-10 h-full w-full rounded-lg bg-banner-bg mix-blend-exclusion'></motion.div>
-// 			)}
-// 				</button>
-// 			</SwiperSlide>
-// 		))}
-// 	</Swiper>;
