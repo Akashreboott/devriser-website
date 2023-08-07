@@ -14,7 +14,7 @@ import cn from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 
 const DesktopHeader = ({ className }: { className?: string }) => {
-	const [activeLink, setActiveLink] = useState("services");
+	const [activeLink, setActiveLink] = useState("");
 	const [subLink, setSubLink] = useState<string>("");
 	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
 	const [selectedLanguage, setSelectedLanguage] = useState(LANGUAGES[0]);

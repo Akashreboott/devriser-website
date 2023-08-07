@@ -19,7 +19,7 @@ import Image from "next/image";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
 
 const MobileHeader = ({ className }: { className?: string }) => {
-	const [subLink, setSubLink] = useState<string>("CMS Services");
+	const [subLink, setSubLink] = useState<string>("");
 
 	const [mobileMenuOpened, setMobileMenuOpened] = useState<boolean>(false);
 	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
