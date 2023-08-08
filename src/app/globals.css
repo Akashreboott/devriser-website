@@ -9,7 +9,11 @@
 @layer base {
 	:root {
 		--delay: 1s;
+
 		@apply [--border-width:2px] xl:[--border-width:3px] min-[1600px]:[--border-width:3.5px];
+	}
+	html {
+		@apply scroll-pt-[86px] scroll-smooth;
 	}
 
 	@media (min-width: "1200px") {

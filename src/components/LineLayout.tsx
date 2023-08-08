@@ -4,6 +4,7 @@ import Code from "./Code";
 import MotionComponent from "./MotionComponent";
 import Image from "next/image";
 import neon from "../../public/assets/icons/Group 771.svg";
+import { slugify } from "@/utils/utils";
 interface props {
 	children: React.ReactNode;
 	LineClasses?: string;
@@ -17,9 +18,11 @@ interface props {
 const LineLayout = ({ children, LineClasses, className, HideSymbol = false, heading, onView, notOnView }: props) => {
 	return (
 		<MotionComponent
+			id={`${slugify(slugify(heading), "/")}`}
 			onViewportEnter={() => onView && onView(heading ?? "")}
 			onViewportLeave={() => notOnView && notOnView("")}
 			className='line-layout'>
+			{/* LINE */}
 			<MotionComponent
 				whileInView={{
 					opacity: [0.6, 0.9, 0.6, 1],
@@ -42,10 +45,8 @@ const LineLayout = ({ children, LineClasses, className, HideSymbol = false, head
 				viewport={{ amount: 0.3 }}
 				className={cn("relative isolate h-full [grid-area:line] max-lg:hidden", LineClasses)}>
 				{!HideSymbol && <Code className='absolute -top-2 right-0 z-10 translate-x-[calc(50%-3px)]  rounded-full backdrop-blur-3xl' />}
-				<div
-					className='z-0 ml-auto h-full w-1 [background-image:linear-gradient(transparent,#245F00,#55D163)] 
-				
-				'></div>
+				<div className='z-0 ml-auto h-full w-1 [background-image:linear-gradient(to_bottom,transparent_40px,#245F00_55px,#55D163_80%,transparent_99%)]' />
+				{/* GRID */}
 			</MotionComponent>
 			<div className={cn("[grid-area:main] lg:pl-16", className, "mt-0")}>
 				{heading && (

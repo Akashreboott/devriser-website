@@ -1,7 +1,6 @@
 @layer base {
 	/* --------------------------------- CMS  --------------------------------- */
 
-	/* ----------- LIGHT MODE ----------- */
 	:root {
 		--dark-gradient-border: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
 		--light-gradient-border: linear-gradient(143.39deg, rgba(217, 82, 82, 0.6) 0%, rgrgba(232, 81, 81, 0.33) 29.61%);
@@ -32,24 +31,30 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+		--decorated-banner-color: "#fafafa";
 
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
 
 		/* SWIPER */
-
 		--swiper-navigation-color: var(--banner-bg);
 	}
 
-	/* ----------- DARK MODE ----------- */
 	:is(.dark main) {
 		--body-bg: #090a0b;
 		--primary-btn-text-color: #ffffff;
 		--primary-text-color: rgba(177, 178, 178, 1);
+		--decorated-banner-color: "#090a0b";
 	}
 	/* --------------------------------- CMS  --------------------------------- */
 
 	/* --------------------------------- UI/UX  --------------------------------- */
+
+	[data-page="About"] {
+		--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
+		--primary-btn-text-color: #ffffff;
+		--primary-btn-color: var(--gradient-bright);
+	}
 
 	[data-page="UI/UX Services"] {
 		/*Gradients*/
@@ -73,6 +78,7 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+		--decorated-banner-color: "#fafafa";
 
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
@@ -103,6 +109,7 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: var(--gradient-bright);
+		--decorated-banner-color: "#fafafa";
 
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
@@ -111,7 +118,6 @@
 
 	/* --------------------------------- WEB DEVELOPMENT  --------------------------------- */
 
-	/* ----------- LIGHT MODE ----------- */
 	[data-page="web-development-services"] {
 		/*Gradients*/
 		--gradient-bright: linear-gradient(92.16deg, #5016cc -0.89%, #f7a1d0 87.66%);
@@ -134,22 +140,22 @@
 		--primary-btn-color: var(--gradient-bright);
 		--secondary-btn-text-color: var(--gradient-bright);
 		--ring-color: linear-gradient(180deg, #ffffff 0%, #9747ff 100%);
+		--decorated-banner-color: "#fafafa";
 
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
 	}
 }
 
-/* ----------- DARK MODE ----------- */
 :is(.dark [data-page="web-development-services"]) {
 	--primary-text-color: rgba(178, 178, 178, 1) !important;
+	--decorated-banner-color: "#090a0b";
 }
 
 /* --------------------------------- WEB DEVELOPMENT  --------------------------------- */
 
 /* --------------------------------- MOBILE APP DEVELOPMENT  --------------------------------- */
 
-/* ----------- LIGHT MODE ----------- */
 [data-page="mobile-app-development"] {
 	/*Gradients*/
 	--gradient-bright: linear-gradient(96.96deg, #4db1c7 0%, #0036ff 121.28%);
@@ -165,6 +171,7 @@
 	--toggle-icon-color: rgba(74, 151, 255, 1);
 	--banner-bg: rgba(12, 158, 239, 1);
 	--hero-overlay-color: rgba(0, 160, 224, 0.79);
+	--decorated-banner-color: "#fafafa";
 
 	/* Variables */
 	--testimonial-bg: var(--gradient-bright);
@@ -178,16 +185,15 @@
 	--swiper-navigation-color: var(--banner-bg);
 }
 
-/* ----------- DARK MODE ----------- */
 :is(.dark [data-page="web-development-services"]) {
 	--primary-text-color: white;
+	--decorated-banner-color: "#090a0b";
 }
 
 /* --------------------------------- MOBILE APP DEVELOPMENT  --------------------------------- */
 
 /* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
 
-/* ----------- LIGHT MODE ----------- */
 [data-page="enterprise-solutions"] {
 	/*Gradients*/
 	--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
@@ -211,21 +217,21 @@
 	--primary-btn-color: var(--gradient-bright);
 	--secondary-btn-text-color: var(--gradient-bright);
 	--ring-color: var(--gradient-bright);
+	--decorated-banner-color: "#fafafa";
 
 	/* SWIPER */
 	--swiper-navigation-color: var(--banner-bg);
 }
 
-/* ----------- DARK MODE ----------- */
 :is(.dark [data-page="enterprise-solutions"]) {
 	--primary-text-color: white;
+	--decorated-banner-color: "#090a0b";
 }
 
 /* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
 
 /* --------------------------------- HOME  --------------------------------- */
 
-/* ----------- LIGHT MODE ----------- */
 [data-page="home"] {
 	/*Gradients*/
 	--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
@@ -249,14 +255,15 @@
 	--primary-btn-color: linear-gradient(to right, white, white);
 	--secondary-btn-text-color: var(--gradient-bright);
 	--ring-color: var(--gradient-bright);
+	--decorated-banner-color: "#fafafa";
 
 	/* SWIPER */
 	--swiper-navigation-color: var(--banner-bg);
 }
 
-/* ----------- DARK MODE ----------- */
 :is(.dark [data-page="home"]) {
 	--primary-text-color: white;
+	--decorated-banner-color: "#090a0b";
 	--primary-btn-text-color: #090a0b;
 	--primary-btn-color: linear-gradient(to right, white, white);
 }

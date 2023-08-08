@@ -7,3 +7,5 @@ export const splitString = (string) => {
 	console.log(arr);
 	return arr;
 };
+
+export const slugify = (sentence, delimiter) => sentence?.split(delimiter ?? " ").join("-");

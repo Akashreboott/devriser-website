@@ -10,7 +10,7 @@ const DarkLightImage = ({ DarkVisibleImage, LightVisibleImage, alt, ...props }: 
 	return (
 		<>
 			<Image src={LightVisibleImage} alt={alt} data-hide-in-dark='true' {...props} />
-			<Image src={DarkVisibleImage} alt={alt} data-hide-in-Light='true' {...props} />
+			<Image src={DarkVisibleImage} alt={alt} data-hide-in-light='true' {...props} />
 		</>
 	);
 };

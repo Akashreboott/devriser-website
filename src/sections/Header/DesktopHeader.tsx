@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import ThemeButton from "@/utils/ThemeButton";
-import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface } from "../../utils/cms-data";
+import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface, ARR_OF_LINKS } from "../../utils/cms-data";
 import Link from "next/link";
 import cn from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const DesktopHeader = ({ className }: { className?: string }) => {
 	const [activeLink, setActiveLink] = useState("");
 	const [subLink, setSubLink] = useState<string>("");
+	const [selectedLink, setSelectedLink] = useState<string>("");
 	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
 	const [selectedLanguage, setSelectedLanguage] = useState(LANGUAGES[0]);
 
@@ -25,6 +26,7 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 	const headerRef = useRef<HTMLDivElement>(null);
 	const [headerWidth, setheaderWidth] = useState<number>(82);
 
+	console.log(activeLink, selectedLink);
 	useEffect(() => {
 		if (mobileMenuOpened) {
 			document.body.style.overflow = "hidden";
@@ -41,6 +43,12 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 	}
 	function setActive(name: string): void {
 		openMenu();
+
+		// for (let arr of ARR_OF_LINKS) {
+		// 	if (arr.has(subLink)) {
+		// 		console.log(arr);
+		// 	}
+		// }
 		setActiveLink(name);
 	}
 
@@ -62,7 +70,12 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 						"scroll-bar-thin z-10 justify-between self-start justify-self-start overflow-y-auto   bg-white  py-3  dark:bg-gray-30"
 					)}>
 					{/* LOGO */}
-					<Link href={"/"}>
+					<Link
+						href={"/"}
+						onClick={() => {
+							setSelectedLink("");
+							setSubLink("");
+						}}>
 						<DevRiserLogo className='mb-[40px]  aspect-square h-[38px] w-[38px] shrink-0' />
 					</Link>
 
@@ -72,38 +85,48 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 						onMouseLeave={closeMenu}
 						className='grid w-full  gap-[25px] px-1 [&_li]:cursor-pointer [&_p]:text-navlink [&_p]:font-350 [&_p]:text-black dark:[&_p]:text-white'>
 						<li onMouseEnter={() => setActive("services")} className=' isolate flex flex-col items-center gap-1.5   '>
-							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
-								<SettingsIcon className={cn(IconClasses, activeLink === "services" && "text-light dark:text-dark")} />
-								{activeLink === "services" && (
+							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, selectedLink === "services" && "text-dark")} />
+								{selectedLink === "services" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+								)}
+								{!(selectedLink === "services") && (
+									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-white opacity-0 shadow transition-opacity duration-200 group-hover:opacity-100 dark:bg-dark/50'></div>
 								)}
 							</div>
 							<p className='z-10'>Services</p>
 						</li>
-						<li onMouseEnter={() => setActive("solutions")} className=' isolate flex flex-col items-center gap-1.5   '>
+						<li onMouseEnter={() => setActive("solutions")} className='group isolate flex flex-col items-center gap-1.5   '>
 							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
-								<SettingsIcon className={cn(IconClasses, activeLink === "solutions" && "text-light dark:text-dark")} />
-								{activeLink === "solutions" && (
+								<SettingsIcon className={cn(IconClasses, selectedLink === "solutions" && "text-light dark:text-dark")} />
+								{selectedLink === "solutions" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+								)}
+								{!(selectedLink === "solutions") && (
+									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light opacity-0 brightness-90 transition-opacity duration-300 group-hover:opacity-100 dark:bg-dark/50'></div>
 								)}
 							</div>
 							<p className='z-10'>Solutions</p>
 						</li>
 
-						<li onMouseEnter={() => setActive("contact")} className=' isolate flex flex-col items-center gap-1.5   '>
+						<li onMouseEnter={() => setActive("contact")} className=' group isolate flex flex-col items-center gap-1.5   '>
 							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
-								<SettingsIcon className={cn(IconClasses, activeLink === "contact" && "text-light dark:text-dark")} />
-								{activeLink === "contact" && (
+								<SettingsIcon className={cn(IconClasses, selectedLink === "contact" && "text-light dark:text-dark")} />
+								{selectedLink === "contact" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+								)}
+
+								{!(selectedLink === "contact") && (
+									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light opacity-0 brightness-90 transition-opacity duration-300 group-hover:opacity-100 dark:bg-dark/50'></div>
 								)}
 							</div>
 							<p className='z-10'>Contact</p>
@@ -152,10 +175,18 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 											animate={{ opacity: [0, 0, 0.4, 1] }}
 											transition={{ duration: 0.5, ease: "easeInOut" }}
 											key={name}
-											className={cn("rounded-md duration-200 hover:bg-light dark:hover:bg-dark", subLink === name && "bg-light dark:bg-dark")}>
+											className={cn(
+												"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
+												subLink === name && "bg-white shadow-[0_0_4px] shadow-dark/10 dark:bg-dark dark:shadow-none "
+											)}>
 											<Link
 												href={path ?? ""}
-												onClick={() => (path !== "#" ? setSubLink(name) : {})}
+												onClick={() => {
+													if (path !== "#") {
+														setSubLink(name);
+														setSelectedLink(activeLink);
+													}
+												}}
 												className={cn("inline-block  h-full w-full p-[14px] pr-[21px]  text-[14px]/[11.6px]")}>
 												{name}
 											</Link>
@@ -167,36 +198,38 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 				</AnimatePresence>
 
 				{/* LANGUAGE POPUP */}
-
-				{languagesOpened && (
-					<motion.ul
-						onMouseLeave={() => setLanguagesOpened(false)}
-						initial={{ x: "-100%", opacity: 0.2 }}
-						animate={{ x: "0", opacity: 1 }}
-						exit={{ x: "-100%", opacity: 0.2 }}
-						className={
-							"absolute bottom-0 left-[calc(100%-1.5px)] -z-10 flex flex-col gap-5 rounded-[0_8px_0_0]  bg-white/60 p-3 backdrop-blur-3xl  dark:bg-gray-30/60   [&>li]:cursor-pointer [&>li]:transition-colors"
-						}>
-						{LANGUAGES.map((lang, index) => (
-							<motion.li
-								animate={{ opacity: [0, 0, 0.4, 1] }}
-								transition={{ duration: 0.5, ease: "easeInOut" }}
-								key={lang.shortName}
-								className={cn(
-									"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
-									selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
-								)}>
-								<div
-									onClick={() => {
-										setSelectedLanguage(lang);
-									}}
-									className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
-									<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
-								</div>
-							</motion.li>
-						))}
-					</motion.ul>
-				)}
+				<AnimatePresence>
+					{languagesOpened && (
+						<motion.ul
+							onMouseLeave={() => setLanguagesOpened(false)}
+							initial={{ x: "-100%", opacity: 0.2 }}
+							animate={{ x: "0", opacity: 1 }}
+							exit={{ x: "-100%", opacity: 0.2 }}
+							className={
+								"absolute bottom-0 left-[calc(100%-1.5px)] -z-10 flex flex-col gap-5 rounded-[0_8px_0_0]  bg-white/60 p-3 backdrop-blur-3xl  dark:bg-gray-30/60   [&>li]:cursor-pointer [&>li]:transition-colors"
+							}>
+							{LANGUAGES.map((lang, index) => (
+								<motion.li
+									animate={{ opacity: [0, 0, 0.4, 1] }}
+									transition={{ duration: 0.5, ease: "easeInOut" }}
+									key={lang.shortName}
+									className={cn(
+										"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
+										selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
+									)}>
+									<div
+										onClick={() => {
+											setSelectedLanguage(lang);
+											setLanguagesOpened(false);
+										}}
+										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
+										<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
+									</div>
+								</motion.li>
+							))}
+						</motion.ul>
+					)}
+				</AnimatePresence>
 			</header>
 		</AnimatePresence>
 	);

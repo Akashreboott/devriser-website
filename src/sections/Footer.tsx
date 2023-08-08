@@ -11,23 +11,12 @@ import ChevronIcon from "../../public/assets/icons/Chevron";
 import cn from "@/utils/cn";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import useMatchesMedia from "@/hooks/useMatchesMedia";
 
 const Footer = () => {
 	let opacityVariants = opacityAnimVariants();
 	let [active, setActive] = useState("");
-	const [breakPoint1011, setBreakPoint1011] = useState(false);
-	useEffect(() => {
-		function matches1011() {
-			if (window.matchMedia("(max-width: 1011px)").matches) {
-				setBreakPoint1011(true);
-			} else {
-				setBreakPoint1011(false);
-			}
-		}
-		window.addEventListener("resize", matches1011);
-		matches1011();
-		return () => window.removeEventListener("resize", matches1011);
-	}, []);
+	const breakPoint1011 = useMatchesMedia("max-width: 1011px");
 
 	return (
 		<MotionComponent
@@ -56,7 +45,7 @@ const Footer = () => {
 							onClick={() => setActive((prev) => (prev === "Company" ? "" : "Company"))}
 							className={cn(
 								"text-[15px]/[33px] brightness-[1.4] max-lg:cursor-pointer",
-								"max-lg:flex max-lg:items-center max-lg:justify-between max-lg:border-b max-lg:border-black/80 max-lg:dark:border-white/50"
+								"max-lg:flex  max-lg:items-center max-lg:justify-between max-lg:border-b max-lg:border-black/80 max-lg:dark:border-white/50"
 							)}>
 							<span>Company</span>
 							<span>
@@ -65,12 +54,12 @@ const Footer = () => {
 						</li>
 						{(active === "Company" || !breakPoint1011) && (
 							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-								<li className='text-[15px]/[33px] opacity-50 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35]'>
-									<Link href={"#"} className='inline-block h-full w-full'>
+								<li className='text-[15px]/[33px] opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
+									<Link href={"/about"} className='inline-block h-full w-full'>
 										About Us
 									</Link>
 								</li>
-								<li className='text-[15px]/[33px] opacity-50 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35]'>
+								<li className='text-[15px]/[33px] opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
 									<Link href={"#"} className='inline-block h-full w-full'>
 										Contact Us
 									</Link>
@@ -94,7 +83,7 @@ const Footer = () => {
 						{(active === "Services" || !breakPoint1011) &&
 							NAV_LINKS["services"].map(([name, path]) => (
 								<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={name}>
-									<li className='text-[15px]/[33px] opacity-50 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35]'>
+									<li className='text-[15px]/[33px] opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
 										<Link href={path} className='inline-block h-full w-full'>
 											{name}
 										</Link>
@@ -118,7 +107,7 @@ const Footer = () => {
 						{(active === "Solutions" || !breakPoint1011) &&
 							NAV_LINKS["solutions"].map(([name, path]) => (
 								<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} key={name}>
-									<li className='text-[15px]/[33px] opacity-50 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35]'>
+									<li className='text-[15px]/[33px] opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
 										<a href={path} className='inline-block h-full w-full'>
 											{name}
 										</a>
@@ -156,7 +145,7 @@ const Footer = () => {
 			</div> */}
 
 			{/* COPYRIGHT SECTION */}
-			<div className='mt-[30px] grid  grid-cols-1 items-center justify-between justify-items-center !px-5 py-2   backdrop-brightness-[0.8] dark:text-white max-lg:gap-5 max-lg:py-4 lg:grid-cols-3'>
+			<div className='mt-[30px] grid  grid-cols-1 items-center justify-between justify-items-center !px-5 py-2   backdrop-brightness-[0.95] dark:text-white dark:backdrop-brightness-[0.85] max-lg:gap-5 max-lg:py-4 lg:grid-cols-3'>
 				<div className='lg:justify-self-start'>
 					<a
 						href='#'

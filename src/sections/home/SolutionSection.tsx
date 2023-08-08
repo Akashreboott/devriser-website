@@ -51,7 +51,7 @@ const SolutionSection = () => {
 				description='Empowering Your Digital Future Web Development, Design'
 				gradientText='Empowering Your Digital Future'
 			/>
-			<div key={active.name} className='relative isolate grid  w-full justify-center gap-10 lg:-translate-x-[25px] xl:-translate-x-[35px]'>
+			<div className='relative isolate grid  w-full justify-center gap-10 lg:-translate-x-[25px] xl:-translate-x-[35px]'>
 				<Image src={Stars} alt='' className='absolute left-0 top-0 -z-20 w-full  opacity-100' />
 				{/* BUTTONS */}
 				{/* 				
@@ -96,9 +96,11 @@ const SolutionSection = () => {
 				{/* IMAGE */}
 				<AnimatePresence>
 					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
+						key={active.name}
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 30 }}
+						transition={{ duration: 0.25 }}
 						className='glass relative mx-auto w-[95%] p-2.5 max-md:mx-2.5 md:w-[70%] md:p-5'>
 						<div className='absolute flex h-full  w-full items-center justify-center '>
 							<GlassCard
@@ -123,10 +125,10 @@ const SolutionSection = () => {
 							</div>
 						</div>
 						<MotionComponent
-							initial={{ opacity: 0, y: 50 }}
+							initial={{ opacity: 0, y: 30 }}
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5 }}>
+							transition={{ duration: 0.25 }}>
 							<Image src={active.mainImage} alt='' className='' />
 						</MotionComponent>
 					</motion.div>

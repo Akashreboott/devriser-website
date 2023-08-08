@@ -36,7 +36,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='UI/UX' className='mb-14' onView={() => props.onView("UI/UX Services")}>
+			<LineLayout heading='UI/UX Services' className='mb-14' onView={() => props.onView("UI/UX Services")}>
 				<HomeGrid className='justify-items-center gap-4 md:gap-10'>
 					<div className='isolate mx-2 flex w-fit justify-center gap-2   md:gap-4'>
 						<div className='my-auto grid shrink gap-3 md:gap-6 '>
@@ -49,7 +49,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='CMS' onView={() => props.onView("CMS Services")}>
+			<LineLayout heading='CMS Services' onView={() => props.onView("CMS Services")}>
 				<HomeGrid reverse={true} className='justify-items-center gap-10 max-lg:gap-0'>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col justify-center gap-2 '>
 						<GlassCard

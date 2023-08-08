@@ -33,28 +33,17 @@ export const NAV_LINKS: NAV_LINKSInterface = {
 		["Human Resource Management System", "#"],
 		["Inventory Management System", "#"],
 	],
-	// blog: [
-	// 	["Blog 0", "#"],
-	// 	["Blog 1", "#"],
-	// 	["Blog 2", "#"],
-	// 	["Blog 3", "#"],
-	// 	["Blog 4", "#"],
-	// 	["Blog 5", "#"],
-	// ],
 	contact: [
 		["Contact Link 1", "#"],
 		["Contact Link 2", "#"],
 		["Contact Link 3", "#"],
 	],
-	// AboutUs: [
-	// 	["About Link 0", "#"],
-	// 	["About Link 1", "#"],
-	// 	["About Link 2", "#"],
-	// 	["About Link 3", "#"],
-	// 	["About Link 4", "#"],
-	// 	["About Link 5", "#"],
-	// ],
 };
+
+export const ARR_OF_LINKS = Object.entries(NAV_LINKS)
+	.map((link) => link)
+	.map(([categoryName, Links]) => Links)
+	.map((arr) => new Set(arr.map(([name]: [string]) => name)));
 
 // ******************************************      FEATURES       ***********************************************
 

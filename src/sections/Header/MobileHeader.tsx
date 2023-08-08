@@ -39,7 +39,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 
 	return (
 		<>
-			<header className='sticky top-0 isolate  z-[100] grid w-full grid-cols-3 items-center justify-between justify-items-center self-start  px-2  py-3 backdrop-blur-[100px] [grid-area:header]  dark:bg-gray-30 lg:hidden'>
+			<header className='sticky top-0 isolate z-[100] grid w-full grid-cols-3 items-center justify-between justify-items-center self-start bg-light px-2  py-3  shadow-sm backdrop-blur-[100px] [grid-area:header]  dark:bg-gray-30 lg:hidden'>
 				<div className='flex justify-self-start'>
 					<button className='shrink-0 rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-gray-30'>
 						Sign In
@@ -163,6 +163,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 													<div
 														onClick={() => {
 															setSelectedLanguage(lang);
+															setLanguagesOpened(false);
 														}}
 														className={cn("flex h-full w-full items-center justify-start gap-4 px-6 py-3  text-[12px]/[11.6px]")}>
 														<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
