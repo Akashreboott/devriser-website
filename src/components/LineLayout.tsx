@@ -15,10 +15,10 @@ interface props {
 	notOnView?: any;
 }
 
-const LineLayout = ({ children, LineClasses, className, HideSymbol = false, heading, onView, notOnView }: props) => {
+const LineLayout = ({ children, LineClasses, className, HideSymbol = false, heading, onView, notOnView = false }: props) => {
 	return (
 		<MotionComponent
-			id={`${slugify(slugify(heading), "/")}`}
+			id={`${slugify(slugify(heading), "/") ?? ""}`}
 			onViewportEnter={() => onView && onView(heading ?? "")}
 			onViewportLeave={() => notOnView && notOnView("")}
 			className='line-layout'>

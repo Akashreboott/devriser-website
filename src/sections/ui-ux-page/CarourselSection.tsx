@@ -7,51 +7,16 @@ import cn from "@/utils/cn";
 import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "@/components/Swiper";
 import { motion } from "framer-motion";
+import { BENEFITS } from "@/utils/ui-ux-data";
 
 const CarourselSection = () => {
 	let SwiperRef = useRef<any>(null);
-	let DATA = [
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-		{
-			title: "User Engagement",
-			content:
-				"Stand out in the digital landscape with our strong UI/UX design, delivering well-designed websites that build trust, credibility, andbrand loyalty through seamless and enjoyable experiences.",
-		},
-	];
 
 	let activeClasses = "overflow-hidden [&>div]:!block scale-[1.15] ";
 	return (
 		<SectionHeading
 			title='Embrace The Benefits Of UI UX Design Services'
+			gradientText='Benefits'
 			description='Witness the power of exceptional UI/UX services with our expert team of designers.'
 			gap='40px'
 			className='max-w-[95%] lg:max-w-[80%] xl:max-w-[60%]'>
@@ -69,7 +34,7 @@ const CarourselSection = () => {
 				}}
 				className='scroll-bar-hide mt-[40px] flex h-[calc(400px+50px)] w-full max-w-full snap-x  items-center justify-start  gap-16  [--card-width:320px]  max-md:px-3 md:[--card-width:400px]'>
 				{/* className='scroll-bar-hide max-w-ful mt-[40px] grid h-[calc(400px+20px)] w-full  snap-x grid-cols-[repeat(7,calc(var(--card-width)-64px))] items-center  justify-start  gap-16 overflow-x-auto overflow-y-visible [--card-width:320px] md:[--card-width:400px] [&>*]:mx-auto   [&>*]:snap-center'> */}
-				{[...DATA, ...DATA].map(({ content, title }, index) => (
+				{BENEFITS.map(({ description, title, image }, index) => (
 					<SwiperSlide key={title} data-swiper-slide='ui-ux-carousel'>
 						<motion.div
 							layout
@@ -79,10 +44,10 @@ const CarourselSection = () => {
 								index === 0 && "ml-4",
 								"group"
 							)}>
-							<Image src={white} className='h-[120px] max-w-[200px] rounded-md' alt='' />
+							<Image src={image} className='h-[120px] max-w-[200px] rounded-md' alt='' />
 							<p className='max-w-[90%] text-xl leading-10 lg:text-[26px]'>{title}</p>
 							<div className='back-card  bg-noise250 absolute inset-0 hidden h-full w-full origin-center rounded  bg-banner-bg  '>
-								<p className='mx-auto mt-10 max-w-[90%] text-white'>{content}</p>
+								<p className='mx-auto mt-10 max-w-[90%] text-white'>{description}</p>
 							</div>
 						</motion.div>
 					</SwiperSlide>

@@ -13,7 +13,14 @@ import DecoratedBanner from "@/components/DecoratedBanner";
 import Banner from "@/components/Banner";
 import HeroOverlay from "@/components/HeroOverlay";
 import Main from "@/components/Main";
+import type { Metadata } from "next";
+import { faqQuestions } from "@/utils/cms-data";
 
+export const metadata: Metadata = {
+	title: "CMS Development Services| CMS web development services",
+	description:
+		"With our CMS development services, experience a seamless user experience as we create visually stunning and feature-rich websites using platforms like WordPress, Wix, Drupal, Webflow, and Shopify.",
+};
 export default function Home() {
 	return (
 		<Main data-page='cms' key='cms'>
@@ -28,13 +35,13 @@ export default function Home() {
 				DarkVisibleImage={illustration}
 				heading="Advanced CMS Development Services  For Maximizing Your Website's Potential"
 				gradientText='CMS Development Services'
-				description="We optimize the true power of your business with our advanced CMS development services. Our CMS team handles every aspect of your
-					website's creation, ensuring a seamless and dynamic online presence that maximizes your website's potential"
+				description="Maximize your website's potential with our CMS development services and reflect the true value of your business."
 				btnText="Let's Begin"
 			/>
 			<FeaturesSection />
 
 			<DecoratedBanner
+				quoteLink='cms-services'
 				title='Crafting Websites For Your Unique Vision'
 				description='Experience website creation artistry with our expert team at DevRiser, delivering websites tailored to your unique requirements'
 				btnText='Get a quote'
@@ -45,7 +52,7 @@ export default function Home() {
 			<TestimonialSection />
 			<ChooseUsSection />
 			<Banner heading="Let's Build Your Dream Website" btnText='Get in touch' />
-			<FaqSection />
+			<FaqSection faqQuestions={faqQuestions} />
 		</Main>
 	);
 }

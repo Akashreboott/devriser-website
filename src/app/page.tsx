@@ -22,9 +22,11 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { slugify } from "@/utils/utils";
 import { SOLUTIONS } from "@/utils/home-data";
+import { useTheme } from "next-themes";
 
 const Page = () => {
 	const [services, setServices] = useState("");
+	const ctx = useTheme();
 	// const [horizontalNavOpened, setHorizontalNavOpened] = useState(false);
 	const [solutionsClicked, setSolutionsClicked] = useState<boolean>(false);
 
@@ -101,10 +103,8 @@ const Page = () => {
 				{/* NAVBAR */}
 
 				{/* STARS AND GRADIENTS OVERLAY */}
-				<div className='absolute left-0 top-0 flex h-fit w-full items-start justify-center overflow-x-hidden '>
+				<div className='absolute left-0 top-0 flex h-[min(100vh,1400px)] w-screen items-start justify-center overflow-hidden '>
 					<MotionComponent
-						// initial={{ filter: "hue-rotate(0deg) blur(100px)", transform: "rotate(0deg)" }}
-						// animate={{ filter: "hue-rotate(40deg) blur(100px)", transform: "rotate(180deg)" }}
 						transition={{ repeat: Infinity, delay: 4.5, duration: 4, repeatType: "mirror" }}
 						className={cn(
 							"opacity-0.5 absolute -right-[350px] -top-full aspect-square w-[543px] rounded-full bg-[rgba(44,91,249,0.1)] blur-[100px] md:-right-[180px]   md:-top-1/4"
@@ -122,10 +122,12 @@ const Page = () => {
 						)}
 					/> */}
 					<motion.div
-						animate={{ filter: ["brightness(0) blur(3px)", "brightness(0.5) blur(1.5px)", "brightness(0.85) blur(0px)"] }}
+						animate={{
+							filter: ["brightness(0) blur(3px)", "brightness(0) blur(1.5px)", "brightness(0.3) blur(0px)"],
+						}}
 						transition={{ duration: 1, delay: 4 }}
 						className='w-full  brightness-50'>
-						<Image src={Stars} alt='' className='h-[900px] w-[90%] -translate-y-[200px] ' />
+						<Image src={Stars} alt='' className='hidden h-full w-full -translate-y-[200px] object-cover dark:block ' />
 					</motion.div>
 				</div>
 

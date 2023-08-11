@@ -22,7 +22,7 @@
 		}
 	}
 	body {
-		@apply relative mx-auto   grid
+		@apply mx-auto   grid
 		bg-light font-mono-sans text-primary-dark  dark:bg-dark dark:text-white
 		dark:[--gradient-border-color:var(--dark-gradient-border)] lg:grid-cols-[auto_1fr];
 

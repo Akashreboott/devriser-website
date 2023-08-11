@@ -26,3 +26,26 @@ export const OFFERINGS: { heading: string; content: string; image: any }[] = [
 		image: PlaceHolder,
 	},
 ];
+
+export const faqQuestions: { question: string; answer: string }[] = [
+	{
+		question: "What is the advantage of Managed Services?",
+		answer:
+			"Managed services offer several advantages. It allows you to focus on your core business activities while leaving the complexities of IT to experts. You gain access to specialized skills, industry best practices, and the latest technologies, resulting in improved efficiency, cost savings, and enhanced security.",
+	},
+	{
+		question: "What level of support can I expect from your Managed Services?",
+		answer:
+			"Our managed services provide comprehensive support tailored to your needs. We offer proactive monitoring, timely issue resolution, regular maintenance, and strategic guidance. Our dedicated team is available to address your concerns and provide assistance, ensuring the smooth functioning of your IT infrastructure.",
+	},
+	{
+		question: "How do you ensure the security of my data with your Managed Services?",
+		answer:
+			"Data security is our top priority. We implement robust security measures such as encryption, access controls, and regular backups to protect your data. Our team follows industry-leading practices, conducts vulnerability assessments, and stays updated with emerging threats to ensure your sensitive information remains safe and secure.",
+	},
+	{
+		question: "How do I get started with your Managed Services?",
+		answer:
+			"Getting started is simple. You can contact us and get a free consultation. We'll discuss your requirements, understand your goals, and recommend the best service options for your business. ",
+	},
+];

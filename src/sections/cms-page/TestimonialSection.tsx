@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Avatar from "./../../../public/assets/images/Avatar.png";
 import Person from "./../../../public/assets/images/test-img.png";
 import Star from "./../../../public/assets/icons/Star.svg";
-import React from "react";
 import SectionHeading from "@/components/SectionHeading";
 
 const TestimonialSection = () => {
@@ -28,7 +26,7 @@ const TestimonialSection = () => {
 			// 		</div>
 			// 	</div>
 			// </div>
-			<div className='testimonial-bg isolate w-[min(920px,100%)] py-3 pl-14 pr-7 lg:rounded-lg '>
+			<div className='testimonial-bg isolate w-[min(920px,100%)] px-9  py-3 lg:rounded-lg '>
 				<div className='mb-2 flex items-center  justify-center gap-3 max-md:flex-col md:justify-between '>
 					<div className='flex flex-col text-center max-md:order-2 md:text-left'>
 						<p className='max-w-[480px] text-p14 font-350 text-white md:text-[16px]/[27px] '>{props.content}</p>

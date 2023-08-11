@@ -1,7 +1,7 @@
 import DottedLine from "@/components/DottedLine";
 import SectionHeading from "@/components/SectionHeading";
 import SemiGradientText from "@/components/SemiGradientText";
-import { PROCESSES } from "@/utils/cms-data";
+import { PROCESSES } from "@/utils/ui-ux-data";
 import React from "react";
 
 const ProcessSection = () => {

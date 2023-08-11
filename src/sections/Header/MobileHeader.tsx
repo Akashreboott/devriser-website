@@ -11,23 +11,28 @@ import Menu from "../../../public/assets/icons/Menu";
 import DevRiserLogo from "../../../public/assets/images/DevRiserLogo";
 import { useEffect, useState } from "react";
 import ThemeButton from "@/utils/ThemeButton";
-import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface } from "../../utils/cms-data";
+import { LANGUAGE, LANGUAGES, NAV_LINKS, NAV_LINKSInterface } from "../../utils/cms-data";
 import Link from "next/link";
 import cn from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
+import { headerPropsInterface } from "./Header";
 
-const MobileHeader = ({ className }: { className?: string }) => {
-	const [subLink, setSubLink] = useState<string>("");
-
+const MobileHeader = ({
+	className,
+	selectedLanguage,
+	setSelectedLanguage,
+	setSubLink,
+	subLink,
+	selectedLink,
+	setSelectedLink,
+	...props
+}: headerPropsInterface) => {
 	const [mobileMenuOpened, setMobileMenuOpened] = useState<boolean>(false);
 	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
-	const [selectedLanguage, setSelectedLanguage] = useState(LANGUAGES[0]);
 	const [services, setServices] = useState<boolean>(false);
 	const [solutions, setSolutions] = useState<boolean>(false);
-
-	let opacityVariants = opacityAnimVariants(0.2, 1);
 
 	useEffect(() => {
 		if (mobileMenuOpened) {
@@ -76,7 +81,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 						</div>
 						{/* LINKS */}
 						<ul className=' mx-auto flex h-fit w-full grow flex-col gap-[26px] bg-white  p-6 pt-8  text-navlink  dark:bg-gray-30 [&_p]:text-basic [&_p]:font-normal'>
-							<li className=''>
+							<li>
 								<Link href={"/"} onClick={() => setMobileMenuOpened(false)} className='flex items-center gap-[18px]'>
 									<Logo className='w-[15px]' />
 									<p>Home</p>
@@ -95,6 +100,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 											href={path}
 											onClick={() => {
 												setSubLink(name);
+												setSelectedLink("services");
 												setMobileMenuOpened(false);
 											}}
 											className={cn("block rounded p-2.5 text-xs/[12px] opacity-60 active:opacity-100", subLink === name && "bg-gray dark:bg-dark")}>
@@ -104,7 +110,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 								</div>
 							</li>
 							<li className='flex flex-col'>
-								<button onClick={() => setSolutions((prev) => !prev)} className='flex  items-center gap-[18px]'>
+								<button onClick={() => setSolutions((prev) => !prev)} className='flex items-center gap-[18px]'>
 									<Solutions className='w-[15px]' />
 									<p>Solutions</p>
 									<ChevronIcon className={`ml-auto w-[15px]  transition-transform ${solutions && "rotate-90"}`} />
@@ -116,6 +122,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 											href={path}
 											onClick={() => {
 												setSubLink(name);
+												setSelectedLink("solutions");
 												setMobileMenuOpened(false);
 											}}
 											className='block rounded p-2.5 text-xs/[12px] opacity-60 active:opacity-100'>
@@ -148,7 +155,7 @@ const MobileHeader = ({ className }: { className?: string }) => {
 											initial='hide'
 											animate='visible'
 											exit='hide'
-											variants={opacityVariants}
+											variants={opacityAnimVariants(0.2, 1)}
 											className={
 												"absolute -bottom-[330%] left-0  z-50 flex w-full flex-col gap-2 rounded-[0_0_8px_8px]  border-2 bg-white/80 p-3  backdrop-blur-3xl dark:border-dark/50 dark:bg-gray-30/95   [&>li]:cursor-pointer [&>li]:transition-colors"
 											}>
@@ -162,14 +169,15 @@ const MobileHeader = ({ className }: { className?: string }) => {
 														"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
 														selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
 													)}>
-													<div
+													<button
 														onClick={() => {
 															setSelectedLanguage(lang);
 															setLanguagesOpened(false);
+															// props.changeLanguage(lang.shortName.toLowerCase());
 														}}
 														className={cn("flex h-full w-full items-center justify-start gap-4 px-6 py-3  text-[12px]/[11.6px]")}>
 														<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
-													</div>
+													</button>
 												</motion.li>
 											))}
 										</motion.ul>

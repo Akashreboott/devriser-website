@@ -1,3 +1,5 @@
+import { QUESTIONS } from "@/utils/questions-data";
+
 export interface SectionHeadingProps {
 	className?: string;
 	title: string;
@@ -14,6 +16,7 @@ export interface DecoratedBannerProps extends SectionHeadingProps {
 	btnText: string;
 	HideRings?: true | false;
 	BannerColor?: string;
+	quoteLink?: keyof QUESTIONS;
 	variant?: "Primary" | "Secondary" | "Outlined";
 }
 

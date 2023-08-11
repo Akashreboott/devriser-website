@@ -10,7 +10,7 @@ const Alert = (props: { className?: string; message: string }) => {
 			exit={{ x: "120%" }}
 			transition={{ duration: 0.5, type: "spring" }}
 			className={cn(
-				"flex w-4/5 items-center justify-center gap-4 rounded-md border-b-2 border-red-300 bg-red-100/80 p-3 px-4 text-lg text-red-900 dark:border-red-400 dark:bg-red-700/20 dark:text-red-400 max-sm:text-base max-[350px]:flex-col lg:w-full lg:max-w-sm",
+				"flex w-4/5 items-center justify-center gap-4 rounded-md border-b-2 border-red-300 bg-red-100/80 p-3 px-4 text-lg text-red-900 backdrop-blur-3xl dark:border-red-400 dark:bg-red-700/20 dark:text-red-400 max-sm:text-base max-[350px]:flex-col lg:w-full lg:max-w-sm",
 				props.className
 			)}>
 			<span>

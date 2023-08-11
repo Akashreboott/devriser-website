@@ -15,6 +15,14 @@ import { TECH_STACK } from "@/utils/web-development-data";
 import Image from "next/image";
 import Banner from "@/components/Banner";
 import FaqSection from "@/sections/cms-page/FaqSection";
+import type { Metadata } from "next";
+import { SERVICES, SOLUTIONS, faqQuestions } from "@/utils/mobile-app-data";
+
+export const metadata: Metadata = {
+	title: "Custom Mobile App Development | DevRiser",
+	description:
+		"We transform your business with our expertly crafted custom mobile app development services which elevate your brand, engage users, and gain a competitive edge. Get started now!",
+};
 const page = () => {
 	return (
 		<Main data-page='mobile-app-development'>
@@ -27,6 +35,7 @@ const page = () => {
 			<HeroSection
 				description="Accelerate your mobile endeavors with DevRiser's Custom Mobile App Development."
 				heading='Redefine Your Mobile Strategy With Custom Mobile App Development'
+				gradientText='Custom Mobile App'
 				btnText="Let's Begin"
 			/>
 
@@ -34,36 +43,17 @@ const page = () => {
 				gap='35px'
 				className='px-4'
 				title='Elevate Your Brand With Value-Driven Mobile App Solutions'
+				gradientText='Mobile App Solutions'
 				description='In this digital world , opting for custom mobile app development unlocks a world of possibilities for your business.'>
 				<div className='mt-20 grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] justify-center justify-items-center gap-10 lg:grid-cols-4 '>
-					<ProcessCard
-						description='Gain valuable insights from your users with built-in analytical tools. Measure engagement, and optimize strategies.'
-						image={Placeholder}
-						title='Analytics & insights'
-						className='px-8'
-					/>
-					<ProcessCard
-						description='Gain valuable insights from your users with built-in analytical tools. Measure engagement, and optimize strategies.'
-						image={Placeholder}
-						title='Analytics & insights'
-						className='px-8'
-					/>
-					<ProcessCard
-						description='Gain valuable insights from your users with built-in analytical tools. Measure engagement, and optimize strategies.'
-						image={Placeholder}
-						title='Analytics & insights'
-						className='px-8'
-					/>
-					<ProcessCard
-						description='Gain valuable insights from your users with built-in analytical tools. Measure engagement, and optimize strategies.'
-						image={Placeholder}
-						title='Analytics & insights'
-						className='px-8'
-					/>
+					{SOLUTIONS.map(({ description, heading }) => (
+						<ProcessCard key={heading} description={description} image={Placeholder} title={heading} className='px-8' />
+					))}
 				</div>
 			</SectionHeading>
 
 			<DecoratedBanner
+				quoteLink='mobile-development'
 				title='Transform Your Ideas Into Impactful Mobile App Solutions'
 				btnText='Get a quote'
 				description='DevRiser brings innovation to life with custom mobile app development, driving business success and user engagement.'
@@ -71,19 +61,13 @@ const page = () => {
 
 			<SectionHeading
 				title='Services Offered'
+				gradientText='Services'
 				gap='40px'
 				description='We specialize in creating tailor-made mobile apps, designed to fit your unique business needs. Transform your app ideas into reality with our expert team.'>
 				<div>
-					<Grid1x2
-						image={Placeholder520}
-						content='DevRiser excels in native app development for iOS and Android, delivering high-performance, engaging brand-enhancing experiences from concept to deployment.'
-						title='Native apps'
-					/>
-					<Grid1x2
-						image={Placeholder520}
-						content='DevRiser excels in native app development for iOS and Android, delivering high-performance, engaging brand-enhancing experiences from concept to deployment.'
-						title='Native apps'
-					/>
+					{SERVICES.map(({ description, heading, image }) => (
+						<Grid1x2 key={heading} image={image} content={description} title={heading} />
+					))}
 				</div>
 			</SectionHeading>
 			<ProcessSection />
@@ -102,7 +86,7 @@ const page = () => {
 				))}
 			</SectionHeading>
 			<Banner btnText='Get started now!' heading="Ready To Innovate? Let's Build Your Dream App!" />
-			<FaqSection />
+			<FaqSection faqQuestions={faqQuestions} />
 		</Main>
 	);
 };

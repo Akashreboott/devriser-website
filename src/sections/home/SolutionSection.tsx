@@ -1,20 +1,19 @@
 "use client";
-import GlassCard from "@/components/GlassCard";
-import React, { useEffect, useRef, useState } from "react";
-import white from "../../../public/assets/images/white520.png";
-import SideHeading from "@/components/SideHeading";
-import Link from "next/link";
 import Image from "next/image";
-import largeImage from "../../../public/assets/images/Rectangle-186.png";
-import smallimage from "../../../public/assets/images/Rectangle-200.png";
-import Stars from "../../../public/assets/images/stars home.svg";
-import MotionComponent from "@/components/MotionComponent";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import useMatchesMedia from "@/hooks/useMatchesMedia";
-import cn from "@/utils/cn";
-import ChevronIcon from "../../../public/assets/icons/Chevron";
-import { SOLUTIONS } from "@/utils/home-data";
 import { AnimatePresence, motion } from "framer-motion";
+
+import GlassCard from "@/components/GlassCard";
+import SideHeading from "@/components/SideHeading";
+import MotionComponent from "@/components/MotionComponent";
+import useMatchesMedia from "@/hooks/useMatchesMedia";
+import { SOLUTIONS } from "@/utils/home-data";
+import cn from "@/utils/cn";
+
+import Stars from "../../../public/assets/images/stars home.svg";
+import ChevronIcon from "../../../public/assets/icons/Chevron";
 
 const SolutionSection = () => {
 	const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -33,8 +32,6 @@ const SolutionSection = () => {
 		setButtonClicked((prev) => {
 			let number = prev === 0 ? prev : prev - 1;
 			setActive(SOLUTIONS[number]);
-
-			// emblaApi?.scrollTo(number);
 			return number;
 		});
 	}
@@ -54,8 +51,6 @@ const SolutionSection = () => {
 			<div className='relative isolate grid  w-full justify-center gap-10 lg:-translate-x-[25px] xl:-translate-x-[35px]'>
 				<Image src={Stars} alt='' className='absolute left-0 top-0 -z-20 w-full  opacity-100' />
 				{/* BUTTONS */}
-				{/* 				
-								// @ts-ignore */}
 				<nav
 					ref={!matches1014px ? emblaRef : null}
 					className=' relative mb-3 mt-2 flex h-[calc(100%+1rem)] w-full items-center justify-center overflow-hidden md:mb-10 md:mt-6'>

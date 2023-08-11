@@ -96,8 +96,8 @@ const About = () => {
 				<div className=' mx-auto mt-8 grid w-[calc(100%-3rem)]  gap-6 rounded-lg bg-white p-10 dark:bg-gray-39'>
 					<h3 className='secondary-heading'>Team</h3>
 					<div className='grid w-full max-w-[1080px] grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3 '>
-						{TEAM.map(({ name, image, role }) => (
-							<div key={name} className=' flex gap-5'>
+						{TEAM.map(({ name, image, role }, index) => (
+							<div key={index} className=' flex gap-5'>
 								<Image src={image} alt='' className='h-full max-h-[80px] w-full max-w-[80px] rounded-lg' />
 								<div className='flex flex-col justify-center  gap-1'>
 									<h4 className='font-medium'>{name}</h4>

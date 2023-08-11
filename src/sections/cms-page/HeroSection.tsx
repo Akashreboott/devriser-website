@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import SemiGradientText from "@/components/SemiGradientText";
 import transparent from "./../../../public/assets/images/transparent.png";
-import Image from "next/image";
 import React from "react";
 import cn from "@/utils/cn";
 import DarkLightImage from "@/components/DarkLightImage";
@@ -39,7 +38,7 @@ const HeroSection = ({ heading, gradientText, btnText, description, className, .
 			<DarkLightImage
 				DarkVisibleImage={props.DarkVisibleImage ?? transparent}
 				LightVisibleImage={props.LightVisibleImage ?? transparent}
-				className='mx-auto mt-[32.5px] hidden h-fit w-full max-w-[402px] dark:block max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
+				className='mx-auto mt-[32.5px]  h-fit w-full max-w-[402px]  max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
 				alt=''
 			/>
 		</section>

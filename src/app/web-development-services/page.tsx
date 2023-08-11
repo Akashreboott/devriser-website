@@ -1,6 +1,6 @@
 import Main from "@/components/Main";
 import HeroSection from "@/sections/cms-page/HeroSection";
-import { HERO_DETAILS, TECH_STACK } from "@/utils/web-development-data";
+import { HERO_DETAILS, TECH_STACK, faqQuestions } from "@/utils/web-development-data";
 import HeroImgDark from "../../../public/assets/images/web-development-illustration.svg";
 
 import HeroImgLight from "../../../public/assets/images/web-development-illustration-light.svg";
@@ -11,14 +11,19 @@ import HeroOverlay from "@/components/HeroOverlay";
 import TestimonialSection from "@/sections/cms-page/TestimonialSection";
 import DecoratedBanner from "@/components/DecoratedBanner";
 import SectionHeading from "@/components/SectionHeading";
-import { OFFERINGS } from "@/utils/managed-services-data";
+import { OFFERINGS } from "@/utils/web-development-data";
 import Grid1x2 from "@/components/Grid1x2";
 import Banner from "@/components/Banner";
 import FaqSection from "@/sections/cms-page/FaqSection";
 import ProcessSection from "@/sections/web-development/ProcessSection";
 import Image from "next/image";
-import AnimatedNumber from "@/components/AnimatedNumber";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+	title: "Custom Website Development Services | DevRiser",
+	description:
+		"Experience the power of custom website development with DevRiser. We craft visually stunning, highly functional websites tailored to your brand. Request a consultation or subscribe to our managed services for ongoing support.",
+};
 const Page = () => {
 	return (
 		<Main data-page='web-development-services' key='web-development-services'>
@@ -34,11 +39,11 @@ const Page = () => {
 				gradientText='Custom Website Development Services'
 				description={HERO_DETAILS.description}
 				btnText={HERO_DETAILS.btnText}
-				DarkModeImage={HeroImgDark}
-				LightModeImage={HeroImgLight}
+				DarkVisibleImage={HeroImgDark}
+				LightVisibleImage={HeroImgLight}
 			/>
 
-			<SectionHeading title='Our Offerings' className='gap-12'>
+			<SectionHeading title='Our Offerings' className='gap-12' gradientText='Offerings'>
 				<div className='h-full max-h-[600px] w-full max-w-[800px] px-2'>
 					<Cone className='h-full w-full text-dark dark:text-white' />
 				</div>
@@ -50,7 +55,7 @@ const Page = () => {
 				btnText='Get a quote'
 			/>
 
-			<SectionHeading title='Experience The Impact Of Custom Made Websites' className='gap-20'>
+			<SectionHeading title='Experience The Impact Of Custom Made Websites' className='gap-20' gradientText='Custom Made Websites'>
 				<div className='flex flex-col items-center justify-center gap-6 px-3 md:flex-row md:items-start md:gap-10'>
 					<span className='text-[26px] font-semibold !leading-[35px] md:text-[30px]'>75%</span>
 					<div className='flex flex-col items-center gap-6 text-left'>
@@ -82,7 +87,7 @@ const Page = () => {
 			<TestimonialSection />
 			<ProcessSection />
 			<Banner heading='Ready For A Website That Sets You Apart?' btnText='Request a Consultation' />
-			<FaqSection />
+			<FaqSection faqQuestions={faqQuestions} />
 		</Main>
 	);
 };

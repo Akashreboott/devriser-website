@@ -8,6 +8,14 @@ import OfferingsSection from "@/sections/managed-services-page/OfferingsSection"
 import TestimonialSection from "@/sections/cms-page/TestimonialSection";
 import FaqSection from "@/sections/cms-page/FaqSection";
 import StatsSection from "@/sections/managed-services-page/StatsSection";
+import type { Metadata } from "next";
+import { faqQuestions } from "@/utils/managed-services-data";
+
+export const metadata: Metadata = {
+	title: " Managed IT services | Cyber security services | DevRiser",
+	description:
+		"Achieve flawless operations with our Managed Services. Let us handle your digital infrastructure while you focus on business activities",
+};
 const ManagedServices = () => {
 	return (
 		<Main data-page='managed-services' key='managed-services'>
@@ -22,6 +30,7 @@ const ManagedServices = () => {
 			<StatsSection className='my-14' />
 
 			<DecoratedBanner
+				quoteLink='managed-services'
 				title='Take Control Of Your Digital Success Today !'
 				className='[&_p]:!text-white'
 				btnText='Start Your Journey'
@@ -35,7 +44,7 @@ const ManagedServices = () => {
 
 			<TestimonialSection />
 
-			<FaqSection />
+			<FaqSection faqQuestions={faqQuestions} />
 		</Main>
 	);
 };

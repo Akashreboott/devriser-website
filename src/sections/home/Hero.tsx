@@ -34,7 +34,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 						GradientTextColor={props.GradientTextColor ?? "gradient-tint"}
 						as='h1'
 					/> */}
-					<h1 className='relative w-full  flex-wrap  overflow-hidden text-[40px] font-semibold text-primary-dark dark:text-white max-lg:text-center max-md:text-center xl:text-[54px]/[70px]'>
+					<h1 className='relative w-full  flex-wrap  overflow-hidden text-[40px] font-semibold text-dark selection:bg-fuchsia-500 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-[54px]/[70px]'>
 						{heading.split(" ").map((word, index) => (
 							<MotionComponent
 								as='span'

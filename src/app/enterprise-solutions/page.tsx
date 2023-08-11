@@ -10,14 +10,20 @@ import Icon2 from "../../../public/assets/images/custom-solution (2).svg";
 import Icon3 from "../../../public/assets/images/custom-solution (3).svg";
 import Icon4 from "../../../public/assets/images/custom-solution (4).svg";
 import Image from "next/image";
-import { INDUSTRIES } from "@/utils/enterprise-data";
+import { INDUSTRIES, faqQuestions } from "@/utils/enterprise-data";
 import Grid1x2 from "@/components/Grid1x2";
 import DecoratedBanner from "@/components/DecoratedBanner";
 import TestimonialSection from "@/sections/cms-page/TestimonialSection";
 import FaqSection from "@/sections/cms-page/FaqSection";
 import WhyDevriserSection from "@/sections/enterprise-solutions/WhyDevriserSection";
-
 import ProcessSection from "@/sections/enterprise-solutions/ProcessSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Enterprise Solutions | Custom Enterprise Solutions | DevRiser",
+	description:
+		"Empower your business with our Custom Enterprise Solutions for digital transformation, revolutionizing operations, enhancing efficiency, and achieving scalable growth.",
+};
 const Page = () => {
 	return (
 		<Main data-page='enterprise-solutions'>
@@ -88,6 +94,7 @@ const Page = () => {
 			</SectionHeading>
 
 			<DecoratedBanner
+				quoteLink='enterprise-solutions'
 				className='[&_p]:!text-white'
 				title='Digitalize Your Transformation With Our Game-Changing Solutions.'
 				description='Experience the Power of Our Enterprise Solutions and Achieve Unprecedented Efficiency and Growth'
@@ -99,7 +106,7 @@ const Page = () => {
 
 			<WhyDevriserSection />
 			<TestimonialSection />
-			<FaqSection />
+			<FaqSection faqQuestions={faqQuestions} />
 		</Main>
 	);
 };

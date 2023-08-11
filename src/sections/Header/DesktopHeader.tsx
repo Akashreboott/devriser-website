@@ -1,25 +1,30 @@
 "use client";
-
 import DevRiserLogo from "../../../public/assets/images/DevRiserLogo";
 import SettingsIcon from "./../../../public/assets/icons/SettingsIcon";
 
 import Image from "next/image";
-
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import { headerPropsInterface } from "./Header";
+
+import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface, ARR_OF_LINKS, LANGUAGE } from "../../utils/cms-data";
 import ThemeButton from "@/utils/ThemeButton";
-import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface, ARR_OF_LINKS } from "../../utils/cms-data";
-import Link from "next/link";
 import cn from "@/utils/cn";
-import { AnimatePresence, motion } from "framer-motion";
-
-const DesktopHeader = ({ className }: { className?: string }) => {
+const DesktopHeader = ({
+	className,
+	subLink,
+	setSubLink,
+	selectedLanguage,
+	setSelectedLanguage,
+	selectedLink,
+	setSelectedLink,
+	...props
+}: headerPropsInterface) => {
 	const [activeLink, setActiveLink] = useState("");
-	const [subLink, setSubLink] = useState<string>("");
-	const [selectedLink, setSelectedLink] = useState<string>("");
-	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
-	const [selectedLanguage, setSelectedLanguage] = useState(LANGUAGES[0]);
 
+	const [languagesOpened, setLanguagesOpened] = useState<boolean>(false);
 	const [desktopMenuOpened, setDesktopMenuOpened] = useState<boolean>(false);
 	const [mobileMenuOpened, setMobileMenuOpened] = useState<boolean>(false);
 
@@ -43,12 +48,6 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 	}
 	function setActive(name: string): void {
 		openMenu();
-
-		// for (let arr of ARR_OF_LINKS) {
-		// 	if (arr.has(subLink)) {
-		// 		console.log(arr);
-		// 	}
-		// }
 		setActiveLink(name);
 	}
 
@@ -100,33 +99,33 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 							<p className='z-10'>Services</p>
 						</li>
 						<li onMouseEnter={() => setActive("solutions")} className='group isolate flex flex-col items-center gap-1.5   '>
-							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
-								<SettingsIcon className={cn(IconClasses, selectedLink === "solutions" && "text-light dark:text-dark")} />
+							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, selectedLink === "solutions" && "text-dark")} />
 								{selectedLink === "solutions" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
 								)}
 								{!(selectedLink === "solutions") && (
-									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light opacity-0 brightness-90 transition-opacity duration-300 group-hover:opacity-100 dark:bg-dark/50'></div>
+									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-white opacity-0 shadow transition-opacity duration-200 group-hover:opacity-100 dark:bg-dark/50'></div>
 								)}
 							</div>
 							<p className='z-10'>Solutions</p>
 						</li>
 
 						<li onMouseEnter={() => setActive("contact")} className=' group isolate flex flex-col items-center gap-1.5   '>
-							<div className='relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
-								<SettingsIcon className={cn(IconClasses, selectedLink === "contact" && "text-light dark:text-dark")} />
+							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
+								<SettingsIcon className={cn(IconClasses, selectedLink === "contact" && "text-dark")} />
 								{selectedLink === "contact" && (
 									<motion.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
 								)}
 
 								{!(selectedLink === "contact") && (
-									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-light opacity-0 brightness-90 transition-opacity duration-300 group-hover:opacity-100 dark:bg-dark/50'></div>
+									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-white opacity-0 shadow transition-opacity duration-200 group-hover:opacity-100 dark:bg-dark/50'></div>
 								)}
 							</div>
 							<p className='z-10'>Contact</p>
@@ -217,14 +216,15 @@ const DesktopHeader = ({ className }: { className?: string }) => {
 										"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
 										selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
 									)}>
-									<div
+									<button
 										onClick={() => {
 											setSelectedLanguage(lang);
 											setLanguagesOpened(false);
+											// props.changeLanguage("fr");
 										}}
 										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
 										<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
-									</div>
+									</button>
 								</motion.li>
 							))}
 						</motion.ul>

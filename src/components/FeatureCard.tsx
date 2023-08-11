@@ -3,12 +3,20 @@ import Image from "next/image";
 import useMousePosition from "@/utils/UseMousePosition";
 import { useRef, useState } from "react";
 import cn from "@/utils/cn";
+import { useMotionValue } from "framer-motion";
+interface props {
+	title: string;
+	description: string;
+	image: any;
+}
 
 const FeatureCard = (props: props) => {
 	const pos = useMousePosition();
 	const CardRef = useRef<HTMLDivElement>();
 	const card = CardRef.current?.getBoundingClientRect();
 	const [hovering, setHovering] = useState(false);
+	// let x = useMotionValue<number>(0);
+	// let y = useMotionValue<number>(0);
 	let [x, setX] = useState<number>(0);
 	let [y, setY] = useState<number>(0);
 	let [rotateX, setRotateX] = useState<number>(0);
@@ -49,7 +57,6 @@ const FeatureCard = (props: props) => {
 						"absolute  left-0 top-0 -z-10 h-[300px] w-[300px] rounded-full blur-[80px] transition-[transform,opacity] duration-500 ease-in-out [background-image:var(--moving-gradient-color)]  max-md:[translate:0_0_!important] md:h-[220px]  md:w-[220px] ",
 						hovering && "max-md:!opacity-60"
 					)}></div>
-				{/* <Image src={Noise} alt='' className='absolute -z-10 h-full w-full object-cover [&~*]:px-2' /> */}
 				<h3 className='mt-4 text-[24px] font-semibold md:mt-[32px]  '>{props.title}</h3>
 				<Image src={props.image} alt='Placeholder' className='h-[53px] w-[71px] object-cover md:h-[81px] md:w-[107px] lg:h-[106px]  lg:w-[141px] ' />
 				<p className='text-[14px]/[24px] font-350 dark:!text-gray md:text-[16px]/[30px] '>{props.description}</p>
@@ -59,8 +66,3 @@ const FeatureCard = (props: props) => {
 };
 
 export default FeatureCard;
-interface props {
-	title: string;
-	description: string;
-	image: any;
-}
