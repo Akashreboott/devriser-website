@@ -4,6 +4,7 @@ import transparent from "./../../../public/assets/images/transparent.png";
 import Image from "next/image";
 import React from "react";
 import cn from "@/utils/cn";
+import DarkLightImage from "@/components/DarkLightImage";
 
 interface props {
 	heading: string;
@@ -11,8 +12,9 @@ interface props {
 	btnText?: string;
 	className?: string;
 	description?: string;
-	LightModeImage?: any;
-	DarkModeImage?: any;
+
+	DarkVisibleImage?: any;
+	LightVisibleImage?: any;
 	GradientTextColor?: string;
 }
 
@@ -34,15 +36,10 @@ const HeroSection = ({ heading, gradientText, btnText, description, className, .
 				{description && <p className='mt-4 text-basic text-primary-dark dark:text-gray'>{description}</p>}
 				{btnText && <Button text={btnText} variant='Primary' className='mt-8' />}
 			</div>
-
-			<Image
+			<DarkLightImage
+				DarkVisibleImage={props.DarkVisibleImage ?? transparent}
+				LightVisibleImage={props.LightVisibleImage ?? transparent}
 				className='mx-auto mt-[32.5px] hidden h-fit w-full max-w-[402px] dark:block max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
-				src={props.DarkModeImage ?? transparent}
-				alt=''
-			/>
-			<Image
-				className='mx-auto mt-[32.5px] block h-fit w-full max-w-[402px] dark:hidden max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
-				src={props.LightModeImage ?? transparent}
 				alt=''
 			/>
 		</section>

@@ -25,8 +25,7 @@ import { SOLUTIONS } from "@/utils/home-data";
 
 const Page = () => {
 	const [services, setServices] = useState("");
-	const AVAILABLE_SERVICES = ["Web Development", "UI-UX", "Web Design", "CMS", " Managed", "Mobile"];
-
+	// const [horizontalNavOpened, setHorizontalNavOpened] = useState(false);
 	const [solutionsClicked, setSolutionsClicked] = useState<boolean>(false);
 
 	function onView(value: string) {

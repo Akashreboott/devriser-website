@@ -125,8 +125,10 @@ const MobileHeader = ({ className }: { className?: string }) => {
 								</div>
 							</li>
 							<li className='flex  items-center gap-[18px]'>
-								<ContactIcon className='w-[15px]' />
-								<p>Contact</p>
+								<Link href={"/contact-us"} onClick={() => setMobileMenuOpened(false)} className='flex items-center gap-[18px]'>
+									<ContactIcon className='w-[15px]' />
+									<p>Contact</p>
+								</Link>
 							</li>
 							{/* BOTTOM BUTTONS */}
 							<li className='flex flex-col gap-2 '>

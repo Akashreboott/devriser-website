@@ -8,7 +8,10 @@ const SectionHeading = (props: SectionHeadingProps) => {
 		return React.createElement(props.as ?? "section", { ...props }, children);
 	};
 	return (
-		<Component as={props.as} style={{ gap: props.gap }} className={cn("mx-auto flex w-full flex-col items-center text-center", props.className)}>
+		<Component
+			as={props.as}
+			style={{ gap: props.gap }}
+			className={cn("mx-auto flex flex-col items-center text-center", "w-[calc(100%-3rem)]", props.className)}>
 			<SemiGradientText
 				GradientTextColor={props.GradientColor ?? "gradient-bright"}
 				gradientText={props.gradientText ?? ""}
@@ -17,7 +20,7 @@ const SectionHeading = (props: SectionHeadingProps) => {
 				as='h2'
 				className='primary-heading mx-auto max-w-[85%] max-md:max-w-[95%]'
 			/>
-			{props.description && <p className=' max-w-[902px] text-basic text-primary-dark dark:text-gray'>{props.description}</p>}
+			{props.description && <p className='max-w-[902px] text-basic text-primary-dark dark:text-gray max-md:text-[14px]'>{props.description}</p>}
 			{props.children}
 		</Component>
 	);

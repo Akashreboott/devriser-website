@@ -60,7 +60,7 @@ const Footer = () => {
 									</Link>
 								</li>
 								<li className='text-[15px]/[33px] opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
-									<Link href={"#"} className='inline-block h-full w-full'>
+									<Link href={"/contact-us"} className='inline-block h-full w-full'>
 										Contact Us
 									</Link>
 								</li>

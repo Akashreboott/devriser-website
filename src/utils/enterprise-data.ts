@@ -96,34 +96,41 @@ export const INDUSTRIES = [
 export const PROCESSES = [
 	{
 		name: "Post-launch support",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Post-launch support team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Strategy and planning",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Strategy and planning team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Design and prototyping",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Design and prototyping team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Deployment and launch",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Deployment and launch team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Development of the solution",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Development of the solution team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Staging Site",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description: "Staging Site team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "User training and documentation",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"User training and documentation team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 	{
 		name: "Testing and quality assurance",
-		description: "Our team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
+		description:
+			"Testing and quality assurance team engages in comprehensive talks to align the solution perfectly with your business needs, and target audience.",
 	},
 ];

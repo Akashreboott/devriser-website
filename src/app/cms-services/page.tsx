@@ -24,8 +24,8 @@ export default function Home() {
 				TransparentGradientClasses='bg-gradient-to-b to-light to-90% '
 			/>
 			<HeroSection
-				LightModeImage={Lightillustration}
-				DarkModeImage={illustration}
+				LightVisibleImage={Lightillustration}
+				DarkVisibleImage={illustration}
 				heading="Advanced CMS Development Services  For Maximizing Your Website's Potential"
 				gradientText='CMS Development Services'
 				description="We optimize the true power of your business with our advanced CMS development services. Our CMS team handles every aspect of your

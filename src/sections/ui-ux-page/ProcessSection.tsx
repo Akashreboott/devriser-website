@@ -23,7 +23,7 @@ const ProcessSection = () => {
 							gradientText={title}
 							className='first text-[18px] md:max-w-[200px] md:text-[24px]/[25px]'
 						/>
-						<p className='second max-w-[90%] text-[14px]  leading-8 text-white md:text-[20px] md:leading-10 lg:max-w-[380px] '>{description}</p>
+						<p className='second e max-w-[90%]  text-[14px] leading-8 md:text-[20px] md:leading-10 lg:max-w-[380px] '>{description}</p>
 					</div>
 				))}
 			</div>

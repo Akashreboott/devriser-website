@@ -1,6 +1,5 @@
 @layer base {
 	/* --------------------------------- CMS  --------------------------------- */
-
 	:root {
 		--dark-gradient-border: linear-gradient(143.39deg, rgba(252, 252, 252, 0.6) 0%, rgba(255, 255, 255, 0.33) 129.61%);
 		--light-gradient-border: linear-gradient(143.39deg, rgba(217, 82, 82, 0.6) 0%, rgrgba(232, 81, 81, 0.33) 29.61%);
@@ -46,7 +45,6 @@
 		--primary-text-color: rgba(177, 178, 178, 1);
 		--decorated-banner-color: "#090a0b";
 	}
-	/* --------------------------------- CMS  --------------------------------- */
 
 	/* --------------------------------- UI/UX  --------------------------------- */
 
@@ -83,7 +81,6 @@
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
 	}
-	/* --------------------------------- UI/UX  --------------------------------- */
 
 	/* --------------------------------- MANAGED SERVICES  --------------------------------- */
 
@@ -114,7 +111,6 @@
 		/* SWIPER */
 		--swiper-navigation-color: var(--banner-bg);
 	}
-	/* --------------------------------- MANAGED SERVICES  --------------------------------- */
 
 	/* --------------------------------- WEB DEVELOPMENT  --------------------------------- */
 
@@ -152,8 +148,6 @@
 	--decorated-banner-color: "#090a0b";
 }
 
-/* --------------------------------- WEB DEVELOPMENT  --------------------------------- */
-
 /* --------------------------------- MOBILE APP DEVELOPMENT  --------------------------------- */
 
 [data-page="mobile-app-development"] {
@@ -189,9 +183,6 @@
 	--primary-text-color: white;
 	--decorated-banner-color: "#090a0b";
 }
-
-/* --------------------------------- MOBILE APP DEVELOPMENT  --------------------------------- */
-
 /* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
 
 [data-page="enterprise-solutions"] {
@@ -210,6 +201,7 @@
 	--toggle-icon-color: rgba(251, 65, 115, 1);
 	--banner-bg: rgba(197, 61, 173, 1);
 	--hero-overlay-color: rgba(125, 61, 245, 1);
+
 	/* Variables */
 	--testimonial-bg: var(--gradient-bright);
 	--card-border-color: var(--gray-gradient);
@@ -228,10 +220,7 @@
 	--decorated-banner-color: "#090a0b";
 }
 
-/* --------------------------------- ENTERPRISE SOLUTIONS  --------------------------------- */
-
 /* --------------------------------- HOME  --------------------------------- */
-
 [data-page="home"] {
 	/*Gradients*/
 	--gradient-bright: linear-gradient(91deg, #8a36e8 5.71%, #b93bb7 42.9%);
@@ -268,7 +257,9 @@
 	--primary-btn-color: linear-gradient(to right, white, white);
 }
 
-/* --------------------------------- HOME  --------------------------------- */
+/* :is(.dark [data-page="About"]) {
+} */
+
 @layer utilities {
 	.gray-gradient {
 		background-image: var(--gray-gradient);

@@ -47,6 +47,6 @@
 	}
 
 	.glass {
-		@apply rounded-lg border-[0.5px] border-white/20 bg-white/[0.05] backdrop-blur  transition-colors duration-300 hover:border-white/40;
+		@apply rounded-lg border-[0.5px] border-dark/20 bg-white/[0.05] backdrop-blur transition-colors  duration-300 hover:border-dark/30  dark:border-white/20 dark:hover:border-white/40;
 	}
 }

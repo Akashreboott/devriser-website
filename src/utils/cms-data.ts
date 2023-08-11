@@ -34,9 +34,9 @@ export const NAV_LINKS: NAV_LINKSInterface = {
 		["Inventory Management System", "#"],
 	],
 	contact: [
-		["Contact Link 1", "#"],
-		["Contact Link 2", "#"],
-		["Contact Link 3", "#"],
+		["Contact Link 1", "/contact-us"],
+		["Contact Link 2", "/contact-us"],
+		["Contact Link 3", "/contact-us"],
 	],
 };
 
