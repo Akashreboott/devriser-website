@@ -1,5 +1,5 @@
 import Main from "@/components/Main";
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import { HERO_DETAILS, TECH_STACK, faqQuestions } from "@/utils/web-development-data";
 import HeroImgDark from "../../../public/assets/images/web-development-illustration.svg";
 
@@ -8,13 +8,13 @@ import Pattern from "../../../public/assets/images/webservices-pattern.svg";
 import Cone from "../../../public/assets/images/OfferingSectionWebDev";
 import React from "react";
 import HeroOverlay from "@/components/HeroOverlay";
-import TestimonialSection from "@/sections/cms-page/TestimonialSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import DecoratedBanner from "@/components/DecoratedBanner";
 import SectionHeading from "@/components/SectionHeading";
 import { OFFERINGS } from "@/utils/web-development-data";
 import Grid1x2 from "@/components/Grid1x2";
 import Banner from "@/components/Banner";
-import FaqSection from "@/sections/cms-page/FaqSection";
+import FaqSection from "@/components/FaqSection";
 import ProcessSection from "@/sections/web-development/ProcessSection";
 import Image from "next/image";
 import type { Metadata } from "next";

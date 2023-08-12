@@ -1,15 +1,15 @@
 import HeroOverlay from "@/components/HeroOverlay";
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import overlay from "../../../public/assets/images/ui-ux-hero-overlay.svg";
 import SectionHeading from "@/components/SectionHeading";
 import { Features, PROCESSES, faqQuestions } from "@/utils/ui-ux-data";
 import FeatureCard from "@/components/FeatureCard";
 import DecoratedBanner from "@/components/DecoratedBanner";
-import TestimonialSection from "@/sections/cms-page/TestimonialSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import ProcessCard from "@/components/ProcessCard";
 import { SPECIALITIES } from "@/utils/ui-ux-data";
 import Banner from "@/components/Banner";
-import FaqSection from "@/sections/cms-page/FaqSection";
+import FaqSection from "@/components/FaqSection";
 import Grid1x2 from "@/components/Grid1x2";
 import white from "../../../public/assets/images/white520.png";
 

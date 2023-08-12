@@ -4,7 +4,7 @@ import Question from "@/components/Question";
 import cn from "@/utils/cn";
 import { Question as QInterface } from "@/utils/questions-data";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 interface props {
@@ -83,6 +83,7 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 			)}
 			{props.redirectTo && (
 				<Link
+					aria-label={`Answer few questions regarding your ${props.redirectTo[1]} to get an accurate start`}
 					href={props.redirectTo[0]}
 					onClick={props.closeModal}
 					className={cn(
@@ -95,15 +96,15 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 	);
 
 	return (
-		<div className={cn("isolate mt-6 grid w-[min(100%,900px)] px-3", "place-items-center gap-5 overflow-x-hidden", props.className)}>
+		<div className={cn("isolate mt-6 grid w-[min(100%,900px)] px-3", "place-items-center gap-5 ", props.className)}>
 			<AnimatePresence>
 				{showAlert && <Alert message='Select one option' className='absolute right-2 top-24 z-50 font-350 backdrop-brightness-0 lg:top-4' />}
 			</AnimatePresence>
 			{/* NUMBERS */}
 			{!submitted && (
-				<div className='scroll-bar-hide relative isolate  mb-10 flex max-w-3xl  justify-start overflow-x-auto max-md:justify-self-start md:justify-center  [&>*]:shrink-0'>
+				<div className=' scroll-bar-hide relative  isolate mb-10 flex max-w-full  justify-start overflow-x-auto max-md:justify-self-start md:justify-center lg:max-w-3xl  [&>*]:shrink-0'>
 					{QUESTIONS.map((question, index) => (
-						<div onClick={() => setCurrentQuestion(index)} key={index} className='flex items-center justify-center overflow-hidden text-[10px]'>
+						<div onClick={() => setCurrentQuestion(index)} key={index} className='flex items-center justify-center overflow-hidden  text-[10px]'>
 							{/* DOT */}
 							<div
 								className={cn(
@@ -115,7 +116,7 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 								{answersSet.has(question.title) &&
 									//@ts-ignore
 									Object.keys(answers).includes(question.title) && (
-										<motion.span
+										<m.span
 											initial={{ scale: 0 }}
 											animate={{ scale: 1 }}
 											transition={{ duration: 0.4, delay: 0.76 }}
@@ -123,7 +124,7 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 												"absolute inset-0  flex h-full w-full items-center justify-center rounded-full border border-dark/50 bg-dark text-light dark:border-white  dark:bg-white dark:text-dark"
 											)}>
 											{index + 1}
-										</motion.span>
+										</m.span>
 									)}
 							</div>
 							{/* LINE */}
@@ -135,11 +136,11 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 									{currentQuestion > index &&
 										//@ts-ignore
 										Object.keys(answers).includes(question.title) && (
-											<motion.span
+											<m.span
 												initial={{ scaleX: 0, transformOrigin: "left" }}
 												animate={{ scaleX: 1 }}
 												transition={{ duration: 0.75 }}
-												className=' inline-flex h-0.5 w-10 bg-white'></motion.span>
+												className=' inline-flex h-0.5 w-10 bg-white'></m.span>
 										)}
 								</div>
 							)}

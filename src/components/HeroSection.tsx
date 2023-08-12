@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import SemiGradientText from "@/components/SemiGradientText";
-import transparent from "./../../../public/assets/images/transparent.png";
+import transparent from "./../../public/assets/images/transparent.png";
 import React from "react";
 import cn from "@/utils/cn";
 import DarkLightImage from "@/components/DarkLightImage";

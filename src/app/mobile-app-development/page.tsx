@@ -1,6 +1,6 @@
 import HeroOverlay from "@/components/HeroOverlay";
 import Main from "@/components/Main";
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import React from "react";
 import Pattern from "../../../public/assets/images/mobile-development-pattern.svg";
 import Placeholder from "../../../public/assets/images/placeholder.png";
@@ -10,11 +10,11 @@ import ProcessCard from "@/components/ProcessCard";
 import DecoratedBanner from "@/components/DecoratedBanner";
 import Grid1x2 from "@/components/Grid1x2";
 import ProcessSection from "@/sections/mobile-app-development/ProcessSection";
-import TestimonialSection from "@/sections/cms-page/TestimonialSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import { TECH_STACK } from "@/utils/web-development-data";
 import Image from "next/image";
 import Banner from "@/components/Banner";
-import FaqSection from "@/sections/cms-page/FaqSection";
+import FaqSection from "@/components/FaqSection";
 import type { Metadata } from "next";
 import { SERVICES, SOLUTIONS, faqQuestions } from "@/utils/mobile-app-data";
 

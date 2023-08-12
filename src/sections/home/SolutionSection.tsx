@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 import GlassCard from "@/components/GlassCard";
 import SideHeading from "@/components/SideHeading";
@@ -64,6 +64,7 @@ const SolutionSection = () => {
 						))}
 					</ul>
 					<button
+						aria-label='Previous'
 						disabled={buttonClicked === 0}
 						onClick={() => {
 							moveLeft();
@@ -76,6 +77,7 @@ const SolutionSection = () => {
 						<ChevronIcon className='pointer-events-none h-5 w-5 -translate-x-0.5 rotate-180 text-banner-bg' />
 					</button>
 					<button
+						aria-label='Next'
 						disabled={buttonClicked === SOLUTIONS.length - 1}
 						onClick={() => {
 							moveRight();
@@ -90,7 +92,7 @@ const SolutionSection = () => {
 				</nav>
 				{/* IMAGE */}
 				<AnimatePresence>
-					<motion.div
+					<m.div
 						key={active.name}
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -126,13 +128,13 @@ const SolutionSection = () => {
 							transition={{ duration: 0.25 }}>
 							<Image src={active.mainImage} alt='' className='' />
 						</MotionComponent>
-					</motion.div>
+					</m.div>
 				</AnimatePresence>
 				{/* CONTENT AND IMAGE */}
 				<div className='mx-auto grid max-w-[1080px]  lg:grid-cols-2'>
 					<div className='flex w-full flex-col gap-6 max-lg:px-2 max-lg:text-center'>
 						<p>{active.content}</p>
-						<Link href={active.link} className='underline'>
+						<Link href={active.link} aria-label={`Go to ${active.name} page`} className='underline'>
 							Check out {active.name}
 						</Link>
 					</div>

@@ -6,7 +6,7 @@ import ArrowLeft from "../../../public/assets/icons/ArrowLeft";
 import cn from "@/utils/cn";
 import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "@/components/Swiper";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { BENEFITS } from "@/utils/ui-ux-data";
 
 const CarourselSection = () => {
@@ -36,7 +36,7 @@ const CarourselSection = () => {
 				{/* className='scroll-bar-hide max-w-ful mt-[40px] grid h-[calc(400px+20px)] w-full  snap-x grid-cols-[repeat(7,calc(var(--card-width)-64px))] items-center  justify-start  gap-16 overflow-x-auto overflow-y-visible [--card-width:320px] md:[--card-width:400px] [&>*]:mx-auto   [&>*]:snap-center'> */}
 				{BENEFITS.map(({ description, title, image }, index) => (
 					<SwiperSlide key={title} data-swiper-slide='ui-ux-carousel'>
-						<motion.div
+						<m.div
 							layout
 							key={title}
 							className={cn(
@@ -49,16 +49,16 @@ const CarourselSection = () => {
 							<div className='back-card  bg-noise250 absolute inset-0 hidden h-full w-full origin-center rounded  bg-banner-bg  '>
 								<p className='mx-auto mt-10 max-w-[90%] text-white'>{description}</p>
 							</div>
-						</motion.div>
+						</m.div>
 					</SwiperSlide>
 				))}
 			</Swiper>
 
 			<div className='ml-8 flex gap-2 self-start max-md:mx-auto'>
-				<button onClick={() => SwiperRef.current.swiper.slidePrev()}>
+				<button aria-label='Previous' onClick={() => SwiperRef.current.swiper.slidePrev()}>
 					<ArrowLeft className='w-10 transition-[colors,opacity] duration-75 hover:text-banner-bg active:opacity-60' />
 				</button>
-				<button onClick={() => SwiperRef.current.swiper.slideNext()}>
+				<button aria-label='Next' onClick={() => SwiperRef.current.swiper.slideNext()}>
 					<ArrowLeft className='w-10 rotate-180 transition-[colors,opacity] duration-75 hover:text-banner-bg active:opacity-60' />
 				</button>
 			</div>

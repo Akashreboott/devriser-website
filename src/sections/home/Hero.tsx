@@ -41,7 +41,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 								initial={{ filter: "brightness(1)" }}
 								animate={{ filter: "brightness(2)" }}
 								transition={{ duration: 1, delay: 4 }}
-								key={word}
+								key={index}
 								className={cn("inline-flex overflow-hidden   max-lg:text-center")}>
 								{/* <span className='relative z-10 h-[120%] w-full overflow-hidden  max-md:hidden'> */}
 								<MotionComponent
@@ -67,7 +67,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 					{description && (
 						<p className='md:hero-btn-animation mt-5 max-w-[700px] text-basic text-primary-dark [--delay:1.7s] dark:text-gray max-lg:mx-auto'>
 							{description.split(" ").map((word, index) => (
-								<span key={word} className={cn("inline-flex   overflow-hidden")}>
+								<span key={index} className={cn("inline-flex   overflow-hidden")}>
 									{/* <span className='relative z-10 h-[120%] w-full overflow-hidden  max-md:hidden'> */}
 									<MotionComponent
 										as='span'

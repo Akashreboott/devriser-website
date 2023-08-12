@@ -1,12 +1,12 @@
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import Frame from "../../../public/assets/images/bg-frame.svg";
 import illustration from "../../../public/assets/images/dark hero illustration.svg";
 import Lightillustration from "../../../public/assets/images/light hero illustration.svg";
 import LineUpSection from "@/sections/cms-page/LineUpSection";
 import ProcessSection from "@/sections/cms-page/ProcessSection";
 import ChooseUsSection from "@/sections/cms-page/ChooseUsSection";
-import TestimonialSection from "@/sections/cms-page/TestimonialSection";
-import FaqSection from "@/sections/cms-page/FaqSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import FaqSection from "@/components/FaqSection";
 import FeaturesSection from "@/sections/cms-page/FeaturesSection";
 import WebsiteTypesSection from "@/sections/cms-page/WebsiteTypesSection";
 import DecoratedBanner from "@/components/DecoratedBanner";

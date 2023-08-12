@@ -36,7 +36,7 @@ const BlogsSection = () => {
 					image={image218}
 				/>
 			</div>
-			<Link href={"#"} className='mx-auto mt-10 flex items-center justify-center gap-3 underline'>
+			<Link href={"#"} aria-label='View all blogs' className='mx-auto mt-10 flex items-center justify-center gap-3 underline'>
 				View all
 				<ArrowSmall className='h-4 ' />
 			</Link>

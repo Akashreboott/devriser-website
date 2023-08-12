@@ -32,10 +32,10 @@ const FeaturesSection = () => {
 			</Swiper>
 
 			<div className='ml-8 mt-8 flex gap-2 self-start max-md:mx-auto lg:hidden'>
-				<button onClick={() => SwiperRef.current.swiper.slidePrev()}>
+				<button aria-label='Previous Feature' onClick={() => SwiperRef.current.swiper.slidePrev()}>
 					<ArrowLeft className='w-10 transition-[colors,opacity] duration-75 hover:text-banner-bg active:opacity-60' />
 				</button>
-				<button onClick={() => SwiperRef.current.swiper.slideNext()}>
+				<button aria-label='Next Feature' onClick={() => SwiperRef.current.swiper.slideNext()}>
 					<ArrowLeft className='w-10 rotate-180 transition-[colors,opacity] duration-75 hover:text-banner-bg active:opacity-60' />
 				</button>
 			</div>

@@ -14,7 +14,7 @@ import ThemeButton from "@/utils/ThemeButton";
 import { LANGUAGE, LANGUAGES, NAV_LINKS, NAV_LINKSInterface } from "../../utils/cms-data";
 import Link from "next/link";
 import cn from "@/utils/cn";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
 import { headerPropsInterface } from "./Header";
@@ -50,11 +50,11 @@ const MobileHeader = ({
 						Sign In
 					</button>
 				</div>
-				<Link href={"/"}>
+				<Link aria-label='Go to home page' href={"/"}>
 					<DevRiserLogo className='h-[38px] w-[38px] shrink-0' />
 				</Link>
 
-				<button className='justify-self-end'>
+				<button className='justify-self-end' aria-label='Menu'>
 					<Menu className='w-5 cursor-pointer fill-white' onClick={() => setMobileMenuOpened(true)} />
 				</button>
 			</header>
@@ -62,7 +62,7 @@ const MobileHeader = ({
 			<AnimatePresence mode='wait'>
 				{/* OVERLAY */}
 				{mobileMenuOpened && (
-					<motion.div
+					<m.div
 						initial={{ opacity: 0, y: "-120%" }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: "-120%" }}
@@ -82,7 +82,7 @@ const MobileHeader = ({
 						{/* LINKS */}
 						<ul className=' mx-auto flex h-fit w-full grow flex-col gap-[26px] bg-white  p-6 pt-8  text-navlink  dark:bg-gray-30 [&_p]:text-basic [&_p]:font-normal'>
 							<li>
-								<Link href={"/"} onClick={() => setMobileMenuOpened(false)} className='flex items-center gap-[18px]'>
+								<Link aria-label='Go to home page' href={"/"} onClick={() => setMobileMenuOpened(false)} className='flex items-center gap-[18px]'>
 									<Logo className='w-[15px]' />
 									<p>Home</p>
 								</Link>
@@ -96,6 +96,7 @@ const MobileHeader = ({
 								<div className={`mt-4 space-y-[6px] pl-8 ${!services && "hidden"}`}>
 									{NAV_LINKS["services"].map(([name, path]) => (
 										<Link
+											aria-label={`Go to ${name} page`}
 											key={name}
 											href={path}
 											onClick={() => {
@@ -118,6 +119,7 @@ const MobileHeader = ({
 								<div className={`mt-4 space-y-[6px] pl-8 ${!solutions && "hidden"}`}>
 									{NAV_LINKS["solutions"].map(([name, path]) => (
 										<Link
+											aria-label={`Go to ${name} page`}
 											key={name}
 											href={path}
 											onClick={() => {
@@ -132,14 +134,18 @@ const MobileHeader = ({
 								</div>
 							</li>
 							<li className='flex  items-center gap-[18px]'>
-								<Link href={"/contact-us"} onClick={() => setMobileMenuOpened(false)} className='flex items-center gap-[18px]'>
+								<Link
+									aria-label='Go to contact us Page'
+									href={"/contact-us"}
+									onClick={() => setMobileMenuOpened(false)}
+									className='flex items-center gap-[18px]'>
 									<ContactIcon className='w-[15px]' />
 									<p>Contact</p>
 								</Link>
 							</li>
 							{/* BOTTOM BUTTONS */}
 							<li className='flex flex-col gap-2 '>
-								<motion.button
+								<m.button
 									initial={{ opacity: 0.15 }}
 									animate={{ opacity: 1 }}
 									exit={{ opacity: 0.15 }}
@@ -151,7 +157,7 @@ const MobileHeader = ({
 									{selectedLanguage.fullName}
 									<ChevronIcon className='ml-auto rotate-90' />
 									{languagesOpened && (
-										<motion.ul
+										<m.ul
 											initial='hide'
 											animate='visible'
 											exit='hide'
@@ -160,7 +166,7 @@ const MobileHeader = ({
 												"absolute -bottom-[330%] left-0  z-50 flex w-full flex-col gap-2 rounded-[0_0_8px_8px]  border-2 bg-white/80 p-3  backdrop-blur-3xl dark:border-dark/50 dark:bg-gray-30/95   [&>li]:cursor-pointer [&>li]:transition-colors"
 											}>
 											{LANGUAGES.map((lang, index) => (
-												<motion.li
+												<m.li
 													initial={{ x: -10, opacity: 0 }}
 													animate={{ opacity: 1, x: 0 }}
 													transition={{ duration: 0.2, type: "spring", stiffness: 120, delay: 0.1 * index }}
@@ -178,17 +184,17 @@ const MobileHeader = ({
 														className={cn("flex h-full w-full items-center justify-start gap-4 px-6 py-3  text-[12px]/[11.6px]")}>
 														<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
 													</button>
-												</motion.li>
+												</m.li>
 											))}
-										</motion.ul>
+										</m.ul>
 									)}
-								</motion.button>
+								</m.button>
 								<button className='flex items-center justify-center rounded-md border border-primary-dark/[0.16] bg-dark px-[20px]  py-[14px] text-center text-base text-primary-light dark:bg-light dark:text-primary-dark'>
 									Sign In
 								</button>
 							</li>
 						</ul>
-					</motion.div>
+					</m.div>
 				)}
 			</AnimatePresence>
 		</>

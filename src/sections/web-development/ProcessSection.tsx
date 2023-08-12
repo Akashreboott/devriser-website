@@ -4,7 +4,7 @@ import { PROCESS_DETAILS } from "@/utils/web-development-data";
 import React, { useState } from "react";
 import ArrowLeft from "../../../public/assets/icons/ArrowLeft";
 import cn from "@/utils/cn";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import ChevronIcon from "../../../public/assets/icons/Chevron";
 
 const ProcessSection = () => {
@@ -79,9 +79,9 @@ const ProcessSection = () => {
 				</div>
 				{/* PROCESS DESCRIPTION */}
 				<div className='rounded bg-white px-8 py-[35px] text-[14px]/[21px] font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-[18px]/[40px] lg:px-[54px]  '>
-					<motion.div initial={{ opacity: 0, y: "-5px" }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
+					<m.div initial={{ opacity: 0, y: "-5px" }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
 						{activeProcess.description}
-					</motion.div>
+					</m.div>
 				</div>
 			</div>
 		</SectionHeading>

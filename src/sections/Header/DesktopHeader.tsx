@@ -4,7 +4,7 @@ import SettingsIcon from "./../../../public/assets/icons/SettingsIcon";
 
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import { headerPropsInterface } from "./Header";
@@ -31,7 +31,6 @@ const DesktopHeader = ({
 	const headerRef = useRef<HTMLDivElement>(null);
 	const [headerWidth, setheaderWidth] = useState<number>(82);
 
-	console.log(activeLink, selectedLink);
 	useEffect(() => {
 		if (mobileMenuOpened) {
 			document.body.style.overflow = "hidden";
@@ -70,6 +69,7 @@ const DesktopHeader = ({
 					)}>
 					{/* LOGO */}
 					<Link
+						aria-label='Go to Home Page'
 						href={"/"}
 						onClick={() => {
 							setSelectedLink("");
@@ -87,10 +87,10 @@ const DesktopHeader = ({
 							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
 								<SettingsIcon className={cn(IconClasses, selectedLink === "services" && "text-dark")} />
 								{selectedLink === "services" && (
-									<motion.div
+									<m.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></m.div>
 								)}
 								{!(selectedLink === "services") && (
 									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-white opacity-0 shadow transition-opacity duration-200 group-hover:opacity-100 dark:bg-dark/50'></div>
@@ -102,10 +102,10 @@ const DesktopHeader = ({
 							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
 								<SettingsIcon className={cn(IconClasses, selectedLink === "solutions" && "text-dark")} />
 								{selectedLink === "solutions" && (
-									<motion.div
+									<m.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></m.div>
 								)}
 								{!(selectedLink === "solutions") && (
 									<div className='absolute inset-0 -z-10 h-full w-full rounded-full bg-white opacity-0 shadow transition-opacity duration-200 group-hover:opacity-100 dark:bg-dark/50'></div>
@@ -118,10 +118,10 @@ const DesktopHeader = ({
 							<div className='group relative isolate -z-10 flex h-fit w-[50px] items-center justify-center'>
 								<SettingsIcon className={cn(IconClasses, selectedLink === "contact" && "text-dark")} />
 								{selectedLink === "contact" && (
-									<motion.div
+									<m.div
 										layoutId='navbox'
 										transition={{ type: "spring", duration: 0.7 }}
-										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></motion.div>
+										className='absolute inset-0 -z-10 h-full w-full rounded-full shadow-[0_0_4px] shadow-sky-400 dark:bg-sky-200 dark:shadow-sky-200'></m.div>
 								)}
 
 								{!(selectedLink === "contact") && (
@@ -157,7 +157,7 @@ const DesktopHeader = ({
 				{/* SIDE BAR */}
 				<AnimatePresence>
 					{desktopMenuOpened && (
-						<motion.div
+						<m.div
 							onMouseEnter={openMenu}
 							onMouseLeave={closeMenu}
 							initial={{ transform: `translateX(-${headerWidth + 250}px)` }}
@@ -170,7 +170,7 @@ const DesktopHeader = ({
 								{activeLink &&
 									desktopMenuOpened &&
 									NAV_LINKS[activeLink as keyof NAV_LINKSInterface].map(([name, path], index) => (
-										<motion.li
+										<m.li
 											animate={{ opacity: [0, 0, 0.4, 1] }}
 											transition={{ duration: 0.5, ease: "easeInOut" }}
 											key={name}
@@ -179,6 +179,7 @@ const DesktopHeader = ({
 												subLink === name && "bg-white shadow-[0_0_4px] shadow-dark/10 dark:bg-dark dark:shadow-none "
 											)}>
 											<Link
+												aria-label={`Go to ${name} page`}
 												href={path ?? ""}
 												onClick={() => {
 													if (path !== "#") {
@@ -189,17 +190,17 @@ const DesktopHeader = ({
 												className={cn("inline-block  h-full w-full p-[14px] pr-[21px]  text-[14px]/[11.6px]")}>
 												{name}
 											</Link>
-										</motion.li>
+										</m.li>
 									))}
 							</ul>
-						</motion.div>
+						</m.div>
 					)}
 				</AnimatePresence>
 
 				{/* LANGUAGE POPUP */}
 				<AnimatePresence>
 					{languagesOpened && (
-						<motion.ul
+						<m.ul
 							onMouseLeave={() => setLanguagesOpened(false)}
 							initial={{ x: "-100%", opacity: 0.2 }}
 							animate={{ x: "0", opacity: 1 }}
@@ -208,7 +209,7 @@ const DesktopHeader = ({
 								"absolute bottom-0 left-[calc(100%-1.5px)] -z-10 flex flex-col gap-5 rounded-[0_8px_0_0]  bg-white/60 p-3 backdrop-blur-3xl  dark:bg-gray-30/60   [&>li]:cursor-pointer [&>li]:transition-colors"
 							}>
 							{LANGUAGES.map((lang, index) => (
-								<motion.li
+								<m.li
 									animate={{ opacity: [0, 0, 0.4, 1] }}
 									transition={{ duration: 0.5, ease: "easeInOut" }}
 									key={lang.shortName}
@@ -225,9 +226,9 @@ const DesktopHeader = ({
 										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
 										<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
 									</button>
-								</motion.li>
+								</m.li>
 							))}
-						</motion.ul>
+						</m.ul>
 					)}
 				</AnimatePresence>
 			</header>

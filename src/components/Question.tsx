@@ -32,7 +32,7 @@ const Question = (props: props) => (
 								)}>
 								<div className='relative  flex h-8 w-8 items-center justify-center'>
 									<input
-										onInput={props.onInput}
+										onChange={props.onInput}
 										type='radio'
 										id={option}
 										name='options'
@@ -53,12 +53,12 @@ const Question = (props: props) => (
 			{props.questionType === "text" && (
 				<div className='w-full'>
 					<textarea
-						onInput={props.onInput}
+						onChange={props.onInput}
 						placeholder='Type your requirements'
 						name='text-area'
 						id=''
 						value={props.selected}
-						className='glass ml-4 h-[150%] w-full resize-none rounded border bg-transparent p-3 text-p14  outline-2 outline-dark/20 focus-within:outline dark:outline-white/30'></textarea>
+						className='glass mb-2 ml-4 h-[150%] w-full resize-none rounded border bg-transparent p-3 text-p14  outline-2 outline-dark/20 focus-within:outline dark:outline-white/30'></textarea>
 				</div>
 			)}
 
@@ -73,16 +73,16 @@ const Question = (props: props) => (
 						)}>
 						<div className='relative  flex h-8 w-8 items-center justify-center'>
 							<input
-								onInput={props.onInput}
+								onChange={props.onInput}
 								type='checkbox'
 								multiple={true}
 								id={option}
 								name='options'
 								value={option}
 								checked={props.selected.includes(option)}
-								className='peer z-10 shrink-0 cursor-pointer  ring-white/80 focus-within:ring-1'
+								className='peer z-10 shrink-0 cursor-pointer  '
 							/>
-							<div className='before-overlay absolute inset-0 -z-10 rounded-full bg-transparent transition-colors group-hover:bg-gray-66/10 group-hover:peer-checked:!bg-fuchsia-300/30 dark:group-hover:bg-gray-66/50 '></div>
+							<div className='before-overlay absolute -z-10 h-8 w-8 rounded-full bg-transparent transition-colors group-hover:bg-gray-66/10 group-hover:peer-checked:!bg-fuchsia-300/30 dark:group-hover:bg-gray-66/50 '></div>
 						</div>
 						<label htmlFor={option} className='w-full cursor-pointer select-none text-left'>
 							{option}

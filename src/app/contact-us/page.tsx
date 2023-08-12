@@ -1,5 +1,5 @@
 import Main from "@/components/Main";
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import illustration from "../../../public/assets/images/dark hero illustration.svg";
 import Lightillustration from "../../../public/assets/images/light hero illustration.svg";
 

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
@@ -56,7 +56,7 @@ function Carousel(props) {
 
 		// // Add event listener
 		// SwiperRef.current.addEventListener("slidechange", (e) => {
-		// 	console.log(e.detail);
+
 		// });
 
 		// // Object with parameters
@@ -64,7 +64,7 @@ function Carousel(props) {
 		// 	// or pass it in on
 		// 	on: {
 		// 		slideChange(s) {
-		// 			console.log(s);
+
 		// 		},
 		// 	},
 		// };
@@ -97,7 +97,7 @@ function Carousel(props) {
 				{/* className='scroll-bar-hide max-w-ful mt-[40px] grid h-[calc(400px+20px)] w-full  snap-x grid-cols-[repeat(7,calc(var(--card-width)-64px))] items-center  justify-start  gap-16 overflow-x-auto overflow-y-visible [--card-width:320px] md:[--card-width:400px] [&>*]:mx-auto   [&>*]:snap-center'> */}
 				{[...DATA, ...DATA].map(({ content, title }, index) => (
 					<SwiperSlide key={title}>
-						<motion.div
+						<m.div
 							layout
 							key={title}
 							className={cn(
@@ -110,7 +110,7 @@ function Carousel(props) {
 							<div className=' back-card bg-noise250 absolute inset-0 hidden h-full w-full rounded  bg-banner-bg  '>
 								<p className='mx-auto mt-10 max-w-[90%] text-white'>{content}</p>
 							</div>
-						</motion.div>
+						</m.div>
 					</SwiperSlide>
 				))}
 			</Swiper>

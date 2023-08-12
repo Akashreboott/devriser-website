@@ -1,6 +1,6 @@
 import HeroOverlay from "@/components/HeroOverlay";
 import Main from "@/components/Main";
-import HeroSection from "@/sections/cms-page/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import Pattern from "../../../public/assets/images/enterprise-pattern.svg";
 import Placeholder from "../../../public/assets/images/white520.png";
 import SectionHeading from "@/components/SectionHeading";
@@ -13,8 +13,8 @@ import Image from "next/image";
 import { INDUSTRIES, faqQuestions } from "@/utils/enterprise-data";
 import Grid1x2 from "@/components/Grid1x2";
 import DecoratedBanner from "@/components/DecoratedBanner";
-import TestimonialSection from "@/sections/cms-page/TestimonialSection";
-import FaqSection from "@/sections/cms-page/FaqSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import FaqSection from "@/components/FaqSection";
 import WhyDevriserSection from "@/sections/enterprise-solutions/WhyDevriserSection";
 import ProcessSection from "@/sections/enterprise-solutions/ProcessSection";
 import type { Metadata } from "next";

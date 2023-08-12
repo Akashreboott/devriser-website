@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import cn from "@/utils/cn";
 import DarkLightImage from "@/components/DarkLightImage";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
 
 import ChevronIcon from "../../../public/assets/icons/Chevron";
@@ -78,7 +78,7 @@ const ProcessSection = () => {
 						))}
 					</div>
 					{/* PROCESS DESCRIPTION */}
-					<motion.div
+					<m.div
 						initial='hide'
 						animate='visible'
 						exit='hide'
@@ -88,7 +88,7 @@ const ProcessSection = () => {
 						className='flex flex-col items-center justify-center gap-10 rounded-md border border-dark/30 p-4 dark:border-white/10 lg:p-6'>
 						{/* <div className='secondary-heading'>{activeProcess.heading}</div> */}
 						<p className='font-350 leading-7'>{activeProcess.description}</p>
-					</motion.div>
+					</m.div>
 				</div>
 			</SectionHeading>
 		</AnimatePresence>

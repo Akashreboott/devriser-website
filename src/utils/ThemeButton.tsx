@@ -16,7 +16,7 @@ const ThemeButton = ({ children, className }: { children?: React.ReactNode; clas
 	if (!mounted)
 		return (
 			<div className={cn("mt-auto flex flex-col items-center gap-[9px]", className)}>
-				<button className='h-[33px] w-[33px] appearance-none'>
+				<button aria-label='Theme Button' className='h-[33px] w-[33px] appearance-none'>
 					<div className='h-full w-full animate-pulse rounded'></div>
 				</button>
 			</div>
@@ -25,6 +25,7 @@ const ThemeButton = ({ children, className }: { children?: React.ReactNode; clas
 		<div className={cn("mt-auto flex flex-col items-center gap-[9px]", className)}>
 			{ctx.theme === "dark" && (
 				<button
+					aria-label='Light Theme Button'
 					className='appearance-none'
 					onClick={() => {
 						ctx.setTheme("light");
@@ -34,6 +35,7 @@ const ThemeButton = ({ children, className }: { children?: React.ReactNode; clas
 			)}
 			{ctx.theme !== "dark" && (
 				<button
+					aria-label='Dark Theme Button'
 					className='appearance-none'
 					onClick={() => {
 						ctx.setTheme("dark");

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const AnimatedNumber = (props: { Value: number; duration?: number; children?: React.ReactNode; className?: string }) => {
@@ -18,10 +18,10 @@ const AnimatedNumber = (props: { Value: number; duration?: number; children?: Re
 	}, [number, props.Value, timeGap]);
 
 	return (
-		<motion.span key={number} className={props.className}>
+		<m.span key={number} className={props.className}>
 			{number}
 			{props.children}
-		</motion.span>
+		</m.span>
 	);
 };
 

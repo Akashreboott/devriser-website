@@ -3,11 +3,12 @@ import HomeGrid from "@/components/HomeGrid";
 import LineLayout from "@/components/LineLayout";
 import React from "react";
 import white from "../../../public/assets/images/white520.png";
+import MotionComponent from "@/components/MotionComponent";
 
 const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 	return (
-		<>
-			<LineLayout heading='Web Development' onView={() => props.onView("Web Development")} notOnView={props.notOnView}>
+		<MotionComponent onViewportLeave={props.notOnView}>
+			<LineLayout heading='Web Development' onView={() => props.onView("Web Development")}>
 				<HomeGrid reverse={true} className=' justify-items-center gap-10  '>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col  justify-center gap-2 '>
 						<GlassCard delay={0.1} heading='AI-powered' image={white} className='relative -right-[3rem] top-[3rem] z-10 ml-auto' />
@@ -81,7 +82,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='Enterprise Solutions' className='mb-14' onView={() => props.onView("Enterprise Solutions")} notOnView={props.notOnView}>
+			<LineLayout heading='Enterprise Solutions' className='mb-14' onView={() => props.onView("Enterprise Solutions")}>
 				<HomeGrid className='justify-items-center gap-10'>
 					<div className='isolate flex w-[70%] flex-col items-center justify-center gap-4 '>
 						<div className=' grid w-full gap-6'>
@@ -94,7 +95,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-		</>
+		</MotionComponent>
 	);
 };
 

@@ -21,7 +21,6 @@ const Header = ({ className }: { className?: string }) => {
 	const [selectedLink, setSelectedLink] = useState<"services" | "solutions" | "contact" | "">("");
 
 	let { locales } = i18nConfig;
-	console.log(locales);
 
 	async function changeLanguage(lang: string) {
 		await setLanguage(lang);

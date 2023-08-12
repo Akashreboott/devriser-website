@@ -6,6 +6,7 @@ import Image from "next/image";
 import { NAV_LINKS } from "@/utils/cms-data";
 import cn from "@/utils/cn";
 import LineLayout from "@/components/LineLayout";
+import Link from "next/link";
 
 import image208 from "./../../public/assets/images/Rectangle-208.png";
 import image281 from "./../../public/assets/images/Rectangle-281.png";
@@ -19,7 +20,7 @@ import ServicesSection from "@/sections/home/ServicesSection";
 import BlogsSection from "@/sections/home/BlogsSection";
 import HeroSection from "@/sections/home/HeroSection";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { slugify } from "@/utils/utils";
 import { SOLUTIONS } from "@/utils/home-data";
 import { useTheme } from "next-themes";
@@ -36,27 +37,26 @@ const Page = () => {
 	function notOnView() {
 		setServices("");
 	}
-	console.log(services);
+
 	return (
 		<>
 			<AnimatePresence>
 				{services && (
-					<motion.nav
+					<m.nav
 						initial={{ y: "-100%", x: "-47.5%" }}
 						animate={{ y: "0%", x: "-47.5%" }}
 						exit={{ y: "-100%", x: "-47.5%" }}
 						transition={{ duration: 1 }}
 						className='fixed left-1/2  top-0 z-50 mx-auto flex w-full max-w-[1728px]  items-center justify-center gap-20 bg-white/[0.05]  py-5 backdrop-blur-2xl max-lg:hidden '>
 						<div className='flex  justify-center gap-5'>
-							{NAV_LINKS["services"].map(([name, path]) => (
-								<a key={name} className='relative inline-block' href={`#${slugify(slugify(name), "/")}`}>
+							{NAV_LINKS["services"].map(([name]) => (
+								<a aria-label={`Go to ${name} section`} key={name} className='relative inline-block' href={`#${slugify(slugify(name), "/")}`}>
 									{name}
 									{services === name && (
 										<MotionComponent
-											layout
 											as='span'
-											layoutId='navbarID'
-											className='absolute -bottom-2.5 left-0  h-1 w-full bg-gradient-to-r from-transparent  via-sky-500  via-50%  to-transparent'
+											layoutId='HorizontalNavbarUnderline'
+											className='absolute -bottom-2.5 left-0 inline-block  h-1 w-full bg-gradient-to-r from-transparent  via-sky-500  via-50%  to-transparent'
 										/>
 									)}
 								</a>
@@ -68,7 +68,7 @@ const Page = () => {
 							<span>Business Solution</span>
 							<AnimatePresence>
 								{solutionsClicked && (
-									<motion.ul
+									<m.ul
 										onMouseLeave={() => setSolutionsClicked(false)}
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
@@ -77,7 +77,7 @@ const Page = () => {
 											"absolute left-0 top-[calc(100%+8px)] -z-10 flex w-full min-w-fit flex-col gap-3  rounded-md  bg-light py-3 backdrop-blur-3xl  dark:bg-gray-30/95   [&>li]:cursor-pointer [&>li]:transition-colors"
 										}>
 										{SOLUTIONS.map(({ name }, index) => (
-											<motion.li
+											<m.li
 												animate={{ opacity: [0, 1] }}
 												transition={{ duration: 0.5, ease: "easeInOut", delay: 0.05 * index }}
 												key={name}
@@ -90,13 +90,13 @@ const Page = () => {
 														setLanguagesOpened(false);
 													}} */}
 												{name}
-											</motion.li>
+											</m.li>
 										))}
-									</motion.ul>
+									</m.ul>
 								)}
 							</AnimatePresence>
 						</button>
-					</motion.nav>
+					</m.nav>
 				)}
 			</AnimatePresence>
 			<Main data-page='home' className=' isolate grid '>
@@ -121,14 +121,14 @@ const Page = () => {
 							"opacity-0.4 absolute -top-[200px] left-full z-20 aspect-square w-[400px] rounded-full bg-gradient-to-tl from-emerald-400 to-emerald-500 opacity-30 blur-3xl lg:-left-[10%] "
 						)}
 					/> */}
-					<motion.div
+					<m.div
 						animate={{
 							filter: ["brightness(0) blur(3px)", "brightness(0) blur(1.5px)", "brightness(0.3) blur(0px)"],
 						}}
 						transition={{ duration: 1, delay: 4 }}
 						className='w-full  brightness-50'>
 						<Image src={Stars} alt='' className='hidden h-full w-full -translate-y-[200px] object-cover dark:block ' />
-					</motion.div>
+					</m.div>
 				</div>
 
 				<div className='home isolate'>

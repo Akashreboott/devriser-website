@@ -4,7 +4,7 @@ import SemiGradientText from "@/components/SemiGradientText";
 import { PROCESSES } from "@/utils/enterprise-data";
 import cn from "@/utils/cn";
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 const ProcessSection = () => {
 	const [selectedProcess, setSelectedProcess] = useState(PROCESSES[0].name);
@@ -13,7 +13,7 @@ const ProcessSection = () => {
 		<SectionHeading title='Our Development Process' className='mb-60 gap-20 max-md:text-center lg:px-[calc(170px+10px)]' gradientText='Development'>
 			<div className='relative mt-20 flex h-[calc(80vw-110px)] w-[calc(80vw-110px)] items-center justify-center rounded-full border border-white md:h-[470px] md:w-[470px] lg:h-[525px] lg:w-[525px] '>
 				<AnimatePresence>
-					<motion.div
+					<m.div
 						key={selectedProcess}
 						initial={{ opacity: 0 }}
 						exit={{ opacity: 0 }}
@@ -21,7 +21,7 @@ const ProcessSection = () => {
 						transition={{ duration: 2.5 }}
 						className='px-10 max-md:text-xs max-[500px]:text-[10px]'>
 						{PROCESSES.find(({ name }) => name === selectedProcess)?.description}
-					</motion.div>
+					</m.div>
 				</AnimatePresence>
 				{PROCESSES.map(({ name }, index) => {
 					let angle = index * (360 / PROCESSES.length);

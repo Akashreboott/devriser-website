@@ -18,9 +18,9 @@ const SectionHeading = (props: SectionHeadingProps) => {
 				text={props.title}
 				FullGradient={props.FullGradient}
 				as='h2'
-				className='primary-heading mx-auto max-w-[85%] max-md:max-w-[95%]'
+				className='primary-heading mx-auto max-w-[85%] px-3 max-md:max-w-[95%]'
 			/>
-			{props.description && <p className='max-w-[902px] text-basic text-primary-dark dark:text-gray max-md:text-[14px]'>{props.description}</p>}
+			{props.description && <p className='text-basi max-w-[902px] px-3 text-primary-dark dark:text-gray max-md:text-[14px]'>{props.description}</p>}
 			{props.children}
 		</Component>
 	);

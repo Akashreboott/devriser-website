@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Person from "./../../../public/assets/images/test-img.png";
-import Star from "./../../../public/assets/icons/Star.svg";
+import Person from "./../../public/assets/images/test-img.png";
+import Star from "./../../public/assets/icons/Star.svg";
 import SectionHeading from "@/components/SectionHeading";
 
 const TestimonialSection = () => {

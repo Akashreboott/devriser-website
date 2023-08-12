@@ -2,7 +2,7 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 import MotionComponent from "@/components/MotionComponent";
 import cn from "@/utils/cn";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import React, { useState } from "react";
 
 const StatsSection = (props: { className?: string }) => {
@@ -31,7 +31,7 @@ const StatsSection = (props: { className?: string }) => {
 	);
 
 	return (
-		<motion.div
+		<m.div
 			onViewportEnter={() => setIsInView(true)}
 			onViewportLeave={() => setIsInView(false)}
 			className={cn("md flex items-center justify-between gap-4 max-lg:flex-col max-lg:gap-24", props.className)}>
@@ -51,7 +51,7 @@ const StatsSection = (props: { className?: string }) => {
 				</div>
 			</>
 			{/* )} */}
-		</motion.div>
+		</m.div>
 	);
 };
 
