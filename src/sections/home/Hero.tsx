@@ -27,13 +27,6 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 					className
 				)}>
 				<div className=' mr-auto mt-[50px] w-full min-w-[300px] basis-full md:mt-[100px]  lg:ml-10 lg:mt-[var(--top-space)] '>
-					{/* <SemiGradientText
-						className='hero-text w-full  font-normal text-primary-dark dark:text-white xl:text-[54px]/[70px]'
-						text={heading}
-						gradientText={gradientText ?? ""}
-						GradientTextColor={props.GradientTextColor ?? "gradient-tint"}
-						as='h1'
-					/> */}
 					<h1 className='relative w-full  flex-wrap  overflow-hidden text-[40px] font-semibold text-dark selection:bg-fuchsia-500 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-[54px]/[70px]'>
 						{heading.split(" ").map((word, index) => (
 							<MotionComponent
@@ -43,11 +36,9 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 								transition={{ duration: 1, delay: 4 }}
 								key={index}
 								className={cn("inline-flex overflow-hidden   max-lg:text-center")}>
-								{/* <span className='relative z-10 h-[120%] w-full overflow-hidden  max-md:hidden'> */}
 								<MotionComponent
 									as='span'
 									animate={{ y: 0 }}
-									// initial={{ y: index % 2 !== 0 ? "-130%" : "130%" }}
 									initial={{
 										y: "100%",
 									}}
@@ -55,14 +46,14 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 									className={cn("inline-flex", word === " " && "[width:0.25ch]")}>
 									{`${word} `}&nbsp;
 								</MotionComponent>
-								{/* </span> */}
 							</MotionComponent>
 						))}
 						<MotionComponent
 							initial={{ x: "-100%" }}
 							animate={{ x: "150%" }}
 							transition={{ duration: 1.5, delay: 4 }}
-							className='absolute bottom-0 h-1 w-[80%] bg-gradient-to-r from-transparent via-emerald-500  via-50% to-sky-500'></MotionComponent>
+							className='absolute bottom-0 h-1 w-[80%] bg-gradient-to-r from-transparent via-emerald-500  via-50% to-sky-500'
+						/>
 					</h1>
 					{description && (
 						<p className='md:hero-btn-animation mt-5 max-w-[700px] text-basic text-primary-dark [--delay:1.7s] dark:text-gray max-lg:mx-auto'>
@@ -86,7 +77,6 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 					{btnText && (
 						<Button
 							text={btnText}
-							// initial='hide'
 							animate='visible'
 							variants={scaleAnimVariants([0, 1.25, 1])}
 							transition={{ duration: 0.3, delay: 2.8 }}

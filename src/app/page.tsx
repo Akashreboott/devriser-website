@@ -123,11 +123,11 @@ const Page = () => {
 					/> */}
 					<m.div
 						animate={{
-							filter: ["brightness(0) blur(3px)", "brightness(0) blur(1.5px)", "brightness(0.3) blur(0px)"],
+							filter: ["brightness(0) blur(3px)", "brightness(0.1) blur(1.5px)", "brightness(0.4) blur(0px)"],
 						}}
 						transition={{ duration: 1, delay: 4 }}
-						className='w-full  brightness-50'>
-						<Image src={Stars} alt='' className='hidden h-full w-full -translate-y-[200px] object-cover dark:block ' />
+						className='h-full  w-full brightness-50'>
+						<Image src={Stars} alt='' className=' hidden h-full w-full -translate-y-[200px] object-cover dark:block max-md:translate-y-0 ' />
 					</m.div>
 				</div>
 
