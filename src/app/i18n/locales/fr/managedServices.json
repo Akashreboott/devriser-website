@@ -1,0 +1,97 @@
+{
+	"faq-heading": {
+		"heading": "Questions fréquemment posées",
+		"gradient-text": "posées"
+	},
+	"testimonial-heading": {
+		"heading": "Ce que les gens disent de nous",
+		"gradient-text": "gens"
+	},
+
+	"hero-heading": "Réalisez Plus, Inquiétez-Vous Moins Services Informatiques Gérés pour des Opérations Sans Faille",
+	"hero-gradient": "Moins Services",
+	"hero-tag": "Réalisez plus, inquiétez-vous moins avec nos Services informatiques gérés experts pour votre infrastructure numérique. Nos solutions informatiques gérées, y compris les Services gérés en cybersécurité et les Services gérés dans le cloud, vous permettent de vous concentrer sur vos activités essentielles pendant que nous gérons la technologie.",
+	"hero-btn-text": "Commençons",
+	"stats": [
+		{ "number": "57", "description": ["57%+ des Corporate", "entreprise rencontrent des obstacles dans la gestion de leurs logiciels"] },
+		{ "number": "47", "description": ["47% des entreprises", "rencontrent des problèmes de performance de leurs logiciels"] }
+	],
+	"decorated-banner": {
+		"heading": "Prenez le contrôle de votre succès numérique dès aujourd'hui !",
+		"description": "Restez en avance sur la concurrence pendant que nous gérons vos besoins en Services informatiques ",
+		"btn-text": "Commencez Votre Voyage "
+	},
+	"offerings-heading": {
+		"heading": "Nos Offres",
+		"gradient-text": "Offres"
+	},
+	"offerings": [
+		{
+			"heading": "Services informatiques gérés",
+			"description": "Chez DevRiser, nous assurons des opérations fluides, une surveillance proactive et une résolution efficace des problèmes pour votre infrastructure informatique grâce à nos Services gérés, vous permettant de vous concentrer sur vos activités commerciales principales.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Services gérés en cybersécurité",
+			"description": "Protégez vos actifs avec nos Services gérés en cybersécurité fiables. Nous déployons une détection avancée des menaces et une surveillance continue pour sauvegarder vos systèmes et données.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Services de conseil en informatique",
+			"description": "Obtenez des insights et des orientations avec l'expertise de DevRiser en Services de conseil en informatique. Alignez la stratégie technologique avec les objectifs commerciaux, stimulez l'innovation et augmentez l'efficacité grâce à notre Conseil en technologie de l'information.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Services gérés dans le cloud",
+			"description": "Tirez parti de l'excellence du cloud avec nos Services gérés dans le cloud. Installation, migration et gestion par des experts. Maximisez la scalabilité, la fiabilité et l'optimisation des coûts avec nos Solutions informatiques gérées.",
+			"image": "Placeholder520"
+		}
+	],
+
+	"specialities-heading": {
+		"heading": "Why Choose Us",
+		"gradient-text": "Choose Us",
+		"description": "Through adherence to industry-leading standards in design and development, we offer tailor-made CMS solutions that prioritize scalability, security, and effortless management"
+	},
+	"specialities": [
+		{
+			"name": "Real-Time Project Tracking",
+			"description": "Track your website development stages effortlessly with our real-time dashboard, providing project visibility and centralized monitoring for transparent communication."
+		},
+		{
+			"name": "Expertise in CMS Development",
+			"description": "DevRiser's skilled professionals excel in CMS website development services, delivering tailored, top-notch websites to meet your unique requirements."
+		},
+		{
+			"name": "Professional Design and User Experience",
+			"description": "We prioritize visually appealing, user-friendly websites for online success. Our professionals create engaging designs with seamless navigation."
+		},
+		{
+			"name": "Ongoing Support and Maintenance",
+			"description": "Beyond initial website creation, our team ensures ongoing support, including updates, troubleshooting, and technical assistance."
+		},
+		{
+			"name": "Economically Viable",
+			"description": "Get cost-effective CMS development tailored to your budget. Our team delivers efficient, high-quality websites, ensuring exceptional value."
+		}
+	],
+	"banner": { "heading": "Let's Build Your Dream Website", "btn-text": "Get in touch" },
+	"faq-questions": [
+		{
+			"question": "Quel est l'avantage des Services gérés ?",
+			"answer": "Les Services gérés offrent plusieurs avantages. Ils vous permettent de vous concentrer sur vos activités commerciales principales tout en confiant les complexités de l'informatique à des experts en Services informatiques gérés. Vous bénéficiez de compétences spécialisées, des meilleures pratiques de l'industrie et des dernières technologies, ce qui se traduit par une amélioration de l'efficacité, des économies de coûts, et une sécurité renforcée."
+		},
+		{
+			"question": "Quel niveau de support puis-je attendre de vos Services gérés ?",
+			"answer": "Nos Services informatiques gérés offrent un support complet adapté à vos besoins. Nous proposons une surveillance proactive, une résolution rapide des problèmes, une maintenance régulière et des conseils stratégiques. Notre équipe dédiée est disponible pour répondre à vos préoccupations et fournir une assistance, garantissant le bon fonctionnement de votre infrastructure informatique."
+		},
+		{
+			"question": "Comment assurez-vous la sécurité de mes données avec vos Services gérés ?",
+			"answer": "La sécurité des données est notre priorité absolue. Nous mettons en œuvre des mesures de sécurité robustes telles que le cryptage, les contrôles d'accès et les sauvegardes régulières pour protéger vos données avec nos Services gérés en cybersécurité. Notre équipe suit les pratiques leaders de l'industrie, réalise des évaluations de vulnérabilité et reste à jour avec les menaces émergentes pour assurer la sécurité de vos informations sensibles."
+		},
+		{
+			"question": "Comment commencer avec vos Services gérés ?",
+			"answer": "Commencer est simple. Vous pouvez nous contacter et obtenir une consultation gratuite en Services de conseil en informatique. Nous discuterons de vos exigences, comprendrons vos objectifs et recommanderons les meilleures options de Services gérés dans le cloud ou d'autres Solutions informatiques gérées pour votre entreprise."
+		}
+	]
+}

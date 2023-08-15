@@ -11,6 +11,10 @@ export const HERO_DETAILS = {
 	description: "Breaking Barriers with Custom Website Development, website solutions beyond limits",
 	btnText: "Let's Begin",
 };
+export interface PROCESS_DETAIL {
+	heading: string;
+	description: string;
+}
 
 export const TECH_STACK = [
 	{
@@ -72,7 +76,7 @@ export const OFFERINGS: { heading: string; content: string; image: any }[] = [
 	},
 ];
 
-export const PROCESS_DETAILS: { heading: string; description: string }[] = [
+export const PROCESS_DETAILS: PROCESS_DETAIL[] = [
 	{
 		heading: "Requirement gathering",
 		description:

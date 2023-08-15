@@ -48,7 +48,8 @@ const SolutionSection = () => {
 				description='Empowering Your Digital Future Web Development, Design'
 				gradientText='Empowering Your Digital Future'
 			/>
-			<div className='relative isolate grid  w-full justify-center gap-10 lg:-translate-x-[25px] xl:-translate-x-[35px]'>
+			<div className='relative isolate grid w-full justify-center gap-10  lg:-translate-x-[25px] xl:-translate-x-[35px]'>
+				<div className='absolute -z-10 h-full w-full bg-gradient-to-b  dark:from-dark dark:via-transparent dark:via-30% dark:to-dark dark:to-95%' />
 				<Image src={Stars} alt='' className='absolute left-0 top-0 -z-20 w-full  opacity-100' />
 				{/* BUTTONS */}
 				<nav
@@ -101,20 +102,20 @@ const SolutionSection = () => {
 						className='glass relative mx-auto w-[95%] p-2.5 max-md:mx-2.5 md:w-[70%] md:p-5'>
 						<div className='absolute flex h-full  w-full items-center justify-center '>
 							<GlassCard
-								delay={0.3}
+								delay={0}
 								heading={active.features[0].name}
 								image={active.features[0].image}
 								className='my-auto mr-auto h-[86px] w-[100px] -translate-y-1/2 translate-x-4 bg-[#47474766] min-[500px]:h-[116px] min-[500px]:w-[130px] md:h-[146px] md:w-[180px] md:-translate-x-20 lg:h-[166px] lg:w-[228px]'
 							/>
 							<div className='flex h-full flex-col justify-evenly '>
 								<GlassCard
-									delay={0.5}
+									delay={0.2}
 									heading={active.features[1].name}
 									image={active.features[1].image}
 									className='h-[86px] w-[100px] -translate-y-1/2 bg-[#47474766] min-[500px]:h-[116px] min-[500px]:w-[130px] md:h-[146px] md:w-[180px] md:translate-x-10 lg:h-[166px] lg:w-[228px]'
 								/>
 								<GlassCard
-									delay={0.7}
+									delay={0.4}
 									heading={active.features[2].name}
 									image={active.features[2].image}
 									className='h-[86px] w-[100px] -translate-x-6 bg-[#47474766] min-[500px]:h-[116px] min-[500px]:w-[130px] md:h-[146px] md:w-[180px] md:translate-x-20 lg:h-[166px] lg:w-[228px] '

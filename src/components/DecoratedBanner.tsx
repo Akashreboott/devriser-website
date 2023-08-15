@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import SectionHeading from "./SectionHeading";
+import Heading from "./SectionHeading";
 import { DecoratedBannerProps } from "../types/types";
 import Button from "./Button";
 import cn from "@/utils/cn";
@@ -31,7 +31,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 			{surveyOpen &&
 				quoteLink &&
 				createPortal(
-					<div className='fixed top-0 z-50 h-full w-screen overflow-y-auto overflow-x-hidden bg-dark/80   px-4 backdrop-blur-md'>
+					<div className=' fixed top-0 z-50 h-full w-screen overflow-y-auto overflow-x-hidden px-4   backdrop-blur-md dark:bg-dark/80'>
 						<Xmark className='absolute -right-10 top-10 h-5 w-5' />
 						<div className='relative isolate flex h-full w-full items-center justify-center '>
 							<div className='absolute inset-0  h-full w-full' onClick={handleModalClose}></div>
@@ -47,7 +47,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 			<section
 				style={{ "--decorated-banner-color": BannerColor } as React.CSSProperties}
 				className={cn(
-					"before:white-gradient group relative isolate my-20 grid w-full items-center justify-center gap-[40px] overflow-hidden py-8 before:absolute before:-z-10 before:h-full before:w-full",
+					"before:white-gradient group relative isolate  grid w-full items-center justify-center gap-[40px] overflow-hidden py-8 before:absolute before:-z-10 before:h-full before:w-full",
 					"after:absolute after:left-0 after:top-0 after:-z-50 after:h-full after:w-full after:bg-[--decorated-banner-color]",
 					className
 				)}>
@@ -64,11 +64,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 				)}
 				{/* rings */}
 
-				<SectionHeading
-					title={title}
-					description={description}
-					className='z-50 gap-[40px] px-3   [&_h2]:text-[26px] [&_h2]:text-white [&_p]:text-[16px]'
-				/>
+				<Heading title={title} description={description} className='z-50 gap-[40px] px-3   [&_h2]:text-[26px]   [&_p]:text-[16px]' />
 				<Button
 					onClick={handleModalOpen}
 					variant={variant ?? "Primary"}

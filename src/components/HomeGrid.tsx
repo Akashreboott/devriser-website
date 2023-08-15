@@ -28,7 +28,7 @@ const HomeGrid = (props: { children: React.ReactNode; className?: string; revers
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				transition={{ duration: 0.8 }}
-				viewport={{ margin: "40px", amount: 0.4, once: true }}
+				viewport={{ amount: 0.4, once: true }}
 				className={cn(
 					"first relative max-lg:mx-auto max-lg:mb-auto  max-lg:w-[max(360px,65%)]",
 					props.reverse ? "justify-self-start lg:ml-auto" : "justify-self-end lg:mr-auto"
@@ -36,10 +36,12 @@ const HomeGrid = (props: { children: React.ReactNode; className?: string; revers
 				<Image alt='' className='h-full w-full scale-[1.2]' src={illustr} />
 				<Image
 					alt=''
+					data-hide-in-light='true'
 					className={cn("absolute h-[40%] w-[40%] object-contain", props.reverse ? positions[1].normal : positions[2].normal)}
 					src={Stars}
 				/>
 				<Image
+					data-hide-in-light='true'
 					alt=''
 					className={cn("absolute h-[40%] w-[40%] object-contain", props.reverse ? positions[1].opposite : positions[2].opposite)}
 					src={Stars}
@@ -49,6 +51,7 @@ const HomeGrid = (props: { children: React.ReactNode; className?: string; revers
 			{/* CONTENT */}
 			<div className='relative grid place-items-center'>
 				<Image
+					data-hide-in-light='true'
 					alt=''
 					className={cn("absolute  h-3/4 w-3/4 object-contain opacity-60", props.reverse ? positions[3].normal : positions[3].opposite)}
 					src={Stars}

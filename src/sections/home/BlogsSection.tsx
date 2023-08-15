@@ -18,19 +18,16 @@ const BlogsSection = () => {
 			/>
 			<div className='wf mx-auto mt-10 grid w-[90%] grid-cols-1 gap-4 md:mt-20 md:grid-cols-3 '>
 				<BlogCard
-					delay={0.1}
 					heading='Know all about improving your sales through eaiser'
 					content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
 					image={image218}
 				/>
 				<BlogCard
-					delay={0.1}
 					heading='Know all about improving your sales through eaiser'
 					content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
 					image={image218}
 				/>
 				<BlogCard
-					delay={0.5}
 					heading='Know all about improving your sales through eaiser'
 					content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
 					image={image218}

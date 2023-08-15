@@ -104,7 +104,10 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 			{!submitted && (
 				<div className=' scroll-bar-hide relative  isolate mb-10 flex max-w-full  justify-start overflow-x-auto max-md:justify-self-start md:justify-center lg:max-w-3xl  [&>*]:shrink-0'>
 					{QUESTIONS.map((question, index) => (
-						<div onClick={() => setCurrentQuestion(index)} key={index} className='flex items-center justify-center overflow-hidden  text-[10px]'>
+						<div
+							onClick={() => (answersSet.has(question.title) ? setCurrentQuestion(index) : {})}
+							key={index}
+							className='flex items-center justify-center overflow-hidden  text-[10px]'>
 							{/* DOT */}
 							<div
 								className={cn(
@@ -113,19 +116,17 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 								)}>
 								{index + 1}
 								{/* OVERLAY DOT */}
-								{answersSet.has(question.title) &&
-									//@ts-ignore
-									Object.keys(answers).includes(question.title) && (
-										<m.span
-											initial={{ scale: 0 }}
-											animate={{ scale: 1 }}
-											transition={{ duration: 0.4, delay: 0.76 }}
-											className={cn(
-												"absolute inset-0  flex h-full w-full items-center justify-center rounded-full border border-dark/50 bg-dark text-light dark:border-white  dark:bg-white dark:text-dark"
-											)}>
-											{index + 1}
-										</m.span>
-									)}
+								{answersSet.has(question.title) && (
+									<m.span
+										initial={{ scale: 0 }}
+										animate={{ scale: 1 }}
+										transition={{ duration: 0.4, delay: 0.76 }}
+										className={cn(
+											"absolute inset-0  flex h-full w-full items-center justify-center rounded-full border border-dark/50 bg-dark text-light dark:border-white  dark:bg-white dark:text-dark"
+										)}>
+										{index + 1}
+									</m.span>
+								)}
 							</div>
 							{/* LINE */}
 							{index !== NoOfQuestions && (

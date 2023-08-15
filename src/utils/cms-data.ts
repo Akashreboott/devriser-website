@@ -36,7 +36,7 @@ export interface LANGUAGE {
 export const LANGUAGES: LANGUAGE[] = [
 	{ shortName: "EN", fullName: "English", flag: EN },
 	{ shortName: "FR", fullName: "Francis", flag: FR },
-	{ shortName: "CN", fullName: "China", flag: CN },
+	// { shortName: "CN", fullName: "China", flag: CN },
 ];
 
 export const NAV_LINKS: NAV_LINKSInterface = {

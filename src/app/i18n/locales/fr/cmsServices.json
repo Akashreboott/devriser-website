@@ -1,0 +1,179 @@
+{
+	"faq-heading": {
+		"heading": "Questions fréquemment posées",
+		"gradient-text": "posées"
+	},
+	"testimonial-heading": {
+		"heading": "Ce que les gens disent de nous",
+		"gradient-text": "gens"
+	},
+
+	"hero-heading": "Services de développement CMS avancés pour maximiser le potentiel de votre site web",
+	"hero-gradient": "Services de développement CMS",
+	"hero-tag": "Maximisez le potentiel de votre site web avec nos Services de développement CMS. Réfléchissez la vraie valeur de votre entreprise grâce au Développement de site web CMS, au Développement de site web Drupal et à la Création de sites avec CMS. Faites confiance à notre Entreprise de développement CMS pour vos besoins en Développement CMS.",
+	"hero-btn-text": "Commençons",
+
+	"features-heading": {
+		"heading": "Offres Riches en Fonctionnalités",
+		"gradient-text": "Offres",
+		"description": "Vivez la création puissante de sites web avec nos Services de développement CMS sur mesure, en utilisant des plateformes populaires pour des résultats transformateurs. Notre Entreprise de développement CMS offre des Services de développement web CMS, le Développement de site web CMS, y compris le Développement de site web Drupal, et la Création de sites avec CMS pour répondre à vos besoins spécifiques en Développement CMS."
+	},
+	"features": [
+		{
+			"heading": "Efficacité Temporelle",
+			"description": "Nous exploitons la puissance des plateformes CMS leaders de l'industrie avec nos Services de développement CMS, créant des sites web époustouflants pour capturer l'intérêt de vos visiteurs en beaucoup moins de temps.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Economique",
+			"description": "Notre approche chez DevRiser consiste à offrir des sites web de grande valeur qui s'alignent avec votre budget, grâce à notre Entreprise de développement CMS, créant une présence en ligne forte qui offre une valeur pour votre investissement.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Design Réactif",
+			"description": "Nous optimisons les dispositions et les fonctionnalités pour une compatibilité sans effort de votre site web sur différents écrans, du grand écran aux appareils mobiles, grâce aux Services de développement web CMS.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Facile à Gérer",
+			"description": "Gérez facilement votre site web avec notre interface conviviale. Nos sites, conçus de manière experte pour la Création de sites avec CMS, offrent un contrôle impeccable pour des mises à jour et une maintenance faciles, y compris le Développement de site web Drupal et le Développement de site web CMS.",
+			"image": "Placeholder520"
+		}
+	],
+	"lineups-heading": {
+		"heading": "Rencontrez Nos Alignements CMS",
+		"gradient-text": "CMS"
+	},
+	"lineups": [
+		{
+			"heading": "WordPress",
+			"description": "Chez DevRiser, nous exploitons WordPress, une plateforme CMS polyvalente et conviviale, en utilisant ses vastes bibliothèques de plugins pour personnaliser les sites web pour les blogs, les affaires, le commerce électronique, les portfolios et les forums. Nos designs réactifs, créés avec les Services de développement web CMS, améliorent l'engagement des utilisateurs et l'accessibilité sur différents appareils.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Drupal",
+			"description": "DevRiser utilise Drupal, un CMS robuste et flexible, pour le Développement de site web Drupal exceptionnel. Avec l'architecture personnalisable de Drupal, sa vaste bibliothèque de modules et son interface d'administration intuitive, nous assurons des performances optimales, une évolutivité et une excellente expérience utilisateur.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Wix",
+			"description": "Wix est un constructeur de site web puissant avec des modèles professionnels, des éléments personnalisables et un marché d'applications pour des fonctionnalités supplémentaires. Chez DevRiser, nous utilisons ses outils intuitifs, son hébergement fiable, son optimisation mobile et ses capacités de référencement pour vous fournir un site web unique, en ligne avec nos Services de développement de site web CMS.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Webflow",
+			"description": "Webflow est connu pour son éditeur visuel intuitif et ses fonctionnalités robustes. Chez DevRiser, nous exploitons ses capacités de conception transparentes, ses dispositions réactives, ses outils SEO intégrés et sa vaste bibliothèque de modèles pour la Création de sites avec CMS, créant des sites web visuellement époustouflants qui correspondent à vos objectifs et aspirations.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Shopify",
+			"description": "Shopify est une puissante plateforme de commerce électronique avec diverses fonctionnalités pour construire et superviser les magasins en ligne. Les experts de DevRiser, votre Entreprise de développement CMS, exploitent les vastes capacités pour créer d'excellents sites web adaptés à vos besoins commerciaux spécifiques. Nous assurons une intégration fluide et une navigation intuitive, résultant en une expérience d'achat élevée.",
+			"image": "Placeholder520"
+		}
+	],
+	"decorated-banner": {
+		"heading": "Création de Sites Web pour Votre Vision Unique",
+		"description": "Vivez l'art de la création de sites web avec notre équipe experte chez DevRiser, offrant des sites web sur mesure selon vos besoins uniques, grâce à nos Services de développement CMS.",
+		"btn-text": "Get A Quote"
+	},
+
+	"websites-heading": {
+		"heading": "Types de Sites Web que Nous Créons avec CMS",
+		"gradient-text": "Types de Sites Web"
+	},
+	"websites": [
+		"Sites Web d'Entreprises",
+		"Sites Web de Blogs et de Nouvelles ",
+		"Sites Web de Commerce Électronique ",
+		"Sites Web Immobiliers ",
+		"Sites Web de Communauté et de Forum ",
+		"Sites Web à But Non Lucratif et de Charité ",
+		"Sites Web de Portfolio ",
+		"Sites Web Éducatifs "
+	],
+
+	"process-heading": {
+		"heading": "Notre Processus",
+		"description": "Processus"
+	},
+	"processes": [
+		{
+			"heading": "Collecte des Exigences",
+			"description": "Analyser vos besoins, vos objectifs, votre préférence de plateforme CMS et votre public cible est notre première étape pour déterminer les fonctionnalités du site web, en utilisant nos Services de développement CMS."
+		},
+		{
+			"heading": "Recherche et Planification",
+			"description": "Après une recherche diligente, notre Entreprise de développement CMS planifie la portée du projet, le calendrier et les livrables de manière exhaustive, intégrant le Développement CMS."
+		},
+		{
+			"heading": "Création du Design",
+			"description": "Nous concevons des sites web visuellement attrayants et conviviaux qui reflètent vraiment votre marque et votre identité, en s'appuyant sur les Services de développement web CMS."
+		},
+		{
+			"heading": "Développement du Site Web",
+			"description": "Nos professionnels utilisent le design pour développer des sites web entièrement fonctionnels avec toutes les fonctionnalités nécessaires, y compris le Développement de site web CMS et le Développement de site web Drupal."
+		},
+		{
+			"heading": "Test du Site Web",
+			"description": "Un test rigoureux de votre site web assure des performances sans faille sur les différents navigateurs, appareils et scénarios, grâce à la Création de sites avec CMS."
+		},
+		{
+			"heading": "Formation des Utilisateurs",
+			"description": "Une formation et un manuel complet pour votre équipe d'exploitation web sont fournis pour une maintenance en douceur, en coordination avec nos Services de développement CMS."
+		},
+		{
+			"heading": "Site en Phase de Test",
+			"description": "Un test final est effectué après la formation des utilisateurs pour assurer un lancement de site web sans bugs, en utilisant nos Services de développement web CMS."
+		},
+		{
+			"heading": "Lancement du Site Web",
+			"description": "Votre site web est mis en ligne après la phase de test, marquant ses débuts en ligne et atteignant le public cible, grâce à l'expertise et au support de notre Entreprise de développement CMS."
+		}
+	],
+	"specialities-heading": {
+		"heading": "Pourquoi Nous Choisir",
+		"gradient-text": "Nous Choisir",
+		"description": "Grâce à notre conformité aux normes de pointe de l'industrie en matière de conception et de développement, nous proposons des solutions CMS sur mesure qui privilégient la scalabilité, la sécurité et la gestion sans effort à travers nos Services de développement CMS."
+	},
+	"specialities": [
+		{
+			"name": "Suivi de Projet en Temps Réel",
+			"description": "Suivez les étapes du développement de votre site web sans effort avec notre tableau de bord en temps réel, offrant une visibilité sur le projet et une surveillance centralisée pour une communication transparente grâce aux Services de développement web CMS."
+		},
+		{
+			"name": "Expertise en Développement CMS",
+			"description": "Les professionnels qualifiés de DevRiser excellent dans les Services de développement de site web CMS, livrant des sites web sur mesure et de premier ordre pour répondre à vos besoins uniques."
+		},
+		{
+			"name": "Design Professionnel et Expérience Utilisateur",
+			"description": "Nous privilégions les sites web attrayants et conviviaux pour le succès en ligne. Nos professionnels créent des designs engageants avec une navigation sans faille, en utilisant notre expertise en Développement CMS et Création de sites avec CMS."
+		},
+		{
+			"name": "Support et Maintenance Continus",
+			"description": "Au-delà de la création initiale du site web, notre équipe d'Entreprise de développement CMS assure un support continu, y compris les mises à jour, le dépannage et l'assistance technique."
+		},
+		{
+			"name": "Économiquement Viable",
+			"description": "Obtenez un Développement de site web CMS adapté à votre budget, notamment le Développement de site web Drupal. Notre équipe livre des sites web efficaces et de haute qualité, assurant une valeur exceptionnelle."
+		}
+	],
+	"banner": { "heading": "Construisons le site web de vos rêves", "btn-text": "Prenez contact avec nous" },
+	"faq-questions": [
+		{
+			"question": "Quelles plateformes CMS proposez-vous pour la création de sites web ?",
+			"answer": "Nous offrons des Services de développement web CMS à travers des plateformes CMS populaires telles que WordPress, Drupal, Webflow, Wix et Shopify. Ces plateformes fournissent des solutions flexibles et évolutives qui nous aident à créer différents types de sites web, des blogs simples aux magasins e-commerce complexes, en utilisant notre expertise en Développement CMS et Création de sites avec CMS."
+		},
+		{
+			"question": "Quel sera le coût des services de développement CMS ?",
+			"answer": "Le coût des Services de développement de site web CMS peut varier selon plusieurs facteurs, notamment la complexité du projet, la plateforme CMS spécifique choisie, les fonctionnalités et les personnalisations souhaitées. Il est essentiel de discuter de vos besoins et objectifs de projet avec notre Entreprise de développement CMS pour obtenir une estimation précise du coût impliqué."
+		},
+		{
+			"question": "Combien de temps faut-il pour créer un site web ?",
+			"answer": "Le temps nécessaire pour créer un site web peut varier selon plusieurs facteurs, y compris la complexité du site web, la plateforme CMS spécifique choisie, les fonctionnalités et les personnalisations souhaitées. Il est essentiel de discuter de vos besoins et objectifs de projet avec nous pour obtenir une estimation précise du temps impliqué en utilisant nos Services de développement CMS."
+		},
+		{
+			"question": "Mes données sont-elles sécurisées avec vous ?",
+			"answer": "Oui, nous chez DevRiser accordons la priorité à la sécurité de vos données. Nous mettons en œuvre des mesures robustes pour assurer la confidentialité, l'intégrité et la disponibilité de vos informations. Soyez assuré que nous suivons les meilleures pratiques de l'industrie, utilisons des protocoles de chiffrement et mettons en place des environnements d'hébergement sécurisés pour protéger vos données tout au long de notre processus de conception et de Développement de site web CMS."
+		}
+	]
+}

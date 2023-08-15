@@ -1,49 +1,76 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DesktopHeader from "./DesktopHeader";
 import MobileHeader from "./MobileHeader";
-import { LANGUAGES, LANGUAGE } from "@/utils/cms-data";
-import setLanguage from "next-translate/setLanguage";
-import i18nConfig from "../../../i18n.json";
+import { LANGUAGES, LANGUAGE, NAV_LINKS } from "@/utils/cms-data";
+import { useRouter } from "next/navigation";
+
 export interface headerPropsInterface {
 	className?: string;
 	subLink: string;
 	setSubLink: any;
 	selectedLanguage: LANGUAGE;
-	setSelectedLanguage: any;
+	setSelectedLanguage?: any;
 	selectedLink: string;
 	setSelectedLink: any;
-	changeLanguage: any;
+	changeLanguage?: any;
+	lng?: any;
 }
-const Header = ({ className }: { className?: string }) => {
+const Header = ({ className, lng }: { className?: string; lng: any }) => {
 	const [subLink, setSubLink] = useState<string>("");
-	const [selectedLanguage, setSelectedLanguage] = useState<LANGUAGE>(LANGUAGES[0]);
+	// const [selectedLanguage, setSelectedLanguage] = useState<LANGUAGE>(LANGUAGES[0]);
+	let selectedLanguage = LANGUAGES.find((language) => language.shortName.toLowerCase() === lng) ?? LANGUAGES[0];
 	const [selectedLink, setSelectedLink] = useState<"services" | "solutions" | "contact" | "">("");
+	const [links, setLinks] = useState({});
+	const [urlParams, setUrlParams] = useState<string[]>([]);
 
-	let { locales } = i18nConfig;
+	useEffect(() => {
+		setUrlParams(window.location.href.split("/"));
+		let obj = {};
+		Object.keys(NAV_LINKS).forEach((key) => {
+			let linkArr = NAV_LINKS[key as keyof typeof NAV_LINKS].map(([_, link]) => link.slice(1));
+			Object.assign(obj, { [key]: linkArr });
+		});
 
-	async function changeLanguage(lang: string) {
-		await setLanguage(lang);
-	}
+		setLinks(obj);
+	}, []);
+
+	useEffect(() => {
+		let set = new Set(urlParams);
+
+		Object.entries(links).forEach(([_, linksArr]) => {
+			// @ts-ignore
+			linksArr.forEach((link) => {
+				if (link && link !== "#" && set.has(link)) {
+					console.log(link);
+					// @ts-ignore
+					setSelectedLink(_);
+					setSubLink(`/${link}`);
+					return;
+				}
+			});
+		});
+	}, [links, urlParams]);
+
 	return (
 		<>
 			<DesktopHeader
 				subLink={subLink}
 				setSubLink={setSubLink}
 				selectedLanguage={selectedLanguage}
-				setSelectedLanguage={setSelectedLanguage}
+				// setSelectedLanguage={setSelectedLanguage}
 				selectedLink={selectedLink}
 				setSelectedLink={setSelectedLink}
-				changeLanguage={changeLanguage}
+				lng={lng}
 			/>
 			<MobileHeader
 				subLink={subLink}
 				setSubLink={setSubLink}
 				selectedLanguage={selectedLanguage}
-				setSelectedLanguage={setSelectedLanguage}
+				// setSelectedLanguage={setSelectedLanguage}
 				selectedLink={selectedLink}
 				setSelectedLink={setSelectedLink}
-				changeLanguage={changeLanguage}
+				lng={lng}
 			/>
 		</>
 	);

@@ -8,7 +8,7 @@ import SettingsIcon from "./../../../public/assets/icons/SettingsIcon";
 import Solutions from "./../../../public/assets/icons/SolutionIcon";
 import Menu from "../../../public/assets/icons/Menu";
 
-import DevRiserLogo from "../../../public/assets/images/DevRiserLogo";
+import DevRiserLogo from "../../assets/DevRiserLogo";
 import { useEffect, useState } from "react";
 import ThemeButton from "@/utils/ThemeButton";
 import { LANGUAGE, LANGUAGES, NAV_LINKS, NAV_LINKSInterface } from "../../utils/cms-data";
@@ -98,13 +98,13 @@ const MobileHeader = ({
 										<Link
 											aria-label={`Go to ${name} page`}
 											key={name}
-											href={path}
+											href={`/${props.lng}/${subLink}`}
 											onClick={() => {
-												setSubLink(name);
+												setSubLink(path);
 												setSelectedLink("services");
 												setMobileMenuOpened(false);
 											}}
-											className={cn("block rounded p-2.5 text-xs/[12px] opacity-60 active:opacity-100", subLink === name && "bg-gray dark:bg-dark")}>
+											className={cn("block rounded p-2.5 text-xs/[12px] opacity-60 active:opacity-100", subLink === path && "bg-gray dark:bg-dark")}>
 											{name}
 										</Link>
 									))}
@@ -121,9 +121,9 @@ const MobileHeader = ({
 										<Link
 											aria-label={`Go to ${name} page`}
 											key={name}
-											href={path}
+											href={`/${props.lng}/#`}
 											onClick={() => {
-												setSubLink(name);
+												setSubLink(path);
 												setSelectedLink("solutions");
 												setMobileMenuOpened(false);
 											}}

@@ -1,5 +1,5 @@
 "use client";
-import DevRiserLogo from "../../../public/assets/images/DevRiserLogo";
+import DevRiserLogo from "../../assets/DevRiserLogo";
 import SettingsIcon from "./../../../public/assets/icons/SettingsIcon";
 
 import Image from "next/image";
@@ -8,10 +8,10 @@ import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import { headerPropsInterface } from "./Header";
-
 import { LANGUAGES, NAV_LINKS, NAV_LINKSInterface, ARR_OF_LINKS, LANGUAGE } from "../../utils/cms-data";
 import ThemeButton from "@/utils/ThemeButton";
 import cn from "@/utils/cn";
+import { useRouter } from "next/navigation";
 const DesktopHeader = ({
 	className,
 	subLink,
@@ -37,7 +37,7 @@ const DesktopHeader = ({
 		} else {
 			document.body.style.overflow = "auto";
 		}
-	}, [mobileMenuOpened, desktopMenuOpened]);
+	}, [mobileMenuOpened]);
 
 	function closeMenu() {
 		setDesktopMenuOpened(false);
@@ -55,7 +55,7 @@ const DesktopHeader = ({
 	return (
 		<AnimatePresence>
 			<header
-				onMouseLeave={() => setLanguagesOpened(false)}
+				// onMouseLeave={() => setLanguagesOpened(false)}
 				ref={headerRef}
 				className={cn(
 					"scroll-bar-thin sticky top-0 isolate z-[100] h-full max-h-screen  min-h-screen w-[82px] [grid-area:header] max-lg:hidden [&_*]:!font-350",
@@ -176,14 +176,16 @@ const DesktopHeader = ({
 											key={name}
 											className={cn(
 												"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
-												subLink === name && "bg-white shadow-[0_0_4px] shadow-dark/10 dark:bg-dark dark:shadow-none "
+												subLink === path && "bg-white shadow-[0_0_4px] shadow-dark/10 dark:bg-dark dark:shadow-none "
 											)}>
 											<Link
 												aria-label={`Go to ${name} page`}
-												href={path ?? ""}
+												href={`/${props.lng}${path}` ?? ""}
 												onClick={() => {
 													if (path !== "#") {
-														setSubLink(name);
+														// console.log(`/${props.lng}/${subLink}`);
+														// router.push(`/${props.lng}${subLink}`);
+														setSubLink(path);
 														setSelectedLink(activeLink);
 													}
 												}}
@@ -217,15 +219,15 @@ const DesktopHeader = ({
 										"rounded-md duration-200 hover:bg-light dark:hover:bg-dark",
 										selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
 									)}>
-									<button
+									<Link
+										href={`/${lang.shortName.toLowerCase()}/${subLink.slice(1)}`}
 										onClick={() => {
-											setSelectedLanguage(lang);
+											// setSelectedLanguage(lang);
 											setLanguagesOpened(false);
-											// props.changeLanguage("fr");
 										}}
 										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
 										<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
-									</button>
+									</Link>
 								</m.li>
 							))}
 						</m.ul>

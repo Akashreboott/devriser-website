@@ -7,7 +7,7 @@ const Banner = (props: BannerProps) => {
 	return (
 		<section
 			className={cn(
-				"before-overlay before:banner-bg isolate  mt-[130px] flex h-[200px] w-[calc(100%-1.25rem)] max-w-[1300px] flex-wrap  items-center justify-center gap-4 rounded-[18px]  px-12 text-center  before:-z-20 before:rounded-[18px]   lg:mx-auto lg:gap-[75px]  xl:gap-[300px]",
+				"section-spacing-m before-overlay before:banner-bg isolate  mt-[130px] flex h-[200px] w-[calc(100%-1.25rem)] max-w-[1300px] flex-wrap  items-center justify-center gap-4 rounded-[18px]  px-12 text-center  before:-z-20 before:rounded-[18px]   lg:mx-auto lg:gap-[75px]  xl:gap-[300px]",
 				props.className
 			)}>
 			<div className='bg-noise absolute -z-10 h-full w-full'></div>

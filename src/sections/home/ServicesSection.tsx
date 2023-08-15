@@ -5,10 +5,10 @@ import React from "react";
 import white from "../../../public/assets/images/white520.png";
 import MotionComponent from "@/components/MotionComponent";
 
-const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
+const ServicesSection = (props: { onView?: (sectionName: string) => void; notOnView?: any }) => {
 	return (
 		<MotionComponent onViewportLeave={props.notOnView}>
-			<LineLayout heading='Web Development' onView={() => props.onView("Web Development")}>
+			<LineLayout heading='Web Development' onView={props.onView}>
 				<HomeGrid reverse={true} className=' justify-items-center gap-10  '>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col  justify-center gap-2 '>
 						<GlassCard delay={0.1} heading='AI-powered' image={white} className='relative -right-[3rem] top-[3rem] z-10 ml-auto' />
@@ -24,7 +24,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 				</HomeGrid>
 			</LineLayout>
 
-			<LineLayout heading='Mobile Development' className='mb-14' onView={() => props.onView("Mobile Development")}>
+			<LineLayout heading='Mobile Development' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10' reverse={true}>
 					<div className='isolate flex w-[70%] flex-col items-center justify-center gap-4 '>
 						<div className='grid w-full grid-cols-2 gap-6'>
@@ -37,7 +37,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='UI/UX Services' className='mb-14' onView={() => props.onView("UI/UX Services")}>
+			<LineLayout heading='UI/UX Services' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-4 md:gap-10'>
 					<div className='isolate mx-2 flex w-fit justify-center gap-2   md:gap-4'>
 						<div className='my-auto grid shrink gap-3 md:gap-6 '>
@@ -50,7 +50,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='CMS Services' onView={() => props.onView("CMS Services")}>
+			<LineLayout heading='CMS Services' onView={props.onView}>
 				<HomeGrid reverse={true} className='justify-items-center gap-10 max-lg:gap-0'>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col justify-center gap-2 '>
 						<GlassCard
@@ -69,7 +69,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='Managed Services' className='mb-14' onView={() => props.onView("Managed Services")}>
+			<LineLayout heading='Managed Services' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10'>
 					<div className='isolate my-auto flex h-fit w-fit justify-center gap-4 '>
 						<div className=' grid gap-6'>
@@ -82,7 +82,7 @@ const ServicesSection = (props: { onView?: any; notOnView?: any }) => {
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='Enterprise Solutions' className='mb-14' onView={() => props.onView("Enterprise Solutions")}>
+			<LineLayout heading='Enterprise Solutions' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10'>
 					<div className='isolate flex w-[70%] flex-col items-center justify-center gap-4 '>
 						<div className=' grid w-full gap-6'>

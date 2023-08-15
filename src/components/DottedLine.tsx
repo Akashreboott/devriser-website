@@ -28,7 +28,7 @@ const DottedLine = ({
 				{Array(noOfDashes)
 					.fill(Math.random())
 					.map((num, index) => (
-						<div key={index} style={{ height: `${DashHeight}px`, width: `${DashWidth}px`, backgroundColor: strokeColor }}></div>
+						<div key={index} className='bg-primary-dark dark:bg-white' style={{ height: `${DashHeight}px`, width: `${DashWidth}px` }}></div>
 					))}
 			</div>
 		</>

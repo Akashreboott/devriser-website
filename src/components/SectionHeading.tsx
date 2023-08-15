@@ -3,7 +3,7 @@ import { SectionHeadingProps } from "../types/types";
 import SemiGradientText from "./SemiGradientText";
 import cn from "@/utils/cn";
 
-const SectionHeading = (props: SectionHeadingProps) => {
+const Heading = (props: SectionHeadingProps) => {
 	const Component = ({ children, ...props }: any) => {
 		return React.createElement(props.as ?? "section", { ...props }, children);
 	};
@@ -11,19 +11,19 @@ const SectionHeading = (props: SectionHeadingProps) => {
 		<Component
 			as={props.as}
 			style={{ gap: props.gap }}
-			className={cn("mx-auto flex flex-col items-center text-center", "w-[calc(100%-3rem)]", props.className)}>
+			className={cn("section-spacing mx-auto flex w-full flex-col items-center px-3 text-center", props.className)}>
 			<SemiGradientText
 				GradientTextColor={props.GradientColor ?? "gradient-bright"}
 				gradientText={props.gradientText ?? ""}
 				text={props.title}
 				FullGradient={props.FullGradient}
 				as='h2'
-				className='primary-heading mx-auto max-w-[85%] px-3 max-md:max-w-[95%]'
+				className='primary-heading mx-auto max-w-[85%] max-md:max-w-[95%]'
 			/>
-			{props.description && <p className='text-basi max-w-[902px] px-3 text-primary-dark dark:text-gray max-md:text-[14px]'>{props.description}</p>}
+			{props.description && <p className='text-basi max-w-[902px] text-primary-dark dark:text-gray max-md:text-[14px]'>{props.description}</p>}
 			{props.children}
 		</Component>
 	);
 };
 
-export default SectionHeading;
+export default Heading;

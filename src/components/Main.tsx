@@ -11,7 +11,7 @@ const Main = ({ children, className, ...props }: any) => {
 			exit={{ opacity: 0, x: 20 }}
 			{...props}
 			className={cn(
-				"mx-auto flex w-[calc(100%+var(--extra-width))] max-w-[1728px]  flex-col items-center  overflow-hidden  pb-24 [--extra-width:0px] [grid-area:main]  lg:-translate-x-[--extra-width] lg:[--extra-width:1.5px] [&>*]:grow-0 [&>]:shrink",
+				"mx-auto flex w-[calc(100%+var(--extra-width))] max-w-[1728px]  snap-y snap-proximity  flex-col  items-center overflow-hidden  [--extra-width:0px] [grid-area:main] lg:-translate-x-[--extra-width] lg:[--extra-width:1.5px] [&>*]:grow-0 [&>]:shrink",
 				className
 			)}>
 			{children}

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Person from "./../../public/assets/images/test-img.png";
 import Star from "./../../public/assets/icons/Star.svg";
-import SectionHeading from "@/components/SectionHeading";
+import Heading from "@/components/SectionHeading";
+import { useTranslation } from "@/app/i18n";
 
-const TestimonialSection = () => {
+const TestimonialSection = async (props: any) => {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(props.lng, "webDevelopment");
 	const Testimonial = (props: { content: string; userName: string; userRole?: string; Rating: number }) => {
 		return (
 			// <div className='testimonial-bg w-full'>
@@ -56,14 +59,14 @@ const TestimonialSection = () => {
 	};
 
 	return (
-		<SectionHeading title='What People Say About Us' gradientText='People Say' gap='60px' className='pt-[60px]'>
+		<Heading title={t("testimonial-heading.heading")} gradientText={t("testimonial-heading.gradient-text")} gap='60px' className='section-spacing-p'>
 			<Testimonial
 				content="Love the simplicity of the service and the prompt customer support. We can't imagine working without it."
 				userName='Kelly Williams'
 				Rating={5}
 				userRole='Head of Design, Layers'
 			/>
-		</SectionHeading>
+		</Heading>
 	);
 };
 

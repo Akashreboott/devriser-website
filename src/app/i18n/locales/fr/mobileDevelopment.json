@@ -1,0 +1,134 @@
+{
+	"faq-heading": {
+		"heading": "Questions fréquemment posées",
+		"gradient-text": "posées"
+	},
+	"testimonial-heading": {
+		"heading": "Ce que les gens disent de nous",
+		"gradient-text": "gens"
+	},
+	"hero-heading": "Redéfinissez votre Stratégie Mobile avec la Création d'Applications Mobiles sur Mesure",
+	"hero-gradient": "Mobile avec la Création d'Applications",
+	"hero-tag": "Accélérez vos initiatives mobiles avec les Services de Développement d'Applications Mobiles personnalisées de DevRiser.",
+	"hero-btn-text": "Commençons",
+	"solutions-heading": {
+		"heading": "Développez  Votre Marque avec des Solutions d'Application Mobile Axées sur la Valeur",
+		"gradient-text": "Mobile App Solutions",
+		"description": "Dans ce monde numérique, opter pour la Création d'Applications Mobiles sur Mesure ouvre un univers de possibilités pour votre entreprise."
+	},
+	"solutions": [
+		{
+			"heading": "Analytique et aperçus",
+			"description": "Optimisez les expériences utilisateur avec l'analytique intégrée. Mesurez l'engagement, gagnez des aperçus, et améliorez les stratégies."
+		},
+		{
+			"heading": "Renforcement de la marque",
+			"description": "Mettez en avant l'identité unique de votre marque et créez une expérience cohérente et reconnaissable pour vos utilisateurs avec notre Service de Développement d'Applications Mobiles personnalisées."
+		},
+		{
+			"heading": "Engagement",
+			"description": "Boostez la rétention des utilisateurs avec des messages marketing ciblés et en exploitant les notifications push pour des rappels opportuns."
+		},
+		{
+			"heading": "Avantage concurrentiel",
+			"description": "Surpassez les concurrents avec une Application Mobile personnalisée, des fonctionnalités inégalées, et des expériences sans faille, que ce soit pour une Application Native ou une Application Hybride."
+		}
+	],
+	"decorated-banner": {
+		"heading": "Transformez Vos Idées en Solutions d'Applications Mobiles Impactantes",
+		"description": "DevRiser donne vie à l'innovation avec la Création d'Applications Mobiles sur Mesure, stimulant le succès commercial et l'engagement des utilisateurs grâce à nos Services de Développement d'Applications Mobiles personnalisées.",
+		"btn-text": "Get A Quote"
+	},
+	"services-heading": {
+		"heading": "Services Proposés",
+		"gradient-text": "Proposés",
+		"description": "Nous sommes spécialisés dans la Création d'Applications Mobiles sur Mesure, conçues pour répondre à vos besoins commerciaux uniques. Transformez vos idées d'application en réalité avec notre équipe d'experts."
+	},
+	"services": [
+		{
+			"heading": "Applications natives ",
+			"description": "DevRiser excelle dans le développement d'Applications Natives pour iOS et Android, offrant des expériences de marque engageantes et performantes, de la conception au déploiement.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Applications hybrides ",
+			"description": "Nos Applications Mobiles Hybrides personnalisées allient rentabilité et expérience utilisateur impeccable, répondant aux plateformes iOS et Android, dans le cadre de nos Services de Développement d'Applications Mobiles personnalisées.",
+			"image": "Placeholder520"
+		}
+	],
+	"process-heading": {
+		"heading": "Notre Processus",
+		"description": "Processus"
+	},
+	"processes": [
+		{
+			"heading": "Collecte des Exigences",
+			"description": "Nous collaborons étroitement avec votre équipe pour comprendre vos besoins uniques, vos objectifs et votre public cible pour l'application mobile personnalisée, à travers des discussions approfondies et des analyses. Cela pose les bases d'une solution unique et réussie dans le cadre de nos Services de Développement d'Applications Mobiles."
+		},
+		{
+			"heading": "Recherche et Planification",
+			"description": "Grâce à une analyse profonde du marché cible, des concurrents et des préférences des utilisateurs, nous élaborons un concept d'application détaillé incluant les fonctionnalités et les spécifications techniques, ainsi que la définition des étapes du projet, des délais et de l'allocation des ressources."
+		},
+		{
+			"heading": "Maquettage et Prototypage",
+			"description": "Le maquettage et le prototypage sont des étapes cruciales dans le Développement d'Applications Mobiles. C'est pourquoi nos développeurs créent soigneusement des maquettes, offrant des représentations visuelles de l'interface et de la navigation de l'application, tandis que les prototypes interactifs sont réalisés pour analyser et améliorer la précision et l'efficacité du nouveau design."
+		},
+		{
+			"heading": "Développement",
+			"description": "Nous convertissons les designs approuvés en une Application Mobile Personnalisée. Sélection de la pile technologique et du cadre de développement appropriés. Implémentation des fonctionnalités, intégration des API et des services tiers, avec un accent sur la scalabilité, la sécurité et les performances."
+		},
+		{
+			"heading": "Test",
+			"description": "Réalisation de tests rigoureux pour identifier et corriger les bugs, les problèmes techniques ou les problèmes d'utilisabilité. Effectuer des tests fonctionnels, de compatibilité, de performance et de sécurité."
+		},
+		{
+			"heading": "Formation",
+			"description": "Nous fournissons une formation et un manuel détaillé pour vous doter des connaissances nécessaires pour mettre à jour et gérer efficacement votre application mobile personnalisée. Cela assure une maintenance facile et offre un guide de référence fiable pour l'avenir."
+		},
+		{
+			"heading": "Mise en Scène",
+			"description": "Après la formation des utilisateurs et avant le lancement de l'application, nous la déployons dans un environnement de mise en scène pour des tests complets, garantissant la résolution de tout problème ou bug. Ce processus méticuleux garantit une présence en ligne fluide et sans erreur avant le lancement officiel."
+		},
+		{
+			"heading": "Déploiement et Lancement",
+			"description": "Une fois les phases de développement et de test terminées, nous vous aidons à déployer votre application dans les boutiques d'applications souhaitées, telles que l'Apple App Store et le Google Play Store. Nous assurons un processus de soumission en douceur et fournissons des conseils pour le lancement réussi de votre application."
+		},
+		{
+			"heading": "Maintenance et Support",
+			"description": "Nous proposons des services de support et de maintenance après le lancement pour traiter tout problème qui pourrait survenir. Alternativement, vous pouvez vous abonner commodément à nos Services de Développement d'Applications Mobiles personnalisées pour une gestion complète de l'application web."
+		}
+	],
+	"technology-heading": {
+		"heading": "Notre Domaine d'Activité",
+		"gradient-text": "Domaine d'Activité"
+	},
+	"technologies": [
+		{ "name": "Applications Mobiles" },
+		{ "name": "Bases de Données" },
+		{ "name": "Automatisation des Tests" },
+		{ "name": "Sécurité " }
+	],
+	"banner": { "heading": "Prêt à innover ? Construisons l'application de vos rêves !", "btn-text": "Commencez dès maintenant!" },
+	"faq-questions": [
+		{
+			"question": "Quel est le délai typique pour développer une application mobile personnalisée ?",
+			"answer": "Le délai pour le développement d'applications mobiles sur mesure peut varier en fonction de la complexité et de la portée du projet. Généralement, cela prend de quelques semaines à plusieurs mois pour terminer le processus de développement."
+		},
+		{
+			"question": "Combien coûte le développement d'une application mobile ?",
+			"answer": "Le coût de la création d'applications mobiles sur mesure dépend de divers facteurs tels que les fonctionnalités de l'application, la complexité du design, les plateformes prises en charge, et les tarifs de l'entreprise de développement. Il est préférable de discuter de vos exigences spécifiques avec notre équipe pour recevoir une estimation précise du coût."
+		},
+		{
+			"question": "Pouvez-vous développer des applications mobiles pour les plateformes iOS et Android ?",
+			"answer": "Oui, nous nous spécialisons dans les Services de développement d'applications mobiles pour les plateformes iOS et Android. Notre équipe expérimentée utilise différentes technologies et cadres pour créer des applications natives ou hybrides qui fonctionnent parfaitement sur ces plateformes."
+		},
+		{
+			"question": "Dans quelle mesure serai-je impliqué dans le processus de développement d'applications mobiles ?",
+			"answer": "Nous croyons en une collaboration étroite avec nos clients tout au long du processus de développement d'applications mobiles. Nous vous impliquons dans la collecte des exigences, fournissons des mises à jour régulières et sollicitons vos commentaires à divers stades pour garantir que l'application corresponde à votre vision et à vos besoins."
+		},
+		{
+			"question": "Mon idée d'application mobile restera-t-elle confidentielle ?",
+			"answer": "Oui, nous donnons la priorité à la confidentialité et prenons les mesures appropriées pour protéger votre idée d'application mobile personnalisée. Nous sommes ouverts à la signature d'accords de non-divulgation (NDA) pour vous assurer que votre idée et votre propriété intellectuelle resteront sécurisées."
+		}
+	]
+}

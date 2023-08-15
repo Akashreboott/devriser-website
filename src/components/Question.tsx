@@ -58,7 +58,7 @@ const Question = (props: props) => (
 						name='text-area'
 						id=''
 						value={props.selected}
-						className='glass mb-2 ml-4 h-[150%] w-full resize-none rounded border bg-transparent p-3 text-p14  outline-2 outline-dark/20 focus-within:outline dark:outline-white/30'></textarea>
+						className='glass mb-2  h-[150%] w-full resize-none rounded border bg-transparent p-3 text-p14  outline-2 outline-dark/20 focus-within:outline dark:outline-white/30'></textarea>
 				</div>
 			)}
 

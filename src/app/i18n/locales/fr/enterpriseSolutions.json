@@ -1,0 +1,210 @@
+{
+	"faq-heading": {
+		"heading": "Questions fréquemment posées",
+		"gradient-text": "posées"
+	},
+	"testimonial-heading": {
+		"heading": "Ce que les gens disent de nous",
+		"gradient-text": "gens disent"
+	},
+	"hero-heading": "Accélérez la numérisation avec des solutions d'entreprise avancées",
+	"hero-gradient": "solutions d'entreprise",
+	"hero-tag": "Embrassez l'avenir de votre entreprise avec nos offres de solutions sur mesure pour les entreprises, révolutionnant la manière dont vous opérez.",
+	"hero-btn-text": "Commençons",
+	"scale-business-heading": {
+		"heading": "Développez Votre Entreprise Avec Des Solutions Flexibles Et Évolutives",
+		"gradient-text": "Développez Votre Entreprise"
+	},
+	"features": [
+		{
+			"title": "Efficacité opérationnelle améliorée ",
+			"description": "Maximisez l'efficacité avec des solutions d'entreprise intégrées et boostez la productivité.",
+			"image": "Vector1"
+		},
+		{
+			"title": "Personnalisation flexible ",
+			"description": "Personnalisez les solutions pour qu'elles correspondent à vos processus et exigences d'entreprise.",
+			"image": "Vector2"
+		},
+		{
+			"title": "Architecture évolutive ",
+			"description": "Nos solutions évolutives grandissent avec votre entreprise et l'augmentation du nombre d'utilisateurs sans compromettre les performances.",
+			"image": "Vector3"
+		},
+		{
+			"title": "Infrastructure maintenable ",
+			"description": "Expérimentez des solutions d'entreprise stables et évolutives avec notre infrastructure robuste, soutenant une croissance sans effort.",
+			"image": "Vector3"
+		},
+		{
+			"title": "Rapport en temps réel ",
+			"description": "Obtenez une visibilité en temps réel sur vos projets avec notre tableau de bord pour un suivi facile des étapes clés, et une communication fluide, assurant une expérience exceptionnelle.",
+			"image": "Vector3"
+		}
+	],
+	"industries-heading": {
+		"heading": "Domaines d'activités",
+		"gradient-text": "Domaines"
+	},
+	"industries": [
+		{
+			"name": "Fabrication"
+		},
+		{
+			"name": "Commerce de détail"
+		},
+		{
+			"name": "Soins de santé"
+		},
+		{
+			"name": "Finance et banque"
+		},
+		{
+			"name": "Transport et logistique"
+		},
+		{
+			"name": "Hôtellerie et tourisme"
+		},
+		{
+			"name": "Éducation"
+		},
+		{
+			"name": "Gouvernement et secteur public"
+		},
+		{
+			"name": "Médias et divertissement"
+		},
+		{
+			"name": "E-commerce"
+		},
+		{
+			"name": "Agriculture et élevage"
+		},
+		{
+			"name": "Organisations à but non lucratif et caritatives"
+		}
+	],
+	"specialities-heading": {
+		"heading": "Pourquoi DevRiser est le choix idéal pour vos besoins en solutions d'entreprise",
+		"gradient-text": "Pourquoi DevRiser est le choix idéal"
+	},
+
+	"specialities": [
+		{
+			"name": "Approche centrée sur le client",
+			"description": "Chez DevRiser, vos objectifs, exigences et problématiques d'entreprise sont au cœur de notre attention. Nous écoutons, collaborons et travaillons sans relâche pour aligner nos solutions sur mesure pour les entreprises avec votre vision."
+		},
+		{
+			"name": "Engagement envers l'excellence",
+			"description": "Notre équipe compétente offre des solutions d'entreprise de premier ordre, dépassant les attentes grâce à une planification méticuleuse et une assurance qualité rigoureuse."
+		},
+		{
+			"name": "Solutions rentables",
+			"description": "DevRiser propose des solutions économiques sans compromettre la qualité, permettant des résultats exceptionnels et des budgets optimisés."
+		},
+		{
+			"name": "Partenariat collaboratif",
+			"description": "DevRiser croit en un partenariat à long terme pour le succès. Vous impliquer dans chaque décision, et prospérer sur la confiance et la transparence."
+		},
+		{
+			"name": "Solutions innovantes",
+			"description": "Nous proposons des solutions innovantes et avant-gardistes en exploitant les technologies émergentes et les meilleures pratiques, y compris la gestion de la relation client (CRM), le système de gestion intégré (IMS), et l'automatisation des processus d'entreprise, fournissant ainsi un avantage concurrentiel pour votre entreprise."
+		}
+	],
+	"custom-solutions": [
+		{
+			"title": "Efficacité améliorée",
+
+			"image": "Vector1"
+		},
+		{
+			"title": "Prise de décisions améliorée",
+
+			"image": "Vector2"
+		},
+		{
+			"title": "Évolutivité et maintenabilité",
+			"image": "Vector3"
+		},
+		{
+			"title": "Sécurité et fiabilité",
+
+			"image": "Vector3"
+		}
+	],
+	"development-heading": {
+		"heading": "Notre Processus de Développement",
+		"gradient-text": "Développement"
+	},
+	"processes": [
+		{
+			"name": "Séances de consultation",
+			"description": "Notre équipe engage des discussions approfondies pour aligner parfaitement la solution avec vos besoins d'entreprise et votre public cible."
+		},
+		{
+			"name": "Stratégie et planification",
+			"description": "Nos experts mènent une recherche et une planification minutieuses, collaborant étroitement avec vous pour créer une feuille de route stratégique pour un développement logiciel réussi."
+		},
+		{
+			"name": "Conception et prototypage",
+			"description": "Nos designers collaborent avec votre équipe pour créer des maquettes logicielles et affiner les aspects visuels tels que les palettes de couleurs, la typographie et la conception de l'interface utilisateur en fonction de vos retours."
+		},
+		{
+			"name": "Développement de la solution",
+			"description": "Les développeurs qualifiés de DevRiser gèrent le front-end, le back-end, la configuration de la base de données, les intégrations tierces, et maintiennent une communication régulière via un logiciel de gestion de projet pour votre participation active dans le processus de développement."
+		},
+		{
+			"name": "Test et assurance qualité",
+			"description": "Nous testons rigoureusement le logiciel pour la réactivité, la compatibilité multi-navigateurs, l'utilisabilité, la sécurité et la performance. Notre équipe dédiée d'assurance qualité traite rapidement les problèmes, garantissant une expérience utilisateur impeccable."
+		},
+		{
+			"name": "Formation des utilisateurs et documentation",
+			"description": "DevRiser offre une formation complète et des manuels détaillés pour habiliter votre équipe à la gestion efficace du logiciel. Nous nous assurons que votre équipe possède les compétences nécessaires pour la maintenance et les mises à jour continues."
+		},
+		{
+			"name": "Site de pré-production",
+			"description": "Avant le lancement officiel du site Web, nous déployons le logiciel dans un environnement de pré-production pour des tests approfondis et la résolution des problèmes. Cela garantit une présence en ligne fluide et sans erreur, et une évaluation de la fonctionnalité dans des conditions réelles."
+		},
+		{
+			"name": "Déploiement et lancement",
+			"description": "Notre équipe gère le déploiement, y compris la configuration de l'hébergement, la configuration du domaine, et les mesures de sécurité, garantissant une transition sans heurts vers l'environnement en direct sur des serveurs cloud ou sur site."
+		},
+		{
+			"name": "Support après lancement",
+			"description": "DevRiser offre un support et une maintenance après le lancement pour une expérience utilisateur transparente. Vous pouvez également choisir nos Services Gérés (lien hypertexte) pour une commodité totale dans la gestion logicielle."
+		}
+	],
+	"not-looking-heading": {
+		"heading": "Vous ne cherchez pas une solution personnalisée ?",
+		"gradient-text": "solution personnalisée"
+	},
+	"grid-section": {
+		"heading": "Solutions prêtes à l'emploi",
+		"description": "Découvrez nos solutions logicielles prêtes à l'emploi, conçues pour une intégration sans effort, une efficacité immédiate et des résultats optimaux dans vos opérations d'entreprise. Ces solutions sur mesure pour les entreprises englobent la gestion de la relation client (CRM), le système de gestion intégré (IMS) et l'automatisation des processus d'entreprise, pour ne nommer que quelques aspects.",
+		"btn-text": "Explorez Nos Solutions",
+		"image": "Vector1"
+	},
+	"decorated-banner": {
+		"heading": "Digitalisez votre transformation avec nos solutions révolutionnaires d'entreprise.",
+		"description": "Découvrez la puissance de nos solutions d'entreprise, y compris la gestion de la relation client (CRM), le système de gestion intégré (IMS), et l'automatisation des processus d'entreprise.",
+		"btn-text": "Obtenez un devis"
+	},
+	"faq-questions": [
+		{
+			"question": "Vos solutions d'entreprise peuvent-elles être personnalisées pour répondre à nos besoins commerciaux spécifiques ?",
+			"answer": "Absolument ! Nos solutions d'entreprise sont conçues en gardant à l'esprit la personnalisation. Nous comprenons que chaque entreprise est unique, et notre équipe travaille en étroite collaboration avec vous pour adapter le logiciel à vos besoins spécifiques, en garantissant une adéquation parfaite avec votre organisation."
+		},
+		{
+			"question": "Combien de temps faut-il pour développer une solution d'entreprise ?",
+			"answer": "La durée de mise en œuvre peut varier en fonction de la complexité du projet et du niveau de personnalisation requis. Nous suivons un processus rationalisé et nous nous efforçons de livrer des solutions de manière efficace. Lors de la consultation initiale, nous vous fournirons un calendrier réaliste basé sur l'étendue et les exigences spécifiques de votre projet."
+		},
+		{
+			"question": "Quel type de support proposez-vous après le déploiement du logiciel ?",
+			"answer": "Nous croyons en l'établissement de partenariats à long terme avec nos clients. Après le déploiement, nous offrons des services complets de support et de maintenance pour répondre à tous problèmes éventuels. Notre équipe de support dédiée est disponible pour vous aider et garantir le fonctionnement continu et fluide de votre solution logicielle."
+		},
+		{
+			"question": "Qu'est-ce qui distingue les solutions d'entreprise de DevRiser des autres fournisseurs ?",
+			"answer": "Chez DevRiser, nous nous enorgueillissons de notre approche personnalisée, de notre souci du détail et de notre engagement à fournir des solutions de haute qualité. Nous combinons la technologie de pointe avec l'expertise du secteur pour créer des solutions d'entreprise répondant vraiment à vos besoins commerciaux, notamment la gestion de la relation client (CRM), le système de gestion intégré (IMS), et l'automatisation des processus d'entreprise. La dévotion, la mentalité innovante et l'orientation centrée sur le client de notre équipe nous distinguent en tant que partenaire de confiance pour vos besoins en logiciels d'entreprise."
+		}
+	]
+}

@@ -1,6 +1,6 @@
 "use client";
 import { NAV_LINKS } from "@/utils/cms-data";
-import DevRiserLogo from "../../public/assets/images/DevRiserLogo";
+import DevRiserLogo from "../assets/DevRiserLogo";
 import Facebooklogo from "../../public/assets/icons/Facebooklogo";
 import InstagramIcon from "../../public/assets/icons/InstagramIcon";
 import TwitterLogo from "../../public/assets/icons/TwitterLogo";

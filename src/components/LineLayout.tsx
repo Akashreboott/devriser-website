@@ -1,26 +1,40 @@
 import cn from "@/utils/cn";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Code from "./Code";
 import MotionComponent from "./MotionComponent";
 import Image from "next/image";
 import neon from "../../public/assets/icons/Group 771.svg";
 import { slugify } from "@/utils/utils";
+import { useInView } from "framer-motion";
 interface props {
 	children: React.ReactNode;
 	LineClasses?: string;
 	className?: string;
 	heading?: string;
 	HideSymbol?: boolean;
-	onView?: any;
+	onView?: (sectionName: string) => void;
 	notOnView?: any;
 }
 
 const LineLayout = ({ children, LineClasses, className, HideSymbol = false, heading, onView, notOnView = false }: props) => {
+	const ref: any = useRef(null);
+	const isInView = useInView(ref, { amount: 0.52 });
+
+	useEffect(() => {
+		onView && onView(heading ?? "");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isInView]);
+
+	useEffect(() => {
+		onView && onView("");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return (
 		<MotionComponent
+			ref={ref}
 			id={`${slugify(slugify(heading), "/") ?? ""}`}
-			onViewportEnter={() => onView && onView(heading ?? "")}
-			onViewportLeave={() => notOnView && notOnView("")}
+			// onViewportEnter={() => onView && onView(heading ?? "")}
+			// onViewportLeave={() => notOnView && notOnView("")}
 			className='line-layout'>
 			{/* LINE */}
 			<MotionComponent
@@ -44,7 +58,9 @@ const LineLayout = ({ children, LineClasses, className, HideSymbol = false, head
 				transition={{ duration: 15, repeat: Infinity, repeatType: "mirror", repeatDelay: 0 }}
 				viewport={{ amount: 0.3 }}
 				className={cn("relative isolate h-full [grid-area:line] max-lg:hidden", LineClasses)}>
-				{!HideSymbol && <Code className='absolute -top-2 right-0 z-10 translate-x-[calc(50%-3px)]  rounded-full backdrop-blur-3xl' />}
+				{!HideSymbol && (
+					<Code className='absolute -top-2 right-0 z-10 translate-x-[calc(50%-3px)] rounded-full text-dark/70  backdrop-blur-3xl dark:text-white' />
+				)}
 				<div className='z-0 ml-auto h-full w-1 [background-image:linear-gradient(to_bottom,transparent_40px,#245F00_55px,#55D163_80%,transparent_99%)]' />
 				{/* GRID */}
 			</MotionComponent>
@@ -59,7 +75,7 @@ const LineLayout = ({ children, LineClasses, className, HideSymbol = false, head
 							initial={{ opacity: 0, x: -100 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5 }}
-							viewport={{ margin: "300px 0px 0px 0px", once: true }}
+							viewport={{ amount: 1, once: true }}
 							className='primary-heading mt-1.5 w-fit max-lg:mx-auto max-lg:mb-0 xl:mb-10'>
 							{heading}
 						</MotionComponent>

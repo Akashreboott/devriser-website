@@ -1,0 +1,54 @@
+@layer components {
+	/* To hide scroll bar for overflowing content  */
+	.scroll-bar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scroll-bar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scroll-bar-thin {
+		scrollbar-width: thin;
+	}
+	.scroll-bar-thin::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.clip {
+		@apply bg-clip-text !text-transparent;
+	}
+
+	/* To use before and after psuedo elements as extra elements */
+	.before-overlay {
+		@apply relative before:absolute before:h-full before:w-full;
+	}
+	.after-overlay {
+		@apply after:absolute after:h-full after:w-full;
+	}
+	.hide-in-dark {
+		@apply dark:!hidden;
+	}
+	.layout-1x2 {
+	}
+	.layout-1x2:nth-of-type(even) > .first {
+		@apply md:order-2 md:pr-16
+		md:[&_:is(h3,p)]:text-right max-md:[&_button]:mx-auto md:[&_button]:ml-auto;
+	}
+	.layout-1x2:nth-of-type(even) > .second {
+		@apply md:order-1 
+		md:[&_:is(h3,p)]:text-left max-md:[&_button]:mx-auto md:[&_button]:mr-auto;
+	}
+
+	/* data attributes to hide elements in dark and light  modes*/
+	:is(.dark [data-hide-in-dark="true"]) {
+		display: none !important;
+	}
+	:is(.light [data-hide-in-light="true"]) {
+		display: none !important;
+	}
+
+	.glass {
+		@apply rounded-lg border-[0.5px] border-dark/20 bg-white/[0.05] backdrop-blur transition-colors  duration-300 hover:border-dark/30  dark:border-white/20 dark:hover:border-white/40;
+	}
+}

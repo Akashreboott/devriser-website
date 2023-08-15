@@ -17,23 +17,27 @@ import processLight from "./../../../public/assets/images/process-image-cms.-lig
 import processSmall from "./../../../public/assets/images/Group 523.svg";
 import processSmallLight from "./../../../public/assets/images/Group 523 light.svg";
 import Image from "next/image";
-import SectionHeading from "@/components/SectionHeading";
+import Heading from "@/components/SectionHeading";
 import { PROCESSES } from "@/utils/cms-data";
 import DarkLightImage from "@/components/DarkLightImage";
+import { useTranslation } from "@/app/i18n";
 
-const ProcessSection = () => {
+const ProcessSection = async (props: any) => {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(props.lng, "cmsServices");
+	let PROCESSES: { heading: string; description: string; image: any }[] = t("processes", { returnObjects: true });
 	function SliceProcesses(start: number, end?: number) {
 		return PROCESSES.slice(start, end).map((process) => (
 			<div
-				key={process.title}
+				key={process.heading}
 				className='btn-outline h-[33px] max-w-[100px] border border-gray px-2.5 md:h-[60px] md:max-w-[155px] lg:h-[75px] lg:max-w-[312px] lg:px-4'>
-				{process.title}
+				{process.heading}
 			</div>
 		));
 	}
 	return (
-		<section className='isolate w-full bg-dark [&_.btn-outline::after]:[background-color:transparent] [&_.btn-outline::before]:bg-none [&_img]:!text-gray'>
-			<SectionHeading title='Our Process' gradientText='Process' as='div' className='z-10 mt-24 text-white max-lg:hidden '>
+		<section className='section-spacing-p section-height isolate w-full dark:bg-dark [&_.btn-outline::after]:[background-color:transparent] [&_.btn-outline::before]:bg-none [&_img]:!text-gray'>
+			<Heading title={t("process-heading.heading")} gradientText={t("process-heading.gradient-text")} as='div' className='z-10 max-lg:hidden '>
 				{/* <div className='flex flex-col'>
 					<div className='relative flex rotate-180 justify-center -space-x-1'>
 						<div className='absolute bottom-0 aspect-square w-5 translate-x-[calc(50%-11px)] rounded-full border-[3px] border-white bg-pink-500'></div>
@@ -60,14 +64,18 @@ const ProcessSection = () => {
 					<div className='flex justify-center gap-3'>{SliceProcesses(5)}</div>
 				</div> */}
 
-				<DarkLightImage alt='' className='px-3' DarkVisibleImage={process} LightVisibleImage={processLight} />
-			</SectionHeading>
+				<DarkLightImage alt='' className='px-3' darkVisibleImage={process} lightVisibleImage={processLight} />
+			</Heading>
 
 			{/* <div className='bg-dark lg:hidden'>
 				<h2 className='primary-heading mb-3 text-center md:mt-24'>
 					Our <span className='clip pink-gradient-bright '>Process</span>
 				</h2> */}
-			<SectionHeading title='Our Process' gradientText='Process' as='div' className='md:pt-24 lg:hidden [&_.btn-outline]:!text-white'>
+			<Heading
+				title={t("process-heading.heading")}
+				gradientText={t("process-heading.gradient-text")}
+				as='div'
+				className='md:pt-24 lg:hidden [&_.btn-outline]:!text-white'>
 				{/* <div className='mt-4 flex flex-col items-center gap-2'>
 					<div className='flex flex-col justify-center gap-3  -space-y-2'>
 						<div className='relative flex justify-center -space-x-1 '>
@@ -104,24 +112,24 @@ const ProcessSection = () => {
 						<div className='flex justify-center gap-[119px]'>{SliceProcesses(6)}</div>
 					</div>
 				</div> */}
-				<DarkLightImage alt='' DarkVisibleImage={processSmall} LightVisibleImage={processSmallLight} />
-			</SectionHeading>
+				<DarkLightImage alt='' darkVisibleImage={processSmall} lightVisibleImage={processSmallLight} />
+			</Heading>
 			{/* </div> */}
-			<div className='relative isolate  mx-auto grid gap-[70px] bg-dark px-12 py-[63px] md:pt-[150px] lg:gap-[75px] lg:pt-[180px] xl:gap-[95px] xl:pt-[200px] '>
+			<div className='relative isolate  mx-auto grid gap-[70px] px-12 py-[63px] dark:bg-dark md:pt-[150px] lg:gap-[75px] lg:pt-[180px] xl:gap-[95px] xl:pt-[200px] '>
 				<div className='absolute -left-[1rem] -top-[6rem]  -z-10 aspect-square w-[500px] rounded-full opacity-40 blur-[100px] [background-image:radial-gradient(circle,theme("colors.violet"),transparent_90%)]'></div>
 				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(0, 3).map((process) => (
-						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
+						<ProcessCard description={process.description} darkVisibleImage={placeholder} title={process.heading} key={process.heading} />
 					))}
 				</div>
 				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(3, 5).map((process) => (
-						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
+						<ProcessCard description={process.description} darkVisibleImage={placeholder} title={process.heading} key={process.heading} />
 					))}
 				</div>
 				<div className='flex flex-wrap justify-center gap-[70px] max-lg:mx-auto max-lg:max-w-[500px]  lg:gap-[30px] xl:gap-[64px]'>
 					{PROCESSES.slice(5).map((process) => (
-						<ProcessCard description={process.description} image={placeholder} title={process.title} key={process.title} />
+						<ProcessCard description={process.description} darkVisibleImage={placeholder} title={process.heading} key={process.heading} />
 					))}
 				</div>
 			</div>

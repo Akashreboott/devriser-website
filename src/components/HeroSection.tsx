@@ -20,8 +20,11 @@ interface props {
 const HeroSection = ({ heading, gradientText, btnText, description, className, ...props }: props) => {
 	return (
 		<section
+			id='hero'
 			className={cn(
-				"relative mx-6 mb-[95px] flex w-full items-center justify-between gap-10  [--top-space:160px]  max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center md:mb-[112px]  lg:mb-[144px]  lg:px-12 xl:max-w-[1400px]",
+				"relative  flex w-full items-center justify-between gap-10    max-lg:flex-wrap max-lg:text-center max-md:max-w-[90%] max-md:text-center  xl:max-w-[1400px]",
+				// "mx-6 mb-[95px] md:mb-[112px]  lg:mb-[144px]  lg:px-12",
+				"min-h-section",
 				className
 			)}>
 			<div className='mx-auto  mt-[57px] w-full min-w-[300px] basis-[611px]  md:mt-[100px] lg:mt-[var(--top-space)] '>
@@ -36,8 +39,8 @@ const HeroSection = ({ heading, gradientText, btnText, description, className, .
 				{btnText && <Button text={btnText} variant='Primary' className='mt-8' />}
 			</div>
 			<DarkLightImage
-				DarkVisibleImage={props.DarkVisibleImage ?? transparent}
-				LightVisibleImage={props.LightVisibleImage ?? transparent}
+				darkVisibleImage={props.DarkVisibleImage ?? transparent}
+				lightVisibleImage={props.LightVisibleImage ?? transparent}
 				className='mx-auto mt-[32.5px]  h-fit w-full max-w-[402px]  max-md:w-[80%] md:mt-[38px] lg:mt-[var(--top-space)]'
 				alt=''
 			/>

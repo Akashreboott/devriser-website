@@ -1,0 +1,133 @@
+{
+	"testimonial-heading": {
+		"heading": "Ce que les gens disent de nous",
+		"gradient-text": "gens"
+	},
+	"faq-heading": {
+		"heading": "Questions fréquemment posées",
+		"gradient-text": "posées"
+	},
+	"process-heading": {
+		"heading": "Notre Processus",
+		"gradient-text": "Processus"
+	},
+	"hero-heading": "Services de Développement de Sites Web sur Mesure qui Transcendent les Limites",
+	"hero-gradient": "Services de Développement de Sites Web",
+	"hero-tag": "Franchir les Barrières avec le Développement de Sites Web Personnalisés, des solutions web au-delà des limites",
+	"hero-btn-text": "Commençons",
+	"offerings": [
+		{
+			"heading": "Distinguez-vous de la foule",
+			"content": "Avec les Services de développement de sites web sur mesure de DevRiser, démarquez-vous dans un monde numérique concurrentiel. Nos experts en développement de sites web personnalisés créent un site unique qui représente votre marque, assurant une expérience utilisateur mémorable.",
+			"image": "PlaceHolder"
+		},
+		{
+			"heading": "Fonctionnalités personnalisées",
+			"content": "Avec le développement web sur mesure, vous avez un contrôle total. Nous construisons des fonctionnalités et des spécificités adaptées à vos besoins commerciaux. Avec DevRiser, vous obtenez exactement ce que vous imaginez grâce aux Services de développement de sites web personnalisés.",
+			"image": "PlaceHolder"
+		},
+		{
+			"heading": "Applications web progressives",
+			"content": "Les PWA comblent le fossé entre les sites web et les applications mobiles traditionnelles, avec la commodité d'être accessibles via un navigateur web, tout en offrant la possibilité d'être installées et lancées directement sur l'appareil.",
+			"image": "PlaceHolder"
+		},
+		{
+			"heading": "Performance du site web",
+			"content": "La performance d'un site web joue un rôle crucial dans l'expérience utilisateur. Chez DevRiser, nous concevons des sites web sur mesure avec un code optimisé pour une performance améliorée, des temps de chargement plus rapides, et une expérience utilisateur exceptionnelle, dans le cadre de notre Développement web adapté.",
+			"image": "PlaceHolder"
+		},
+		{
+			"heading": "Amélioration du référencement",
+			"content": "La visibilité sur les moteurs de recherche est essentielle pour attirer du trafic organique vers votre site web. En mettant en œuvre les meilleures pratiques de SEO, vous pouvez augmenter la visibilité sur les moteurs de recherche et le trafic organique avec nos Services de développement de sites web sur mesure et personnalisés.",
+			"image": "PlaceHolder"
+		}
+	],
+	"offerings-heading": {
+		"heading": "Nos Offres",
+		"gradient-text": "Offres"
+	},
+	"decorated-banner": {
+		"heading": "Revitalisez Votre Présence Numérique avec des Sites Web Personnalisés",
+		"description": "Créez des sites web qui reflètent véritablement votre marque et capturent votre vision grâce à nos Services de développement de sites web sur mesure et personnalisés.",
+		"btn-text": "Get a quote"
+	},
+	"custom-website": {
+		"section-heading": { "heading": "Découvrez l'Impact des Sites Web Sur Mesure Statistiques", "gradient-text": "l'Impact des Sites Web Sur" },
+		"users-percentage": "75%",
+		"content": "des Utilisateurs Internet Déterminent la Fiabilité d'une Entreprise Uniquement par la Conception de son Site Web",
+		"source": "Source: Stanford"
+	},
+	"technology-heading": {
+		"heading": "Notre champs d'action",
+		"gradient-text": "champs"
+	},
+
+	"process-details": [
+		{
+			"heading": "Consultation et collecte des exigences",
+			"description": "Nous recueillons des informations et établissons la portée du projet grâce à la consultation. Nous nous assurons de créer un site web conforme à vos objectifs commerciaux, à votre public cible, aux fonctionnalités souhaitées, à l'esthétique du design, et aux considérations techniques, en utilisant nos Services de développement de sites web sur mesure et personnalisés."
+		},
+		{
+			"heading": "Recherche et planification",
+			"description": "Par la recherche et la planification, nous posons les fondations de votre site web, incluant l'analyse de marché, la recherche sur les concurrents, et la planification de l'expérience utilisateur. Cette étape garantit une approche stratégique et une feuille de route claire pour un site web réussi."
+		},
+		{
+			"heading": "Maquettage et conception",
+			"description": "Nos experts créent des maquettes de l'agencement et du design du site web. Nous collaborons avec votre équipe pour finaliser les aspects visuels, y compris les gammes de couleurs, la typographie et la conception globale de l'interface utilisateur (UI). Ce stade peut impliquer plusieurs itérations pour vous assurer satisfaction."
+		},
+		{
+			"heading": "Développement du site web",
+			"description": "Une fois le design approuvé, nous commençons le codage, comprenant le développement front-end et back-end, la base de données et les intégrations tierces, dans le cadre de nos services de Développement web sur mesure et personnalisé. Nous priorisons la communication régulière avec votre équipe pour vous tenir informés à chaque étape."
+		},
+		{
+			"heading": "Intégration de contenu",
+			"description": "Nous intégrons vos textes, images, vidéos et éléments multimédias dans le site web. Si votre contenu n'est pas encore disponible, nous fournissons un contenu temporaire qui peut être facilement remplacé lorsque vous êtes prêt."
+		},
+		{
+			"heading": "Tests et assurance qualité",
+			"description": "Notre processus de test exhaustif couvre la réactivité, la compatibilité entre les navigateurs, l'utilisabilité, la sécurité, et les performances, garantissant un site web sans erreurs. Tout problème identifié est rapidement résolu pour offrir une expérience fluide."
+		},
+		{
+			"heading": "Formation des utilisateurs",
+			"description": "Notre formation complète et notre manuel détaillé fournissent à votre équipe les connaissances nécessaires pour mettre à jour et gérer efficacement votre site web, en utilisant nos Services de développement de sites web personnalisés."
+		},
+		{
+			"heading": "Mise en scène",
+			"description": "Après la formation des utilisateurs et avant la mise en ligne, nous déployons le site web dans un environnement de mise en scène pour des tests complets, garantissant la résolution de tout problème avant le lancement officiel."
+		},
+		{
+			"heading": "Déploiement et lancement",
+			"description": "Nous préparons le site web pour le déploiement en configurant l'hébergement, les paramètres de domaine, et en mettant en place les mesures de sécurité nécessaires. Une fois toutes les préparations terminées, le site web est officiellement lancé et accessible au public."
+		},
+		{
+			"heading": "Support après lancement",
+			"description": "Nous offrons des services de support et de maintenance pour résoudre tout problème post-lancement, y compris la Conception et développement de sites web sur mesure. Vous avez également la possibilité de vous abonner à nos services gérés, garantissant une gestion complète du site web."
+		}
+	],
+	"banner-section": {
+		"heading": "Prêt pour un site Web qui se démarque ?",
+		"btn-text": "Demander une consultation"
+	},
+	"faq-questions": [
+		{
+			"question": "Pourquoi devrais-je investir dans les Services de développement de sites web sur mesure?",
+			"answer": "Le développement de sites web personnalisés assure une présence en ligne unique pour votre marque, offrant des fonctionnalités améliorées, une meilleure expérience utilisateur et une visibilité accrue sur les moteurs de recherche grâce à nos services de développement de sites web sur mesure et personnalisés."
+		},
+		{
+			"question": "Combien de temps faut-il pour développer un site web sur mesure?",
+			"answer": "Le délai pour le développement de sites web personnalisés varie en fonction de la complexité du projet, des fonctionnalités et des exigences du client. Notre équipe fournit des estimations de temps après la consultation, en suivant les principes de Développement web sur mesure et adapté."
+		},
+		{
+			"question": "Puis-je mettre à jour et gérer mon site web personnalisé moi-même?",
+			"answer": "Oui, nous fournissons une formation aux utilisateurs et un manuel détaillé pour vous permettre de mettre à jour et gérer votre site web efficacement. Cependant, nous proposons également des services gérés pour une gestion et un support complets du site web, dans le cadre de nos Services de développement de sites web personnalisés."
+		},
+		{
+			"question": "Mon site web personnalisé sera-t-il adapté aux mobiles et réactif?",
+			"answer": "Oui, tous les sites web personnalisés développés par nos soins sont conçus pour être entièrement adaptés aux mobiles et réactifs, garantissant une expérience utilisateur optimale sur différents appareils et tailles d'écran, grâce à notre expertise en Développement web personnalisé."
+		},
+		{
+			"question": "Pouvez-vous optimiser mon site web personnalisé pour les moteurs de recherche?",
+			"answer": "Oui, nous mettons en œuvre les meilleures pratiques SEO pendant le processus de développement, en optimisant la structure du site, les méta-tags, le contenu et plus encore, pour améliorer la visibilité sur les moteurs de recherche et augmenter le trafic organique, en utilisant nos services de Conception et développement de sites web sur mesure et personnalisés."
+		}
+	]
+}

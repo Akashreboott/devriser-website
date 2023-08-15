@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeading from "@/components/SectionHeading";
+import Heading from "@/components/SectionHeading";
 import { PROCESS_DETAILS } from "@/utils/mobile-app-data";
 import Placeholder from "../../../public/assets/images/placeholder.png";
 import React, { useState } from "react";
@@ -11,8 +11,11 @@ import { AnimatePresence, m } from "framer-motion";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
 
 import ChevronIcon from "../../../public/assets/icons/Chevron";
-PROCESS_DETAILS;
-const ProcessSection = () => {
+import { useTranslation } from "@/app/i18n/client";
+const ProcessSection = (props: any) => {
+	const { t, i18n } = useTranslation(props.lng, "mobileDevelopment");
+	let PROCESS_DETAILS: { heading: string; description: string }[] = t("processes", { returnObjects: true });
+
 	const [processIndex, setProcessIndex] = useState(0);
 	const activeProcess = PROCESS_DETAILS[processIndex];
 
@@ -25,7 +28,11 @@ const ProcessSection = () => {
 
 	return (
 		<AnimatePresence>
-			<SectionHeading title='Our Process' gap='50px' gradientText='Process' className='my-32'>
+			<Heading
+				title={t("process-heading.heading")}
+				gradientText={t("process-heading.gradient-text")}
+				gap='50px'
+				className='section-spacing-p section-height'>
 				<div className=' grid w-full max-w-[90%] grid-cols-1 justify-center justify-items-center gap-8 md:grid-cols-2  md:gap-12'>
 					{/* MOBILE VERSION */}
 					<div className='relative h-full w-full md:hidden'>
@@ -59,7 +66,7 @@ const ProcessSection = () => {
 					</div>
 					{/* DESKTOP VERSION */}
 					<div className='grid grid-cols-[repeat(9,max-content)] gap-2 [--box-width:210px]  max-md:hidden  md:grid-cols-[repeat(3,minmax(auto,var(--box-width)))] '>
-						{PROCESS_DETAILS.slice(0, 9).map(({ heading }, index) => (
+						{PROCESS_DETAILS.map(({ heading }, index) => (
 							<button
 								onClick={() => setProcessIndex(index)}
 								key={heading}
@@ -68,8 +75,8 @@ const ProcessSection = () => {
 									activeProcess.heading === heading && "bg-banner-bg dark:bg-banner-bg"
 								)}>
 								<DarkLightImage
-									DarkVisibleImage={Placeholder}
-									LightVisibleImage={Placeholder}
+									darkVisibleImage={Placeholder}
+									lightVisibleImage={Placeholder}
 									className='max-md:hidden md:h-10 md:w-16 lg:h-14 lg:w-20'
 									alt=''
 								/>
@@ -90,7 +97,7 @@ const ProcessSection = () => {
 						<p className='font-350 leading-7'>{activeProcess.description}</p>
 					</m.div>
 				</div>
-			</SectionHeading>
+			</Heading>
 		</AnimatePresence>
 	);
 };

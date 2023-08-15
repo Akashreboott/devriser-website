@@ -1,11 +1,15 @@
 "use client";
+import { useTranslation } from "@/app/i18n/client";
 import AnimatedNumber from "@/components/AnimatedNumber";
 import MotionComponent from "@/components/MotionComponent";
 import cn from "@/utils/cn";
 import { m } from "framer-motion";
 import React, { useState } from "react";
 
-const StatsSection = (props: { className?: string }) => {
+const StatsSection = (props: { className?: string; lng: string }) => {
+	const { t } = useTranslation(props.lng, "managedServices");
+	let STATS: { number: string; description: string[] }[] = t("stats", { returnObjects: true });
+
 	const [isInView, setIsInView] = useState<boolean>(false);
 
 	const Circle = (props: { CircleWidth?: string; borderWidth?: string; offsetWidth?: string; Value: number; Color: string }) => (
@@ -38,15 +42,19 @@ const StatsSection = (props: { className?: string }) => {
 			{/* {isInView && ( */}
 			<>
 				<div className={cn("flex  items-center justify-center gap-10 max-lg:flex-col max-lg:gap-20")}>
-					<Circle Color='#00D085' Value={57} />
+					<Circle Color='#00D085' Value={parseInt(STATS[0].number)} />
 					<p className='max-w-[45%]'>
-						57%+ Of Corporate <br className='max-lg:hidden' /> Professionals Face Hurdles In Managing their software
+						{STATS[0].description[0]}
+						<br className='max-lg:hidden' />
+						{STATS[0].description[1]}
 					</p>
 				</div>
 				<div className={cn("flex  items-center justify-center gap-10 max-lg:flex-col max-lg:gap-20")}>
-					<Circle Color='#0b759f' Value={47} />
+					<Circle Color='#0b759f' Value={parseInt(STATS[1].number)} />
 					<p className='max-w-[45%]'>
-						47%+ of businesses <br className='max-lg:hidden' /> struggle with their software performance issues
+						{STATS[1].description[0]}
+						<br className='max-lg:hidden' />
+						{STATS[1].description[1]}
 					</p>
 				</div>
 			</>

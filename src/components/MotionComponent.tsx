@@ -1,16 +1,20 @@
 "use client";
 import { m, HTMLMotionProps, MotionProps } from "framer-motion";
-import React from "react";
+import React, { forwardRef } from "react";
 
 interface props extends HTMLMotionProps<"div"> {
 	children?: React.ReactNode;
-	as?: "div" | "main" | "section" | "span" | "p" | "footer" | "header" | "h2" | "h3" | "img";
+	as?: "div" | "main" | "section" | "span" | "p" | "footer" | "header" | "h2" | "h3";
 }
-
-const MotionComponent = ({ children, as, ...props }: props) => {
+export type Ref = HTMLDivElement;
+const MotionComponent = forwardRef<Ref, props>(function MotionComponen({ children, as, ...props }, ref) {
 	let Component = as ? m[as] : m["div"];
-	return <Component {...props}>{children}</Component>;
-};
+	return (
+		<Component {...props} ref={ref}>
+			{children}
+		</Component>
+	);
+});
 
 export default MotionComponent;
 

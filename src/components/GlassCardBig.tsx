@@ -16,11 +16,7 @@ const GlassCardBig = ({ variant, ...props }: props) => {
 		<div
 			className={cn(
 				"glass isolate z-0 grid h-[calc(100%-1px)] w-[calc(100%-1px)] ",
-				// "border-none",
-				// "after-overlay after:inset-[1px] after:-z-10 after:h-auto after:w-auto after:rounded-lg after:glass",
-				// "before-overlay before:inset-0 before:-z-20 before:rounded-lg before:bg-gradient-to-br before:from-white/70 before:via-white/10  before:to-white/70  before:opacity-40 before:transition-opacity before:duration-300 hover:before:opacity-80",
 				variant === "small" ? "grid-cols-1 gap-6" : "grid-cols-2 gap-2 md:gap-8",
-				"",
 				props.className
 			)}>
 			<div className={cn("flex flex-col gap-3 md:gap-6 ")}>

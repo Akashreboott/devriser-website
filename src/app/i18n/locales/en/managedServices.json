@@ -1,0 +1,96 @@
+{
+	"testimonial-heading": {
+		"heading": "What People Say About Us",
+		"gradient-text": "People Say"
+	},
+	"faq-heading": {
+		"heading": "Frequently Asked Questions",
+		"gradient-text": "Asked"
+	},
+	"hero-heading": "Achieve More, Worry Less Managed Services For Flawless Operations",
+	"hero-gradient": "Managed Services",
+	"hero-tag": "Achieve More, Worry Less with Our Expert Managed Services for Your Digital Infrastructure.",
+	"hero-btn-text": "Commençons",
+	"stats": [
+		{ "number": "57", "description": ["57%+ Of Corporate", "Professionals Face Hurdles In Managing their software"] },
+		{ "number": "47", "description": ["47%+ of businesses", "struggle with their software performance issues"] }
+	],
+	"decorated-banner": {
+		"heading": "Take Control Of Your Digital Success Today!",
+		"description": "Stay ahead of the curve while we handle your IT needs, allowing you to stay laser-focused on fueling your business growth",
+		"btn-text": "Start Your Journey"
+	},
+	"offerings-heading": {
+		"heading": "Our Offerings",
+		"gradient-text": "Offerings"
+	},
+	"offerings": [
+		{
+			"heading": "IT Managed Services",
+			"description": "At DevRiser, we ensure smooth operations, proactive monitoring, and efficient issue resolution for your IT infrastructure, enabling you to focus on core business activities.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Cyber Security Services",
+			"description": "Secure Your Assets with Our Reliable Cyber Security Services. We Deploy Advanced Threat Detection & Continuous Monitoring to Safeguard Your Systems & Data.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "IT Consultancy Services",
+			"description": "Gain insights and guidance with DevRiser's expert IT consultancy. Align tech strategy with business goals, drive innovation, and boost efficiency.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Cloud Managed Services",
+			"description": "Leverage Cloud Excellence with Our Managed Services. Setup, Migration & Management by Experts. Maximize Scalability, Reliability & Cost Optimization.",
+			"image": "Placeholder520"
+		}
+	],
+
+	"specialities-heading": {
+		"heading": "Why Choose Us",
+		"gradient-text": "Choose Us",
+		"description": "Through adherence to industry-leading standards in design and development, we offer tailor-made CMS solutions that prioritize scalability, security, and effortless management"
+	},
+	"specialities": [
+		{
+			"name": "Real-Time Project Tracking",
+			"description": "Track your website development stages effortlessly with our real-time dashboard, providing project visibility and centralized monitoring for transparent communication."
+		},
+		{
+			"name": "Expertise in CMS Development",
+			"description": "DevRiser's skilled professionals excel in CMS website development services, delivering tailored, top-notch websites to meet your unique requirements."
+		},
+		{
+			"name": "Professional Design and User Experience",
+			"description": "We prioritize visually appealing, user-friendly websites for online success. Our professionals create engaging designs with seamless navigation."
+		},
+		{
+			"name": "Ongoing Support and Maintenance",
+			"description": "Beyond initial website creation, our team ensures ongoing support, including updates, troubleshooting, and technical assistance."
+		},
+		{
+			"name": "Economically Viable",
+			"description": "Get cost-effective CMS development tailored to your budget. Our team delivers efficient, high-quality websites, ensuring exceptional value."
+		}
+	],
+	"banner": { "heading": "Let's Build Your Dream Website", "btn-text": "Get in touch" },
+	"faq-questions": [
+		{
+			"question": "What is the advantage of Managed Services?",
+			"answer": "Managed services offer several advantages. It allows you to focus on your core business activities while leaving the complexities of IT to experts. You gain access to specialized skills, industry best practices, and the latest technologies, resulting in improved efficiency, cost savings, and enhanced security."
+		},
+		{
+			"question": "What level of support can I expect from your Managed Services?",
+			"answer": "Our managed services provide comprehensive support tailored to your needs. We offer proactive monitoring, timely issue resolution, regular maintenance, and strategic guidance. Our dedicated team is available to address your concerns and provide assistance, ensuring the smooth functioning of your IT infrastructure."
+		},
+		{
+			"question": "How do you ensure the security of my data with your Managed Services?",
+			"answer": "Data security is our top priority. We implement robust security measures such as encryption, access controls, and regular backups to protect your data. Our team follows industry-leading practices, conducts vulnerability assessments, and stays updated with emerging threats to ensure your sensitive information remains safe and secure."
+		},
+		{
+			"question": "How do I get started with your Managed Services?",
+			"answer": "Getting started is simple. You can contact us and get a free consultation. We'll discuss your requirements, understand your goals, and recommend the best service options for your business. "
+		}
+	]
+}

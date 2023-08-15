@@ -11,7 +11,7 @@ const GlassCard = (props: { heading: string; ImageClasses?: string; className?: 
 			transition={{ duration: 0.45, delay: props.delay ?? 0, type: "spring" }}
 			viewport={{ margin: "30px", once: true }}
 			className={cn(
-				"flex w-fit flex-col gap-3 rounded-[10px] border-[0.5px] border-white/20 bg-white/[0.05] p-2.5 text-center backdrop-blur-sm md:gap-8 md:p-3 lg:p-4",
+				"flex w-fit flex-col gap-3 rounded-[10px] border-[0.5px] border-dark/10 bg-white/[0.05] p-2.5 text-center backdrop-blur-sm dark:border-white/20 md:gap-8 md:p-3 lg:p-4",
 				props.className
 			)}>
 			<div className='max-md:text-xs'>{props.heading}</div>

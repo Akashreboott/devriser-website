@@ -2,6 +2,10 @@ import Vector1 from "../../public/assets/images/Vector1.svg";
 import Vector2 from "../../public/assets/images/Vector2.svg";
 import Vector3 from "../../public/assets/images/Vector3.svg";
 // INDUSTRIES
+import Icon1 from "./../../public/assets/images/custom-solution (1).svg";
+import Icon2 from "./../../public/assets/images/custom-solution (2).svg";
+import Icon3 from "./../../public/assets/images/custom-solution (3).svg";
+import Icon4 from "./../../public/assets/images/custom-solution (4).svg";
 
 import industry1 from "../../public/assets/images/industries-(1).png";
 import industry2 from "../../public/assets/images/industries-(2).png";
@@ -198,3 +202,5 @@ export const SPECIALITIES = [
 			"We offer innovative, forward-thinking solutions by leveraging emerging technologies and best practices, providing a competitive edge for your business.",
 	},
 ];
+
+export const SOLUTIONS_IMAGES = [Icon1, Icon2, Icon3, Icon4];

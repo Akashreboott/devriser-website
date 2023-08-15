@@ -12,6 +12,9 @@ module.exports = {
 			fontFamily: {
 				"mono-sans": "Mona-Sans",
 			},
+			minHeight: {
+				section: "min(800px,100vh)",
+			},
 			colors: {
 				gray: "rgba(177, 178, 178, 1)",
 				"body-bg": "var(--body-bg)",

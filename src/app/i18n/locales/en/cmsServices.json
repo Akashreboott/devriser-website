@@ -1,0 +1,178 @@
+{
+	"testimonial-heading": {
+		"heading": "What People Say About Us",
+		"gradient-text": "People Say"
+	},
+	"faq-heading": {
+		"heading": "Frequently Asked Questions",
+		"gradient-text": "Asked"
+	},
+	"hero-heading": "Advanced CMS Development Services For Maximizing Your Website's Potential ",
+	"hero-gradient": "CMS Development Services",
+	"hero-tag": "Maximize your website's potential with our CMS development services and reflect the true value of your business.",
+	"hero-btn-text": "Commençons",
+
+	"features-heading": {
+		"heading": "Feature-Packed Offerings",
+		"gradient-text": "Offerings",
+		"description": "Experience powerful website creation with our tailored CMS Development Services, using popular platforms for transformative results."
+	},
+	"features": [
+		{
+			"heading": "Time-Efficient",
+			"description": "We harness the power of industry-leading CMS platforms and create stunning websites to capture your visitor's interest in significantly less time.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Cost-Effective",
+			"description": "Our approach at DevRiser is to deliver high-value websites that align with your budget, creating a strong online presence that delivers value for your investment.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Responsive Design",
+			"description": "We optimize layouts and functionality for effortless compatibility of your website across various screens, from big screens to mobile devices.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Easy to manage",
+			"description": "Effortlessly manage your website with our user-friendly interface. Our expertly crafted sites offer flawless control for easy updates and maintenance.",
+			"image": "Placeholder520"
+		}
+	],
+	"lineups-heading": {
+		"heading": "Meet Our CMS Lineups",
+		"gradient-text": "CMS"
+	},
+	"lineups": [
+		{
+			"heading": "WordPress",
+			"description": "At DevRiser, we leverage WordPress, a versatile and user-friendly CMS platform, using its extensive plugin libraries to customize websites for blogs, business, e-commerce, portfolios, and forums. Our responsive designs enhance user engagement and accessibility across devices.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Drupal",
+			"description": "DevRiser utilizes Drupal, a robust and flexible CMS, to create exceptional websites. With Drupal's customizable architecture, extensive module library, and intuitive administration interface, we ensure optimal performance, scalability, and a great user experience.",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Wix",
+			"description": "Wix is a powerful website builder with professional templates, customizable elements, and an app market for added functionalities. We at DevRiser utilize its intuitive tools, reliable hosting, mobile optimization, and SEO capabilities to provide you with a unique website that delivers an outstanding online experience",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Webflow",
+			"description": "Webflow is known for its intuitive visual editor and robust features. At DevRiser, we leverage its seamless design capabilities, responsive layouts, built-in SEO tools, and extensive template library to create visually stunning websites which align with your goals and objectives",
+			"image": "Placeholder520"
+		},
+		{
+			"heading": "Shopify",
+			"description": "Shopify is a powerful e-commerce platform with diverse features to construct and oversee online stores. DevRiser experts harness the extensive capabilities to craft excellent websites tailored to your specific business requirements. We ensure smooth integration, and intuitive navigation, resulting in an elevated shopping experience",
+			"image": "Placeholder520"
+		}
+	],
+	"decorated-banner": {
+		"heading": "Crafting Websites For Your Unique Vision",
+		"description": "Experience website creation artistry with our expert team at DevRiser, delivering websites tailored to your unique requirements",
+		"btn-text": "Get A Quote"
+	},
+
+	"websites-heading": {
+		"heading": "Types Of Websites We Create With CMS",
+		"gradient-text": "Types Of Websites"
+	},
+	"websites": [
+		"Business websites",
+		"Blog and news websites",
+		"E-commerce websites",
+		"Real-estate websites",
+		"Community and forum websites",
+		"Non-profit and charity websites",
+		"Portfolio websites",
+		"Educational websites"
+	],
+
+	"process-heading": {
+		"heading": "Our Process",
+		"gradient-text": "Process"
+	},
+	"processes": [
+		{
+			"heading": "Gathering requirements",
+			"description": "Analyzing your needs, goals, CMS platform preference, and target audience is our first step to determine website features."
+		},
+		{
+			"heading": "Research and planning",
+			"description": "After diligent research, we plan the project scope, timeline, and deliverables comprehensively."
+		},
+		{
+			"heading": "Creating design",
+			"description": "We design visually appealing, user-friendly websites that truly reflect your brand and identity."
+		},
+		{
+			"heading": "Website development",
+			"description": "Our professionals use the design to develop fully functional websites with all necessary functionalities."
+		},
+		{
+			"heading": "Website testing",
+			"description": "Rigorous testing of your website ensures flawless website performance across browsers, devices, and scenarios."
+		},
+		{
+			"heading": "User training",
+			"description": "Training and a comprehensive manual for your web operations team are provided for smooth maintenance."
+		},
+		{
+			"heading": "Staging site",
+			"description": "Final testing is conducted post-user training to ensure a bug-free website launch."
+		},
+		{
+			"heading": "Launch of website",
+			"description": "Your website goes live after staging, marking its online debut and reaching the target audience"
+		}
+	],
+	"specialities-heading": {
+		"heading": "Why Choose Us",
+		"gradient-text": "Choose Us",
+		"description": "Through adherence to industry-leading standards in design and development, we offer tailor-made CMS solutions that prioritize scalability, security, and effortless management"
+	},
+	"specialities": [
+		{
+			"name": "Real-Time Project Tracking",
+			"description": "Track your website development stages effortlessly with our real-time dashboard, providing project visibility and centralized monitoring for transparent communication."
+		},
+		{
+			"name": "Expertise in CMS Development",
+			"description": "DevRiser's skilled professionals excel in CMS website development services, delivering tailored, top-notch websites to meet your unique requirements."
+		},
+		{
+			"name": "Professional Design and User Experience",
+			"description": "We prioritize visually appealing, user-friendly websites for online success. Our professionals create engaging designs with seamless navigation."
+		},
+		{
+			"name": "Ongoing Support and Maintenance",
+			"description": "Beyond initial website creation, our team ensures ongoing support, including updates, troubleshooting, and technical assistance."
+		},
+		{
+			"name": "Economically Viable",
+			"description": "Get cost-effective CMS development tailored to your budget. Our team delivers efficient, high-quality websites, ensuring exceptional value."
+		}
+	],
+	"banner": { "heading": "Let's Build Your Dream Website", "btn-text": "Get in touch" },
+	"faq-questions": [
+		{
+			"question": "What CMS platforms do you offer for website creation?",
+			"answer": "We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores."
+		},
+		{
+			"question": "What will be the cost of the CMS development services?",
+			"answer": "The cost for CMS website development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals with us to get an accurate estimate of the cost involved."
+		},
+		{
+			"question": "How much time will it take to create a website?",
+			"answer": "The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals with us to get an accurate estimate of the time involved."
+		},
+		{
+			"question": "Is my data secure with you?",
+			"answer": "Yes, we as at DevRiser prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our design and development process."
+		}
+	]
+}

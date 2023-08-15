@@ -13,11 +13,7 @@ interface props {
 
 const BlogCard = ({ ...props }: props) => {
 	return (
-		<MotionComponent
-			initial={{ opacity: 0, x: 50, y: 50 }}
-			whileInView={{ opacity: 1, y: 0, x: 0 }}
-			transition={{ duration: 0.5, delay: props.delay ?? 0 }}
-			viewport={{ once: true }}
+		<div
 			className={cn(
 				"glass grid p-4 transition-colors duration-300 hover:border-white/50 lg:p-5",
 				// variant === "small" ? "grid-cols-1 gap-6" : "grid-cols-2 gap-8",
@@ -41,7 +37,7 @@ const BlogCard = ({ ...props }: props) => {
 					<span>June 27, 2023</span>
 				</div>
 			</div>
-		</MotionComponent>
+		</div>
 	);
 };
 

@@ -22,8 +22,8 @@ const ContactCard = (props: {
 		)}>
 		<DarkLightImage
 			alt=''
-			DarkVisibleImage={props.DarkVisibleImage}
-			LightVisibleImage={props.LightVisibleImage}
+			darkVisibleImage={props.DarkVisibleImage}
+			lightVisibleImage={props.LightVisibleImage}
 			className={cn("w-7/12", props.imageClasses)}
 		/>
 		<h3 className='font-semibold'>{props.heading}</h3>

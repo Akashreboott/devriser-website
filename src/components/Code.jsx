@@ -6,7 +6,7 @@ const Code = (props) => {
 			<circle cx={44} cy={44} r={44} fill='url(#paint0_radial_5_302490)' />
 			<path
 				d='M51.646 56l-1.456-1.688L59.087 44 50.19 33.688 51.647 32 62 44 51.646 56zm-14.292 0L27 44l10.354-12 1.456 1.688L29.913 44l8.897 10.312L37.354 56z'
-				fill='#E5E1E6'
+				fill='currentColor'
 			/>
 			<defs>
 				<radialGradient

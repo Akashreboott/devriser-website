@@ -1,15 +1,19 @@
 "use client";
-import SectionHeading from "@/components/SectionHeading";
-import { PROCESS_DETAILS } from "@/utils/web-development-data";
+import Heading from "@/components/SectionHeading";
+
+import type { PROCESS_DETAIL } from "@/utils/web-development-data";
 import React, { useState } from "react";
 import ArrowLeft from "../../../public/assets/icons/ArrowLeft";
 import cn from "@/utils/cn";
-import { AnimatePresence, m } from "framer-motion";
+import { m } from "framer-motion";
 import ChevronIcon from "../../../public/assets/icons/Chevron";
+import { useTranslation } from "@/app/i18n/client";
 
-const ProcessSection = () => {
+const ProcessSection = (props: any) => {
+	const { t } = useTranslation(props.lng, "webDevelopment");
+	const PROCESS_DETAILS: PROCESS_DETAIL[] = t("process-details", { returnObjects: true });
 	const [processIndex, setProcessIndex] = useState(0);
-	const activeProcess = PROCESS_DETAILS[processIndex];
+	const activeProcess: PROCESS_DETAIL = PROCESS_DETAILS[processIndex];
 
 	let activeClasses = "clip gradient-tint";
 
@@ -21,7 +25,7 @@ const ProcessSection = () => {
 	}
 
 	return (
-		<SectionHeading title='Our Process' gradientText='Process' className='mt-20 w-full gap-20'>
+		<Heading title={t("process-heading.heading")} gradientText={t("process-heading.gradient-text")} className='mt-20 w-full gap-20'>
 			<div className='gradient-border grid w-[calc(100%-30px)]  max-w-[1436px] grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-9 lg:p-[65px]'>
 				<div>
 					{/* DESKTOP VERSION */}
@@ -78,13 +82,13 @@ const ProcessSection = () => {
 					</div>
 				</div>
 				{/* PROCESS DESCRIPTION */}
-				<div className='rounded bg-white px-8 py-[35px] text-[14px]/[21px] font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-[18px]/[40px] lg:px-[54px]  '>
+				<div className='rounded  bg-[#f9f9f9] px-8 py-[35px] text-[14px]/[21px] font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-[18px]/[40px] lg:px-[54px]  '>
 					<m.div initial={{ opacity: 0, y: "-5px" }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
 						{activeProcess.description}
 					</m.div>
 				</div>
 			</div>
-		</SectionHeading>
+		</Heading>
 	);
 };
 

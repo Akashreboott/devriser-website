@@ -8,15 +8,20 @@ const Grid1x2 = ({
 	content,
 	image,
 	btnText,
+	as,
 }: {
 	className?: string;
 	title: string;
 	content: string;
 	image: any;
 	btnText?: string;
+	as?: string;
 }) => {
+	const Component = ({ children, ...props }: any) => {
+		return React.createElement(as ?? "div", { ...props }, children);
+	};
 	return (
-		<div
+		<Component
 			className={cn(
 				"layout-1x2  mx-4 mt-14 grid grid-cols-1 items-center justify-between justify-items-center gap-10",
 				"max-md:text-center md:mt-20 md:grid-cols-[1fr_minmax(280px,1fr)] md:gap-12",
@@ -28,7 +33,7 @@ const Grid1x2 = ({
 				{btnText && <Button text={btnText} className='mt-6 w-fit max-md:mx-auto' variant='Secondary' />}
 			</div>
 			<Image src={image} alt='placeholder' className='second h-[335px] w-full max-w-[520px] rounded-md object-cover' />
-		</div>
+		</Component>
 	);
 };
 
