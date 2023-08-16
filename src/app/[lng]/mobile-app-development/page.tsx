@@ -42,7 +42,7 @@ const page = async ({ params: { lng } }: any) => {
 
 			<Heading
 				gap='35px'
-				className='section-spacing-p section-spacing-p h-[min(800px,100vh)] px-4  [--pb:100px]'
+				className='section-spacing-p section-spacing-p min-h-section px-4  [--pb:100px]'
 				title={t("solutions-heading.heading")}
 				gradientText={t("solutions-heading.gradient-text")}
 				description={t("solutions-heading.description")}>

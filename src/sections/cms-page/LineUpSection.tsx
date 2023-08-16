@@ -61,7 +61,7 @@ const LineUpSection = (props: any) => {
 							emblaApi?.scrollPrev();
 						}}
 						className={cn(
-							"absolute left-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark md:hidden"
+							"absolute left-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark lg:hidden"
 						)}>
 						<ChevronIcon className='pointer-events-none h-5 w-5 -translate-x-0.5 rotate-180 text-banner-bg' />
 					</button>
@@ -72,7 +72,7 @@ const LineUpSection = (props: any) => {
 							emblaApi?.scrollNext();
 						}}
 						className={cn(
-							"absolute right-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark md:hidden"
+							"absolute right-4 top-1/2 z-10 flex -translate-y-[calc(50%-(1.5rem/2))] cursor-pointer items-center justify-center rounded-full border border-white/20 bg-light p-2 transition-transform active:scale-[0.97] active:opacity-60 dark:bg-dark lg:hidden"
 						)}>
 						<ChevronIcon className=' pointer-events-none h-5 w-5 translate-x-0.5 text-banner-bg' />
 					</button>

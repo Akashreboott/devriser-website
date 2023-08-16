@@ -35,7 +35,7 @@ const FeaturesSection = (props: any) => {
 					))}
 				</Swiper>
 
-				<div className='ml-8 mt-8 flex gap-2 self-start max-md:mx-auto lg:hidden'>
+				<div className='ml-8 mt-8 flex gap-2 self-start max-md:mx-auto '>
 					<button aria-label='Previous Feature' onClick={() => SwiperRef.current.swiper.slidePrev()}>
 						<ArrowLeft className='w-10 transition-[colors,opacity] duration-75 hover:text-banner-bg active:opacity-60' />
 					</button>

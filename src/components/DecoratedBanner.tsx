@@ -38,7 +38,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 							<QuestionsSection
 								closeModal={handleModalClose}
 								QUESTIONS={QUESTIONS[quoteLink]}
-								className='glass m-10 min-h-[90%] gap-5 bg-light p-8 dark:bg-dark [&>*]:my-0 [&_button]:my-0 '
+								className='glass m-10 min-h-[90%] gap-5 bg-light  p-8 dark:bg-dark [&>*]:my-0 [&_button]:my-0 '
 							/>
 						</div>
 					</div>,
@@ -64,7 +64,11 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 				)}
 				{/* rings */}
 
-				<Heading title={title} description={description} className='z-50 gap-[40px] px-3   [&_h2]:text-[26px]   [&_p]:text-[16px]' />
+				<Heading
+					title={title}
+					description={description}
+					className='z-50 gap-[40px] px-3   [&_h2]:text-[20px] md:[&_h2]:text-[26px]   [&_p]:text-[12px]  md:[&_p]:text-[16px]'
+				/>
 				<Button
 					onClick={handleModalOpen}
 					variant={variant ?? "Primary"}

@@ -29,8 +29,7 @@
 	.hide-in-dark {
 		@apply dark:!hidden;
 	}
-	.layout-1x2 {
-	}
+
 	.layout-1x2:nth-of-type(even) > .first {
 		@apply md:order-2 md:pr-16
 		md:[&_:is(h3,p)]:text-right max-md:[&_button]:mx-auto md:[&_button]:ml-auto;
@@ -38,6 +37,14 @@
 	.layout-1x2:nth-of-type(even) > .second {
 		@apply md:order-1 
 		md:[&_:is(h3,p)]:text-left max-md:[&_button]:mx-auto md:[&_button]:mr-auto;
+	}
+	.layout-1x2-lg:nth-of-type(even) > .first {
+		@apply lg:order-2 lg:pr-16
+		lg:[&_:is(h3,p)]:text-right max-lg:[&_button]:mx-auto lg:[&_button]:ml-auto;
+	}
+	.layout-1x2-lg:nth-of-type(even) > .second {
+		@apply lg:order-1 
+		lg:[&_:is(h3,p)]:text-left max-lg:[&_button]:mx-auto lg:[&_button]:mr-auto;
 	}
 
 	/* data attributes to hide elements in dark and light  modes*/

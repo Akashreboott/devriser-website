@@ -19,7 +19,7 @@ const ProcessSection = async (props: any) => {
 				{PROCESSES.map(({ heading, description }) => (
 					<div
 						key={heading}
-						className='layout-1x2 relative grid grid-cols-1 gap-8 pl-24 text-left lg:grid-cols-2  lg:justify-center lg:justify-items-center lg:gap-20 lg:text-center  '>
+						className='layout-1x2-lg relative grid grid-cols-1 gap-8 pl-24 text-left lg:grid-cols-2  lg:justify-center lg:justify-items-center lg:gap-20 lg:text-center  '>
 						{/* DOT */}
 						<div className='ball top[calc(50%+14px)] absolute left-[calc(25px+0.75px)] h-[28px] w-[28px] rounded-full border-[9px] border-black bg-white dark:border-white dark:bg-black lg:left-[calc(50%-14px-1.5px)]'></div>
 
