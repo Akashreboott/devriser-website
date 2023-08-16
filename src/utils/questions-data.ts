@@ -129,6 +129,11 @@ export const QUESTIONS: QUESTIONS = {
 	],
 	"mobile-development": [
 		{
+			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
+			options: ["", "", "", ""],
+			field: "text",
+		},
+		{
 			title: "What platform(s) do you want your mobile app to be developed for?",
 			options: ["iOS", "Android", "Both iOS and Android", ""],
 		},
@@ -181,11 +186,6 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Will you require ongoing maintenance and updates for your mobile app after it is developed/ deployed/launch?",
 			options: ["Yes, I would like a maintenance plan.", "No, I will handle maintenance myself."],
-		},
-		{
-			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
-			options: ["", "", "", ""],
-			field: "text",
 		},
 	],
 	"ui-ux": [

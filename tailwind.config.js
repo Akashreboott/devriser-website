@@ -10,7 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				"mono-sans": "Mona-Sans",
+				"mono-sans": ["var(--font-mona-sans)"],
 			},
 			minHeight: {
 				section: "min(800px,100vh)",
