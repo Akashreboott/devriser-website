@@ -1,6 +1,6 @@
 import placeholder from "../../public/assets/images/placeholder.png";
-import EN from "../../public/assets/icons/flag.svg";
-import FR from "../../public/assets/icons/frenchflagframed.svg";
+import EN from "../../public/assets/icons/us.svg";
+import FR from "../../public/assets/icons/fr.svg";
 import CN from "../../public/assets/icons/BevelledChina.svg";
 
 import ShopifyLight from "./../../public/assets/icons/shopify-svgrepo-light.svg";
@@ -35,7 +35,7 @@ export interface LANGUAGE {
 
 export const LANGUAGES: LANGUAGE[] = [
 	{ shortName: "EN", fullName: "English", flag: EN },
-	{ shortName: "FR", fullName: "Francis", flag: FR },
+	{ shortName: "FR", fullName: "Français", flag: FR },
 	// { shortName: "CN", fullName: "China", flag: CN },
 ];
 

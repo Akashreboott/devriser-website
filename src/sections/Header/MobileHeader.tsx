@@ -18,6 +18,7 @@ import { AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import { opacityAnimVariants } from "@/utils/FramerVariants";
 import { headerPropsInterface } from "./Header";
+import MenuButton from "@/components/MenuButton";
 
 const MobileHeader = ({
 	className,
@@ -44,18 +45,30 @@ const MobileHeader = ({
 
 	return (
 		<>
-			<header className='sticky top-0 isolate z-[100] grid w-full grid-cols-3 items-center justify-between justify-items-center self-start bg-light px-2  py-3  shadow-sm backdrop-blur-[100px] [grid-area:header]  dark:bg-gray-30 lg:hidden'>
+			<header
+				className={cn(
+					"sticky top-0  z-[300] grid w-full grid-cols-3 items-center justify-between justify-items-center self-start bg-light px-2  py-3  shadow-sm backdrop-blur-[100px] [grid-area:header]  dark:bg-gray-30 lg:hidden",
+					mobileMenuOpened && "bg-transparent dark:bg-transparent"
+				)}>
 				<div className='flex justify-self-start'>
-					<button className='shrink-0 rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-gray-30'>
-						Sign In
-					</button>
+					{!mobileMenuOpened && (
+						<button className='shrink-0 rounded-[3.5px] border border-black bg-light px-[10px] py-[5px] text-xs dark:border-white dark:bg-gray-30'>
+							Sign In
+						</button>
+					)}
+					{mobileMenuOpened && (
+						<ThemeButton className='justify-self-start'>
+							<Light className='h-3 w-3' />
+						</ThemeButton>
+					)}
 				</div>
 				<Link aria-label='Go to home page' href={"/"}>
 					<DevRiserLogo className='h-[38px] w-[38px] shrink-0' />
 				</Link>
 
-				<button className='justify-self-end' aria-label='Menu'>
-					<Menu className='w-5 cursor-pointer fill-white' onClick={() => setMobileMenuOpened(true)} />
+				<button className='relative z-[250] justify-self-end' aria-label='Menu'>
+					<MenuButton className=' cursor-pointer' onClick={() => setMobileMenuOpened((prev) => !prev)} opened={mobileMenuOpened} />
+					{/* <Menu className='w-5 cursor-pointer fill-white' onClick={() => setMobileMenuOpened(true)} /> */}
 				</button>
 			</header>
 

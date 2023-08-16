@@ -29,7 +29,8 @@ const DesktopHeader = ({
 	const [mobileMenuOpened, setMobileMenuOpened] = useState<boolean>(false);
 
 	const headerRef = useRef<HTMLDivElement>(null);
-	const [headerWidth, setheaderWidth] = useState<number>(82);
+	// --navbar-width
+	const headerWidth = 82;
 
 	useEffect(() => {
 		if (mobileMenuOpened) {
@@ -58,14 +59,14 @@ const DesktopHeader = ({
 				// onMouseLeave={() => setLanguagesOpened(false)}
 				ref={headerRef}
 				className={cn(
-					"scroll-bar-thin sticky top-0 isolate z-[100] h-full max-h-screen  min-h-screen w-[82px] [grid-area:header] max-lg:hidden [&_*]:!font-350",
+					"scroll-bar-thin sticky top-0 isolate z-[100] h-full max-h-screen  min-h-screen w-[--navbar-width] [grid-area:header] max-lg:hidden [&_*]:!font-350",
 					className
 				)}>
 				<div
 					className={cn(
 						"flex h-full w-fit flex-col items-center [&>:not(ul)]:mx-1.5",
 						desktopMenuOpened && "border-r border-gray",
-						"scroll-bar-thin z-10 justify-between self-start justify-self-start overflow-y-auto   bg-white  py-3  dark:bg-gray-30"
+						"scroll-bar-thin z-10 justify-between self-start justify-self-start overflow-y-auto bg-white py-3 dark:bg-gray-30"
 					)}>
 					{/* LOGO */}
 					<Link
@@ -139,16 +140,16 @@ const DesktopHeader = ({
 						<div className='grow-0'>
 							<button
 								className='w-full
-								rounded-[3.5px] bg-[#EBEAEA] px-[17px] py-2 dark:bg-gray-66'>
-								SignIn
+								rounded-[3.5px] bg-[#EBEAEA] px-[15px] py-2 dark:bg-gray-66'>
+								Sign In
 							</button>
 						</div>
 						{/* LANGUAGE BUTTON */}
 						<div className='relative z-[100] w-full grow-0'>
 							<button
 								onMouseEnter={() => setLanguagesOpened(true)}
-								className='isolate z-[100] flex w-full items-center justify-center  gap-1.5 rounded-[3.5px] border border-[#2A2A2A]   p-2 dark:border-white'>
-								<Image src={selectedLanguage.flag} className='h-[18px] w-[18px] rounded-full object-contain' alt='' />
+								className='isolate z-[100] flex w-full items-center justify-center  gap-1.5 rounded-[3.5px] border border-[#2A2A2A]   px-2 py-2.5 dark:border-white'>
+								<Image src={selectedLanguage.flag} className='h-[12px] w-[16px] object-contain' alt='' />
 								<span className='relative top-[0.5px]'>{selectedLanguage.shortName}</span>
 							</button>
 						</div>
@@ -183,8 +184,6 @@ const DesktopHeader = ({
 												href={`/${props.lng}${path}` ?? ""}
 												onClick={() => {
 													if (path !== "#") {
-														// console.log(`/${props.lng}/${subLink}`);
-														// router.push(`/${props.lng}${subLink}`);
 														setSubLink(path);
 														setSelectedLink(activeLink);
 													}
@@ -208,7 +207,7 @@ const DesktopHeader = ({
 							animate={{ x: "0", opacity: 1 }}
 							exit={{ x: "-100%", opacity: 0.2 }}
 							className={
-								"absolute bottom-0 left-[calc(100%-1.5px)] -z-10 flex flex-col gap-5 rounded-[0_8px_0_0]  bg-white/60 p-3 backdrop-blur-3xl  dark:bg-gray-30/60   [&>li]:cursor-pointer [&>li]:transition-colors"
+								"absolute bottom-0 left-[calc(100%-1.5px)] -z-10 flex flex-col gap-3 rounded-[0_8px_0_0]  bg-white/60 p-3 backdrop-blur-3xl  dark:bg-gray-30/60   [&>li]:cursor-pointer [&>li]:transition-colors"
 							}>
 							{LANGUAGES.map((lang, index) => (
 								<m.li
@@ -225,8 +224,8 @@ const DesktopHeader = ({
 											// setSelectedLanguage(lang);
 											setLanguagesOpened(false);
 										}}
-										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2  text-[12px]/[11.6px]")}>
-										<Image src={lang.flag} className='h-[18px] w-[18px] object-contain' alt='' /> <span>{lang.fullName}</span>
+										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2.5  text-[12px]/[11.6px]")}>
+										<Image src={lang.flag} className='h-[12px] w-[16px] object-contain' alt='' /> <span>{lang.fullName}</span>
 									</Link>
 								</m.li>
 							))}

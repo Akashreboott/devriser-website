@@ -42,7 +42,6 @@ const Header = ({ className, lng }: { className?: string; lng: any }) => {
 			// @ts-ignore
 			linksArr.forEach((link) => {
 				if (link && link !== "#" && set.has(link)) {
-					console.log(link);
 					// @ts-ignore
 					setSelectedLink(_);
 					setSubLink(`/${link}`);
