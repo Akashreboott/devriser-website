@@ -44,14 +44,19 @@ const CarourselSection = (props: any) => {
 								layout
 								key={heading}
 								className={cn(
-									"gradient-border bg-noise relative !flex  h-[332px] w-full max-w-[320px] flex-col  items-center justify-center gap-10 overflow-hidden rounded px-4 transition-transform max-md:mx-auto lg:max-w-[400px]",
+									"gradient-border !flex  h-[332px]  w-full max-w-[320px] flex-col items-center  justify-center gap-10 overflow-hidden rounded  transition-transform [perspective:1000px] max-md:mx-auto lg:max-w-[400px]",
 									index === 0 && "ml-4",
 									"group"
 								)}>
-								<Image src={BENEFITS_IMAGES[index].image} className='h-[120px] max-w-[200px] rounded-md' alt='' />
-								<p className='max-w-[90%] text-xl leading-10 lg:text-[26px]'>{heading}</p>
-								<div className='back-card  bg-noise250 absolute inset-0 hidden h-full w-full origin-center rounded  bg-banner-bg  '>
-									<p className='mx-auto mt-10 max-w-[90%] text-white'>{description}</p>
+								<div className='relative h-full w-full  transition-transform duration-[400ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]'>
+									<div className='absolute grid h-full w-full place-items-center px-4 [backface-visibility:hidden]'>
+										<Image src={BENEFITS_IMAGES[index].image} className='h-[120px] max-w-[200px] rounded-md' alt='' />
+										<p className='max-w-[90%] text-xl leading-10 lg:text-[22px]'>{heading}</p>
+									</div>
+
+									<div className='back-card absolute inset-0  h-full w-full origin-center rounded bg-banner-bg [backface-visibility:hidden]  [transform:rotateY(180deg)]  '>
+										<p className='mx-auto mt-10 max-w-[90%] text-white'>{description}</p>
+									</div>
 								</div>
 							</m.div>
 						</SwiperSlide>

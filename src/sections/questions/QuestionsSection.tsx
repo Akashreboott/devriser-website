@@ -96,13 +96,13 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 	);
 
 	return (
-		<div className={cn("isolate mt-6 grid w-[min(100%,900px)] px-3", "place-items-center gap-5 ", props.className)}>
+		<div className={cn("isolate mt-6 grid w-[min(100%,900px)] grid-rows-[auto_1fr_auto] px-3", "place-items-center gap-5 ", props.className)}>
 			<AnimatePresence>
 				{showAlert && <Alert message='Select one option' className='absolute right-2 top-24 z-50 font-350 backdrop-brightness-0 lg:top-4' />}
 			</AnimatePresence>
 			{/* NUMBERS */}
 			{!submitted && (
-				<div className=' scroll-bar-hide relative  isolate mb-10 flex max-w-full  justify-start overflow-x-auto max-md:justify-self-start md:justify-center lg:max-w-3xl  [&>*]:shrink-0'>
+				<div className='scroll-bar-hide relative  isolate mb-10 flex max-w-full  justify-start overflow-x-auto max-md:justify-self-start md:justify-center lg:max-w-3xl  [&>*]:shrink-0'>
 					{QUESTIONS.map((question, index) => (
 						<div
 							onClick={() => (answersSet.has(question.title) ? setCurrentQuestion(index) : {})}
@@ -150,8 +150,8 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 				</div>
 			)}
 			{/* QUESTIONS */}
-			<div className={cn("max-lg:mx-auto")}>
-				<div className={cn("mx-auto flex w-[min(100%,800px)] gap-8 max-lg:mx-auto  [&>*]:shrink-0 [&>*]:grow-0  [&>*]:basis-full")}>
+			<div className={cn("max-lg:mx-auto", "h-full pt-20")}>
+				<div className={cn("mx-auto flex h-full w-[min(100%,800px)] gap-8 max-lg:mx-auto  [&>*]:shrink-0 [&>*]:grow-0  [&>*]:basis-full")}>
 					<AnimatePresence mode='wait' initial={false}>
 						{!submitted && (
 							<Question

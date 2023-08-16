@@ -58,7 +58,9 @@ const SolutionSection = () => {
 					<ul className='flex w-full items-center gap-4 lg:mx-auto lg:justify-center max-lg:[&>li]:shrink-0 max-lg:[&>li]:grow-0 max-lg:[&>li]:basis-full'>
 						{SOLUTIONS.map((solution) => (
 							<li key={solution.name} className='flex items-center justify-center'>
-								<button onClick={() => setActive(solution)} className={cn("glass px-8 py-4", active.name === solution.name && "bg-[#2853DE]")}>
+								<button
+									onClick={() => setActive(solution)}
+									className={cn("glass px-8 py-4", active.name === solution.name && "bg-[#2853DE] text-white")}>
 									{solution.name}
 								</button>
 							</li>
@@ -135,7 +137,7 @@ const SolutionSection = () => {
 				<div className='mx-auto grid max-w-[1080px]  lg:grid-cols-2'>
 					<div className='flex w-full flex-col gap-6 max-lg:px-2 max-lg:text-center'>
 						<p>{active.content}</p>
-						<Link href={active.link} aria-label={`Go to ${active.name} page`} className='underline'>
+						<Link href={active.link} aria-label={`Check out ${active.name}`} className='underline'>
 							Check out {active.name}
 						</Link>
 					</div>

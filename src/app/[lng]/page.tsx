@@ -23,13 +23,9 @@ import { useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
 import { slugify } from "@/utils/utils";
 import { SOLUTIONS } from "@/utils/home-data";
-import { useTheme } from "next-themes";
 
 const Page = () => {
 	const [services, setServices] = useState("");
-	console.log(services);
-	const ctx = useTheme();
-	// const [horizontalNavOpened, setHorizontalNavOpened] = useState(false);
 	const [solutionsClicked, setSolutionsClicked] = useState<boolean>(false);
 
 	function onView(value: string) {
