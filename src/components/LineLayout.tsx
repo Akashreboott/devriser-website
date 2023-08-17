@@ -30,12 +30,7 @@ const LineLayout = ({ children, LineClasses, className, HideSymbol = false, head
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
-		<MotionComponent
-			ref={ref}
-			id={`${slugify(slugify(heading), "/") ?? ""}`}
-			// onViewportEnter={() => onView && onView(heading ?? "")}
-			// onViewportLeave={() => notOnView && notOnView("")}
-			className='line-layout'>
+		<MotionComponent ref={ref} id={`${slugify(slugify(heading), "/") ?? ""}`} className='line-layout'>
 			{/* LINE */}
 			<MotionComponent
 				whileInView={{
@@ -75,7 +70,7 @@ const LineLayout = ({ children, LineClasses, className, HideSymbol = false, head
 							initial={{ opacity: 0, x: -100 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5 }}
-							viewport={{ amount: 1, once: true }}
+							viewport={{ amount: 0.7, once: true }}
 							className='primary-heading mt-1.5 w-fit max-lg:mx-auto max-lg:mb-0 xl:mb-10'>
 							{heading}
 						</MotionComponent>

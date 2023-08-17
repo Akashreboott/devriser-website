@@ -37,6 +37,14 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 
 	function handleSelect(e: any) {
 		let value = e.target.value;
+		let name = e.target.name;
+
+		if (name === "attachments") {
+			return setAnswers((prev: any) => ({ ...prev, [name]: e.target.files?.item(0) }));
+		}
+		if (question.field === "textarea") {
+			return setAnswers((prev: any) => ({ ...prev, [name]: value }));
+		}
 
 		if (question.field === "checkbox") {
 			return setAnswers((prev: any) => {
@@ -52,10 +60,10 @@ const QuestionsSection = ({ QUESTIONS, ...props }: props) => {
 
 	function handleSubmit() {
 		// @ts-ignore
-		if (QUESTIONS.length !== Object.keys(answers).length) {
+		if (Object.keys(answers).length < QUESTIONS.length) {
 			return showMessage();
 		}
-		console.log("Submitted", answers);
+		console.log("Submitted", Object.values(answers));
 		setSubmitted(true);
 	}
 	function showMessage() {

@@ -8,7 +8,7 @@ const LogoClouds = (props: { heading: string; logos: any[]; className?: string; 
 		<MotionComponent
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 1, delay: 3 }}
+			transition={{ duration: 1 }}
 			className={cn(
 				"mx-3 flex  justify-between max-lg:flex-col max-lg:justify-center max-md:mb-20 max-md:gap-6 lg:ml-24 lg:mr-8",
 				"flex-col items-center gap-7",

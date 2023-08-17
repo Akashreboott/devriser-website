@@ -37,6 +37,7 @@ const Page = () => {
 
 	return (
 		<>
+			{/* NAVBAR */}
 			<AnimatePresence>
 				{services && (
 					<m.nav
@@ -97,10 +98,8 @@ const Page = () => {
 				)}
 			</AnimatePresence>
 			<Main data-page='home' className=' isolate grid '>
-				{/* NAVBAR */}
-
 				{/* STARS AND GRADIENTS OVERLAY */}
-				<div className='absolute left-0 top-0 flex h-[min(100vh,1400px)] w-screen items-start justify-center overflow-hidden '>
+				<div className='absolute left-0 top-0 flex min-h-section w-screen items-start justify-center overflow-hidden '>
 					<MotionComponent
 						transition={{ repeat: Infinity, delay: 4.5, duration: 4, repeatType: "mirror" }}
 						className={cn(
@@ -143,15 +142,15 @@ const Page = () => {
 								<GlassCardBig
 									delay={0.1}
 									heading='Responsive'
-									content='Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development, stunning design, and cutting-edge applications.'
+									content='Experience responsive accessibility—our solution smoothly adapts to all devices, enhancing your efficiency on the go.'
 									image={Phone}
 									variant='big'
 									className='p-3.5 md:p-5 md:[grid-column:1/3]'
 								/>
 								<GlassCardBig
 									delay={0.1}
-									heading='AI powered'
-									content='Unlock the full potential of your digital journey with us! Our platform offers a powerful combination.'
+									heading='Data center'
+									content='Choose Your Service Hosting Destination. Customize your experience by deciding where your services reside, putting you in control of security'
 									image={image208}
 									variant='small'
 									className='p-3.5 md:p-5 md:[grid-column:3/4]'
@@ -161,15 +160,15 @@ const Page = () => {
 								<GlassCardBig
 									delay={0.1}
 									heading='Security'
-									content='Unlock the full potential of your digital journey with us! Our platform offers a powerful combination.'
+									content='Our solution employs encryption, access controls, and audits to protect your data and ensure compliance.'
 									image={image208}
 									variant='small'
 									className='p-3.5 md:p-5 md:[grid-column:1/2]'
 								/>
 								<GlassCardBig
 									delay={0.1}
-									heading='Data Centre'
-									content='Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development, stunning design, and cutting-edge applications. '
+									heading='AI powered'
+									content='Step into the future with AI-powered innovation. Automate tasks, gain insights, and make informed decisions for unparalleled efficiency.'
 									image={image281}
 									variant='big'
 									className='p-3.5 md:p-5 md:[grid-column:2/4]'
@@ -180,7 +179,7 @@ const Page = () => {
 
 					<LineLayout className='w-full '>
 						<BlogsSection />
-						<Banner className='max-lg:mx-auto' btnText='Get started now!' heading="Ready To Innovate? Let's Build Your Dream App!" />
+						<Banner className='max-lg:mx-auto' btnText='Get started now!' heading="Let's Create Digital Excellence Together." />
 					</LineLayout>
 				</div>
 			</Main>
