@@ -1,7 +1,7 @@
 export interface Question {
 	title: string;
 	options: string[];
-	field?: "radio" | "checkbox" | "text" | undefined;
+	field?: "radio" | "checkbox" | "textarea" | undefined;
 }
 export interface QUESTIONS {
 	"web-development": Question[];
@@ -75,7 +75,7 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Do you have any additional questions or requirements you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 	],
 	"cms-services": [
@@ -124,14 +124,14 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Do you have any additional questions or requirements you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 	],
 	"mobile-development": [
 		{
 			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 		{
 			title: "What platform(s) do you want your mobile app to be developed for?",
@@ -238,7 +238,7 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 	],
 	"enterprise-solutions": [
@@ -300,7 +300,7 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 	],
 	"managed-services": [
@@ -393,7 +393,7 @@ export const QUESTIONS: QUESTIONS = {
 		{
 			title: "Do you have any additional questions or specific requirements that you would like to discuss?",
 			options: ["", "", "", ""],
-			field: "text",
+			field: "textarea",
 		},
 	],
 };

@@ -225,3 +225,39 @@
 .section-height {
 	min-height: min(800px, 100vh);
 }
+
+@keyframes color-animation-1 {
+	0% {
+		background-color: theme(colors.sky.700);
+		box-shadow: 0 0 10px theme(colors.sky.700);
+	}
+	50% {
+		background-color: theme(colors.white);
+		box-shadow: 0 0 2px theme(colors.transparent);
+	}
+	100% {
+		background-color: theme(colors.white);
+		box-shadow: 0 0 2px theme(colors.transparent);
+	}
+}
+
+@keyframes color-animation-2 {
+	0% {
+		background-color: theme(colors.white);
+		box-shadow: 0 0 2px theme(colors.transparent);
+	}
+	50% {
+		background-color: theme(colors.sky.700);
+		box-shadow: 0 0 10px theme(colors.sky.700);
+	}
+	100% {
+		background-color: theme(colors.white);
+		box-shadow: 0 0 2px theme(colors.transparent);
+	}
+}
+.color-animation-1 {
+	animation: color-animation-1 6s ease-out 1s infinite alternate-reverse;
+}
+.color-animation-2 {
+	animation: color-animation-2 6s ease-out 1s infinite alternate-reverse;
+}

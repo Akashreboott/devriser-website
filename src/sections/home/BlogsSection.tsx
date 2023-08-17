@@ -12,8 +12,8 @@ const BlogsSection = () => {
 		<>
 			<SideHeading
 				heading='Blogs'
-				description='Empowering Your Digital Future Web Development, Design'
-				gradientText='Empowering Your Digital Future'
+				description='Discover Our Thoughtful Perspectives'
+				gradientText='Thoughtful Perspectives'
 				gradientColor='[background-color:#7B9AFE]'
 			/>
 			<div className='wf mx-auto mt-10 grid w-[90%] grid-cols-1 gap-4 md:mt-20 md:grid-cols-3 '>

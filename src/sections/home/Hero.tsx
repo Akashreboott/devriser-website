@@ -27,7 +27,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 					className
 				)}>
 				<div className=' mr-auto mt-[50px] w-full min-w-[300px] basis-full md:mt-[100px]  lg:ml-10 lg:mt-[var(--top-space)] '>
-					<h1 className='relative w-full  flex-wrap  overflow-hidden text-[40px] font-semibold text-dark selection:bg-fuchsia-500 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-[54px]/[70px]'>
+					<h1 className='relative w-full  flex-wrap  overflow-hidden  text-[40px] font-semibold text-dark selection:bg-fuchsia-500 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-[54px]/[70px]'>
 						{heading.split(" ").map((word, index) => (
 							<MotionComponent
 								as='span'
@@ -35,15 +35,17 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
 								animate={{ filter: "brightness(2)" }}
 								transition={{ duration: 1, delay: 4 }}
 								key={index}
-								className={cn("inline-flex overflow-hidden   max-lg:text-center")}>
+								className={cn("inline-flex overflow-hidden  max-lg:text-center")}>
 								<MotionComponent
 									as='span'
+									initial={{ y: "100%" }}
 									animate={{ y: 0 }}
-									initial={{
-										y: "100%",
-									}}
 									transition={{ delay: 0.35 * index, duration: 0.8, ease: "easeInOut" }}
-									className={cn("inline-flex", word === " " && "[width:0.25ch]")}>
+									className={cn(
+										"clip inline-flex",
+										word === " " && "[width:0.25ch]",
+										index === 0 || index === 1 ? "color-animation-1" : "color-animation-2"
+									)}>
 									{`${word} `}&nbsp;
 								</MotionComponent>
 							</MotionComponent>

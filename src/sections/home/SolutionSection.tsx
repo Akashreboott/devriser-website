@@ -45,8 +45,8 @@ const SolutionSection = () => {
 				gradientColor='[background-color:#7B9AFE]'
 				className='mb-12'
 				heading='Solutions'
-				description='Empowering Your Digital Future Web Development, Design'
-				gradientText='Empowering Your Digital Future'
+				description='Excel with Unique Solutions'
+				gradientText='Unique Solutions'
 			/>
 			<div className='relative isolate grid w-full justify-center gap-10  lg:-translate-x-[25px] xl:-translate-x-[35px]'>
 				<div className='absolute -z-10 h-full w-full bg-gradient-to-b  dark:from-dark dark:via-transparent dark:via-30% dark:to-dark dark:to-95%' />

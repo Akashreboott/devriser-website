@@ -13,10 +13,10 @@ import Image from "next/image";
 
 const HeroSection = () => {
 	return (
-		<LineLayout className='mb-20' HideSymbol={true}>
+		<LineLayout className='mb-10' HideSymbol={true}>
 			<Hero
-				heading='Empowering Your Digital Future'
-				description='Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development'
+				heading='Innovative Solutions, Lasting Impact'
+				description='Empower your success with our innovative solutions.'
 				btnText="Let's Begin"
 				className=' z-50'
 			/>
@@ -38,10 +38,10 @@ const HeroSection = () => {
 				</div>
 			</MotionComponent>
 			<SideHeading
-				className='mb-0 mt-20 lg:mb-40 lg:mt-40 lg:pl-16'
+				className='relative mb-0 mt-20  lg:mb-5 lg:mt-40 '
 				heading='Services'
-				description='Empowering Your Digital Future Web Development, Design'
-				gradientText='Empowering Your Digital Future'
+				description='Digital Alchemy at Its Finest'
+				gradientText='Digital Alchemy'
 			/>
 		</LineLayout>
 	);

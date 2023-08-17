@@ -8,31 +8,31 @@ import MotionComponent from "@/components/MotionComponent";
 const ServicesSection = (props: { onView?: (sectionName: string) => void; notOnView?: any }) => {
 	return (
 		<MotionComponent onViewportLeave={props.notOnView}>
-			<LineLayout heading='Web Development' onView={props.onView}>
+			<LineLayout heading='Custom Website Development' onView={props.onView}>
 				<HomeGrid reverse={true} className=' justify-items-center gap-10  '>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col  justify-center gap-2 '>
-						<GlassCard delay={0.1} heading='AI-powered' image={white} className='relative -right-[3rem] top-[3rem] z-10 ml-auto' />
+						<GlassCard delay={0.1} heading='Unique Design' image={white} className='relative -right-[3rem] top-[3rem] z-10 ml-auto' />
 						<GlassCard
 							delay={0.3}
-							heading='AI-powered'
+							heading='Enhanced Functionality'
 							image={white}
 							ImageClasses='w-full h-[200px] md:h-[280px]'
 							className='z-0 h-full w-[200px] md:w-[280px]'
 						/>
-						<GlassCard delay={0.5} heading='AI-powered' image={white} className='relative -top-[3rem] right-[3rem] z-10 mr-auto' />
+						<GlassCard delay={0.5} heading='Scalability' image={white} className='relative -top-[3rem] right-[3rem] z-10 mr-auto' />
 					</div>
 				</HomeGrid>
 			</LineLayout>
 
-			<LineLayout heading='Mobile Development' className='mb-14' onView={props.onView}>
+			<LineLayout heading='CMS Services' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10' reverse={true}>
 					<div className='isolate flex w-[70%] flex-col items-center justify-center gap-4 '>
 						<div className='grid w-full grid-cols-2 gap-6'>
-							<GlassCard delay={0.1} heading='Transaction history' image={white} className='w-full' />
-							<GlassCard delay={0.3} heading='Transaction history' image={white} className='w-full' />
+							<GlassCard delay={0.1} heading='Cost-Effective' image={white} className='w-full' />
+							<GlassCard delay={0.3} heading='Easy to manage' image={white} className='w-full' />
 						</div>
 						<div className=' grid  w-full gap-6'>
-							<GlassCard delay={0.5} heading='Transaction history' image={white} ImageClasses='w-full h-full' className='h-[245px] w-full' />
+							<GlassCard delay={0.5} heading='Responsive Design' image={white} ImageClasses='w-full h-full' className='h-[245px] w-full' />
 						</div>
 					</div>
 				</HomeGrid>
@@ -41,56 +41,64 @@ const ServicesSection = (props: { onView?: (sectionName: string) => void; notOnV
 				<HomeGrid className='justify-items-center gap-4 md:gap-10'>
 					<div className='isolate mx-2 flex w-fit justify-center gap-2   md:gap-4'>
 						<div className='my-auto grid shrink gap-3 md:gap-6 '>
-							<GlassCard delay={0.1} heading='Transaction history' image={white} className='' />
-							<GlassCard delay={0.3} heading='Transaction history' image={white} className='' />
+							<GlassCard delay={0.1} heading='User engagement' image={white} className='' />
+							<GlassCard delay={0.3} heading='Higher Conversion Rates' image={white} className='' />
 						</div>
 						<div className='my-auto grid gap-6'>
-							<GlassCard delay={0.5} heading='Transaction history' image={white} className='' />
+							<GlassCard delay={0.5} heading='Better SEO Performance' image={white} className='' />
 						</div>
 					</div>
 				</HomeGrid>
 			</LineLayout>
-			<LineLayout heading='CMS Services' onView={props.onView}>
+			<LineLayout heading='Mobile Development' onView={props.onView}>
 				<HomeGrid reverse={true} className='justify-items-center gap-10 max-lg:gap-0'>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col justify-center gap-2 '>
 						<GlassCard
 							delay={0.1}
-							heading='AI-powered'
+							heading='Brand reinforcement'
 							image={white}
 							className='relative left-[50%] top-16 -z-10 w-[140px] md:left-[80%]  md:mr-auto md:w-[173px]'
 						/>
-						<GlassCard delay={0.3} heading='AI-powered' image={white} ImageClasses='w-full h-[180px]' className='z-0 h-full w-[70%] md:w-[300px]' />
+						<GlassCard
+							delay={0.3}
+							heading='Build engagement'
+							image={white}
+							ImageClasses='w-full h-[180px]'
+							className='z-0 h-full w-[70%] md:w-[300px]'
+						/>
 						<GlassCard
 							delay={0.5}
-							heading='AI-powered'
+							heading='Competitive edge'
 							image={white}
 							className='relative -left-4 -top-12 z-10  w-[140px] md:right-[80%] md:ml-auto md:w-[173px]'
 						/>
 					</div>
 				</HomeGrid>
 			</LineLayout>
+
 			<LineLayout heading='Managed Services' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10'>
 					<div className='isolate my-auto flex h-fit w-fit justify-center gap-4 '>
 						<div className=' grid gap-6'>
-							<GlassCard delay={0.1} heading='Transaction history' image={white} ImageClasses='h-[120%] max-w-[200px] w-full ' className='' />
+							<GlassCard delay={0.1} heading='timely issue resolution' image={white} ImageClasses='h-[120%] max-w-[200px] w-full ' className='' />
 						</div>
 						<div className='my-auto grid gap-6'>
-							<GlassCard delay={0.3} heading='Transaction history' image={white} className='' />
-							<GlassCard delay={0.5} heading='Transaction history' image={white} className='' />
+							<GlassCard delay={0.3} heading='regular maintenance' image={white} className='' />
+							<GlassCard delay={0.5} heading='strategic guidance' image={white} className='' />
 						</div>
 					</div>
 				</HomeGrid>
 			</LineLayout>
+
 			<LineLayout heading='Enterprise Solutions' className='mb-14' onView={props.onView}>
 				<HomeGrid className='justify-items-center gap-10'>
 					<div className='isolate flex w-[70%] flex-col items-center justify-center gap-4 '>
 						<div className=' grid w-full gap-6'>
-							<GlassCard delay={0.1} heading='Transaction history' image={white} ImageClasses='w-full' className='w-full' />
+							<GlassCard delay={0.1} heading='Flexible customization' image={white} ImageClasses='w-full' className='w-full' />
 						</div>
 						<div className='grid w-full grid-cols-2 gap-6'>
-							<GlassCard delay={0.3} heading='Transaction history' image={white} className='w-full' />
-							<GlassCard delay={0.5} heading='Transaction history' image={white} className='w-full' />
+							<GlassCard delay={0.3} heading='Scalable architecture' image={white} className='w-full' />
+							<GlassCard delay={0.5} heading='Data Center' image={white} className='w-full' />
 						</div>
 					</div>
 				</HomeGrid>

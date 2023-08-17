@@ -32,7 +32,7 @@ const Footer = () => {
 					<div className='flex items-center gap-[18px]'>
 						<DevRiserLogo className='h-[48px] w-[48px]' />
 						<div>
-							<h4 className='text-[22px]/[33px] font-normal'>DevRiser</h4>
+							<div className='text-[22px]/[33px] font-normal'>DevRiser</div>
 							<div className='max-w-md text-[15px]/[25px] opacity-70'>Elevating Your Project</div>
 						</div>
 					</div>

@@ -6,7 +6,7 @@ interface props {
 	options: string[];
 	onInput: any;
 	selected: string;
-	questionType: "radio" | "text" | "checkbox";
+	questionType: "radio" | "textarea" | "checkbox";
 }
 
 const Question = (props: props) => (
@@ -49,18 +49,18 @@ const Question = (props: props) => (
 				})}
 
 			{/* TEXT-AREA */}
-			{props.questionType === "text" && (
+			{props.questionType === "textarea" && (
 				<>
 					<div className='h-[150px] w-full'>
 						<textarea
 							onChange={props.onInput}
 							placeholder='Type your requirements'
-							name='text-area'
+							name={props.question}
 							id=''
 							value={props.selected}
 							className='glass mb-2  h-full w-full resize-none rounded border bg-transparent p-3 text-p14  outline-2 outline-dark/20 focus-within:outline dark:outline-white/30'></textarea>
 					</div>
-					<UploadComponent />
+					<UploadComponent onInput={props.onInput} />
 					<div
 						className={cn(
 							"group flex w-full items-center justify-start gap-4 rounded-md  py-1.5  pr-6 transition-colors  duration-200 "
@@ -71,13 +71,13 @@ const Question = (props: props) => (
 								onChange={props.onInput}
 								type='checkbox'
 								id={"nda"}
-								name='options'
+								name='NDA'
 								value={"I agree to the Non-Disclosure Agreement"}
 								className='peer z-10 shrink-0 cursor-pointer  '
 							/>
 							<div className='before-overlay absolute -z-10 h-5 w-5 rounded-full bg-transparent transition-colors group-hover:bg-gray-66/10 group-hover:peer-checked:!bg-fuchsia-300/30 dark:group-hover:bg-gray-66/50 '></div>
 						</div>
-						<label htmlFor={"nda"} className='w-full cursor-pointer select-none text-left !text-sm'>
+						<label htmlFor={"nda"} className='w-full cursor-pointer select-none text-left !text-xs md:!text-sm'>
 							I agree to the Non-Disclosure Agreement
 						</label>
 					</div>

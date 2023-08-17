@@ -11,8 +11,7 @@ export const SOLUTIONS = [
 			{ name: "Transactions", image: white },
 			{ name: "Sales", image: white },
 		],
-		content:
-			"Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development,stunning design, and cutting-edge AI-powered",
+		content: "With DevRiser, cultivate meaningful customer relationships, streamline sales, and enhance communication for sustainable growth.",
 		link: "#",
 		smallImages: [smallImage, smallImage],
 	},
@@ -24,8 +23,7 @@ export const SOLUTIONS = [
 			{ name: "Sales", image: white },
 			{ name: "Leads", image: white },
 		],
-		content:
-			"Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development,stunning design, and cutting-edge AI-powered",
+		content: "Elevate HR management with our efficient HRMS solution. Automate processes and empower your workforce.",
 		link: "#",
 		smallImages: [smallImage, smallImage],
 	},
@@ -37,8 +35,7 @@ export const SOLUTIONS = [
 			{ name: "Transactions", image: white },
 			{ name: "Sales", image: white },
 		],
-		content:
-			"Unlock the full potential of your digital journey with us! Our platform offers a powerful combination of expert web development,stunning design, and cutting-edge AI-powered",
+		content: "Revamp inventory management with our advanced IMS. Streamline control, enhanced accuracy, fuel efficiency.",
 		link: "#",
 		smallImages: [smallImage, smallImage],
 	},
