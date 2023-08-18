@@ -11,11 +11,6 @@ import StatsSection from "@/sections/managed-services-page/StatsSection";
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n";
 
-export const metadata: Metadata = {
-	title: " Managed IT services | Cyber security services | DevRiser",
-	description:
-		"Achieve flawless operations with our Managed Services. Let us handle your digital infrastructure while you focus on business activities",
-};
 const ManagedServices = async ({ params: { lng } }: any) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const { t } = await useTranslation(lng, "managedServices");
@@ -53,3 +48,11 @@ const ManagedServices = async ({ params: { lng } }: any) => {
 };
 
 export default ManagedServices;
+export async function generateMetadata({ params: { lng } }: { params: { lng: string } }) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(lng, "managedServices");
+	return {
+		title: t("meta-title"),
+		description: t("meta-description"),
+	};
+}

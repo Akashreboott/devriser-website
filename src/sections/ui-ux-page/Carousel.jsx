@@ -106,7 +106,7 @@ function Carousel(props) {
 								"group"
 							)}>
 							<Image src={white} className='h-[120px] max-w-[200px] rounded-md' alt='' />
-							<p className='max-w-[90%] text-xl leading-10 lg:text-[26px]'>{title}</p>
+							<p className='max-w-[90%] text-xl leading-10 lg:text-p26'>{title}</p>
 							<div className=' back-card bg-noise250 absolute inset-0 hidden h-full w-full rounded  bg-banner-bg  '>
 								<p className='mx-auto mt-10 max-w-[90%] text-white'>{content}</p>
 							</div>

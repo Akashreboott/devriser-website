@@ -1,6 +1,6 @@
 import Main from "@/components/Main";
 import HeroSection from "@/components/HeroSection";
-import { HERO_DETAILS, TECH_STACK, faqQuestions } from "@/utils/web-development-data";
+import { TECH_STACK } from "@/utils/web-development-data";
 import HeroImgDark from "../../../../public/assets/images/web-development-illustration.svg";
 
 import HeroImgLight from "../../../../public/assets/images/web-development-illustration-light.svg";
@@ -17,14 +17,7 @@ import Banner from "@/components/Banner";
 import FaqSection from "@/components/FaqSection";
 import ProcessSection from "@/sections/web-development/ProcessSection";
 import Image from "next/image";
-import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n";
-
-export const metadata: Metadata = {
-	title: "Custom Website Development Services | DevRiser",
-	description:
-		"Experience the power of custom website development with DevRiser. We craft visually stunning, highly functional websites tailored to your brand. Request a consultation or subscribe to our managed services for ongoing support.",
-};
 
 const Page = async ({ params: { lng } }: any) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -72,7 +65,7 @@ const Page = async ({ params: { lng } }: any) => {
 				className='section-spacing-p section-height gap-20  [--pt:100px]'
 				gradientText={t("custom-website.section-heading.gradient-text")}>
 				<div className='flex flex-col items-center justify-center gap-6 px-3 md:flex-row md:items-start md:gap-10'>
-					<span className='text-[26px] font-semibold !leading-[35px] md:text-[30px]'>{t("custom-website.users-percentage")}</span>
+					<span className='text-p26 font-semibold !leading-[35px] md:text-[30px]'>{t("custom-website.users-percentage")}</span>
 					<div className='flex flex-col items-center gap-6 text-left'>
 						<p className='flex w-full justify-between max-md:text-center'>{t("custom-website.content")}</p>
 						<span className='max-md:text-center md:ml-auto'>{t("custom-website.source")}</span>
@@ -91,7 +84,7 @@ const Page = async ({ params: { lng } }: any) => {
 				className='section-spacing-p section-height max-w-6xl gap-12'>
 				{TECH_STACK.map(({ field, techs }) => (
 					<div key={field} className='group  flex w-[calc(100%-20px)] max-w-[80%] flex-col items-center gap-2'>
-						<h3 className='mr-auto origin-left text-lg leading-[52px] transition-transform group-hover:scale-110 md:text-[24px]'>{field}</h3>
+						<h3 className='mr-auto origin-left text-lg leading-[52px] transition-transform group-hover:scale-110 md:text-p24'>{field}</h3>
 						{/* <div className='flex w-full flex-wrap  justify-center rounded border border-white px-4 py-4 [&>img]:mx-12'> */}
 						<div className='flex w-full max-w-[var(--container-width)]  flex-wrap items-center justify-center gap-7 rounded-lg  border border-dark/[0.15] bg-white/[0.05] p-2 transition-all [--container-width:1280px] [--logo-width:8rem] [--space:0.6rem] group-hover:border-dark/[0.15] group-hover:shadow-md dark:border-white/10  group-hover:dark:border-white/30 md:p-1.5 md:[--space:1rem]  [&>img>*]:aspect-[7/1]  [&>img>*]:w-[var(--logo-width)]  [&>img]:mx-[var(--space)] [&>img]:my-[calc(var(--space)/2)]'>
 							{techs.map((logo, index) => (
@@ -111,3 +104,12 @@ const Page = async ({ params: { lng } }: any) => {
 };
 
 export default Page;
+
+export async function generateMetadata({ params: { lng } }: { params: { lng: string } }) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(lng, "webDevelopment");
+	return {
+		title: t("meta-title"),
+		description: t("meta-description"),
+	};
+}

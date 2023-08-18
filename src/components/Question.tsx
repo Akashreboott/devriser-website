@@ -16,7 +16,7 @@ const Question = (props: props) => (
 		animate={{ opacity: 1 }}
 		transition={{ duration: 0.3 }}
 		className={cn("mx-auto grid grid-rows-[auto_1fr] [&>*]:mx-auto [&>*]:w-[calc(100%-3rem)]", "md:text-[12px] ")}>
-		<h2 className='w-full text-[18px] font-semibold md:text-[20px] lg:text-[26px]'>{props.question}</h2>
+		<h2 className='w-full text-p18 font-semibold md:text-p20 lg:text-p26'>{props.question}</h2>
 		<div className='mt-10 flex  w-full flex-col items-start justify-start  gap-3 accent-[#936EEB] [&_input]:h-4 [&_input]:w-4 [&_label]:text-p14 md:[&_label]:text-p16'>
 			{/* RADIO */}
 			{props.questionType === "radio" &&

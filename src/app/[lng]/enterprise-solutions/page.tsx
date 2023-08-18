@@ -16,11 +16,6 @@ import ProcessSection from "@/sections/enterprise-solutions/ProcessSection";
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n";
 
-export const metadata: Metadata = {
-	title: "Enterprise Solutions | Custom Enterprise Solutions | DevRiser",
-	description:
-		"Empower your business with our Custom Enterprise Solutions for digital transformation, revolutionizing operations, enhancing efficiency, and achieving scalable growth.",
-};
 const Page = async ({ params: { lng } }: { params: any }) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	let { t } = await useTranslation(lng, "enterpriseSolutions");
@@ -48,7 +43,7 @@ const Page = async ({ params: { lng } }: { params: any }) => {
 						title={t("custom-solutions-heading.heading")}
 						description={t("custom-solutions-heading.description")}
 						as='div'
-						className='mt-4 [&_h2]:!text-[26px]/[52px]'>
+						className='mt-4 [&_h2]:!text-p26'>
 						<div className='mx-3 mt-10 grid max-w-[1120px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4'>
 							{SOLUTIONS.map(({ title }, index) => (
 								<div
@@ -59,7 +54,7 @@ const Page = async ({ params: { lng } }: { params: any }) => {
 										alt='icon1'
 										className=' object-contain transition-all group-hover:brightness-125 group-hover:contrast-150'
 									/>
-									<div className='text-[16px]/[30px] font-normal md:text-[20px]/[35px]'>{title}</div>
+									<div className='text-p16 font-normal md:text-p20'>{title}</div>
 								</div>
 							))}
 						</div>
@@ -78,7 +73,7 @@ const Page = async ({ params: { lng } }: { params: any }) => {
 								className='absolute inset-0 -z-10 h-full w-full object-cover brightness-[0.3] transition-transform duration-500  group-hover:scale-110'
 								alt={name}
 							/>
-							<div className='flex h-full w-full items-center justify-center px-4 text-[20px] leading-[50px] text-white transition-transform  lg:text-[26px]'>
+							<div className='flex h-full w-full items-center justify-center px-4 text-p20 leading-[50px] text-white transition-transform  lg:text-p26'>
 								{name}
 							</div>
 						</div>
@@ -114,3 +109,11 @@ const Page = async ({ params: { lng } }: { params: any }) => {
 };
 
 export default Page;
+export async function generateMetadata({ params: { lng } }: { params: { lng: string } }) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(lng, "enterpriseSolutions");
+	return {
+		title: t("meta-title"),
+		description: t("meta-description"),
+	};
+}

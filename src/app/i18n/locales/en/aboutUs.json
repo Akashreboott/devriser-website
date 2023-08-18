@@ -1,0 +1,42 @@
+{
+	"hero-heading": "DevRiser - Excellence in Every Endeavor",
+	"hero-gradient": "CMS Development Services",
+	"hero-tag": "Driven by a passion for perfection, we at DevRiser tirelessly strive to deliver unparalleled quality in all that we do.",
+
+	"partners-heading": {
+		"heading": "Our Partners"
+	},
+	"tomorrow-heading": {
+		"heading": "Tech for Tomorrow !",
+		"gradient-text": "Tomorrow",
+		"description": "Enabling business success with solutions, fostering growth, and unlocking their limitless potential through our offerings."
+	},
+	"solutions": [
+		{
+			"heading": "Custom-made solutions",
+			"description": "At DevRiser, we pride ourselves on providing tailor-made solutions that perfectly fit our clients' unique needs and goals."
+		},
+		{
+			"heading": "Data Security and Privacy",
+			"description": "We prioritize data security and privacy, safeguarding our clients' information with utmost diligence and care."
+		},
+		{
+			"heading": "Diverse Industry Expertise",
+			"description": "Backed by a team with diverse industry expertise, we empower businesses across sectors with customized solutions."
+		},
+		{
+			"heading": "Scalable Solutions",
+			"description": "We develop and deploy scalable solutions that can adjust and grow according to our clients' business needs and growth."
+		}
+	],
+	"team-heading": {
+		"heading": "Our Team",
+		"gradient-text": "Team",
+		"description": "Meet our exceptional team, a blend of diverse expertise and creativity, dedicated to fostering a work culture that thrives on collaboration and innovation."
+	},
+	"join-team": "Join our team",
+	"decorated-banner": {
+		"heading": "Ready to Experience Excellence? Join Us on this Journey!",
+		"btn-text": "Contact us"
+	}
+}

@@ -18,7 +18,7 @@ const Button = forwardRef(function Button({ variant: variant, text, ...props }: 
 		<MotionButtonComponent
 			{...props}
 			className={cn(baseClasses, variant === "Primary" && primaryClasses, variant === "Secondary" && secondaryClasses, props.className)}>
-			{variant === "Primary" ? text : <span className='clip secondary-btn-text-color'>{text}</span>}
+			{variant === "Primary" ? text : <span className='clip secondary-btn-text-color '>{text}</span>}
 		</MotionButtonComponent>
 	);
 });

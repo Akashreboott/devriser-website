@@ -18,11 +18,6 @@ import type { Metadata } from "next";
 import { SERVICES as SERVICES_IMAGES } from "@/utils/mobile-app-data";
 import { useTranslation } from "@/app/i18n";
 
-export const metadata: Metadata = {
-	title: "Custom Mobile App Development | DevRiser",
-	description:
-		"We transform your business with our expertly crafted custom mobile app development services which elevate your brand, engage users, and gain a competitive edge. Get started now!",
-};
 const page = async ({ params: { lng } }: any) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const { t } = await useTranslation(lng, "mobileDevelopment");
@@ -80,7 +75,7 @@ const page = async ({ params: { lng } }: any) => {
 				className='section-spacing-p section-height  max-w-6xl gap-12'>
 				{TECHNOLOGIES.map(({ name }, index) => (
 					<div key={name} className='group  flex w-[calc(100%-20px)] max-w-[80%] flex-col items-center gap-2'>
-						<h3 className='mr-auto origin-left text-lg leading-[52px] transition-transform group-hover:scale-110 md:text-[24px]'>{name}</h3>
+						<h3 className='mr-auto origin-left text-lg leading-[52px] transition-transform group-hover:scale-110 md:text-p24'>{name}</h3>
 						{/* <div className='flex w-full flex-wrap  justify-center rounded border border-white px-4 py-4 [&>img]:mx-12'> */}
 						<div className='flex w-full max-w-[var(--container-width)]  flex-wrap items-center justify-center gap-7 rounded-lg  border border-dark/[0.15] bg-white/[0.05] p-2 transition-all [--container-width:1280px] [--logo-width:8rem] [--space:0.6rem] group-hover:border-dark/[0.15] group-hover:shadow-md dark:border-white/10  group-hover:dark:border-white/30 md:p-1.5 md:[--space:1rem]  [&>img>*]:aspect-[7/1]  [&>img>*]:w-[var(--logo-width)]  [&>img]:mx-[var(--space)] [&>img]:my-[calc(var(--space)/2)]'>
 							{TECH_STACK[index].techs.map((logo, index) => (
@@ -97,3 +92,12 @@ const page = async ({ params: { lng } }: any) => {
 };
 
 export default page;
+
+export async function generateMetadata({ params: { lng } }: { params: { lng: string } }) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(lng, "mobileDevelopment");
+	return {
+		title: t("meta-title"),
+		description: t("meta-description"),
+	};
+}

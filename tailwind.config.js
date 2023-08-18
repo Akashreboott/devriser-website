@@ -61,11 +61,24 @@ module.exports = {
 						fontWeight: "600",
 					},
 				],
+
 				navlink: [
 					"12px",
 					{
 						lineHeight: "11.6px",
 						fontWeight: "normal",
+					},
+				],
+				p12: [
+					"12px",
+					{
+						lineHeight: "11.6px",
+					},
+				],
+				p15: [
+					"15px",
+					{
+						lineHeight: "33px",
 					},
 				],
 				p18: [
@@ -74,18 +87,58 @@ module.exports = {
 						lineHeight: "30px",
 					},
 				],
-				p16: [
-					"16px",
-					{
-						lineHeight: "25.71px",
-					},
-				],
 				p14: [
 					"14px",
 					{
 						lineHeight: "24px",
 					},
 				],
+				p16: [
+					"16px",
+					{
+						lineHeight: "30px",
+					},
+				],
+				p18: [
+					"18px",
+					{
+						lineHeight: "30px",
+					},
+				],
+				p20: [
+					"20px",
+					{
+						lineHeight: "32px",
+					},
+				],
+				p22: [
+					"22px",
+					{
+						lineHeight: "35px",
+					},
+				],
+				p24: [
+					"24px",
+					{
+						lineHeight: "35px",
+					},
+				],
+				p26: [
+					"26px",
+					{
+						lineHeight: "52px",
+					},
+				],
+				p28: [
+					"28px",
+					{
+						lineHeight: "48px",
+					},
+				],
+				p32: ["32px", { lineHeight: "normal" }],
+				p36: ["36px", { lineHeight: "normal" }],
+				p48: ["48px", { lineHeight: "normal" }],
+				p64: ["64px", { lineHeight: "70px" }],
 			},
 			backgroundImage: {
 				// noise: "url(./public/assets/images/bg-noise.png)",

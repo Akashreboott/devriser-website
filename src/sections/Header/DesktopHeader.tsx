@@ -147,7 +147,7 @@ const DesktopHeader = ({
 						{/* LANGUAGE BUTTON */}
 						<div className='relative z-[100] w-full grow-0'>
 							<button
-								onMouseEnter={() => setLanguagesOpened(true)}
+								onClick={() => setLanguagesOpened((prev) => !prev)}
 								className='isolate z-[100] flex w-full items-center justify-center  gap-1.5 rounded-[3.5px] border border-[#2A2A2A]   px-2 py-2.5 dark:border-white'>
 								<Image src={selectedLanguage.flag} className='h-[12px] w-[16px] object-contain' alt='' />
 								<span className='relative top-[0.5px]'>{selectedLanguage.shortName}</span>
@@ -188,7 +188,7 @@ const DesktopHeader = ({
 														setSelectedLink(activeLink);
 													}
 												}}
-												className={cn("inline-block  h-full w-full p-[14px] pr-[21px]  text-[14px]/[11.6px]")}>
+												className={cn("inline-block  h-full w-full p-[14px] pr-[21px]  text-p14/[11.6px]")}>
 												{name}
 											</Link>
 										</m.li>
@@ -224,7 +224,7 @@ const DesktopHeader = ({
 											// setSelectedLanguage(lang);
 											setLanguagesOpened(false);
 										}}
-										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2.5  text-[12px]/[11.6px]")}>
+										className={cn("flex h-full w-full items-center justify-center gap-2 px-6 py-2.5  text-p12")}>
 										<Image src={lang.flag} className='h-[12px] w-[16px] object-contain' alt='' /> <span>{lang.fullName}</span>
 									</Link>
 								</m.li>

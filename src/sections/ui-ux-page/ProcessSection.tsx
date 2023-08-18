@@ -28,9 +28,9 @@ const ProcessSection = async (props: any) => {
 							text={heading}
 							FullGradient={true}
 							gradientText={heading}
-							className='first text-[18px] md:max-w-[200px] md:text-[24px]/[25px]'
+							className='first text-p18 md:max-w-[200px] md:text-p24/[25px]'
 						/>
-						<p className='second e max-w-[90%]  text-[14px] leading-8 md:text-[20px] md:leading-10 lg:max-w-[380px] '>{description}</p>
+						<p className='second e max-w-[90%]  text-[14px] leading-8 md:text-p20 md:leading-10 lg:max-w-[380px] '>{description}</p>
 					</div>
 				))}
 			</div>

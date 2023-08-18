@@ -67,7 +67,7 @@ const DecoratedBanner = ({ title, description, btnText, variant, className, Hide
 				<Heading
 					title={title}
 					description={description}
-					className='z-50 gap-[40px] px-3   [&_h2]:text-[20px] md:[&_h2]:text-[26px]   [&_p]:text-[12px]  md:[&_p]:text-[16px]'
+					className='z-50 gap-[40px] px-3   [&_h2]:text-p20 md:[&_h2]:text-p26   [&_p]:text-[12px]  md:[&_p]:text-p16'
 				/>
 				<Button
 					onClick={handleModalOpen}

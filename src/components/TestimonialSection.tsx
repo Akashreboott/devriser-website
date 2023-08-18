@@ -11,10 +11,10 @@ const TestimonialSection = async (props: any) => {
 		return (
 			// <div className='testimonial-bg w-full'>
 			// 	<div className='flex flex-col items-center py-[80px] md:py-[90px] '>
-			// 		<h3 className='max-w-[90%] font-350 text-white md:text-[24px]/[34px] lg:max-w-[1024px] lg:text-[36px]/[44px]'>{props.content}</h3>
+			// 		<h3 className='max-w-[90%] font-350 text-white md:text-p24 lg:max-w-[1024px] lg:text-p36/[44px]'>{props.content}</h3>
 			// 		<Image src={Avatar} className='mt-[62px]' alt='' />
-			// 		<p className='mt-4 text-[18px]/[28px] font-bold !text-white'>{props.userName}</p>
-			// 		<p className='mt-1 text-[18px]/[28px] font-bold !text-white'>{props.userRole}</p>
+			// 		<p className='mt-4 text-p18 font-bold !text-white'>{props.userName}</p>
+			// 		<p className='mt-1 text-p18 font-bold !text-white'>{props.userRole}</p>
 			// 		<div className='mt-4 flex justify-center gap-1'>
 			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
 			// 			<Image src={Star} className='h-5 w-5 object-cover' alt='' />
@@ -32,9 +32,9 @@ const TestimonialSection = async (props: any) => {
 			<div className='testimonial-bg isolate w-[min(920px,100%)] px-9  py-3 lg:rounded-lg '>
 				<div className='mb-2 flex items-center  justify-center gap-3 max-md:flex-col md:justify-between '>
 					<div className='flex flex-col text-center max-md:order-2 md:text-left'>
-						<p className='max-w-[480px] text-p14 font-350 text-white md:text-[16px]/[27px] '>{props.content}</p>
-						<h3 className='mt-6 text-p14 font-semibold text-white md:text-[18px]/[28px] '>{props.userName}</h3>
-						<p className='mt-1 text-xs text-white  md:text-[14px]/[28px]'>{props.userRole}</p>
+						<p className='max-w-[480px] text-p14 font-350 text-white md:text-p16 '>{props.content}</p>
+						<h3 className='mt-6 text-p14 font-semibold text-white md:text-p18 '>{props.userName}</h3>
+						<p className='mt-1 text-xs text-white  md:text-p14'>{props.userRole}</p>
 						<div className='mt-1 flex justify-center gap-1 md:justify-start [&>img]:h-4 [&>img]:w-4 md:[&>img]:h-5 md:[&>img]:w-5'>
 							<Image src={Star} className=' object-cover' alt='' />
 							<Image src={Star} className=' object-cover' alt='' />

@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
-import useMousePosition from "@/utils/UseMousePosition";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import cn from "@/utils/cn";
-import { useMotionValue } from "framer-motion";
 interface props {
 	title: string;
 	description: string;
@@ -11,27 +9,24 @@ interface props {
 }
 
 const FeatureCard = (props: props) => {
-	const pos = useMousePosition();
-	const CardRef = useRef<HTMLDivElement>();
-	const card = CardRef.current?.getBoundingClientRect();
+
 	const [hovering, setHovering] = useState(false);
-	// let x = useMotionValue<number>(0);
-	// let y = useMotionValue<number>(0);
 	let [x, setX] = useState<number>(0);
 	let [y, setY] = useState<number>(0);
 	let [rotateX, setRotateX] = useState<number>(0);
 	let [rotateY, setRotateY] = useState<number>(0);
 
+
 	return (
 		<div
 			style={{ transform: `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY < 0 ? Math.abs(rotateY) : -rotateY}deg)` }}
 			className='gradient-border '
-			onMouseMove={() => {
-				if (card) {
+			onMouseMove={(e) => {
+					const card = e.currentTarget.getBoundingClientRect();
 					let maxRotationAboutYAxis = 1.5; //degree
 					let maxRotationAboutXAxis = 1; //degree
-					let mouseX = pos?.x - card?.x;
-					let mouseY = pos?.y - card?.y;
+					let mouseX = e.clientX - card?.x;
+					let mouseY = e.clientY - card?.y;
 					setX((prev) => (mouseX > 0 && mouseX < card?.width + 180 ? mouseX : prev));
 					setY((prev) => (mouseY > 0 && mouseY < card?.height + 180 ? mouseY : prev));
 					setRotateY((prev) =>
@@ -41,11 +36,10 @@ const FeatureCard = (props: props) => {
 						mouseY > 0 && mouseY < card?.height + 180 ? (maxRotationAboutYAxis * 2 * mouseY) / card?.height - maxRotationAboutYAxis : prev
 					);
 				}
-			}}
+			}
 			onMouseEnter={() => setHovering(true)}
 			onMouseLeave={() => setHovering(false)}
-			// @ts-ignore
-			ref={CardRef}>
+>
 			<div className='relative  isolate box-content flex h-full  flex-col  items-center gap-4 overflow-hidden rounded-lg after:bg-dark max-md:gap-4 [&>img~*]:mx-[26px] max-md:[&>img~*]:mx-4'>
 				<div
 					style={{

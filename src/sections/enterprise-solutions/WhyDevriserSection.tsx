@@ -33,7 +33,7 @@ const WhyDevRiserSection = async (props: any) => {
 				<SemiGradientText
 					text={t("specialities-heading.heading")}
 					gradientText={t("specialities-heading.gradient-text")}
-					className='mx-auto text-center text-[28px]/[47px] md:hidden'
+					className='mx-auto text-center text-p28 md:hidden'
 				/>
 
 				<div className='absolute  inset-[--remaining-width] -z-10 h-[--width] w-[--width] border  border-dashed border-primary-dark dark:border-white max-md:hidden '></div>
@@ -53,7 +53,7 @@ const WhyDevRiserSection = async (props: any) => {
 					<SemiGradientText
 						text='Why DevRiser Is The Right Fit For Your Enterprise Needs ?'
 						gradientText='DevRiser Is The Right Fit'
-						className='max-w-[250px] text-center text-[28px]/[47px] max-md:hidden'
+						className='max-w-[250px] text-center text-p28 max-md:hidden'
 					/>
 					<Card name={SPECIALITIES[2].name} description={SPECIALITIES[2].description} />
 				</div>

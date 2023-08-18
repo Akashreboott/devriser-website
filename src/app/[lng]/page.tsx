@@ -80,7 +80,7 @@ const Page = () => {
 												transition={{ duration: 0.5, ease: "easeInOut", delay: 0.05 * index }}
 												key={name}
 												className={cn(
-													"flex h-full w-full  items-center justify-start gap-2 px-5  py-3 text-[12px]/[11.6px] transition-colors duration-200 hover:bg-light  dark:hover:bg-dark"
+													"flex h-full w-full  items-center justify-start gap-2 px-5  py-3 text-p12 transition-colors duration-200 hover:bg-light  dark:hover:bg-dark"
 													// ,selectedLanguage.shortName === lang.shortName && "bg-light dark:bg-dark"
 												)}>
 												{/* onClick={() => {
@@ -101,18 +101,13 @@ const Page = () => {
 				{/* STARS AND GRADIENTS OVERLAY */}
 				<div className='absolute left-0 top-0 flex min-h-section w-screen items-start justify-center overflow-hidden '>
 					<MotionComponent
-						transition={{ repeat: Infinity, delay: 4.5, duration: 4, repeatType: "mirror" }}
+						transition={{ repeat: Infinity, delay: 3, duration: 4, repeatType: "mirror" }}
 						className={cn(
 							"opacity-0.5 absolute -right-[350px] -top-full aspect-square w-[543px] rounded-full bg-[rgba(44,91,249,0.1)] blur-[100px] md:-right-[180px]   md:-top-1/4"
 						)}
 					/>
 					{/* WHITE BALL */}
-					{/* <MotionComponent
-						animate={{
-							x: [0, 100, 200, 200, 300, 400, 500, 750, 850, 950, 1000, 1100, 1200],
-							y: [0, 100, 200, 250, 500, 600, 400, 300, 200, 100, 0],
-						}}
-						transition={{ duration: 15, repeat: Infinity, repeatType: "mirror" }}
+					{/* <div
 						className={cn(
 							"opacity-0.4 absolute -top-[200px] left-full z-20 aspect-square w-[400px] rounded-full bg-gradient-to-tl from-emerald-400 to-emerald-500 opacity-30 blur-3xl lg:-left-[10%] "
 						)}
@@ -121,7 +116,7 @@ const Page = () => {
 						animate={{
 							filter: ["brightness(0) blur(3px)", "brightness(0.1) blur(1.5px)", "brightness(0.4) blur(0px)"],
 						}}
-						transition={{ duration: 1, delay: 4 }}
+						transition={{ duration: 1, delay: 3 }}
 						className='h-full  w-full brightness-50'>
 						<Image src={Stars} alt='' className=' hidden h-full w-full -translate-y-[200px] object-cover dark:block max-md:translate-y-0 ' />
 					</m.div>

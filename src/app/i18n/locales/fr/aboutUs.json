@@ -1,0 +1,42 @@
+{
+	"hero-heading": "DevRiser - Excellence dans chaque entreprise",
+	"hero-gradient": "CMS Development Services",
+	"hero-tag": "Animés par une passion pour la perfection, nous chez DevRiser nous efforçons sans relâche de fournir une qualité inégalée dans tout ce que nous faisons, y compris dans nos Services gérés, Services informatiques gérés et Solutions informatiques gérées.",
+
+	"partners-heading": {
+		"heading": "Nos partenaires"
+	},
+	"tomorrow-heading": {
+		"heading": "Technologie pour demain !",
+		"gradient-text": "pour demain",
+		"description": "Favoriser le succès des entreprises avec des solutions, stimuler la croissance et libérer leur potentiel illimité grâce à nos offres."
+	},
+	"solutions": [
+		{
+			"heading": "Solutions sur mesure",
+			"description": "Chez DevRiser, nous nous félicitons de fournir des solutions informatiques gérées, adaptées aux besoins et objectifs uniques de nos clients."
+		},
+		{
+			"heading": "Sécurité et confidentialité des données",
+			"description": "Nous donnons la priorité à la sécurité des données et à la confidentialité, en protégeant les informations de nos clients avec la plus grande diligence et attention, notamment à travers nos Services gérés en cybersécurité."
+		},
+		{
+			"heading": "Expertise dans diverses industries",
+			"description": "Soutenus par une équipe ayant une expertise diversifiée dans l'industrie, nous donnons aux entreprises de différents secteurs le pouvoir de réussir grâce à nos solutions informatiques personnalisées et nos Services de conseil en informatique."
+		},
+		{
+			"heading": "Solutions évolutives",
+			"description": "Nous développons et déployons des solutions évolutives, y compris des Services gérés dans le cloud, qui peuvent s'adapter et croître en fonction des besoins et de la croissance de l'activité de nos clients."
+		}
+	],
+	"team-heading": {
+		"heading": "Notre Équipe",
+		"gradient-text": "Équipe",
+		"description": "Rencontrez notre équipe exceptionnelle, un mélange d'expertise diversifiée et de créativité, dédiée à encourager une culture de travail qui prospère sur la collaboration et l'innovation."
+	},
+	"join-team": "Rejoignez notre équipe",
+	"decorated-banner": {
+		"heading": "Prêt à Vivre l'Excellence ? Rejoignez-Nous dans cette Aventure !",
+		"btn-text": "Contactez-nous"
+	}
+}

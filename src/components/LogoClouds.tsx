@@ -14,7 +14,7 @@ const LogoClouds = (props: { heading: string; logos: any[]; className?: string; 
 				"flex-col items-center gap-7",
 				props.className
 			)}>
-			<div className='text-[20px] font-medium max-lg:mx-auto lg:text-[26px]/[54px]'>{props.heading}</div>
+			<div className='text-p20 font-medium max-lg:mx-auto lg:text-p26'>{props.heading}</div>
 			<div
 				className={cn("flex items-center justify-center  gap-10 max-lg:flex-wrap max-lg:space-y-2 lg:gap-16 [&>*]:shrink-0", props.gapBetweenLogos)}>
 				{props.logos.map((logo, index) => (

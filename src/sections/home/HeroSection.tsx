@@ -27,7 +27,7 @@ const HeroSection = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, delay: 3 }}
 				className='mx-3 flex justify-between max-lg:flex-col max-lg:justify-center max-md:mb-20 max-md:gap-6 lg:ml-24 lg:mr-8'>
-				<div className='text-[20px] font-medium max-lg:mx-auto lg:text-[26px]/[54px]'>Trusted by</div>
+				<div className='text-p20 font-medium max-lg:mx-auto lg:text-p26'>Trusted by</div>
 				<div className='flex justify-center gap-5 max-lg:space-y-1 max-md:flex-wrap  lg:gap-16 [&>*]:shrink-0'>
 					<Image src={Logo0} alt='' className='h-4 object-contain md:h-12' />
 					<Image src={Logo1} alt='' className='h-4 object-contain md:h-12' />
