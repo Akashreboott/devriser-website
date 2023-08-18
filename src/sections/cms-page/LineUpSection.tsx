@@ -43,7 +43,7 @@ const LineUpSection = (props: any) => {
 									key={detail.heading}
 									onClick={() => setIndexOfCMS(index)}
 									className={cn(
-										"relative isolate  rounded-lg  text-[16px]/[19.39px] transition-colors active:scale-[0.99]",
+										"relative isolate  rounded-lg  text-p16 transition-colors active:scale-[0.99]",
 										"max-lg:min-h-[3rem] max-lg:shrink-0 max-lg:grow-0 max-lg:basis-full   max-lg:text-center   max-lg:before:absolute max-lg:before:top-10 max-lg:before:h-0.5 max-lg:before:w-full max-[320px]:w-fit",
 										"lg:grow lg:border lg:border-white/20  lg:bg-[#eee] lg:p-1 lg:text-xl lg:backdrop-blur lg:dark:bg-gray-30",
 										detail.heading === activeCMS.heading && "lg:pink-gradient max-lg:rounded-none max-lg:border-b-2 max-lg:border-b-pink-500"
@@ -87,7 +87,7 @@ const LineUpSection = (props: any) => {
 						alt={activeCMS.heading}
 						className='h-[65px] w-[65px] max-lg:mx-auto'
 					/>
-					<p className='text-center text-[15px]/[30px] font-350 dark:text-white  md:text-[16px]/[35px] lg:mr-16 '>{activeCMS.description}</p>
+					<p className='text-center text-p15 font-350 dark:text-white  md:text-p16 lg:mr-16 '>{activeCMS.description}</p>
 				</div>
 			</div>
 		</section>

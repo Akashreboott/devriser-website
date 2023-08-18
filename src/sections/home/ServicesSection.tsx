@@ -8,7 +8,7 @@ import MotionComponent from "@/components/MotionComponent";
 const ServicesSection = (props: { onView?: (sectionName: string) => void; notOnView?: any }) => {
 	return (
 		<MotionComponent onViewportLeave={props.notOnView}>
-			<LineLayout heading='Custom Website Development' onView={props.onView}>
+			<LineLayout heading='Web Development' onView={props.onView}>
 				<HomeGrid reverse={true} className=' justify-items-center gap-10  '>
 					<div className='isolate flex h-[calc(100%-6rem)] w-fit flex-col  justify-center gap-2 '>
 						<GlassCard delay={0.1} heading='Unique Design' image={white} className='relative -right-[3rem] top-[3rem] z-10 ml-auto' />

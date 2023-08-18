@@ -26,7 +26,7 @@ const GlassCardBig = ({ variant, ...props }: props) => {
 					transition={{ duration: 0.5 }}
 					viewport={{ once: true }}
 					as='h2'
-					className='text-[18px]/[33px] font-semibold md:text-[22px]/[43px]'>
+					className='md:text-p22 text-p18 font-semibold'>
 					{props.heading}
 				</MotionComponent>
 				<MotionComponent

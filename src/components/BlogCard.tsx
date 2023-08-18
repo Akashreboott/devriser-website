@@ -30,8 +30,8 @@ const BlogCard = ({ ...props }: props) => {
 				)}
 			/>
 			<div className={cn("mt-6 flex flex-col gap-5 ")}>
-				<h3 className='text-[15px]/[33px] font-semibold md:text-[20px]/[30px]'>{props.heading}</h3>
-				<p className='max-w-[95%] text-[13px] font-350 leading-6 md:text-[16px] md:leading-7'>{props.content}</p>
+				<h3 className='text-p15 font-semibold md:text-p20'>{props.heading}</h3>
+				<p className='max-w-[95%] text-[13px] font-350 leading-6 md:text-p16 md:leading-7'>{props.content}</p>
 				<div className='grid gap-1'>
 					<span className='font-semibold'>Ibrahim</span>
 					<span>June 27, 2023</span>

@@ -13,14 +13,8 @@ import DecoratedBanner from "@/components/DecoratedBanner";
 import Banner from "@/components/Banner";
 import HeroOverlay from "@/components/HeroOverlay";
 import Main from "@/components/Main";
-import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n";
 
-export const metadata: Metadata = {
-	title: "CMS Development Services| CMS web development services",
-	description:
-		"With our CMS development services, experience a seamless user experience as we create visually stunning and feature-rich websites using platforms like WordPress, Wix, Drupal, Webflow, and Shopify.",
-};
 export default async function Home({ params: { lng } }: any) {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const { t } = await useTranslation(lng, "cmsServices");
@@ -59,4 +53,12 @@ export default async function Home({ params: { lng } }: any) {
 			<FaqSection lng={lng} faqQuestions={t("faq-questions", { returnObjects: true })} />
 		</Main>
 	);
+}
+export async function generateMetadata({ params: { lng } }: { params: { lng: string } }) {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const { t } = await useTranslation(lng, "cmsServices");
+	return {
+		title: t("meta-title"),
+		description: t("meta-description"),
+	};
 }

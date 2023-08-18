@@ -51,7 +51,7 @@ const CarourselSection = (props: any) => {
 								<div className='relative h-full w-full  transition-transform duration-[400ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]'>
 									<div className='absolute grid h-full w-full place-items-center px-4 [backface-visibility:hidden]'>
 										<Image src={BENEFITS_IMAGES[index].image} className='h-[120px] max-w-[200px] rounded-md' alt='' />
-										<p className='max-w-[90%] text-xl leading-10 lg:text-[22px]'>{heading}</p>
+										<p className='max-w-[90%] text-xl leading-10 lg:text-p22'>{heading}</p>
 									</div>
 
 									<div className='back-card absolute inset-0  h-full w-full origin-center rounded bg-banner-bg [backface-visibility:hidden]  [transform:rotateY(180deg)]  '>

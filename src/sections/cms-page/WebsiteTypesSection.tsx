@@ -19,7 +19,7 @@ const WebsiteTypesSection = async (props: any) => {
 						<div
 							key={website}
 							className={cn(
-								"btn-outline px-1 text-center !text-[16px] [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
+								"btn-outline px-1 text-center !text-p16 [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
 							)}>
 							{website}
 						</div>
@@ -30,7 +30,7 @@ const WebsiteTypesSection = async (props: any) => {
 						<div
 							key={website}
 							className={cn(
-								"btn-outline px-1 text-center !text-[16px] [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
+								"btn-outline px-1 text-center !text-p16 [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
 							)}>
 							{website}
 						</div>
@@ -41,7 +41,7 @@ const WebsiteTypesSection = async (props: any) => {
 						<div
 							key={website}
 							className={cn(
-								"btn-outline px-1 text-center !text-[16px] [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
+								"btn-outline px-1 text-center !text-p16 [--gradient-border-color:var(--light-gradient-border2)] max-md:rounded-sm md:px-4 "
 							)}>
 							{website}
 						</div>

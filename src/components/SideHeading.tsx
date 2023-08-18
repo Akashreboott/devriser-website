@@ -20,7 +20,7 @@ const SideHeading = (props: props) => {
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
 				viewport={{ once: true }}
-				className='w-fit text-p16 font-medium max-lg:mx-auto max-lg:text-center lg:text-[24px]'>
+				className='w-fit text-p16 font-medium max-lg:mx-auto max-lg:text-center lg:text-p24'>
 				{props.heading}
 			</MotionComponent>
 			<SemiGradientText

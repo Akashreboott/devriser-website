@@ -28,7 +28,7 @@ const Grid1x2 = ({
 				className
 			)}>
 			<div className='first flex flex-col gap-2 md:gap-10 md:pl-16 md:text-left'>
-				<h3 className='text-[18px]/[52px] font-semibold md:text-[24px]/[43px]'>{title}</h3>
+				<h3 className='text-p18/[52px] font-semibold md:text-p24'>{title}</h3>
 				<p className='text-p14  font-350 md:text-p16 '>{content}</p>
 				{btnText && <Button text={btnText} className='mt-6 w-fit max-md:mx-auto' variant='Secondary' />}
 			</div>

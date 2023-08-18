@@ -39,7 +39,7 @@ const ProcessSection = (props: any) => {
 									className={cn("flex snap-center items-center gap-4 max-lg:justify-between  max-md:shrink-0 max-md:basis-full")}>
 									<p
 										className={cn(
-											"mr-auto text-left text-sm/[23px] font-semibold max-lg:max-w-[200px] max-md:max-w-full lg:text-base/[15.4px] xl:text-[18px]/[17.4px]",
+											"mr-auto text-left text-sm/[23px] font-semibold max-lg:max-w-[200px] max-md:max-w-full lg:text-base/[15.4px] xl:text-p18/[17.4px]",
 											activeTab ? activeClasses : "dark:text-white"
 										)}>
 										{heading}
@@ -54,7 +54,7 @@ const ProcessSection = (props: any) => {
 						<div
 							key={activeProcess.heading}
 							className={cn("flex snap-center  items-center justify-center gap-4 max-lg:justify-between  max-md:shrink-0 max-md:basis-full")}>
-							<span className={cn("mx-auto text-left text-sm/[23px] font-semibold   lg:text-base/[15.4px] xl:text-[18px]/[17.4px]", activeClasses)}>
+							<span className={cn("mx-auto text-left text-sm/[23px] font-semibold   lg:text-base/[15.4px] xl:text-p18/[17.4px]", activeClasses)}>
 								{activeProcess.heading}
 							</span>
 						</div>
@@ -82,7 +82,7 @@ const ProcessSection = (props: any) => {
 					</div>
 				</div>
 				{/* PROCESS DESCRIPTION */}
-				<div className='rounded  bg-[#f9f9f9] px-8 py-[35px] text-[14px]/[21px] font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-[18px]/[40px] lg:px-[54px]  '>
+				<div className='rounded  bg-[#f9f9f9] px-8 py-[35px] text-p14 font-350 text-dark dark:bg-gray-54 dark:text-white max-md:font-350 md:text-p18/[40px] lg:px-[54px]  '>
 					<m.div initial={{ opacity: 0, y: "-5px" }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
 						{activeProcess.description}
 					</m.div>
