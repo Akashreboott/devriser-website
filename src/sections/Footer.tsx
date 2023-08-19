@@ -6,7 +6,7 @@ import InstagramIcon from "../../public/assets/icons/InstagramIcon";
 import TwitterLogo from "../../public/assets/icons/TwitterLogo";
 import Link from "next/link";
 import MotionComponent from "@/components/MotionComponent";
-import { opacityAnimVariants } from "@/utils/FramerVariants";
+import FramerProps, { opacityAnimVariants } from "@/utils/FramerVariants";
 import ChevronIcon from "../../public/assets/icons/Chevron";
 import cn from "@/utils/cn";
 import { useContext, useEffect, useState } from "react";
@@ -22,15 +22,13 @@ const Footer = (props: { lng: string }) => {
 
   return (
     <MotionComponent
-      initial='hide'
-      whileInView='visible'
-      variants={opacityAnimVariants()}
+      {...FramerProps(opacityAnimVariants())}
       viewport={{ margin: "200px" }}
       as='footer'
       className='grid w-[calc(100%+1.5px)] -translate-x-[1.5px] bg-white pt-[30px] font-350 [grid-area:footer] dark:bg-gray-30  [&>*]:mx-auto [&>*]:w-[min(100%,1347px)] [&>*]:px-3 '>
       <div className='flex flex-col justify-between gap-16 lg:flex-row'>
         {/* LOGO SECTION */}
-        <MotionComponent initial='hide' animate='visible' variants={opacityAnimVariants()} className='flex flex-col space-y-[16px] '>
+        <MotionComponent {...FramerProps(opacityAnimVariants())} className='flex flex-col space-y-[16px] '>
           <div className='flex items-center gap-[18px]'>
             <DevRiserLogo className='h-[48px] w-[48px]' />
             <div>
@@ -41,11 +39,7 @@ const Footer = (props: { lng: string }) => {
         </MotionComponent>
 
         {/* LINKS SECTION */}
-        <MotionComponent
-          initial='hide'
-          animate='visible'
-          variants={opacityAnimVariants()}
-          className='flex flex-col gap-5  lg:flex-row  lg:gap-[60px] '>
+        <MotionComponent {...FramerProps(opacityAnimVariants())} className='flex flex-col gap-5  lg:flex-row  lg:gap-[60px] '>
           <ul className='flex flex-col gap-2.5 '>
             <li
               onClick={() => setActive((prev) => (prev === "Company" ? "" : "Company"))}
@@ -59,7 +53,7 @@ const Footer = (props: { lng: string }) => {
               </span>
             </li>
             {(active === "Company" || !breakPoint1011) && (
-              <m.li initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <m.li {...FramerProps(opacityAnimVariants())}>
                 <div className='text-p15 opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
                   <Link
                     aria-label='Know more about us.'
@@ -96,7 +90,7 @@ const Footer = (props: { lng: string }) => {
             {/* <AnimatePresence> */}
             {(active === "Services" || !breakPoint1011) &&
               NAV_LINKS["services"].map(([name, path]) => (
-                <m.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={name}>
+                <m.li {...FramerProps(opacityAnimVariants())} key={name}>
                   <div className='text-p15 opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
                     <Link
                       aria-label={`Go to ${name} Page`}
@@ -127,7 +121,7 @@ const Footer = (props: { lng: string }) => {
             </li>
             {(active === "Solutions" || !breakPoint1011) &&
               NAV_LINKS["solutions"].map(([name, path]) => (
-                <m.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} key={name}>
+                <m.li {...FramerProps(opacityAnimVariants())} key={name}>
                   <div className='text-p15 opacity-70 transition-[filter,opacity] duration-200 hover:opacity-100 hover:brightness-[1.35] dark:opacity-50 dark:hover:opacity-100'>
                     <Link
                       aria-label={`Go to ${name} page`}

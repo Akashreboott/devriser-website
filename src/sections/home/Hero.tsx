@@ -52,7 +52,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
             text={btnText}
             variant='Primary'
             className={cn(
-              "home-btn relative inset-0 isolate mt-8 [--delay:3s]  dark:text-white   max-lg:mx-auto",
+              "home-btn relative inset-0 isolate mt-8 [--delay:3s] dark:text-white max-lg:mx-auto",
               "duration-500 before:absolute before:inset-[1px] before:-z-10 before:rounded-md before:bg-white before:transition-colors hover:before:bg-transparent active:before:bg-white dark:before:bg-dark dark:before:hover:bg-transparent active:dark:before:bg-dark",
               "after:absolute after:inset-0 after:-z-20 after:rounded-md"
             )}
