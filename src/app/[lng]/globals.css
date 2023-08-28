@@ -142,10 +142,12 @@
 #hero ~ * {
   @apply snap-start;
 }
+/* SPACING ACHIEVED THROUGH PADDING TO AVOID PROBLEM WHEN SWITCHING DARK AND LIGHT THEME */
 .section-spacing-p {
   padding-top: var(--pt);
   padding-bottom: var(--pb);
 }
+/* SPACING ACHIEVED THROUGH MARGIN */
 .section-spacing-m {
   margin-top: var(--pt);
   margin-bottom: var(--pb);

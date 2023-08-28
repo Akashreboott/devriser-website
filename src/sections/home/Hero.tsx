@@ -23,7 +23,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
         className
       )}>
       <div className=' mr-auto mt-[50px] w-full min-w-[300px] basis-full md:mt-[100px]  lg:ml-10 lg:mt-[var(--top-space)] '>
-        <h1 className='relative w-full  flex-wrap  overflow-hidden  text-[32px] font-semibold text-dark selection:bg-fuchsia-700 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-p64'>
+        <h1 className='relative w-full  flex-wrap  overflow-hidden  text-[42px]/[150%] font-semibold text-dark selection:bg-fuchsia-700 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-p64'>
           {heading.split(",").map((word, index) => (
             <span key={index} className={cn("inline-flex overflow-hidden brightness-[1.8] dark:brightness-200 max-lg:text-center")}>
               <span

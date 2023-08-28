@@ -14,12 +14,12 @@ import Logo5 from "../../../public/assets/icons/logoipsum-299.svg";
 
 const HeroSection = () => {
   return (
-    <LineLayout className='mb-10' HideSymbol={true}>
+    <LineLayout className='mb-10 max-md:h-screen' HideSymbol={true}>
       <Hero
         heading='Innovative Solutions, Lasting Impact'
         description='Empower your success with our innovative solutions.'
         btnText="Let's Begin"
-        className=' z-50'
+        className='z-50'
       />
 
       {/* LOGO SECTION */}
@@ -27,8 +27,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 3 }}
-        className='mx-3 flex justify-between max-lg:flex-col max-lg:justify-center max-md:mb-20 max-md:gap-6 lg:ml-24 lg:mr-8'
-      >
+        className='mx-3 flex justify-between max-lg:flex-col max-lg:justify-center max-md:mb-20 max-md:gap-6 lg:ml-24 lg:mr-8'>
         <div className='text-p20 font-medium max-lg:mx-auto lg:text-p26'>Trusted by</div>
         <div className='flex justify-center gap-5 max-lg:space-y-1 max-md:flex-wrap  lg:gap-16 [&>*]:shrink-0'>
           <Image src={Logo0} alt='' className='h-4 object-contain md:h-12' />

@@ -49,55 +49,6 @@
     @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-[--text-color] dark:from-fuchsia-600 dark:to-fuchsia-950/50;
   }
 }
-/* @keyframes color-animation-1 {
-  0% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-
-  5% {
-    @apply bg-gradient-to-r from-sky-800 to-sky-950  dark:from-sky-600 dark:to-sky-950/70;
-  }
-  15% {
-    @apply text-transparent;
-  }
-  40% {
-    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-transparent dark:from-sky-600 dark:to-sky-950/70;
-  }
-  50% {
-    @apply bg-gradient-to-r  from-black to-black  dark:from-white dark:to-white;
-  }
-  45% {
-    @apply text-[--text-color];
-  }
-  90% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-  100% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-}
-
-@keyframes color-animation-2 {
-  0% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-  40% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-
-  50% {
-    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  dark:from-fuchsia-600 dark:to-fuchsia-950/50;
-  }
-  65% {
-    @apply text-transparent;
-  }
-  95% {
-    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950 text-transparent dark:from-fuchsia-600 dark:to-fuchsia-950/50;
-  }
-  100% {
-    @apply bg-gradient-to-r  from-black to-black text-[--text-color] dark:from-white dark:to-white;
-  }
-} */
 
 @keyframes button-color-anim {
   0% {
@@ -122,20 +73,6 @@
     @apply bg-fuchsia-700  dark:bg-fuchsia-600;
   }
 }
-/* @keyframes button-color-anim {
-  0% {
-    @apply bg-gradient-to-r from-sky-500 to-sky-700 opacity-100 dark:from-sky-600 dark:to-sky-950/70;
-  }
-  40% {
-    @apply bg-gradient-to-r from-sky-500 to-sky-700 opacity-100 dark:from-sky-600 dark:to-sky-950/70;
-  }
-  60% {
-    @apply bg-gradient-to-r from-fuchsia-500 to-fuchsia-700 opacity-100 dark:from-fuchsia-600 dark:to-fuchsia-950/50;
-  }
-  100% {
-    @apply bg-gradient-to-r from-fuchsia-500 to-fuchsia-700 opacity-100 dark:from-fuchsia-600 dark:to-fuchsia-950/50;
-  }
-} */
 
 @keyframes slide-right {
   0% {

@@ -1,11 +1,5 @@
-"use client";
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence, m } from "framer-motion";
-import { NAV_LINKS } from "@/utils/cms-data";
 import cn from "@/utils/cn";
-import { slugify } from "@/utils/utils";
-import { SOLUTIONS } from "@/utils/home-data";
 
 import Stars from "./../../../public/assets/images/stars home.svg";
 import LineLayout from "@/components/LineLayout";
@@ -21,72 +15,10 @@ import MotionComponent from "@/components/MotionComponent";
 import ServicesSection from "@/sections/home/ServicesSection";
 import BlogsSection from "@/sections/home/BlogsSection";
 import HeroSection from "@/sections/home/HeroSection";
-import FramerProps, { opacityAnimVariants, slideCrossVariants } from "@/utils/FramerVariants";
 
 const Page = () => {
-  const [services, setServices] = useState("");
-  const [solutionsClicked, setSolutionsClicked] = useState<boolean>(false);
-
-  function onView(value: string) {
-    setServices(value);
-  }
-  function notOnView() {
-    setServices("");
-  }
-
   return (
     <>
-      {/* NAVBAR */}
-      <AnimatePresence>
-        {services && (
-          <m.nav
-            {...FramerProps(slideCrossVariants(["-47.5%", "-100%"], ["-47.5%", "0%"]))}
-            transition={{ duration: 1 }}
-            className='fixed left-1/2  top-0 z-50 mx-auto flex w-full max-w-[1728px]  items-center justify-center gap-20 bg-white/[0.05]  py-5 backdrop-blur-2xl max-lg:hidden '>
-            <div className='flex  justify-center gap-5'>
-              {NAV_LINKS["services"].map(([name]) => (
-                <a aria-label={`Go to ${name} section`} key={name} className='relative inline-block' href={`#${slugify(slugify(name), "/")}`}>
-                  {name}
-                  {services === name && (
-                    <MotionComponent
-                      as='span'
-                      layoutId='HorizontalNavbarUnderline'
-                      className='absolute -bottom-2.5 left-0 inline-block  h-1 w-full bg-gradient-to-r from-transparent  via-sky-500  via-50%  to-transparent'
-                    />
-                  )}
-                </a>
-              ))}
-            </div>
-            <button
-              onClick={() => setSolutionsClicked((prev) => !prev)}
-              className='bg-[rgba(71, 71, 71, 0.4)] relative rounded-[10px] border-[0.5px] border-white/50 px-3.5 py-2.5'>
-              <span>Business Solution</span>
-              <AnimatePresence>
-                {solutionsClicked && (
-                  <m.ul
-                    onMouseLeave={() => setSolutionsClicked(false)}
-                    {...FramerProps(opacityAnimVariants(0, 1))}
-                    className={
-                      "absolute left-0 top-[calc(100%+8px)] -z-10 flex w-full min-w-fit flex-col gap-3  rounded-md  bg-light py-3 backdrop-blur-3xl  dark:bg-gray-30/95   [&>li]:cursor-pointer [&>li]:transition-colors"
-                    }>
-                    {SOLUTIONS.map(({ name }, index) => (
-                      <m.li
-                        animate={{ opacity: [0, 1] }}
-                        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.05 * index }}
-                        key={name}
-                        className={cn(
-                          "flex h-full w-full  items-center justify-start gap-2 px-5  py-3 text-p12 transition-colors duration-200 hover:bg-light  dark:hover:bg-dark"
-                        )}>
-                        {name}
-                      </m.li>
-                    ))}
-                  </m.ul>
-                )}
-              </AnimatePresence>
-            </button>
-          </m.nav>
-        )}
-      </AnimatePresence>
       <Main data-page='home' className=' isolate grid '>
         {/* STARS AND GRADIENTS OVERLAY */}
         <div className='absolute left-0 top-0 flex min-h-section w-screen items-start justify-center overflow-hidden '>
@@ -102,20 +34,24 @@ const Page = () => {
 							"opacity-0.4 absolute -top-[200px] left-full z-20 aspect-square w-[400px] rounded-full bg-gradient-to-tl from-emerald-400 to-emerald-500 opacity-30 blur-3xl lg:-left-[10%] "
 						)}
 					/> */}
-          <m.div
+          <MotionComponent
             animate={{
               filter: ["brightness(0) blur(3px)", "brightness(0.1) blur(1.5px)", "brightness(0.4) blur(0px)"],
             }}
             transition={{ duration: 1, delay: 3 }}
             className='h-full  w-full brightness-50'>
-            <Image src={Stars} alt='' className=' hidden h-full w-full -translate-y-[200px] object-cover dark:block max-md:translate-y-0 ' />
-          </m.div>
+            <Image
+              src={Stars}
+              alt=''
+              className=' hidden h-screen w-full -translate-y-[200px] object-cover opacity-50 dark:block max-md:translate-y-0 md:h-full '
+            />
+          </MotionComponent>
         </div>
 
         <div className='home isolate'>
           {/* HERO SECTION */}
           <HeroSection />
-          <ServicesSection notOnView={notOnView} onView={onView} />
+          <ServicesSection />
 
           {/* SOLUTIONS SECTION */}
           <LineLayout className='mb-20'>
