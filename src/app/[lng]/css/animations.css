@@ -1,0 +1,179 @@
+@keyframes color-animation-1 {
+  0% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-transparent  dark:from-sky-600 dark:to-sky-950/70;
+  }
+  40% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-transparent dark:from-sky-600 dark:to-sky-950/70;
+  }
+
+  45% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-[--text-color] dark:from-sky-600 dark:to-sky-950/70;
+  }
+  50% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-[--text-color] dark:from-sky-600 dark:to-sky-950/70;
+  }
+
+  90% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-[--text-color] dark:from-sky-600 dark:to-sky-950/70;
+  }
+  95% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-transparent dark:from-sky-600 dark:to-sky-950/70;
+  }
+  100% {
+    @apply bg-gradient-to-r from-sky-800 to-sky-950 text-transparent dark:from-sky-600 dark:to-sky-950/70;
+  }
+}
+
+@keyframes color-animation-2 {
+  0% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-[--text-color] dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+
+  40% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-[--text-color] dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+  45% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-transparent dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+  50% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-transparent dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+
+  90% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950 text-transparent dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+  95% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950 text-[--text-color] dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+  100% {
+    @apply bg-gradient-to-r from-fuchsia-800 to-fuchsia-950  text-[--text-color] dark:from-fuchsia-600 dark:to-fuchsia-950/50;
+  }
+}
+
+@keyframes button-color-anim {
+  0% {
+    @apply bg-sky-500  dark:bg-sky-600;
+  }
+  40% {
+    @apply bg-sky-500  dark:bg-sky-600;
+  }
+  45% {
+    @apply bg-[--bg-color] dark:bg-[--bg-color];
+  }
+  60% {
+    @apply bg-fuchsia-700  dark:bg-fuchsia-600;
+  }
+  90% {
+    @apply bg-fuchsia-700  dark:bg-fuchsia-600;
+  }
+  95% {
+    @apply bg-[--text-color] dark:bg-[--text-color];
+  }
+  100% {
+    @apply bg-fuchsia-700  dark:bg-fuchsia-600;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+.color-animation-1 {
+  @apply [--text-color:black] dark:[--text-color:white];
+  animation: color-animation-1 6s 2s ease-out infinite alternate-reverse backwards;
+}
+.color-animation-2 {
+  @apply [--text-color:black] dark:[--text-color:white];
+  animation: color-animation-2 6s 2s ease-out infinite alternate-reverse backwards;
+}
+.button-color-animation {
+  transition: background-color 200ms ease;
+  animation: button-color-anim 6s 2s ease-out infinite backwards;
+}
+
+.home-btn::after {
+  @apply [--bg-color:rgba(0,0,0,0.5)] dark:[--bg-color:rgba(220,220,220,0.5)];
+  transition: background-color 200ms ease;
+  animation: button-color-anim 6s 2s ease-out infinite alternate-reverse backwards;
+}
+
+.slide-right {
+  animation: slide-right 1.5s ease-in 3s forwards;
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero-btn-animation {
+  animation: opacityAnimation 1s ease-out var(--delay) backwards;
+}
+
+@keyframes NavSlide {
+  from {
+    transform: translateX(-85px);
+  }
+}
+@keyframes InfiniteRotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes moveX {
+  0% {
+    translate: -2px 0;
+  }
+  100% {
+    translate: 5px 0;
+  }
+}
+@keyframes RotateAndSlide {
+  0% {
+    transform: rotate(0deg) translateX(var(--x));
+  }
+  100% {
+    transform: rotate(var(--rotation)) translateX(0);
+  }
+}
+
+@keyframes scaleAnim {
+  0% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1;
+  }
+}
+.RotateAndSlide {
+  --x: -0.65rem;
+  --rotation: 720deg;
+  animation: RotateAndSlide 15s ease-in-out infinite alternate-reverse;
+}
+.RotateAndSlideOpposite {
+  --rotation: -720deg;
+  --x: 0.65rem;
+  animation: RotateAndSlide 15s ease-in-out infinite alternate-reverse;
+}
+.moveX {
+  animation: moveX 1s ease-in-out infinite alternate-reverse;
+}
+.infinite-rotate {
+  animation: InfiniteRotate 2s ease-out infinite;
+}
+.navslide-anim {
+  animation: NavSlide 0.3s ease forwards;
+}

@@ -23,7 +23,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
         className
       )}>
       <div className=' mr-auto mt-[50px] w-full min-w-[300px] basis-full md:mt-[100px]  lg:ml-10 lg:mt-[var(--top-space)] '>
-        <h1 className='relative w-full  flex-wrap  overflow-hidden  text-[32px] font-semibold text-dark selection:bg-fuchsia-700 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-p64'>
+        <h1 className='relative w-full  flex-wrap  overflow-hidden  text-[42px]/[150%] font-semibold text-dark selection:bg-fuchsia-700 selection:text-white dark:text-white max-lg:text-center max-md:text-center xl:text-p64'>
           {heading.split(",").map((word, index) => (
             <span key={index} className={cn("inline-flex overflow-hidden brightness-[1.8] dark:brightness-200 max-lg:text-center")}>
               <span
@@ -52,7 +52,7 @@ const Hero = ({ heading, gradientText, btnText, description, className, ...props
             text={btnText}
             variant='Primary'
             className={cn(
-              "home-btn relative inset-0 isolate mt-8 [--delay:3s]  dark:text-white   max-lg:mx-auto",
+              "home-btn relative inset-0 isolate mt-8 [--delay:3s] dark:text-white max-lg:mx-auto",
               "duration-500 before:absolute before:inset-[1px] before:-z-10 before:rounded-md before:bg-white before:transition-colors hover:before:bg-transparent active:before:bg-white dark:before:bg-dark dark:before:hover:bg-transparent active:dark:before:bg-dark",
               "after:absolute after:inset-0 after:-z-20 after:rounded-md"
             )}
